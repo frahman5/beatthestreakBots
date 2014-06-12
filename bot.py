@@ -1,7 +1,7 @@
 from selenium import webdriver
 
 class Bot(object):
-    pass
+    ## make sure you logout after logging in. 
     def __init__(self, username, password):
         """
         string string -> None
@@ -14,6 +14,9 @@ class Bot(object):
         self.username = username
         self.password = password
         self.browser = webdriver.Firefox()
+        self.pageTitles = {
+            'login':'Account Management - Login/Register | MLB.com: Account', 
+            'picks': 'Beat The Streak | MLB.com: Fantasy'}
 
     def get_login_page(self):
         """
@@ -23,6 +26,16 @@ class Bot(object):
               'btsloginregister&forwardUrl=http://mlb.mlb.com/mlb/fantasy/' + \
               'bts/y2014/'
         self.browser.get(url)
+
+    def login(self):
+        """
+        Logs in to mlb beat the streak site
+        """
+        if not self.pageTitles['login'] in self.browser.title:
+            self.get_login_page()
+        self.browser.find_element_by_id('login_email').send_keys(self.username)
+        self.browser.find_element_by_id('login_password').send_keys(self.password)
+        self.browser.find_element_by_name('submit').click()
 
     def quit_browser(self):
         """

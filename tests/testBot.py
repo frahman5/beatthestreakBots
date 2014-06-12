@@ -13,3 +13,8 @@ class TestBot(unittest.TestCase):
         loginTitle = 'Account Management - Login/Register | MLB.com: Account'
         self.bot.get_login_page()
         self.assertTrue(loginTitle in self.bot.get_browser().title)
+
+    def test_login(self):
+    	pageTitle = 'Beat The Streak | MLB.com: Fantasy'
+    	self.bot.login()
+    	self.assertTrue(pageTitle in self.bot.get_browser().title)
