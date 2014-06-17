@@ -1,4 +1,5 @@
-from bot import Bot
+import btsReal
+from btsReal.bot import Bot
 import unittest
 
 class TestBot(unittest.TestCase):
@@ -18,3 +19,6 @@ class TestBot(unittest.TestCase):
     	pageTitle = 'Beat The Streak | MLB.com: Fantasy'
     	self.bot.login()
     	self.assertTrue(pageTitle in self.bot.get_browser().title)
+
+
+

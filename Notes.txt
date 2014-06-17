@@ -1,0 +1,8 @@
+1) ToDo:
+   -> Write test for "remove selections"
+   -> Write "remove selections"
+   -> Write test for "choose player", including double downs
+   -> Refactor "choose player" until it passes and has 100% coverage
+   -> Refactor code to send emails if exception occurs
+2) ToDos after we start making daily selections:
+   -> Write code for Bot to report its history via email/excel
