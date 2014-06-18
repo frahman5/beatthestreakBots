@@ -1,5 +1,11 @@
 1) ToDo:
-   -> Write test for "remove selections"
+   -> Write test for "remove selections" | DONE
+       -> Figure out how to check if a selection has been made | DONE
+       -> Make three test bots to manually set before testing remove selections
+          -> No selection | DONE
+          -> Single selection | DONE
+          -> Double Selection | DONE
+       -> Write test code | DONE
    -> Write "remove selections"
    -> Write test for "choose player", including double downs
    -> Refactor "choose player" until it passes and has 100% coverage

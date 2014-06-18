@@ -1,8 +1,5 @@
 from selenium import webdriver
 import time
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.support.ui import WebDriverWait as Wait
-# from selenium.webdriver.support import expected_conditions as EC
 
 class Bot(object):
     ## make sure you logout after logging in. 
@@ -68,10 +65,6 @@ class Bot(object):
         
         # login (waits for page to load)
         time.sleep(2)
-        # loginEmail = Wait(self.browser, 10).until(
-        #     EC.presence_of_element_located((By.ID, "login_email")))
-        # loginEmail.send_keys(self.username)
-        
         self.browser.find_element_by_id('login_email').send_keys(self.username)
         self.browser.find_element_by_id('login_password').send_keys(self.password)
         self.browser.find_element_by_name('submit').click()
@@ -86,8 +79,6 @@ class Bot(object):
 
         # click on today's make pick 
         time.sleep(2)
-        # playerInfoRows = Wait(self.browser, 10).until(
-        #     EC.presence_of_all_elements_located((By.CLASS_NAME, 'player-info-rows')))
         playerInfoRows = self.browser.find_elements_by_class_name('player-info-rows')
         today = playerInfoRows[1] ## always the second row from the top
         today.click()
@@ -165,6 +156,13 @@ class Bot(object):
                     raise SameNameException("Team {0} has two players".format(team) + \
                         "with same name: {0} {1}".format(firstName, lastName))
 
+    def reset_selections(self):
+        """
+        If this bot has already made some selections today, removes
+        the selections
+        """
+        pass
+        
     def quit_browser(self):
         """
         Closes self.browser
