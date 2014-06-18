@@ -1,4 +1,4 @@
-1) ToDo:
+1) ToDo Before working on beatthestreak:
    -> Write test for "remove selections" | DONE
        -> Figure out how to check if a selection has been made | DONE
        -> Make three test bots to manually set before testing remove selections
@@ -7,16 +7,25 @@
           -> Double Selection | DONE
        -> Write test code | DONE
    -> Write "remove selections" | DONE
-   -> Write test for "choose player", including double downs
+   -> Write test for "choose player", including double downs | DONE
    -> Refactor "choose player" until it passes and has 100% coverage
+        -> Get basic tests to work | DONE
+        -> Cover corner cases
+            -> Uncovered lines of code:
+                 90, 93, 129, 144, 180, 253-254
+            -> Decide if you want to test choose_player function for every
+               single, or perhaps just seperately test the self.teams dict
    -> Refactor code to send emails if exception occurs
-2) ToDos after we start making daily selections:
-   -> Use explicit waits plus random set time pauses after the fact to 
-         1) Ensure nothing happens before the necessary elements have loaded
-         2) WebDriver actions don't seem too robotic
-   -> Write code for Bot to report its history via email/excel
+
+2) ToDo to get daily selections Running 
    -> Write code (perhaps another Researcher module) that will do the heavy
       lifting in figuring out which players to pick for a given day
    -> Write code (perhaps another module named "Master of Ceremonies") that
       will take what the researcher tells him and then organize the bots
       to make their selections and report back. 
+    
+3) ToDos after we start making daily selections:
+   -> Use explicit waits plus random set time pauses after the fact to 
+         1) Ensure nothing happens before the necessary elements have loaded
+         2) WebDriver actions don't seem too robotic
+   -> Write code for Bot to report its history via email/excel

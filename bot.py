@@ -1,5 +1,8 @@
-from selenium import webdriver
 import time
+import logging
+
+from selenium import webdriver
+
 
 class Bot(object):
     ## make sure you logout after logging in. 
@@ -23,6 +26,9 @@ class Bot(object):
         self.username = username
         self.password = password
         self.browser = webdriver.Firefox()
+        seleniumLogger = logging.getLogger('selenium.webdriver.remote.remote_connection')
+        # Only display possible problems
+        seleniumLogger.setLevel(logging.WARNING)
 
         self.pageTitles = {
             'login':'Account Management - Login/Register | MLB.com: Account', 
@@ -45,85 +51,47 @@ class Bot(object):
             'St. Louis Cardinals': 'stl', 'Washington Nationals': 'was'
             }
 
-    def choose_player(self, team, firstName, lastName):
+    def choose_players(self, p1=(), p2=()):
         """
-        string string string -> None
+        TupleOfStrings TupleOfStrings -> None
+           p1 and p2: Either the empty tuple or a tuple of format
+              (firstName, lastName, teamAbbreviation) where firstName and
+              lastName define a player in the MLB and teamAbbrevations
+              is the team abbreviation used in beatthestreak's html code, 
+              as defined in self.teams
 
-        Chooses player firstName lastName on team team 
+        If p1 and p2 are both nonEmpty, choose p1 and p2. Else, we choose
+        p1, which should be nonempty. 
         """
-        ## type checking
-        for param in (team, firstName, lastName):
-            assert type(param) == str
-        assert team in self.teams.keys()
-
-        # click on make pick for today
-        self._click_make_pick_today() 
-
-        ## click on "select teams"
-        selectTeam = self.browser.find_element_by_id('team-name')
-        selectTeam.click()
-
-        ## click on desired team
-        time.sleep(2)
-        team = self.browser.find_element_by_class_name(self.teams[team])
-        team.click()
-
-        ## Make pick
-            # For each row including a "select" button, there are two last
-            # names, one for a player on team team, and one for the opposing
-            # starting pitcher. 
-        time.sleep(2)
-        lastNameElems = self.browser.find_elements_by_class_name("last-name")
-        lastNames = [elem.text for elem in lastNameElems]
-
-        selectButtons = self.browser.find_elements_by_class_name("select-action")
-        assert len(lastNames) == len(selectButtons) * 2
-            # sift out the repeated last name of the opposing starting pitcher.
-            # This way, the index of a lastName in teamLastNames is the index
-            # of the select button in selectButtons for the corresponding player
-        teamLastNames = [elem for elem in lastNames 
-            if lastNames.index(elem) % 2 == 0]
-
-        desiredPlayer = [elem for elem in teamLastNames if elem == lastName]
-            # Either desiredPlayer is len 1 or > 1:
-            # len1: # check that firstname is correct and then select player
-        if len(desiredPlayer) == 1:
-            player = desiredPlayer[0]
-            print player
-            firstNames = self.browser.find_elements_by_class_name('first-name')
-            assert firstNames[lastNames.index(player)].text == firstName
-            print firstNames[lastNames.index(player)].text
-            import pdb
-            pdb.set_trace()
-            selectButtons[teamLastNames.index(player)].click()
-            # len > 1: proceed via firstName
-        elif len(desiredPlayer) > 1:
-            print desiredPlayer
-            firstNameElems = self.browser.find_elements_by_class_name('first-name')
-            firstNames = [elem.text for elem in firstNameElems]
-            teamFirstNames = [elem for elem in firstNames 
-                if firstNames.index(elem) % 2 == 0]
-            desiredPlayer = [elem for elem in teamFirstNames 
-                if elem.text == firstNames]
-            if len(desiredPlayer) == 1: # check that lastName is correct and select player
-                player = desiredPlayer[0]
-                assert lastNames[firstNames.index(player)].text == lastName
-                selectButtons[teamFirstNames.index(player)].click()
-            elif len(desiredPlayer) > 1: 
-                correctNames = [player for player in desiredPlayer 
-                    if teamLastNames[teamFirstNames.index(player)].text == lastName]
-                if len(correctNames) == 1:
-                    selectButtons[teamFirstNames.index(player)].click()
-                else:
-                    raise SameNameException("Team {0} has two players".format(team) + \
-                        "with same name: {0} {1}".format(firstName, lastName))
+        ## Type checking
+           # should both be tuples
+        assert type(p1) == tuple
+        assert type(p2) == tuple
+           # p1 should be of length 3, contain strings, and have a valid team
+        assert len(p1) == 3
+        for item in p1:
+            assert type(item) == str
+        assert p1[2] in self.teams.keys()
+           # p2 should be of length 0 or 3, and in the later case contain strings
+           # and have a valid team
+        assert len(p2) in (0,3)
+        if len(p2) == 3:
+            for item in p2:
+                assert type(item) == str
+            assert p2[2] in self.teams.keys()
+        
+        # Reset selections and then choose players
+        self._reset_selections() 
+        self.__choose_single_player(p1)
+        if len(p2) == 3:
+            self.__choose_single_player(p2, doubleDown=True)
 
     def get_username(self):
-        return self.username
+        return self.username ## UNCOVERED IN TEST CASES
 
-    def get_password(self):
-        return self.password
-    
+    def get_password(self): 
+        return self.password  ## UNCOVERED IN TEST CASES
+
     def _get_login_page(self):
         """
         Opens a web broswer and navigates to the beat the streak login page
@@ -152,17 +120,15 @@ class Bot(object):
         self.browser.find_element_by_name('submit').click()
         time.sleep(2)
 
-
     def _click_make_pick_today(self):
         """
         Clicks on make pick for today's date
         """
         ## make sure we're on the right page
         if not self.pageTitles['picks'] in self.browser.title:
-            self._login()
+            self._login() ## UNCOVERED IN TEST CASES
 
         # click on today's make pick 
-        time.sleep(2)
         playerInfoRows = self.browser.find_elements_by_class_name('player-info-rows')
         today = playerInfoRows[1] ## always the second row from the top
         today.click()
@@ -175,7 +141,7 @@ class Bot(object):
         """
         # make sure we're on the make picks page
         if not self.pageTitles['picks'] in self.browser.title:
-            self._get_make_picks_page()
+            self._get_make_picks_page() ## UNCOVERED IN TEST CASES
 
         selectTeamBox = self.browser.find_elements_by_id('team-name')[0]
         if selectTeamBox.is_displayed():
@@ -211,5 +177,85 @@ class Bot(object):
         self.browser.quit()
 
     def _get_browser(self):
-        return self.browser
+        return self.browser  ## UNCOVERED IN TEST CASES
 
+    def _get_chosen_players(self):
+        """
+        None -> Tuple
+           Returns a tuple of strings containing the names
+           of players this bot currently has selected
+        """
+        # html elements that correspond to players are the first item
+        # in a list. Other html elements on the make pick page that 
+        # are first items in a list have text that either says 'date locked', 
+        # 'double down', or 'make pick'
+        firstItems = self.browser.find_elements_by_class_name('first')
+        players = [elem.text for elem in firstItems if 
+            elem.tag_name == 'li' and elem.text not in ('Date Locked', 
+                'Double Down', 'Make Pick')]
+        return tuple(players)
+
+    def __choose_single_player(self, player, doubleDown=False):
+        """
+        TupleOfStrings bool -> None
+            player: (firstName, lastName, teamAbbreviation)
+            doubleDown: True if this is a doubleDown pick, False otherwise
+
+        Assigns player player to bot.
+        """
+        ## Type checking
+        assert type(player) == tuple
+        assert len(player) == 3
+        assert player[2] in self.teams.keys()
+
+        firstName, lastName, team = player
+
+        ## Get to selection dropdown for team
+        self._get_player_selection_dropdown()
+            # click on "select teams"
+        selectTeam = self.browser.find_element_by_id('team-name')
+        selectTeam.click()
+        time.sleep(2)
+            # click on desired team
+        team = self.browser.find_element_by_class_name(self.teams[team])
+        team.click()
+        time.sleep(2)
+
+        ## Make pick
+            # get lists of firstNames, lastNames, and select Buttons
+        lastNameElems = self.browser.find_elements_by_class_name("last-name")
+        firstNameElems = self.browser.find_elements_by_class_name("first-name")
+        selectButtons = self.browser.find_elements_by_class_name("select-action")
+        assert len(lastNameElems) == len(selectButtons) * 2
+        assert len(firstNameElems) == len(selectButtons) * 2
+            # for each player on team team, the opposing pitcher's name shows
+            # up once (in both name lists). Sift out the repeated last name of the 
+            # opposing starting pitcher so that the index of a lastName in 
+            # teamLastNames (resp. firstName in teamFirstNames) is the index
+            # of the select button in selectButtons for the corresponding player
+        teamLastNameElems = [elem for elem in lastNameElems
+            if lastNameElems.index(elem) % 2 == 0]
+        teamFirstNameElems = [elem for elem in firstNameElems
+            if firstNameElems.index(elem) % 2 == 0]
+        firstNameMatches = [teamFirstNameElems.index(elem) for elem 
+            in teamFirstNameElems if elem.text == firstName]
+        lastNameMatches = [teamLastNameElems.index(elem) for elem 
+            in teamLastNameElems if elem.text == lastName]
+        fullNameMatches = [index for index in firstNameMatches 
+            if index in lastNameMatches]
+
+        numMatches = len(fullNameMatches)
+        if numMatches == 0: ## UNCOVERED IN TEST CASES
+            raise NoPlayerFoundException("Player {0} {1} on team {2}".format(
+                firstName, lastName, team) + "was not found")
+        if numMatches == 1:
+            selectButtons[fullNameMatches[0]].click()
+        elif numMatches > 1: ## UNCOVERED IN TEST CASES
+            raise SameNameException("Team {0} has two players".format(team) + \
+                        "with same name: {0} {1}".format(firstName, lastName))
+        if doubleDown:
+            # first button : Double Down. SecondButton: Replace Selection
+            buttons = self.browser.find_elements_by_class_name('ui-button-text-only')
+            buttons[0].click()
+
+        time.sleep(2)
