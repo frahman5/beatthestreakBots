@@ -6,7 +6,7 @@
           -> Single selection | DONE
           -> Double Selection | DONE
        -> Write test code | DONE
-   -> Write "remove selections"
+   -> Write "remove selections" | DONE
    -> Write test for "choose player", including double downs
    -> Refactor "choose player" until it passes and has 100% coverage
    -> Refactor code to send emails if exception occurs
@@ -15,3 +15,8 @@
          1) Ensure nothing happens before the necessary elements have loaded
          2) WebDriver actions don't seem too robotic
    -> Write code for Bot to report its history via email/excel
+   -> Write code (perhaps another Researcher module) that will do the heavy
+      lifting in figuring out which players to pick for a given day
+   -> Write code (perhaps another module named "Master of Ceremonies") that
+      will take what the researcher tells him and then organize the bots
+      to make their selections and report back. 
