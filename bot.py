@@ -23,7 +23,6 @@ class Bot(object):
         self.username = username
         self.password = password
         self.browser = webdriver.Firefox()
-        self.browser.implicitly_wait(5) # wait 2 seconds if an element is not there
 
         self.pageTitles = {
             'login':'Account Management - Login/Register | MLB.com: Account', 
@@ -45,43 +44,6 @@ class Bot(object):
             'San Diego Padres': 'sd', 'San Francisco Giants': 'sf',
             'St. Louis Cardinals': 'stl', 'Washington Nationals': 'was'
             }
-
-    def get_login_page(self):
-        """
-        Opens a web broswer and navigates to the beat the streak login page
-        """
-        url = 'https://secure.mlb.com/enterworkflow.do?flowId=fantasy.bts.' + \
-              'btsloginregister&forwardUrl=http://mlb.mlb.com/mlb/fantasy/' + \
-              'bts/y2014/'
-        self.browser.get(url)
-
-    def login(self):
-        """
-        Logs in to mlb beat the streak site
-        """
-        ## make sure we're on the right page
-        if not self.pageTitles['login'] in self.browser.title:
-            self.get_login_page()
-        
-        # login (waits for page to load)
-        time.sleep(2)
-        self.browser.find_element_by_id('login_email').send_keys(self.username)
-        self.browser.find_element_by_id('login_password').send_keys(self.password)
-        self.browser.find_element_by_name('submit').click()
-
-    def _click_make_pick_today(self):
-        """
-        Clicks on make pick for today's date
-        """
-        ## make sure we're on the right page
-        if not self.pageTitles['picks'] in self.browser.title:
-            self.login()
-
-        # click on today's make pick 
-        time.sleep(2)
-        playerInfoRows = self.browser.find_elements_by_class_name('player-info-rows')
-        today = playerInfoRows[1] ## always the second row from the top
-        today.click()
 
     def choose_player(self, team, firstName, lastName):
         """
@@ -156,32 +118,98 @@ class Bot(object):
                     raise SameNameException("Team {0} has two players".format(team) + \
                         "with same name: {0} {1}".format(firstName, lastName))
 
-    def reset_selections(self):
-        """
-        If this bot has already made some selections today, removes
-        the selections
-        """
-        pass
-        
-    def quit_browser(self):
-        """
-        Closes self.browser
-        """
-        self.browser.quit()
-
     def get_username(self):
         return self.username
 
     def get_password(self):
         return self.password
+    
+    def _get_login_page(self):
+        """
+        Opens a web broswer and navigates to the beat the streak login page
+        """
+        url = 'https://secure.mlb.com/enterworkflow.do?flowId=fantasy.bts.' + \
+              'btsloginregister&forwardUrl=http://mlb.mlb.com/mlb/fantasy/' + \
+              'bts/y2014/'
+        self.browser.get(url)
+        time.sleep(2)
 
-    def __set_username(self, username):
-        assert type(username) == str
-        self.username == username
+    def _get_make_picks_page(self):
+        """
+        Logs in to mlb beat the streak site
+        """
+        ## Navigate to the login page
+        if not self.pageTitles['login'] in self.browser.title:
+            self._get_login_page()
 
-    def __set_password(self, password):
-        assert type(password) == str
-        self.password = password
+        ## If we were already logged in, then we'll now be on the make picks page
+        if self.pageTitles['picks'] in self.browser.title:
+            return
+        
+        # Otherwise, we need to login
+        self.browser.find_element_by_id('login_email').send_keys(self.username)
+        self.browser.find_element_by_id('login_password').send_keys(self.password)
+        self.browser.find_element_by_name('submit').click()
+        time.sleep(2)
 
-    def get_browser(self):
+
+    def _click_make_pick_today(self):
+        """
+        Clicks on make pick for today's date
+        """
+        ## make sure we're on the right page
+        if not self.pageTitles['picks'] in self.browser.title:
+            self._login()
+
+        # click on today's make pick 
+        time.sleep(2)
+        playerInfoRows = self.browser.find_elements_by_class_name('player-info-rows')
+        today = playerInfoRows[1] ## always the second row from the top
+        today.click()
+        time.sleep(2)
+
+    def _get_player_selection_dropdown(self):
+        """
+        Gets the player selection dropdown box. Should be used from the make picks
+        page
+        """
+        # make sure we're on the make picks page
+        if not self.pageTitles['picks'] in self.browser.title:
+            self._get_make_picks_page()
+
+        selectTeamBox = self.browser.find_elements_by_id('team-name')[0]
+        if selectTeamBox.is_displayed():
+            return
+        else:
+            self._click_make_pick_today() # includes a sleep at the end
+
+    def _reset_selections(self):
+        """
+        If this bot has already made some selections today, removes
+        the selections
+        """
+        self._get_player_selection_dropdown() # make the remove Buttons show up
+
+        removeButtonsRaw = self.browser.find_elements_by_class_name('remove-action')
+        removeButtons = [elem for elem in removeButtonsRaw 
+               if elem.get_attribute('class') == 'remove-action player-row']
+        while removeButtons != []:
+            removeButtons[0].click()
+            time.sleep(2)
+            subAndCancel = self.browser.find_elements_by_class_name('ui-button-text-only')
+            subAndCancel[0].click()
+            time.sleep(2)
+            removeButtonsRaw = self.browser.find_elements_by_class_name('remove-action')
+            removeButtons = [elem for elem in removeButtonsRaw 
+                   if elem.get_attribute('class') == 'remove-action player-row']
+        time.sleep(2)
+
+    def _quit_browser(self):
+        """
+        Closes self.browser
+        """
+        self.browser.quit()
+
+    def _get_browser(self):
         return self.browser
+

@@ -11,4 +11,7 @@
    -> Refactor "choose player" until it passes and has 100% coverage
    -> Refactor code to send emails if exception occurs
 2) ToDos after we start making daily selections:
+   -> Use explicit waits plus random set time pauses after the fact to 
+         1) Ensure nothing happens before the necessary elements have loaded
+         2) WebDriver actions don't seem too robotic
    -> Write code for Bot to report its history via email/excel
