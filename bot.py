@@ -3,10 +3,14 @@ import logging
 
 from selenium import webdriver
 
+from exception import NoPlayerFoundException, SameNameException
+from decorator import logErrors
+
 
 class Bot(object):
     ## make sure you logout after logging in. 
 
+    @logErrors
     def __init__(self, username, password):
         """
         string string -> None
@@ -51,6 +55,7 @@ class Bot(object):
             'St. Louis Cardinals': 'stl', 'Washington Nationals': 'was'
             }
 
+    @logErrors
     def choose_players(self, p1=(), p2=()):
         """
         TupleOfStrings TupleOfStrings -> None
@@ -86,12 +91,15 @@ class Bot(object):
         if len(p2) == 3:
             self.__choose_single_player(p2, doubleDown=True)
 
+    @logErrors
     def get_username(self):
-        return self.username ## UNCOVERED IN TEST CASES
+        return self.username
 
+    @logErrors
     def get_password(self): 
-        return self.password  ## UNCOVERED IN TEST CASES
+        return self.password
 
+    @logErrors
     def _get_login_page(self):
         """
         Opens a web broswer and navigates to the beat the streak login page
@@ -100,17 +108,22 @@ class Bot(object):
               'btsloginregister&forwardUrl=http://mlb.mlb.com/mlb/fantasy/' + \
               'bts/y2014/'
         self.browser.get(url)
-        time.sleep(2)
+        time.sleep(3)
 
+    @logErrors
     def _get_make_picks_page(self):
         """
         Logs in to mlb beat the streak site
         """
-        ## Navigate to the login page
+        ## Are we already on it?
+        if self.pageTitles['picks'] in self.browser.title:
+            return
+
+        ## Else navigate to the login page
         if not self.pageTitles['login'] in self.browser.title:
             self._get_login_page()
 
-        ## If we were already logged in, then we'll now be on the make picks page
+        ## If we were already logged in, then now we are on the picks page
         if self.pageTitles['picks'] in self.browser.title:
             return
         
@@ -118,30 +131,30 @@ class Bot(object):
         self.browser.find_element_by_id('login_email').send_keys(self.username)
         self.browser.find_element_by_id('login_password').send_keys(self.password)
         self.browser.find_element_by_name('submit').click()
-        time.sleep(2)
+        time.sleep(3)
 
+    @logErrors
     def _click_make_pick_today(self):
         """
         Clicks on make pick for today's date
         """
         ## make sure we're on the right page
-        if not self.pageTitles['picks'] in self.browser.title:
-            self._login() ## UNCOVERED IN TEST CASES
+        self._get_make_picks_page()
 
         # click on today's make pick 
         playerInfoRows = self.browser.find_elements_by_class_name('player-info-rows')
         today = playerInfoRows[1] ## always the second row from the top
         today.click()
-        time.sleep(2)
+        time.sleep(3)
 
+    @logErrors
     def _get_player_selection_dropdown(self):
         """
         Gets the player selection dropdown box. Should be used from the make picks
         page
         """
         # make sure we're on the make picks page
-        if not self.pageTitles['picks'] in self.browser.title:
-            self._get_make_picks_page() ## UNCOVERED IN TEST CASES
+        self._get_make_picks_page()
 
         selectTeamBox = self.browser.find_elements_by_id('team-name')[0]
         if selectTeamBox.is_displayed():
@@ -149,6 +162,7 @@ class Bot(object):
         else:
             self._click_make_pick_today() # includes a sleep at the end
 
+    @logErrors
     def _reset_selections(self):
         """
         If this bot has already made some selections today, removes
@@ -161,24 +175,23 @@ class Bot(object):
                if elem.get_attribute('class') == 'remove-action player-row']
         while removeButtons != []:
             removeButtons[0].click()
-            time.sleep(2)
+            time.sleep(3)
             subAndCancel = self.browser.find_elements_by_class_name('ui-button-text-only')
             subAndCancel[0].click()
-            time.sleep(2)
+            time.sleep(3)
             removeButtonsRaw = self.browser.find_elements_by_class_name('remove-action')
             removeButtons = [elem for elem in removeButtonsRaw 
                    if elem.get_attribute('class') == 'remove-action player-row']
-        time.sleep(2)
+        time.sleep(3)
 
+    @logErrors
     def _quit_browser(self):
         """
         Closes self.browser
         """
         self.browser.quit()
-
-    def _get_browser(self):
-        return self.browser  ## UNCOVERED IN TEST CASES
-
+    
+    @logErrors
     def _get_chosen_players(self):
         """
         None -> Tuple
@@ -195,6 +208,7 @@ class Bot(object):
                 'Double Down', 'Make Pick')]
         return tuple(players)
 
+    @logErrors
     def __choose_single_player(self, player, doubleDown=False):
         """
         TupleOfStrings bool -> None
@@ -215,11 +229,11 @@ class Bot(object):
             # click on "select teams"
         selectTeam = self.browser.find_element_by_id('team-name')
         selectTeam.click()
-        time.sleep(2)
+        time.sleep(3)
             # click on desired team
         team = self.browser.find_element_by_class_name(self.teams[team])
         team.click()
-        time.sleep(2)
+        time.sleep(3)
 
         ## Make pick
             # get lists of firstNames, lastNames, and select Buttons
@@ -245,17 +259,17 @@ class Bot(object):
             if index in lastNameMatches]
 
         numMatches = len(fullNameMatches)
-        if numMatches == 0: ## UNCOVERED IN TEST CASES
+        if numMatches == 0: 
             raise NoPlayerFoundException("Player {0} {1} on team {2}".format(
                 firstName, lastName, team) + "was not found")
         if numMatches == 1:
             selectButtons[fullNameMatches[0]].click()
-        elif numMatches > 1: ## UNCOVERED IN TEST CASES
-            raise SameNameException("Team {0} has two players".format(team) + \
-                        "with same name: {0} {1}".format(firstName, lastName))
+        elif numMatches > 1: # pragma: no cover
+            raise SameNameException("The {0} have two players ".format(team) + \
+                        "with the same name: {0} {1}".format(firstName, lastName))
         if doubleDown:
             # first button : Double Down. SecondButton: Replace Selection
             buttons = self.browser.find_elements_by_class_name('ui-button-text-only')
             buttons[0].click()
 
-        time.sleep(2)
+        time.sleep(3)

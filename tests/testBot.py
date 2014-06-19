@@ -4,19 +4,18 @@ import pandas as pd
 
 from btsReal.bot import Bot
 from btsReal.filepath import Filepath
+from btsReal.exception import NoPlayerFoundException
 
 class TestBot(unittest.TestCase):
 
     def setUp(self):
-        ## We initalize in order dBot, sBot, eBot so that tests can test
-        ## in order eBot, sBot, dBot and tester does not need to fiddle around
-        ## with windows
-
         ## get usernames and passwords for test bots
         df = pd.io.excel.read_excel(Filepath.get_accounts_file(), 
                 sheetname='Test', parse_cols='A,B,C,D')
 
         # If necessary, initalize sBot and dBot. Else set to None
+        # sBot: always should have one selection when used
+        # dBot: always should have two selections when used
         testsWithSAndDBots = (
             'testBot.TestBot.test_get_chosen_players', 
             'testBot.TestBot.test__reset_selections', 
@@ -29,17 +28,17 @@ class TestBot(unittest.TestCase):
                         str(self.dBotVals.MLBPassword.item()))
             self.sBot = Bot(str(self.sBotVals.Email.item()), 
                             str(self.sBotVals.MLBPassword.item()))
-            self.sBot.browser.set_window_position(34, 52)
+            self.sBot.browser.set_window_position(34, 52) # for accessibility
         else:
             self.sBot = None
             self.dBot = None
 
-        ## Create empty Bot -- always should have no selections when used
-          # Doubles as default testing bot
-        eBotVals = df[df.ID == 'emptyBot']
-        self.eBot = Bot(str(eBotVals.Email.item()), 
-            str(eBotVals.MLBPassword.item()))
-        self.eBot.browser.set_window_position(64, 82)
+        # Create empty Bot -- always should have no selections when used
+        # Doubles as default testing bot
+        self.eBotVals = df[df.ID == 'emptyBot']
+        self.eBot = Bot(str(self.eBotVals.Email.item()), 
+            str(self.eBotVals.MLBPassword.item()))
+        self.eBot.browser.set_window_position(64, 82) # for accessibility
 
     def tearDown(self):
         self.eBot._quit_browser()
@@ -52,17 +51,21 @@ class TestBot(unittest.TestCase):
     def test_get_login_page(self):
         loginTitle = 'Account Management - Login/Register | MLB.com: Account'
         self.eBot._get_login_page()
-        self.assertTrue(loginTitle in self.eBot._get_browser().title)
+        self.assertTrue(loginTitle in self.eBot.browser.title)
 
-    @unittest.skip("Not Focus")
+    # @unittest.skip("Not Focus")
     def test_get_make_pick_page(self):
         pageTitle = 'Beat The Streak | MLB.com: Fantasy'
         ## Case 1: Bot is not yet logged in:
         self.eBot._get_make_picks_page()
-        self.assertTrue(pageTitle in self.eBot._get_browser().title)
-        ## Case 2: Bot is already logged in:
+        self.assertTrue(pageTitle in self.eBot.browser.title)
+        ## Case 2: Bot is already on picks page
         self.eBot._get_make_picks_page()
-        self.assertTrue(pageTitle in self.eBot._get_browser().title)
+        self.assertTrue(pageTitle in self.eBot.browser.title)
+        ## Case 3: Bot is already logged in but not on picks page
+        self.eBot.browser.get('www.google.com')
+        self.eBot._get_make_picks_page()
+        self.assertTrue(pageTitle in self.eBot.browser.title)
 
     @unittest.skip("Not Focus")
     def test_get_player_selection_dropdown(self):
@@ -142,7 +145,7 @@ class TestBot(unittest.TestCase):
         self.assertEqual(set(self.dBot._get_chosen_players()), 
             set([player1, player2]))
 
-    # @unittest.skip("Not Focus")
+    @unittest.skip("Not Focus")
     def test_choose_players(self):
         ## Get some active players to test with
         somePlayers = (
@@ -154,6 +157,7 @@ class TestBot(unittest.TestCase):
         self.eBot._get_make_picks_page() # give the tester somehwere to look
         actPlayer1 = None
         actPlayer2 = None
+        actTeam = None
         for firstName, lastName, team in somePlayers:
             answer = ''
             if actPlayer1 and actPlayer2:
@@ -168,9 +172,10 @@ class TestBot(unittest.TestCase):
                     break
                 else:
                     actPlayer1 = (firstName, lastName, team)
+                    actTeam = team
             elif answer == 'no':
                 continue
-        if (not actPlayer1) or not (actPlayer2):
+        if None in (actPlayer1, actPlayer2, actTeam):
             print "Please add more players to some players"
             assert False
 
@@ -217,6 +222,19 @@ class TestBot(unittest.TestCase):
                 [ actPlayer1[0] + ' ' + actPlayer1[1], 
                   actPlayer2[0] + ' ' + actPlayer2[1] ] 
                 ))
+
+        ## Case 3: No player on given team with given name
+        self.__assure_bot_setup(self.eBot) # assure eBot is empty
+        self.assertRaises(NoPlayerFoundException, 
+            self.eBot.choose_players, p1=('oogly', 'boogly', actTeam))
+
+    def test_get_username(self):
+        self.assertEqual(self.eBot.get_username(), 
+            self.eBotVals.Email.item())
+
+    def test_get_password(self):
+        self.assertEqual(self.eBot.get_password(), 
+            self.eBotVals.MLBPassword.item())
 
     def __assure_bot_setup(self, bot):
         """

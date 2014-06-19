@@ -8,14 +8,18 @@
        -> Write test code | DONE
    -> Write "remove selections" | DONE
    -> Write test for "choose player", including double downs | DONE
-   -> Refactor "choose player" until it passes and has 100% coverage
+   -> Refactor "choose player" until it passes and has 100% coverage | Done
         -> Get basic tests to work | DONE
-        -> Cover corner cases
-            -> Uncovered lines of code:
+        -> Cover corner cases 
+            -> Uncovered lines of code: | DONE (covered)
                  90, 93, 129, 144, 180, 253-254
-            -> Decide if you want to test choose_player function for every
+            -> Decide if you want to test choose_player function for every | DONE
                single, or perhaps just seperately test the self.teams dict
-   -> Refactor code to send emails if exception occurs
+                   -> Will simply leave as is and write a decorator to send emails
+                   if exception occurs
+   -> Refactor code to update me if exception occurs | DONE
+        -> Test that decorator results in log updates | DONE
+        -> Test that decorator results in emails sent | DONE
 
 2) ToDo to get daily selections Running 
    -> Write code (perhaps another Researcher module) that will do the heavy

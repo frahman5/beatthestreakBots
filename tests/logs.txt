@@ -1,0 +1,2 @@
+2014-06-18 20:17:15,422 ERROR Here is an error message
+2014-06-18 20:19:22,053 ERROR Here is an error message at time 2014-06-18 20:19:22.053791
