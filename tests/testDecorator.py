@@ -1,8 +1,8 @@
 import unittest
 import datetime
 
-from btsReal.decorators import logErrors
-from btsReal.filepath import Filepath
+from beatthestreakBots.decorators import logErrors
+from beatthestreakBots.filepath import Filepath
 
 class TestBot(unittest.TestCase):
 

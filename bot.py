@@ -4,13 +4,13 @@ import logging
 from selenium import webdriver
 
 from exception import NoPlayerFoundException, SameNameException
-from decorator import logErrors
+from decorators import logErrors
 
 
 class Bot(object):
     ## make sure you logout after logging in. 
 
-    @logErrors
+    # @logErrors
     def __init__(self, username, password):
         """
         string string -> None

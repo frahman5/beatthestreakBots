@@ -1,3 +1,5 @@
+from config import ROOT
+
 class Filepath(object):
 
     @classmethod
@@ -5,7 +7,7 @@ class Filepath(object):
         """
         Returns the path of btsReal
         """
-        return '/Users/faiyamrahman/programming/Python/btsReal'
+        return ROOT
 
     @classmethod
     def get_accounts_file(self):
