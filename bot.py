@@ -55,7 +55,7 @@ class Bot(object):
             'St. Louis Cardinals': 'stl', 'Washington Nationals': 'was'
             }
 
-    @logErrors
+    # @logErrors
     def choose_players(self, p1=(), p2=()):
         """
         TupleOfStrings TupleOfStrings -> None
@@ -91,15 +91,27 @@ class Bot(object):
         if len(p2) == 3:
             self.__choose_single_player(p2, doubleDown=True)
 
-    @logErrors
+    # @logErrors
+    def claim_mulligan(self):
+        ## navigate to claim mulligan page
+        self._get_make_picks_page()
+        self.browser.find_element_by_class_name('last').click()
+        buttons = self.browser.find_elements_by_class_name('bam-button-primary')
+        buttons[3].click() # the mulligan button is the 4th (zero-indexed) button in the page
+
+        ## Claim the mulligan
+        self.browser.find_element_by_class_name('mulligan-list').click()
+        self.browser.find_element_by_class_name('claim-mulligan-btn').click()
+        
+    # @logErrors
     def get_username(self):
         return self.username
 
-    @logErrors
+    # @logErrors
     def get_password(self): 
         return self.password
 
-    @logErrors
+    # @logErrors
     def _get_login_page(self):
         """
         Opens a web broswer and navigates to the beat the streak login page
@@ -110,7 +122,7 @@ class Bot(object):
         self.browser.get(url)
         time.sleep(3)
 
-    @logErrors
+    # @logErrors
     def _get_make_picks_page(self):
         """
         Logs in to mlb beat the streak site
@@ -133,7 +145,7 @@ class Bot(object):
         self.browser.find_element_by_name('submit').click()
         time.sleep(3)
 
-    @logErrors
+    # @logErrors
     def _click_make_pick_today(self):
         """
         Clicks on make pick for today's date
@@ -147,7 +159,7 @@ class Bot(object):
         today.click()
         time.sleep(3)
 
-    @logErrors
+    # @logErrors
     def _get_player_selection_dropdown(self):
         """
         Gets the player selection dropdown box. Should be used from the make picks
@@ -162,7 +174,7 @@ class Bot(object):
         else:
             self._click_make_pick_today() # includes a sleep at the end
 
-    @logErrors
+    # @logErrors
     def _reset_selections(self):
         """
         If this bot has already made some selections today, removes
@@ -184,14 +196,14 @@ class Bot(object):
                    if elem.get_attribute('class') == 'remove-action player-row']
         time.sleep(3)
 
-    @logErrors
+    # @logErrors
     def _quit_browser(self):
         """
         Closes self.browser
         """
         self.browser.quit()
     
-    @logErrors
+    # @logErrors
     def _get_chosen_players(self):
         """
         None -> Tuple
@@ -208,7 +220,7 @@ class Bot(object):
                 'Double Down', 'Make Pick')]
         return tuple(players)
 
-    @logErrors
+    # @logErrors
     def __choose_single_player(self, player, doubleDown=False):
         """
         TupleOfStrings bool -> None
