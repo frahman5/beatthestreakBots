@@ -14,3 +14,4 @@
 2014-06-30 13:25:15,084 ERROR Here is an test error message at time 2014-06-30 13:25:15.084822
 2014-06-30 13:26:54,699 ERROR Here is an test error message at time 2014-06-30 13:26:54.698979
 2014-06-30 13:38:18,451 ERROR Here is an test error message at time 2014-06-30 13:38:18.450782
+2014-07-01 15:14:58,977 ERROR Here is an test error message at time 2014-07-01 15:14:58.977193
