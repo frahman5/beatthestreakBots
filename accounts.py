@@ -109,19 +109,29 @@ def make_espn_bts_account(username, password):
     dropDowns = browser.find_elements_by_tag_name('select')
             # 1) birthMonth
     dropDowns[0].click() # make the month options clickable
-    options = dropDowns[0].find_elements_by_tag_name('option')
+    time.sleep(5)
+    ######### EXPERIMENT ##############
+    dDowns = browser.find_elements_by_tag_name('select')
+    options = dDowns[0].find_elements_by_tag_name('option')
+    # options = dropDowns[0].find_elements_by_tag_name('option')
     for option in options: # select month 3
         if option.text == '3':
             option.click()
             # 2) birthDay
-    dropDowns[1].click() # make the day options clickacle
-    options = dropDowns[1].find_elements_by_tag_name('option')
+    dropDowns[1].click() # make the day options clickable
+    time.sleep(5)
+    dDowns = browser.find_elements_by_tag_name('select')
+    options = dDowns[1].find_elements_by_tag_name('option')
+    # options = dropDowns[1].find_elements_by_tag_name('option')
     for option in options: # select day 5
         if option.text == '5':
             option.click()
             # 3) birthYear
     dropDowns[2].click() # make the year options clickable
-    options = dropDowns[2].find_elements_by_tag_name('option')
+    time.sleep(5)
+    dDowns = browser.find_elements_by_tag_name('select')
+    options = dDowns[2].find_elements_by_tag_name('option')
+    # options = dropDowns[2].find_elements_by_tag_name('option')
     for option in options: # select year 1991
         if option.text == '1991':
             option.click()
@@ -152,9 +162,8 @@ def main(N):
 
     usernameStarters = [ 'faiyam', 'rahman', 'bts', 'metro', 'williams', 
                          'grassfed', 'daft', 'fossil', 'water', 'earth']
-    passwordChoices = ['sdFgsdfg892m45', 'beatthesTreak82349234nn', 
-                       'alma89345350Monopoly23', 'helloGoduEbye234', 
-                       'n64Williams3459sdfgmmiopRos']
+    passwordChoices = ['sdFgsdfg892m45@', 'beatthesTr&k78', 
+                       'alma8oly23@', 'helloGoe234!', 'n64Will!iam345']
     newUsernamesL, newPasswordsL = [], []
 
     ## read in the production sheet to get the already existing accounts
@@ -214,11 +223,19 @@ def main(N):
                    index=False, 
                    sheet_name='Production') 
 
+def main2(username, password):
+    global browser
+    browser = webdriver.Firefox()
+
+    # make_espn_bts_account(username, password)
+    claim_mulligan(username, password)
+
 if __name__ == '__main__':
     """
     Usage: ./accounts.py N
     """
-    assert len(sys.argv) == 2
-    main(sys.argv[1])
+    # assert len(sys.argv) == 2
+    # main(sys.argv[1])
+    main2(sys.argv[1], sys.argv[2])
 
 

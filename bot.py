@@ -2,6 +2,9 @@ import time
 import logging
 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 from exception import NoPlayerFoundException, SameNameException
 from decorators import logErrors
@@ -95,13 +98,23 @@ class Bot(object):
     def claim_mulligan(self):
         ## navigate to claim mulligan page
         self._get_make_picks_page()
-        self.browser.find_element_by_class_name('last').click()
+        more = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "last"))
+            )
+        more.click()
+        button1 = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "bam-button-primary"))
+            )
         buttons = self.browser.find_elements_by_class_name('bam-button-primary')
-        buttons[3].click() # the mulligan button is the 4th (zero-indexed) button in the page
-
-        ## Claim the mulligan
-        self.browser.find_element_by_class_name('mulligan-list').click()
-        self.browser.find_element_by_class_name('claim-mulligan-btn').click()
+        buttons[3].click()
+        mulOption = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "mulligan-list")) 
+            )
+        mulOption.click()
+        claimMul = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'claim-mulligan-btn'))
+            )
+        claimMul.click()
         
     # @logErrors
     def get_username(self):
