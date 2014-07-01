@@ -11,77 +11,68 @@ from filepath import Filepath
 ## A globally shared browser for all activites
 browser = None
 
-def make_gmail_account(username, password):
+def make_outlook365_email_addys(N):
     """
-    string string -> bool
+    int -> ListOfStrings
 
-    Creates a yahoo email account with the given username and password. 
-    Returns True if successful, False otherwise
-
-    Assumes browser is already launched
+    Creates N new email addresses on outlook365 for admin account
+    faiyam@faiyamrahman.com and returns a list of the new addresses
     """
-    global browser
+    import pdb
+    pdb.set_trace()
+    global browser 
+    browser = webdriver.Firefox()
+    newUsernamesL = []
 
-    ## get the gmail create account page
-    url = 'https://accounts.google.com/SignUp?service=mail&continue=https' + \
-          '%3A%2F%2Fmail.google.com%2Fmail%2F&ltmpl=default'
+    usernameStarters = [ 'faiyam', 'rahman', 'bts', 'metro', 'williams', 
+                         'grassfed', 'daft', 'fossil', 'water', 'earth']
+    ## get to manage aliases page
+        ## get to outlook inbox
+    url = 'https://sso.godaddy.com/?realm=pass&app=o365&wa=wsignin1.0&wt' +\
+          'realm=urn:federation:MicrosoftOnline&wctx=wa%3Dwsignin1.0%26rpsnv' +\
+          '%3D3%26ct%3D1404228578%26rver%3D6.1.6206.0%26wp%3DMBI_SSL%26wreply' +\
+          '%3Dhttps:%252F%252Fpod51038.outlook.com%252Fowa%252F%26id%3D260563' +\
+          '%26whr%3Dfaiyamrahman.com%26CBCXT%3Dout'
+    browser.get(url) # sign in page
+    browser.find_element_by_id('username').send_keys('faiyam@faiyamrahman.com')
+    browser.find_element_by_id('password').send_keys('helloGoe234!')
+    browser.find_element_by_id('submitBtn').click()
+        ## go to manage aliases page
+    url = 'https://portal.office.com/UserManagement/EditUser.aspx?tab=' + \
+          'emailAddresses&id=ce2ec883-494a-4c13-808c-9cfcba873199'
     browser.get(url)
+    raise Exception("done testing")
 
-    ## Supply account creation info
-        # Enter email username. If it's already taken, return False
-    browser.find_element_by_id('GmailAddress').send_keys(username)
-    errorMessage = browser.find_element_by_id('errormsg_0_GmailAddress')
-    if errorMessage.text != '':
-        return False
-        # Handle all other non dropdowns
-    browser.find_element_by_id('FirstName').send_keys('Faiyam')
-    browser.find_element_by_id('LastName').send_keys('Rahman')
-    browser.find_element_by_id('Passwd').send_keys(password)
-    browser.find_element_by_id('PasswdAgain').send_keys(password)
-    browser.find_element_by_id('RecoveryPhoneNumber').send_keys('3472626300')
-    browser.find_element_by_id('RecoveryEmailAddress').send_keys('frahman305@gmail.com')
-    browser.find_element_by_id('BirthDay').send_keys('5')
-    browser.find_element_by_id('BirthYear').send_keys('1991')
-    browser.find_element_by_id('TermsOfService').click()
-        # Handle dropdowns
-    dropDowns = browser.find_elements_by_class_name('jfk-select')
-            # 1) birthMonth
-    dropDowns[0].click()
-    options = browser.find_elements_by_class_name("goog-menuitem-content")
-    for option in options:
-        if option.text == 'March':
-            option.click()
-            # 2) Gender
-    dropDowns[1].click()
-    options = browser.find_elements_by_class_name("goog-menuitem-content")
-    for option in options:
-        if option.text == 'Male':
-            option.click()
-            # 3) Location --> defaults to United States so we leave it alone
+    ## enter in the N addy's
+       # randomly choose one of the two available domain names
+    selectBox = browser.find_element_by_id('ddlDomainsAliases_dropdown')
+    options = selectBox.find_elements_by_tag_name('option')
+    domain = random.choice(options)
+    domain.click()
+        # construct a random email and try to add it
+    username = random.choice(usernameStarters) + "." + \
+               random.choice(usernameStarters) + "." + \
+               str(random.randint(1,2014))
+    browser.find_element_by_id('tbEmailAlias').send_keys(username)
+        # if it works, keep going, otherwise try another one
+    newUsernamesL.append(username + domain.text)
 
-    ## Prompt user to do the captcha and submit the form
-    userResponse = ''
-    while userResponse != 'n':
-        userResponse = raw_input("Solve captcha, then type enter n to continue\n")
-    submitButton = browser.find_element_by_id('submitbutton')
-    submitButton.click()
-    time.sleep(5)
+    ## hit save and wait a minute
+    # ????????????? # hit save
+    time.sleep(60)
 
-    ## Click the continue button (verifying account)
-    submitButton = browser.find_element_by_id('next-button')
-    submitButton.click()
-    time.sleep(5)
+    ## prompt the user to check if shit worked
+    success = ''
+    while success not in ('done', 'again'):
+        success = raw_input('Hit "done" if the additions worked, or "again"' +\
+                            'if we need to try again')
+    if success == 'again':
+        browser.quit()
+        make_outlook365_email_addys(N)
 
-    ## Prompt user to enter verification code and submit the form
-    userResponse = ''
-    while userResponse != 'n':
-        userResponse = raw_input("Enter verification number (see your phone)," +\
-                                  "then type n to continue\n")
-    submitButton = browser.find_element_by_id('VerifyPhone')
-    submitButton.click()
-    time.sleep(5)
-
-    return True
+    ## return the list of strings and close the browser
+    browser.quit()
+    return newUsernamesL
 
 def make_espn_bts_account(username, password):
     """
@@ -155,16 +146,15 @@ def main(N):
     """
     int -> None
 
-    Creates N unique beatthestreak accounts, claims mulligans for each account
-    and stores all username and password info in btsAccounts.xlsx, sheetname "Production"
+    Creates N unique beatthestreak accounts, claims mulligans for each account and
+    also verifies the email addresses for each account.
+    Stores all username and password info in btsAccounts.xlsx, sheetname "Production"
     """
     global browser
+    newMLBPasswordsL = []
 
-    usernameStarters = [ 'faiyam', 'rahman', 'bts', 'metro', 'williams', 
-                         'grassfed', 'daft', 'fossil', 'water', 'earth']
-    passwordChoices = ['sdFgsdfg892m45@', 'beatthesTr&k78', 
-                       'alma8oly23@', 'helloGoe234!', 'n64Will!iam345']
-    newUsernamesL, newPasswordsL = [], []
+    passwordChoices = ['beatthestreak1', 'ksdfgusergjiserg98', 
+                       'faiyamWinsbeat243', 'almaalmamater6573']
 
     ## read in the production sheet to get the already existing accounts
        # Column A: id
@@ -173,35 +163,26 @@ def main(N):
        # Column D: MLBPassword
     df = pd.io.excel.read_excel(Filepath.get_accounts_file(), 
                 sheetname='Production', parse_cols='A,B,C,D')
-    random.seed()
-    for iteration in range(int(N)):
-        print "Making account number: {0} of {1}".format(iteration, N)
+
+    ## Create N new email addresses
+    newUsernamesL = make_outlook365_email_addys(N) # opens and closes the browser on its own
+
+    for username in newUsernamesL:
+        print "Finishing account number: {0} of {1}".format(iteration, N)
 
         ## get a new firefox browser
         browser = webdriver.Firefox()
         
-        ## Create a gmail account with a pseudo-random username
-        success = False
-        while not success:      
-            username = random.choice(usernameStarters) + "." + \
-                       random.choice(usernameStarters) + "." + \
-                       str(random.randint(1,2014))
-            password = random.choice(passwordChoices)
-            success = make_gmail_account(username, password)
-        
-        ## Create a beatthestreak account on espn
+        ## Create a beatthestreak account on espn and kill the browser
+        password = random.choice(passwordChoices)
         make_espn_bts_account(username, password)
         browser.quit()
 
         ## Claim the bots mulligan 
-        claim_mulligan(username, password)
+        claim_mulligan(username, password) # uses its own browser
 
         ## Hold on to the data to add to the btsAccounts excel file
-        newUsernamesL.append(username)
-        newPasswordsL.append(password)
-
-        ## Kill the firefox browser
-        browser.quit()
+        newMLBPasswordsL.append(password)
 
     ## add to the dataframe and replace the Production sheet
         # make sure the excel file has the column headers we expect
@@ -212,10 +193,12 @@ def main(N):
         # make a dataframe containing the new info
     firstID = len(df.ID) - 1
     idL = [firstID + i for i in range(0, len(newUsernamesL))]
+            # outlook 365 aliases don't have their own passwords
+    newEmailPasswordsL = ['n/a' for password in newMLBPasswordsL]
     extraDF = pd.concat([Series(idL, name='ID')], 
                          Series(newUsernamesL, name='Email'), 
-                         Series(newPasswordsL, name='EmailPassword'), 
-                         Series(newPasswordsL, name='MLBPassword'), 
+                         Series(newEmailPasswordsL, name='EmailPassword'), 
+                         Series(newMLBPasswordsL, name='MLBPassword'), 
                          axis=1)
         # create a dataframe with all the info and write it to file
     newDF = pd.concat([df, extraDF])
@@ -234,8 +217,6 @@ if __name__ == '__main__':
     """
     Usage: ./accounts.py N
     """
-    # assert len(sys.argv) == 2
-    # main(sys.argv[1])
-    main2(sys.argv[1], sys.argv[2])
-
-
+    assert len(sys.argv) == 2
+    main(int(sys.argv[1]))
+    # main2(sys.argv[1], sys.argv[2])
