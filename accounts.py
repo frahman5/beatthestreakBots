@@ -5,10 +5,14 @@ import pandas as pd
 import time
 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 from bot import Bot
 from filepath import Filepath
 from config import GDUSERNAME, GDPASSWORD, OUTLOOKPW
+
 ## A globally shared browser for all activites
 browser = None
 
@@ -19,75 +23,108 @@ def make_outlook365_email_addys(N):
     Creates N new email addresses on outlook365 for admin account
     faiyam@faiyamrahman.com and returns a list of the new addresses
     """
-    import pdb
-    pdb.set_trace()
     global browser 
     browser = webdriver.Firefox()
     newUsernamesL = []
 
     usernameStarters = [ 'faiyam', 'rahman', 'bts', 'metro', 'williams', 
                          'grassfed', 'daft', 'fossil', 'water', 'earth']
-    ## get to manage aliases page
-        ## goDaddy account page
-    browser.get('http://www.godaddy.com/')
-    oiButtons = browser.find_elements_by_class_name('oi-group1')
-    for button in oiButtons:
-        if button.text == "Sign In\nRegister":
-            button.click()
-            break
-    browser.find_element_by_id('loginname').send_keys(GDUSERNAME)
-    browser.find_element_by_id('password').send_keys(GDPASSWORD)
-    browser.find_element_by_class_name('sign-in-btn').click()
-        # launch outlook365 manager
-    buttons = browser.find_elements_by_class_name('mr10')
-    for button in buttons:
-        if button.get_attribute('title') == "Office 365 Email and Productivity Control Center":
-            button.click()
-            break
-        # get to manage aliasing page
-    browser.find_element_by_id('gearIcon_faiyam@faiyamrahman.com').click()
-    accountManagement = browser.find_element_by_id('account_management')
-    links = accountManagement.find_elements_by_tag_name('a')
-    for link in links:
-        if link.text == 'Manage aliases':
-            link.click()
-            break
-    browser.switch_to_window(browser.window_handles[1]) # hitting the manage aliases link opens a new window
-    browser.find_element_by_id('password').send_keys(OUTLOOKPW)
-    browser.find_element_by_id('submitBtn').click()
+    try : 
+        ## get to manage aliases page
+            # goDaddy account page
+        browser.get('http://www.godaddy.com/')
 
-###### FINISHED UP TO HERE
+            # get the login form to dropdown
+        aButton = WebDriverWait(browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'oi-group1'))
+            )
+        oiButtons = browser.find_elements_by_class_name('oi-group1')
+        for button in oiButtons:
+            if button.text == "Sign In\nRegister":
+                button.click()
+                break
 
-    ## enter in the N addy's
-       # randomly choose one of the two available domain names
-    selectBox = browser.find_element_by_id('ddlDomainsAliases_dropdown')
-    options = selectBox.find_elements_by_tag_name('option')
-    domain = random.choice(options)
-    domain.click()
-        # construct a random email and try to add it
-    username = random.choice(usernameStarters) + "." + \
-               random.choice(usernameStarters) + "." + \
-               str(random.randint(1,2014))
-    browser.find_element_by_id('tbEmailAlias').send_keys(username)
-        # if it works, keep going, otherwise try another one
-    newUsernamesL.append(username + domain.text)
+            # login
+        login = WebDriverWait(browser, 10).until(
+            EC.presence_of_element_located((By.ID, 'loginname')))
+        login.send_keys(GDUSERNAME)
+        password = WebDriverWait(browser, 10).until(
+            EC.presence_of_element_located((By.ID, 'password')))
+        password.send_keys(GDPASSWORD)
+        browser.find_element_by_class_name('sign-in-btn').click()
 
-    ## hit save and wait a minute
-    # ????????????? # hit save
-    time.sleep(60)
+            # launch outlook365 manager
+        buttons = browser.find_elements_by_class_name('mr10')
+        for button in buttons:
+            if button.get_attribute('title') == "Office 365 Email and Productivity Control Center":
+                button.click()
+                break
 
-    ## prompt the user to check if shit worked
-    success = ''
-    while success not in ('done', 'again'):
-        success = raw_input('Hit "done" if the additions worked, or "again"' +\
-                            'if we need to try again')
-    if success == 'again':
+            # get to manage aliases page
+        gearIcon = WebDriverWait(browser, 10).until(
+            EC.presence_of_element_located((By.ID, 'gearIcon_faiyam@faiyamrahman.com')))
+        gearIcon.click()
+        accountManagement = WebDriverWait(browser, 10).until(
+            EC.presence_of_element_located((By.ID, 'account_management'))
+            )
+        links = accountManagement.find_elements_by_tag_name('a')
+        for link in links:
+            if link.text == 'Manage aliases':
+                link.click()
+                break
+        browser.switch_to_window(browser.window_handles[1]) # hitting the manage aliases link opens a new window
+        browser.find_element_by_id('password').send_keys(OUTLOOKPW)
+        browser.find_element_by_id('submitBtn').click()
+        
+        ## enter in the N addy's
+        i = 1
+        while (i <= N):
+               # randomly choose one of the two available domain names
+            selectBox = WebDriverWait(browser, 10).until(
+                EC.presence_of_element_located((By.ID, 'ddlDomainsAliases_dropdown')))
+            options = selectBox.find_elements_by_tag_name('option')
+            domain = random.choice(options)
+            domain.click()
+
+                # construct a random email and try to add it
+            username = random.choice(usernameStarters) + "." + \
+                       random.choice(usernameStarters) + "." + \
+                       str(random.randint(1,2014))
+            aliasBox = WebDriverWait(browser, 10).until(
+                EC.presence_of_element_located((By.ID, 'tbEmailAlias')))
+            aliasBox.send_keys(username)
+
+                # if it doesn't work, try again
+            dialogueBoxes = browser.find_elements_by_id('dialogBodyArea')
+            for box in dialogueBoxes:
+                if box.text == "Please try again later.":
+                    browser.find_element_by_id('DialogManager1_dialogAcceptButton_0').click()
+                    aliasBox.clear()
+                    continue
+
+                # otherwise continue forward young man!
+            newUsernamesL.append(username + '@' + domain.text)
+            browser.find_element_by_id('SmtpAddButton').click()
+            i += 1
+
+        ## hit save and wait for it to work, prompting user to check
+        browser.find_element_by_id('MultiPageLayout_Save').click()
+        success = ''
+        while success not in ('done', 'again'):
+            print "Have these addresses been added?: Answer in 2 minutes"
+            print newUsernamesL
+            time.sleep(120)
+            success = raw_input('Hit "done" if the additions worked, or "again"' +\
+                                'if we need to try again\n')
+        if success == 'again':
+            browser.quit()
+            make_outlook365_email_addys(N)
+    except Exception as e:
+        raise e
+    finally:
+        ## return the newEmailAddys and close the browser
         browser.quit()
-        make_outlook365_email_addys(N)
-
-    ## return the list of strings and close the browser
-    browser.quit()
-    return newUsernamesL
+        return newUsernamesL
 
 def make_espn_bts_account(username, password):
     """
@@ -97,6 +134,7 @@ def make_espn_bts_account(username, password):
 
     Assumes browser is already launched
     """
+    print "Making BTS account for u, p: {0}, {1}\n".format(username, password)
     global browser
 
     ## get the gmail create account page
@@ -179,26 +217,28 @@ def main(N):
     df = pd.io.excel.read_excel(Filepath.get_accounts_file(), 
                 sheetname='Production', parse_cols='A,B,C,D')
 
-    ## Create N new email addresses
-    newUsernamesL = make_outlook365_email_addys(N) # opens and closes the browser on its own
+    # ## Create N new email addresses
+    # newUsernamesL = make_outlook365_email_addys(N) # opens and closes the browser on its own
+ 
+    newUsernamesL = ['earth.water.1824@NETORG112903.onmicrosoft.com']
+    # for username in newUsernamesL:
+    #     print "Finishing account number: {0} of {1}".format(newUsernamesL.index(username) + 1, len(newUsernamesL))
 
-    for username in newUsernamesL:
-        print "Finishing account number: {0} of {1}".format(iteration, N)
-
-        ## get a new firefox browser
-        browser = webdriver.Firefox()
+    #     ## get a new firefox browser
+    #     browser = webdriver.Firefox()
         
-        ## Create a beatthestreak account on espn and kill the browser
-        password = random.choice(passwordChoices)
-        make_espn_bts_account(username, password)
-        browser.quit()
+    #     ## Create a beatthestreak account on espn and kill the browser
+    #     # password = random.choice(passwordChoices)
+    #     password = 'beatthestreak1'
+    #     # make_espn_bts_account(username, password)
+    #     browser.quit()
 
-        ## Claim the bots mulligan 
-        claim_mulligan(username, password) # uses its own browser
+    #     ## Claim the bots mulligan 
+    #     claim_mulligan(username, password) # uses its own browser
 
-        ## Hold on to the data to add to the btsAccounts excel file
-        newMLBPasswordsL.append(password)
-
+    #     ## Hold on to the data to add to the btsAccounts excel file
+    #     newMLBPasswordsL.append(password)
+    newMLBPasswordsL.append('beatthestreak1')
     ## add to the dataframe and replace the Production sheet
         # make sure the excel file has the column headers we expect
     assert df.columns[0] == 'ID'
@@ -210,16 +250,20 @@ def main(N):
     idL = [firstID + i for i in range(0, len(newUsernamesL))]
             # outlook 365 aliases don't have their own passwords
     newEmailPasswordsL = ['n/a' for password in newMLBPasswordsL]
-    extraDF = pd.concat([Series(idL, name='ID')], 
-                         Series(newUsernamesL, name='Email'), 
-                         Series(newEmailPasswordsL, name='EmailPassword'), 
-                         Series(newMLBPasswordsL, name='MLBPassword'), 
+    extraDF = pd.concat([pd.Series(idL, name='ID'), 
+                         pd.Series(newUsernamesL, name='Email'), 
+                         pd.Series(newEmailPasswordsL, name='EmailPassword'), 
+                         pd.Series(newMLBPasswordsL, name='MLBPassword')], 
                          axis=1)
         # create a dataframe with all the info and write it to file
     newDF = pd.concat([df, extraDF])
-    newDF.to_excel(pd.ExcelWriter(Filepath.get_accounts_file()),
+    print newDF
+    print Filepath.get_accounts_file()
+    writer = pd.ExcelWriter(Filepath.get_accounts_file())
+    newDF.to_excel(writer,
                    index=False, 
                    sheet_name='Production') 
+    writer.save()
 
 def main2(username, password):
     global browser

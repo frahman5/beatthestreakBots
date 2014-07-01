@@ -96,6 +96,8 @@ class Bot(object):
 
     # @logErrors
     def claim_mulligan(self):
+        print "Claiming Mulligan for u, p: {0}, {1}\n".format(self.username, self.password)
+
         ## navigate to claim mulligan page
         self._get_make_picks_page()
         more = WebDriverWait(self.browser, 10).until(
@@ -107,6 +109,8 @@ class Bot(object):
             )
         buttons = self.browser.find_elements_by_class_name('bam-button-primary')
         buttons[3].click()
+
+        ## Claim the mulligan
         mulOption = WebDriverWait(self.browser, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, "mulligan-list")) 
             )
