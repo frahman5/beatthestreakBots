@@ -5,6 +5,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+
 
 from exception import NoPlayerFoundException, SameNameException
 from decorators import logErrors
@@ -120,6 +122,37 @@ class Bot(object):
             )
         claimMul.click()
         
+    def has_claimed_mulligan(self):
+        """
+        Returns True if the account with self.username and self.password
+        has claimed its mulligan, false otherwise
+        """
+        ## navigate to claim mulligan page
+        self._get_make_picks_page()
+        more = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "last"))
+            )
+        more.click()
+        button1 = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "bam-button-primary"))
+            )
+        buttons = self.browser.find_elements_by_class_name('bam-button-primary')
+        buttons[3].click()
+
+        ## Check if we've claimed the mulligan
+        mulOption = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "mulligan-list")) 
+            )
+        mulOption.click()
+        try:
+            claimMul = WebDriverWait(self.browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, 'claim-mulligan-btn')))
+        except TimeoutException:
+            return True
+
+        return False
+
+
     # @logErrors
     def get_username(self):
         return self.username

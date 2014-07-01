@@ -19,7 +19,8 @@ class TestBot(unittest.TestCase):
         testsWithSAndDBots = (
             'testBot.TestBot.test_get_chosen_players', 
             'testBot.TestBot.test__reset_selections', 
-            'testBot.TestBot.test_choose_players'
+            'testBot.TestBot.test_choose_players', 
+            'testBot.TestBot.test_has_claimed_mulligan'
             )
         if self.id() in testsWithSAndDBots:
             self.dBotVals = df[df.ID == 'doubleBot']
@@ -48,6 +49,10 @@ class TestBot(unittest.TestCase):
             self.sBot._quit_browser()
         if self.dBot:
             self.dBot._quit_browser()
+
+    def test_has_claimed_mulligan(self):
+        self.assertTrue(self.sBot.has_claimed_mulligan())
+        self.assertFalse(self.eBot.has_claimed_mulligan())
 
     # @unittest.skip("Not Focus") 
     # def test_get_login_page(self):
