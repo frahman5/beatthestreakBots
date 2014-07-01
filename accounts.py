@@ -8,6 +8,7 @@ from selenium import webdriver
 
 from bot import Bot
 from filepath import Filepath
+from config import GDUSERNAME, GDPASSWORD, OUTLOOKPW
 ## A globally shared browser for all activites
 browser = None
 
@@ -27,21 +28,35 @@ def make_outlook365_email_addys(N):
     usernameStarters = [ 'faiyam', 'rahman', 'bts', 'metro', 'williams', 
                          'grassfed', 'daft', 'fossil', 'water', 'earth']
     ## get to manage aliases page
-        ## get to outlook inbox
-    url = 'https://sso.godaddy.com/?realm=pass&app=o365&wa=wsignin1.0&wt' +\
-          'realm=urn:federation:MicrosoftOnline&wctx=wa%3Dwsignin1.0%26rpsnv' +\
-          '%3D3%26ct%3D1404228578%26rver%3D6.1.6206.0%26wp%3DMBI_SSL%26wreply' +\
-          '%3Dhttps:%252F%252Fpod51038.outlook.com%252Fowa%252F%26id%3D260563' +\
-          '%26whr%3Dfaiyamrahman.com%26CBCXT%3Dout'
-    browser.get(url) # sign in page
-    browser.find_element_by_id('username').send_keys('faiyam@faiyamrahman.com')
-    browser.find_element_by_id('password').send_keys('helloGoe234!')
+        ## goDaddy account page
+    browser.get('http://www.godaddy.com/')
+    oiButtons = browser.find_elements_by_class_name('oi-group1')
+    for button in oiButtons:
+        if button.text == "Sign In\nRegister":
+            button.click()
+            break
+    browser.find_element_by_id('loginname').send_keys(GDUSERNAME)
+    browser.find_element_by_id('password').send_keys(GDPASSWORD)
+    browser.find_element_by_class_name('sign-in-btn').click()
+        # launch outlook365 manager
+    buttons = browser.find_elements_by_class_name('mr10')
+    for button in buttons:
+        if button.get_attribute('title') == "Office 365 Email and Productivity Control Center":
+            button.click()
+            break
+        # get to manage aliasing page
+    browser.find_element_by_id('gearIcon_faiyam@faiyamrahman.com').click()
+    accountManagement = browser.find_element_by_id('account_management')
+    links = accountManagement.find_elements_by_tag_name('a')
+    for link in links:
+        if link.text == 'Manage aliases':
+            link.click()
+            break
+    browser.switch_to_window(browser.window_handles[1]) # hitting the manage aliases link opens a new window
+    browser.find_element_by_id('password').send_keys(OUTLOOKPW)
     browser.find_element_by_id('submitBtn').click()
-        ## go to manage aliases page
-    url = 'https://portal.office.com/UserManagement/EditUser.aspx?tab=' + \
-          'emailAddresses&id=ce2ec883-494a-4c13-808c-9cfcba873199'
-    browser.get(url)
-    raise Exception("done testing")
+
+###### FINISHED UP TO HERE
 
     ## enter in the N addy's
        # randomly choose one of the two available domain names
