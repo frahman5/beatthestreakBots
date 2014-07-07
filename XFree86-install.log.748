@@ -1,0 +1,38 @@
+
+		Welcome to the XFree86(R) 4.7.0 installer
+
+You are strongly advised to backup your existing XFree86 installation
+before proceeding.  This includes the /usr/X11R6, /etc/X11
+and /etc/fonts directories.  The installation process will
+overwrite existing files in those directories, and this may include
+some configuration files that have been customised either by you
+or by your OS distribution.  Although an attempt is made to make backup
+copies of these files and directories before overwriting them, this is
+not a failsafe procedure.  The backup copies will have a suffix
+".748".  The installation is logged.  Refer to the log
+file "XFree86-install.log.748" in the current directory if you
+have problems during or after the installation.
+
+When making your own backup of the installation directories before 
+proceeding with this installation, do it by making a copy of those
+directories and their contents.  Do not simply rename them.  Otherwise
+you may find that many of your existing applications will no longer be
+visible.
+
+If you are installing a version different from 4.7.0, you
+may need an updated version of this installer script.
+
+Do you wish to continue? (y/n) [n] 
+Checking which OS you're running...
+uname reports 'Linux' version '3.14-0.bpo.1-amd64', architecture 'x86_64'.
+
+
+You need to download the 'extract' (or 'extract.exe') utility
+and put it in this directory.
+
+When you have corrected the problem, please re-run 'sh Xinstall.sh'
+to proceed with the installation.
+
+
+The log for this installation is XFree86-install.log.748
+
