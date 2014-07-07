@@ -216,10 +216,6 @@ def main(N):
        # Column D: MLBPassword
     df = pd.io.excel.read_excel(Filepath.get_accounts_file(), 
                 sheetname='Production', parse_cols='A,B,C,D')
-    testDF = pd.io.excel.read_excel(Filepath.get_accounts_file(), 
-                sheetname='Test')
-    otherDF = pd.io.excel.read_excel(Filepath.get_accounts_file(), 
-                sheetname='Other')
 
     ## Create N new fake email addresses. We'll go and ACTUALLY make them
     ## if they reach a certain plateau streak length
@@ -290,8 +286,6 @@ def main(N):
     newDF.to_excel(writer,
                    index=False, 
                    sheet_name='Production') 
-    testDF.to_excel(writer, index=False, sheet_name="Test")
-    otherDF.to_excel(writer, index=False, sheet_name="Other")
     writer.save()
 
 if __name__ == '__main__':
