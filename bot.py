@@ -34,7 +34,7 @@ class Bot(object):
 
         self.username = username
         self.password = password
-        self.browser = webdriver.Firefox()
+        self.browser = webdriver.Chrome()
         seleniumLogger = logging.getLogger('selenium.webdriver.remote.remote_connection')
         # Only display possible problems
         seleniumLogger.setLevel(logging.WARNING)
@@ -125,6 +125,7 @@ class Bot(object):
         # give it some time, then quit the browser
         time.sleep(10)
         self.browser.quit()
+
     def has_claimed_mulligan(self):
         """
         Returns True if the account with self.username and self.password

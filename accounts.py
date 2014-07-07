@@ -160,7 +160,6 @@ def make_espn_bts_account(username, password):
     options = dDowns[0].find_elements_by_tag_name('option')
     for option in options: # select month 3
         if option.text == '3':
-            print "we click month"
             option.click()
             
             # 2) birthDay
@@ -197,17 +196,19 @@ def main(N):
     """
     int -> None
 
-    Creates N unique beatthestreak accounts, claims mulligans for each account and
-    also verifies the email addresses for each account.
+    Creates N unique beatthestreak accounts, and claims mulligans for each account.
     Stores all username and password info in btsAccounts.xlsx, sheetname "Production"
+
+       IMPORTANT: Does not actually make email addresses for the accounts. 
+    If any account gets to over 40 hits in a row, we'll go and MANUALLY
+    make an email account and validate it. 
     """
     global browser
+    newUsernamesL = []
     newMLBPasswordsL = []
+    usernameStarters = [ 'faiyam', 'rahman', 'bts', 'metro', 'williams', 
+                         'grassfed', 'daft', 'fossil', 'water', 'earth']
 
-    passwordChoices = ['beatthestreak1', 'ksdfgusergjiserg98', 
-                       'faiyamWinsbeat243', 'almaalmamater6573']
-
-    random.seed() # will be takin random pauses along the way
     ## read in the production sheet to get the already existing accounts
        # Column A: id
        # Column B: Email
@@ -220,27 +221,21 @@ def main(N):
     otherDF = pd.io.excel.read_excel(Filepath.get_accounts_file(), 
                 sheetname='Other')
 
-    ## Create N new email addresses. Wrap it in a try-except if shit goes bad
-    numAddresses = N
-    usernamesBuffer = []
-    while True:
-        try:
-            # opens and closes the browser on its own
-            newUsernamesL = make_outlook365_email_addys(numAddresses) 
-        except:
+    ## Create N new fake email addresses. We'll go and ACTUALLY make them
+    ## if they reach a certain plateau streak length
+    listOfEmails = list(df.Email) # need a list to check if an email has already been used
+    i = 0
+    while (i < N):
+        username = random.choice(usernameStarters) + "." + \
+                    random.choice(usernameStarters) + "." + \
+                    str(random.randint(1,2014)) + '@faiyamrahman.com'
+        if username in listOfEmails:
             continue
-        else:
-            if len(newUsernamesL) != numAddresses:
-                numAddresses -= len(newUsernamesL)
-                usernamesBuffer.extend(newUsernamesL)
-                continue
-            else:
-                break
-    if len(usernamesBuffer) != 0:
-        newUsernamesL.extend(usernamesBuffer)
+        newUsernamesL.append(username)
+        i += 1
 
- 
     for username in newUsernamesL:
+        time.sleep(10) # give it some time to clean things up
         print "Finishing account number: {0} of {1}".format(newUsernamesL.index(username) + 1, len(newUsernamesL))
 
         ## get a new firefox browser
@@ -258,9 +253,6 @@ def main(N):
                     accountMade = True
                 ## Claim the bots mulligan 
                 if not mulliganClaimed:
-                    print "Let's claim a mulligan!"
-                    # import pdb
-                    # pdb.set_trace()
                     claim_mulligan(username, password) # uses its own browser
                     print "Mulligan claimed :)"
                     mulliganClaimed = True
