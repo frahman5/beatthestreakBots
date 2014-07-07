@@ -229,7 +229,8 @@ def main(N):
         username = random.choice(usernameStarters) + "." + \
                     random.choice(usernameStarters) + "." + \
                     str(random.randint(1,2014)) + '@faiyamrahman.com'
-        if username in listOfEmails:
+        # make sure we don't repeat an address
+        if (username in listOfEmails) or (username in newUsernamesL):
             continue
         newUsernamesL.append(username)
         i += 1
