@@ -122,6 +122,9 @@ class Bot(object):
             )
         claimMul.click()
         
+        # give it some time, then quit the browser
+        time.sleep(10)
+        self.browser.quit()
     def has_claimed_mulligan(self):
         """
         Returns True if the account with self.username and self.password

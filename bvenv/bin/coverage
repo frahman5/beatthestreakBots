@@ -1,4 +1,4 @@
-#!/Users/Dima/faiProgramming/Python/beatthestreakBots/bvenv/bin/python
+#!/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/bin/python
 # EASY-INSTALL-ENTRY-SCRIPT: 'coverage==3.7.1','console_scripts','coverage'
 __requires__ = 'coverage==3.7.1'
 import sys

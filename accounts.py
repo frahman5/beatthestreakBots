@@ -23,6 +23,7 @@ def make_outlook365_email_addys(N):
     Creates N new email addresses on outlook365 for admin account
     faiyam@faiyamrahman.com and returns a list of the new addresses
     """
+    print "Let's make some email addresses!"
     global browser 
     browser = webdriver.Firefox()
     newUsernamesL = []
@@ -52,6 +53,7 @@ def make_outlook365_email_addys(N):
             EC.presence_of_element_located((By.ID, 'password')))
         password.send_keys(GDPASSWORD)
         browser.find_element_by_class_name('sign-in-btn').click()
+        assert browser.title == 'My Account'
 
             # launch outlook365 manager
         buttons = browser.find_elements_by_class_name('mr10')
@@ -76,6 +78,7 @@ def make_outlook365_email_addys(N):
         browser.find_element_by_id('password').send_keys(OUTLOOKPW)
         browser.find_element_by_id('submitBtn').click()
         
+        print "About to enter the loop"
         ## enter in the N addy's
         i = 1
         while (i <= N):
@@ -103,17 +106,17 @@ def make_outlook365_email_addys(N):
                     continue
 
                 # otherwise continue forward young man!
-            newUsernamesL.append(username + '@' + domain.text)
             browser.find_element_by_id('SmtpAddButton').click()
+            newUsernamesL.append(username + '@' + domain.text)  
             i += 1
 
         ## hit save and wait for it to work, prompting user to check
         browser.find_element_by_id('MultiPageLayout_Save').click()
         success = ''
         while success not in ('done', 'again'):
-            print "Have these addresses been added?: Answer in 2 minutes"
+            print "Have these addresses been added?: Answer in 1 minute"
             print newUsernamesL
-            time.sleep(120)
+            time.sleep(60)
             success = raw_input('Hit "done" if the additions worked, or "again"' +\
                                 'if we need to try again\n')
         if success == 'again':
@@ -153,36 +156,31 @@ def make_espn_bts_account(username, password):
     dropDowns = browser.find_elements_by_tag_name('select')
             # 1) birthMonth
     dropDowns[0].click() # make the month options clickable
-    time.sleep(5)
-    ######### EXPERIMENT ##############
     dDowns = browser.find_elements_by_tag_name('select')
     options = dDowns[0].find_elements_by_tag_name('option')
-    # options = dropDowns[0].find_elements_by_tag_name('option')
     for option in options: # select month 3
         if option.text == '3':
+            print "we click month"
             option.click()
+            
             # 2) birthDay
     dropDowns[1].click() # make the day options clickable
-    time.sleep(5)
     dDowns = browser.find_elements_by_tag_name('select')
     options = dDowns[1].find_elements_by_tag_name('option')
-    # options = dropDowns[1].find_elements_by_tag_name('option')
     for option in options: # select day 5
         if option.text == '5':
             option.click()
             # 3) birthYear
     dropDowns[2].click() # make the year options clickable
-    time.sleep(5)
     dDowns = browser.find_elements_by_tag_name('select')
     options = dDowns[2].find_elements_by_tag_name('option')
-    # options = dropDowns[2].find_elements_by_tag_name('option')
     for option in options: # select year 1991
         if option.text == '1991':
             option.click()
  
     ## Hit the submit button
     browser.find_element_by_id('submit_btn').click()
-    time.sleep(5)
+    assert browser.title == 'Beat The Streak | MLB.com: Fantasy'
 
 def claim_mulligan(username, password):
     """
@@ -192,7 +190,7 @@ def claim_mulligan(username, password):
 
     Assumes browser is already launched
     """
-    bot = Bot(username, password)
+    bot = Bot(str(username), password)
     bot.claim_mulligan()
 
 def main(N):
@@ -209,6 +207,7 @@ def main(N):
     passwordChoices = ['beatthestreak1', 'ksdfgusergjiserg98', 
                        'faiyamWinsbeat243', 'almaalmamater6573']
 
+    random.seed() # will be takin random pauses along the way
     ## read in the production sheet to get the already existing accounts
        # Column A: id
        # Column B: Email
@@ -221,28 +220,61 @@ def main(N):
     otherDF = pd.io.excel.read_excel(Filepath.get_accounts_file(), 
                 sheetname='Other')
 
-    # ## Create N new email addresses
-    # newUsernamesL = make_outlook365_email_addys(N) # opens and closes the browser on its own
+    ## Create N new email addresses. Wrap it in a try-except if shit goes bad
+    numAddresses = N
+    usernamesBuffer = []
+    while True:
+        try:
+            # opens and closes the browser on its own
+            newUsernamesL = make_outlook365_email_addys(numAddresses) 
+        except:
+            continue
+        else:
+            if len(newUsernamesL) != numAddresses:
+                numAddresses -= len(newUsernamesL)
+                usernamesBuffer.extend(newUsernamesL)
+                continue
+            else:
+                break
+    if len(usernamesBuffer) != 0:
+        newUsernamesL.extend(usernamesBuffer)
+
  
-    newUsernamesL = ['earth.water.1824@NETORG112903.onmicrosoft.com']
-    # for username in newUsernamesL:
-    #     print "Finishing account number: {0} of {1}".format(newUsernamesL.index(username) + 1, len(newUsernamesL))
+    for username in newUsernamesL:
+        print "Finishing account number: {0} of {1}".format(newUsernamesL.index(username) + 1, len(newUsernamesL))
 
-    #     ## get a new firefox browser
-    #     browser = webdriver.Firefox()
+        ## get a new firefox browser
+        browser = webdriver.Chrome()
         
-    #     ## Create a beatthestreak account on espn and kill the browser
-    #     # password = random.choice(passwordChoices)
-    #     password = 'beatthestreak1'
-    #     # make_espn_bts_account(username, password)
-    #     browser.quit()
+        ## Wrap this in a try except in case selenium fails us
+        accountMade, mulliganClaimed = (False, False)
+        while True:
+            try:
+                ## Create a beatthestreak account on espn and kill the browser
+                if not accountMade:
+                    password = 'beatthestreak1'
+                    make_espn_bts_account(username, password)
+                    browser.quit()
+                    accountMade = True
+                ## Claim the bots mulligan 
+                if not mulliganClaimed:
+                    print "Let's claim a mulligan!"
+                    # import pdb
+                    # pdb.set_trace()
+                    claim_mulligan(username, password) # uses its own browser
+                    print "Mulligan claimed :)"
+                    mulliganClaimed = True
+            except Exception as e:
+                print e.message
+                continue
+            else:
+                break
 
-    #     ## Claim the bots mulligan 
-    #     claim_mulligan(username, password) # uses its own browser
+        
 
-    #     ## Hold on to the data to add to the btsAccounts excel file
-    #     newMLBPasswordsL.append(password)
-    newMLBPasswordsL.append('beatthestreak1')
+        ## Hold on to the data to add to the btsAccounts excel file
+        newMLBPasswordsL.append(password)
+
     ## add to the dataframe and replace the Production sheet
         # make sure the excel file has the column headers we expect
     assert df.columns[0] == 'ID'
@@ -250,7 +282,7 @@ def main(N):
     assert df.columns[2] == 'EmailPassword'
     assert df.columns[3] == 'MLBPassword'
         # make a dataframe containing the new info
-    firstID = len(df.ID) - 1
+    firstID = len(df.ID)
     idL = [firstID + i for i in range(0, len(newUsernamesL))]
             # outlook 365 aliases don't have their own passwords
     newEmailPasswordsL = ['n/a' for password in newMLBPasswordsL]
@@ -261,8 +293,6 @@ def main(N):
                          axis=1)
         # create a dataframe with all the info and write it to file
     newDF = pd.concat([df, extraDF])
-    print newDF
-    print Filepath.get_accounts_file()
     writer = pd.ExcelWriter(Filepath.get_accounts_file())
     newDF.to_excel(writer,
                    index=False, 
@@ -271,17 +301,9 @@ def main(N):
     otherDF.to_excel(writer, index=False, sheet_name="Other")
     writer.save()
 
-def main2(username, password):
-    global browser
-    browser = webdriver.Firefox()
-
-    # make_espn_bts_account(username, password)
-    claim_mulligan(username, password)
-
 if __name__ == '__main__':
     """
     Usage: ./accounts.py N
     """
     assert len(sys.argv) == 2
     main(int(sys.argv[1]))
-    # main2(sys.argv[1], sys.argv[2])
