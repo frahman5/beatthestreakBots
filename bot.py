@@ -1,3 +1,4 @@
+from pyvirtualdisplay import Display
 import time
 import logging
 
@@ -31,6 +32,10 @@ class Bot(object):
         """
         assert type(username) == str
         assert type(password) == str
+
+        ## webdriver needs a display to run. This sets up a virtual "fake" one
+        display = Display(visible=0, size=(1024, 768))
+        display.start()
 
         self.username = username
         self.password = password
@@ -91,10 +96,14 @@ class Bot(object):
             assert p2[2] in self.teams.keys()
         
         # Reset selections and then choose players
-        self._reset_selections() 
+        self._reset_selections()
+        assert self.browser.title == self.pageTitles['picks'] 
         self.__choose_single_player(p1)
         if len(p2) == 3:
             self.__choose_single_player(p2, doubleDown=True)
+        # check that the players have been chosen
+        assert set(self._get_chosen_players()) == set([p1[0] + ' ' + p1[1], 
+                                                       p2[0] + ' ' + p2[1]])
 
     # @logErrors
     def claim_mulligan(self):
@@ -255,8 +264,9 @@ class Bot(object):
         """
         Closes self.browser
         """
+        display.stop()
         self.browser.quit()
-    
+            
     # @logErrors
     def _get_chosen_players(self):
         """

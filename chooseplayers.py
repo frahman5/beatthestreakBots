@@ -9,11 +9,12 @@ from selenium.webdriver.support import expected_conditions as EC # available sin
 from datetime import datetime
 
 
-from filepath import Fielpath
+from filepath import Filepath
 from bot import Bot
 from config import ROOT
 
 ## get list of accounts you need
+print "\n-->Getting accounts file {}".format(Filepath.get_accounts_file())
     # B: Email (i.e username)
     # D: MLBPassword
 df = pd.read_excel( Filepath.get_accounts_file(), sheetname='Production',
@@ -26,21 +27,28 @@ somePlayers = [
     ('Robinson', 'Cano', 'Seattle Mariners'), ('Mike', 'Trout', 'Los Angeles Dodgers'),
     ('Giancarlo', 'Stanton', 'Miami Marlins'), ('Adam', 'Lind', 'Toronto Blue Jays')
               ]
+print df
 while len(updatedAccounts) != len(df):
-    for username, password in df.itertuples():
-        if username in updatedAccounts:
+    updatedUsernames = [account[0] for account in updatedAccounts]
+    for index, username, password in df.itertuples():
+        if username in updatedUsernames:
             continue
         try: 
-            bot = Bot(username, password)
+            print "-->Choosing players for account {} of {}. U: {}".format(
+                         index+1, len(df), username)
+            bot = Bot(str(username), str(password))
             p1 = random.choice(somePlayers)
             p2 = random.choice(somePlayers)
             bot.choose_players(p1=p1, p2=p2)
-        except:
+        except Exception as e:
+            print "-->Failure."
             continue
         else:
+            print "-->Success!"
             updatedAccounts.append((username, p1, p2))            
 
 ## Update the accounts file to reflect the updates
+print "-->Updating accounts file: {}".format(Filepath.get_accounts_file())
 today = str(datetime.today.month()) + '-' + str(datetime.today.day())
 fullDF = pd.read_excel(Filepath.get_accounts_file(), sheetname='Production')
 accountInfoL = []
