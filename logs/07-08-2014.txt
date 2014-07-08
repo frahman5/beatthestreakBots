@@ -90,3 +90,16 @@ AssertionError
 
 2014-07-08 14:52:50,816     U, P: faiyam.earth.1200@NETORG112903.onmicrosoft.com, ooglyboogly
 
+2014-07-08 18:10:39,117 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-08 18:10:39,118     p1, p2: ('Robinson', 'Cano', 'Seattle Mariners'), ('Giancarlo', 'Stanton', 'Miami Marlins')
+
+2014-07-08 18:10:39,118 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 138, in main
+    bot.choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 111, in choose_players
+    self.__choose_single_player(p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 390, in __choose_single_player
+    assert len(lastNameElems) == len(selectButtons) * 2
+AssertionError

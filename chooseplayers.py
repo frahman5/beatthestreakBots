@@ -92,7 +92,7 @@ def main():
     updatedAccounts=[]
     somePlayers = [ 
                     ('Robinson', 'Cano', 'Seattle Mariners'), 
-                    ('Yasiel', 'Puig', 'Los Angeles Dodgers'),
+                    ('Paul', 'Goldschmidt', 'Arizona Diamondbacks'),
                     ('Giancarlo', 'Stanton', 'Miami Marlins'), 
                     ('Adam', 'Lind', 'Toronto Blue Jays')
                   ]
@@ -126,7 +126,7 @@ def main():
                 print "\n-->Iteration {} of {}".format(numIters, 2 * lenDF)
                 print "-->Choosing players for account {} of {}. U: {}".format(
                              index+1, lenDF, username)
-                print "------> Accounts Done: {0}({1:.2f})".format(
+                print "------> Accounts Done: {0}({1:.2f}%)".format(
                             len(updatedAccounts), 
                             float(len(updatedAccounts))/float(lenDF))
                 bot = None # in case we throw an exception while constructing Bot
@@ -156,11 +156,11 @@ def main():
 
             # If it worked, record as much and keep going!
             else:
-                print "----->Success!"
+                print "-----> Success!"
                 updatedAccounts.append((username, p1, p2))            
 
     ## Update the accounts file to reflect the updates
-    print "-->Updating accounts file: {}".format(Filepath.get_accounts_file())
+    print "--> Updating accounts file: {}".format(Filepath.get_accounts_file())
 
         # Get the full production spreadsheet
     today = str(datetime.today().month) + '-' + str(datetime.today().day)
