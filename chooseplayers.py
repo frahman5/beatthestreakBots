@@ -12,6 +12,7 @@ from datetime import datetime
 from filepath import Filepath
 from bot import Bot
 from config import ROOT
+from exception import NoPlayerFoundException
 
 ## get list of accounts you need
 print "\n-->Getting accounts file {}".format(Filepath.get_accounts_file())
@@ -40,8 +41,11 @@ while len(updatedAccounts) != len(df):
             p1 = random.choice(somePlayers)
             p2 = random.choice(somePlayers)
             bot.choose_players(p1=p1, p2=p2)
+        except NoPlayerFoundException as e:
+            raise e
         except Exception as e:
             print "-->Failure."
+            print "-->Error Message: {}".format(e.message)
             continue
         else:
             print "-->Success!"

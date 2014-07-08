@@ -10,7 +10,7 @@ class TestBot(unittest.TestCase):
 
     def setUp(self):
         ## get usernames and passwords for test bots
-        df = pd.io.excel.read_excel(Filepath.get_accounts_file(), 
+        df = pd.io.excel.read_excel(Filepath.get_test_file(), 
                 sheetname='Test', parse_cols='A,B,C,D')
 
         # If necessary, initalize sBot and dBot. Else set to None
@@ -88,7 +88,7 @@ class TestBot(unittest.TestCase):
         self.eBot._get_player_selection_dropdown()
         self.assertTrue(selectTeamBox.is_displayed())
 
-    @unittest.skip("Not Focus")
+    # @unittest.skip("Not Focus")
     def test__reset_selections(self):
         ## Case 1: Empty Bot -- no selections before AND after func call
         self.__assure_bot_setup(self.eBot)

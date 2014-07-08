@@ -11,6 +11,8 @@ from selenium.common.exceptions import TimeoutException
 
 from exception import NoPlayerFoundException, SameNameException
 from decorators import logErrors
+from config import ROOT
+
 
 
 class Bot(object):
@@ -34,8 +36,9 @@ class Bot(object):
         assert type(password) == str
 
         ## webdriver needs a display to run. This sets up a virtual "fake" one
-        display = Display(visible=0, size=(1024, 768))
-        display.start()
+        if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+            display = Display(visible=0, size=(1024, 768))
+            display.start()
 
         self.username = username
         self.password = password
@@ -102,8 +105,9 @@ class Bot(object):
         if len(p2) == 3:
             self.__choose_single_player(p2, doubleDown=True)
         # check that the players have been chosen
-        assert set(self._get_chosen_players()) == set([p1[0] + ' ' + p1[1], 
-                                                       p2[0] + ' ' + p2[1]])
+        playerSet = {player[0] + ' ' + player[1] for player in (p1, p2)
+                      if len(player) != 0}
+        assert set(self._get_chosen_players()) == playerSet
 
     # @logErrors
     def claim_mulligan(self):
@@ -164,7 +168,6 @@ class Bot(object):
             return True
 
         return False
-
 
     # @logErrors
     def get_username(self):
@@ -244,10 +247,18 @@ class Bot(object):
         the selections
         """
         self._get_player_selection_dropdown() # make the remove Buttons show up
+ 
+        # if it's the empty Bot, then return
+        if len(self._get_chosen_players()) == 0:
+            return
 
+        ## Use a webdriverWait so we throw an exception if shit isnt there
+        firstRemoveButton = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'remove-action')))
         removeButtonsRaw = self.browser.find_elements_by_class_name('remove-action')
         removeButtons = [elem for elem in removeButtonsRaw 
                if elem.get_attribute('class') == 'remove-action player-row']
+
         while removeButtons != []:
             removeButtons[0].click()
             time.sleep(3)
@@ -264,7 +275,8 @@ class Bot(object):
         """
         Closes self.browser
         """
-        display.stop()
+        if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+            display.stop()
         self.browser.quit()
             
     # @logErrors
@@ -303,16 +315,22 @@ class Bot(object):
         ## Get to selection dropdown for team
         self._get_player_selection_dropdown()
             # click on "select teams"
-        selectTeam = self.browser.find_element_by_id('team-name')
+        selectTeam = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.ID, 'team-name')))
+        # selectTeam = self.browser.find_element_by_id('team-name')
         selectTeam.click()
         time.sleep(3)
             # click on desired team
-        team = self.browser.find_element_by_class_name(self.teams[team])
+        team = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, self.teams[team])))
+        # team = self.browser.find_element_by_class_name(self.teams[team])
         team.click()
         time.sleep(3)
 
         ## Make pick
             # get lists of firstNames, lastNames, and select Buttons
+        namesThereYet = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "last-name")))
         lastNameElems = self.browser.find_elements_by_class_name("last-name")
         firstNameElems = self.browser.find_elements_by_class_name("first-name")
         selectButtons = self.browser.find_elements_by_class_name("select-action")
@@ -345,6 +363,8 @@ class Bot(object):
                         "with the same name: {0} {1}".format(firstName, lastName))
         if doubleDown:
             # first button : Double Down. SecondButton: Replace Selection
+            buttonsThereYet = WebDriverWait(self.browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, 'ui-button-text-only')))
             buttons = self.browser.find_elements_by_class_name('ui-button-text-only')
             buttons[0].click()
 
