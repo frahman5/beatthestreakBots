@@ -137,7 +137,7 @@ def make_espn_bts_account(username, password):
 
     Assumes browser is already launched
     """
-    print "Making BTS account for u, p: {0}, {1}\n".format(username, password)
+    print "-->Making BTS account for u, p: {0}, {1}\n".format(username, password)
     global browser
 
     ## get the gmail create account page
@@ -233,7 +233,7 @@ def main(N):
 
     for username in newUsernamesL:
         time.sleep(10) # give it some time to clean things up
-        print "Finishing account number: {0} of {1}".format(newUsernamesL.index(username) + 1, len(newUsernamesL))
+        print "\nFinishing account number: {0} of {1}".format(newUsernamesL.index(username) + 1, len(newUsernamesL))
 
         ## get a new firefox browser
         browser = webdriver.Chrome()
@@ -251,7 +251,7 @@ def main(N):
                 ## Claim the bots mulligan 
                 if not mulliganClaimed:
                     claim_mulligan(username, password) # uses its own browser
-                    print "Mulligan claimed :)"
+                    print "-->Mulligan claimed :)"
                     mulliganClaimed = True
             except Exception as e:
                 print e.message
@@ -293,4 +293,17 @@ if __name__ == '__main__':
     Usage: ./accounts.py N
     """
     assert len(sys.argv) == 2
-    main(int(sys.argv[1]))
+    
+    numAccounts = int(sys.argv[1])
+    origCount = numAccounts
+    # make accounts in sets of 50 so that in case something bad happens,
+    #  we dont lose e.g 1000 accounts
+    while numAccounts > 0:
+        if numAccounts < 50:
+            main(numAccounts)
+            break
+        else: 
+            print "********** CREATING IN CHUNKS OF FIFTY:. Completed {} of {} ***********".format(
+               origCount-numAccounts, origCount) 
+            main(50)
+            numAccounts -= 50
