@@ -15,7 +15,7 @@ class Filepath(object):
         Returns the path of the excel file containing account info
         for emails and beatthestreak accounts on mlb.com
         """
-        return self.get_root() + '/btsAccountsTest.xlsx'
+        return self.get_root() + '/btsAccountsTest10.xlsx'
 
     @classmethod
     def get_test_file(self):
