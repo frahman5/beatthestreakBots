@@ -9,8 +9,8 @@ from filepath import Filepath
 
 class logErrors(object):
     """
-    function -> function
 
+    function -> function
     Wraps a function such that if there is an error during the course
     of the function execution, an email is sent to admin Email, and
     the errors are logged to btsReal/log.txt

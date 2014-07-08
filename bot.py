@@ -101,6 +101,7 @@ class Bot(object):
             assert p2[2] in self.teams.keys()
         
         # Reset selections and then choose players
+        print "------> Removing any currently selected players"
         self._reset_selections()
         assert self.browser.title == self.pageTitles['picks'] 
         print "------> Choosing player: {}".format(p1)
@@ -241,14 +242,6 @@ class Bot(object):
         todayRow = self.__get_todays_make_pick_row()
 
         todayPlayerInfoRow = todayRow.find_element_by_class_name('player-info-rows')
-        # playerInfoRows = self.browser.find_elements_by_class_name('player-info-rows')
-            # it's the topmost row that says "make pick". Rows above it will
-            # contain previous player selections
-        # for row in playerInfoRows:
-            # if row.text == 'Make Pick':
-                # today = row
-                # break
-        # today.click()
         todayPlayerInfoRow.click()
         time.sleep(3)
 
@@ -289,10 +282,6 @@ class Bot(object):
         removeButtons = [elem for elem in removeButtonsRaw 
                if elem.get_attribute('class') == 'remove-action player-row']
 
-        # removeButtonsRaw = self.browser.find_elements_by_class_name('remove-action')
-        # removeButtons = [elem for elem in removeButtonsRaw 
-        #        if elem.get_attribute('class') == 'remove-action player-row']
-
         while removeButtons != []:
             removeButtons[0].click()
             time.sleep(3)
@@ -324,15 +313,16 @@ class Bot(object):
            Returns a tuple of strings containing the names
            of players this bot currently has selected
         """
-        # html elements that correspond to players are the first item
-        # in a list. Other html elements on the make pick page that 
-        # are first items in a list have text that either says 'date locked', 
-        # 'double down', or 'make pick'
+
  
         # Get today's make pick row
         todayRow = self.__get_todays_make_pick_row()
 
         # Find the players selected for today
+                # html elements that correspond to players are the first item
+                # in a list. Other html elements on the make pick page that 
+                # are first items in a list have text that either says 
+                # 'date locked', 'double down', or 'make pick'
         firstItems = todayRow.find_elements_by_class_name('first')
         players = [ elem.text for elem in firstItems if 
                     elem.tag_name == 'li' and elem.text not in ('Date Locked', 
