@@ -2,6 +2,7 @@ import unittest
 
 from beatthestreakBots.config import ROOT
 from beatthestreakBots.filepath import Filepath as F
+from datetime import datetime
 
 class TestFilepath(unittest.TestCase):
 
@@ -14,8 +15,9 @@ class TestFilepath(unittest.TestCase):
 		self.assertEqual(F.get_accounts_file(), accountsFile)
 
 	def test_get_log_file(self):
-		testLog = ROOT + '/tests/logs.txt'
-		prodLog = ROOT + '/logs.txt'
+		today = datetime.today().date().strftime('%m-%d-%Y')
+		testLog = ROOT + '/tests/logs/' + today + '.txt'
+		prodLog = ROOT + '/logs/' + today + '.txt'
 		# Case 1: testing
 		self.assertEqual(F.get_log_file(test=True), testLog)
 		# Case 2: Production
