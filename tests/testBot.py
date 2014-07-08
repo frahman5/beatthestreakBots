@@ -74,7 +74,8 @@ class TestBot(unittest.TestCase):
         self.eBot._get_make_picks_page()
         self.assertTrue(pageTitle in self.eBot.browser.title)
 
-    @unittest.skip("Not Focus")
+    # @unittest.skip("Not Focus")
+       ## indirectly tests "_click_make_pick_today"
     def test_get_player_selection_dropdown(self):
         self.eBot._get_make_picks_page()
 
@@ -92,42 +93,54 @@ class TestBot(unittest.TestCase):
     def test__reset_selections(self):
         ## Case 1: Empty Bot -- no selections before AND after func call
         self.__assure_bot_setup(self.eBot)
-        removeButtonsRaw = self.eBot.browser.find_elements_by_class_name('remove-action')
+        todayRow = self.eBot._Bot__get_todays_make_pick_row()
+        # removeButtonsRaw = self.eBot.browser.find_elements_by_class_name('remove-action')
+        removeButtonsRaw = todayRow.find_elements_by_class_name('remove-action')
         removeButtons = [elem for elem in removeButtonsRaw 
             if elem.get_attribute('class') == 'remove-action player-row']
         self.assertEqual(removeButtons, []) 
 
         self.eBot._reset_selections() # reset selections
         # should still be no remove Buttons after _reset_selections
-        removeButtonsRaw = self.eBot.browser.find_elements_by_class_name('remove-action')
+        todayRow = self.eBot._Bot__get_todays_make_pick_row()
+        removeButtonsRaw = todayRow.find_elements_by_class_name('remove-action')
+        # removeButtonsRaw = self.eBot.browser.find_elements_by_class_name('remove-action')
         removeButtons = [elem for elem in removeButtonsRaw 
             if elem.get_attribute('class') == 'remove-action player-row']
         self.assertEqual(removeButtons, [])
 
         ## Case 2: Single Bot -- one selection before, no selections after func call
         self.__assure_bot_setup(self.sBot)
-        removeButtonsRaw = self.sBot.browser.find_elements_by_class_name('remove-action')
+        todayRow = self.sBot._Bot__get_todays_make_pick_row()
+        removeButtonsRaw = todayRow.find_elements_by_class_name('remove-action')
+        # removeButtonsRaw = self.sBot.browser.find_elements_by_class_name('remove-action')
         removeButtons = [elem for elem in removeButtonsRaw 
             if elem.get_attribute('class') == 'remove-action player-row']
         self.assertEqual(len(removeButtons), 1)
 
         self.sBot._reset_selections() # reset the selection
         # should now be zero removeButtons
-        removeButtonsRaw = self.sBot.browser.find_elements_by_class_name('remove-action')
+        todayRow = self.sBot._Bot__get_todays_make_pick_row()
+        removeButtonsRaw = todayRow.find_elements_by_class_name('remove-action')
+        # removeButtonsRaw = self.sBot.browser.find_elements_by_class_name('remove-action')
         removeButtons = [elem for elem in removeButtonsRaw 
             if elem.get_attribute('class') == 'remove-action player-row']
         self.assertEqual(removeButtons, [])
 
         ## Case 3: Double (down) Bot -- two selections before, one selection after func call
         self.__assure_bot_setup(self.dBot)
-        removeButtonsRaw = self.dBot.browser.find_elements_by_class_name('remove-action')
+        # removeButtonsRaw = self.dBot.browser.find_elements_by_class_name('remove-action')
+        todayRow = self.dBot._Bot__get_todays_make_pick_row()
+        removeButtonsRaw = todayRow.find_elements_by_class_name('remove-action')
         removeButtons = [elem for elem in removeButtonsRaw 
             if elem.get_attribute('class') == 'remove-action player-row']
         self.assertEqual(len(removeButtons), 2)
 
         self.dBot._reset_selections() # reset selections
         # should be no remove buttons after we reset selections
-        removeButtonsRaw = self.dBot.browser.find_elements_by_class_name('remove-action')
+        # removeButtonsRaw = self.dBot.browser.find_elements_by_class_name('remove-action')
+        todayRow = self.dBot._Bot__get_todays_make_pick_row()
+        removeButtonsRaw = todayRow.find_elements_by_class_name('remove-action')
         removeButtons = [elem for elem in removeButtonsRaw 
             if elem.get_attribute('class') == 'remove-action player-row']
         self.assertEqual(removeButtons, [])

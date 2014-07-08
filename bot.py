@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
+from datetime import datetime
 
 
 from exception import NoPlayerFoundException, SameNameException
@@ -37,12 +38,13 @@ class Bot(object):
 
         ## webdriver needs a display to run. This sets up a virtual "fake" one
         if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
-            display = Display(visible=0, size=(1024, 768))
-            display.start()
+            self.display = Display(visible=0, size=(1024, 768))
+            self.display.start()
 
         self.username = username
         self.password = password
         self.browser = webdriver.Chrome()
+        self.today = datetime.today()
         seleniumLogger = logging.getLogger('selenium.webdriver.remote.remote_connection')
         # Only display possible problems
         seleniumLogger.setLevel(logging.WARNING)
@@ -112,7 +114,6 @@ class Bot(object):
         assert set(self._get_chosen_players()) == playerSet
 
         # Close up shop
-        display.stop()
         self.browser.quit()
 
     # @logErrors
@@ -236,10 +237,19 @@ class Bot(object):
         ## make sure we're on the right page
         self._get_make_picks_page()
 
-        # click on today's make pick 
-        playerInfoRows = self.browser.find_elements_by_class_name('player-info-rows')
-        today = playerInfoRows[1] ## always the second row from the top
-        today.click()
+        # get today's row
+        todayRow = self.__get_todays_make_pick_row()
+
+        todayPlayerInfoRow = todayRow.find_element_by_class_name('player-info-rows')
+        # playerInfoRows = self.browser.find_elements_by_class_name('player-info-rows')
+            # it's the topmost row that says "make pick". Rows above it will
+            # contain previous player selections
+        # for row in playerInfoRows:
+            # if row.text == 'Make Pick':
+                # today = row
+                # break
+        # today.click()
+        todayPlayerInfoRow.click()
         time.sleep(3)
 
     # @logErrors
@@ -251,8 +261,6 @@ class Bot(object):
         # make sure we're on the make picks page
         self._get_make_picks_page()
 
-        selectBoxesThere = WebDriverWait(self.browser, 10).until(
-            EC.presence_of_element_located((By.ID, "team-name")))
         selectTeamBox = self.browser.find_elements_by_id('team-name')[0]
         if selectTeamBox.is_displayed():
             return
@@ -274,9 +282,16 @@ class Bot(object):
         ## Use a webdriverWait so we throw an exception if shit isnt there
         firstRemoveButton = WebDriverWait(self.browser, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, 'remove-action')))
-        removeButtonsRaw = self.browser.find_elements_by_class_name('remove-action')
+
+        ## Get today's row
+        todayRow = self.__get_todays_make_pick_row()
+        removeButtonsRaw = todayRow.find_elements_by_class_name('remove-action')
         removeButtons = [elem for elem in removeButtonsRaw 
                if elem.get_attribute('class') == 'remove-action player-row']
+
+        # removeButtonsRaw = self.browser.find_elements_by_class_name('remove-action')
+        # removeButtons = [elem for elem in removeButtonsRaw 
+        #        if elem.get_attribute('class') == 'remove-action player-row']
 
         while removeButtons != []:
             removeButtons[0].click()
@@ -284,8 +299,12 @@ class Bot(object):
             subAndCancel = self.browser.find_elements_by_class_name('ui-button-text-only')
             subAndCancel[0].click()
             time.sleep(3)
-            removeButtonsRaw = self.browser.find_elements_by_class_name('remove-action')
-            removeButtons = [elem for elem in removeButtonsRaw 
+
+            ## get the remaining remove Buttons
+               # need to refresh todayRow because it might have moved off DOM
+            todayRow = self.__get_todays_make_pick_row() 
+            removeButtonsRaw = todayRow.find_elements_by_class_name('remove-action')
+            removeButtons = [ elem for elem in removeButtonsRaw 
                    if elem.get_attribute('class') == 'remove-action player-row']
         time.sleep(3)
 
@@ -295,7 +314,7 @@ class Bot(object):
         Closes self.browser
         """
         if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
-            display.stop()
+            self.display.stop()
         self.browser.quit()
             
     # @logErrors
@@ -309,11 +328,36 @@ class Bot(object):
         # in a list. Other html elements on the make pick page that 
         # are first items in a list have text that either says 'date locked', 
         # 'double down', or 'make pick'
-        firstItems = self.browser.find_elements_by_class_name('first')
-        players = [elem.text for elem in firstItems if 
-            elem.tag_name == 'li' and elem.text not in ('Date Locked', 
-                'Double Down', 'Make Pick')]
+ 
+        # Get today's make pick row
+        todayRow = self.__get_todays_make_pick_row()
+
+        # Find the players selected for today
+        firstItems = todayRow.find_elements_by_class_name('first')
+        players = [ elem.text for elem in firstItems if 
+                    elem.tag_name == 'li' and elem.text not in ('Date Locked', 
+                    'Double Down', 'Make Pick')]
         return tuple(players)
+
+    def __get_todays_make_pick_row(self):
+        """
+        None -> WebElement
+           Returns the row on the make picks page corresponding to today
+        """
+        # make sure we are on the get make picks page
+        self._get_make_picks_page()
+
+        ## Get the row corresponding to today
+        firstRow = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.TAG_NAME, 'tr')))
+        rows = self.browser.find_elements_by_tag_name('tr')
+            ## date in 'mm/dd/yyyy' format
+        todayFormatted = self.today.date().strftime('%m/%d/%Y')
+        todayRow = [ row for row in rows if 
+                     row.get_attribute('data-date') == todayFormatted][0]
+
+        return todayRow
+
 
     # @logErrors
     def __choose_single_player(self, player, doubleDown=False):
@@ -331,7 +375,7 @@ class Bot(object):
 
         firstName, lastName, team = player
 
-        ## Get to selection dropdown for team
+        ## Make sure the player selection dropdown has been dropped
         self._get_player_selection_dropdown()
             # click on "select teams"
         selectTeam = WebDriverWait(self.browser, 10).until(
