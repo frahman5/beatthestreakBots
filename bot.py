@@ -101,13 +101,19 @@ class Bot(object):
         # Reset selections and then choose players
         self._reset_selections()
         assert self.browser.title == self.pageTitles['picks'] 
+        print "------> Choosing player: {}".format(p1)
         self.__choose_single_player(p1)
         if len(p2) == 3:
+            print "------> Choosing player: {}".format(p2)
             self.__choose_single_player(p2, doubleDown=True)
         # check that the players have been chosen
         playerSet = {player[0] + ' ' + player[1] for player in (p1, p2)
                       if len(player) != 0}
         assert set(self._get_chosen_players()) == playerSet
+
+        # Close up shop
+        display.stop()
+        self.browser.quit()
 
     # @logErrors
     def claim_mulligan(self):
@@ -187,6 +193,7 @@ class Bot(object):
               'bts/y2014/'
         self.browser.get(url)
         time.sleep(3)
+        assert self.browser.title == self.pageTitles['login']
 
     # @logErrors
     def _get_make_picks_page(self):
@@ -206,10 +213,20 @@ class Bot(object):
             return
         
         # Otherwise, we need to login
-        self.browser.find_element_by_id('login_email').send_keys(self.username)
-        self.browser.find_element_by_id('login_password').send_keys(self.password)
-        self.browser.find_element_by_name('submit').click()
+        login = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.ID, 'login_email')))
+        login.send_keys(self.username)
+        pword = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.ID, 'login_password')))
+        pword.send_keys(self.password)
+        submit = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.NAME, 'submit')))
+        submit.click()
+        # self.browser.find_element_by_id('login_email').send_keys(self.username)
+        # self.browser.find_element_by_id('login_password').send_keys(self.password)
+        # self.browser.find_element_by_name('submit').click()
         time.sleep(3)
+        assert self.browser.title == self.pageTitles['picks']
 
     # @logErrors
     def _click_make_pick_today(self):
@@ -234,6 +251,8 @@ class Bot(object):
         # make sure we're on the make picks page
         self._get_make_picks_page()
 
+        selectBoxesThere = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.ID, "team-name")))
         selectTeamBox = self.browser.find_elements_by_id('team-name')[0]
         if selectTeamBox.is_displayed():
             return

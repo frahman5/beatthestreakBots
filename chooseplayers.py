@@ -25,9 +25,9 @@ df = pd.read_excel( Filepath.get_accounts_file(), sheetname='Production',
     # list of tuples: (username, firstPlayerChoice, secondPlayerChoice)
 updatedAccounts=[]
 somePlayers = [ 
-    ('Robinson', 'Cano', 'Seattle Mariners'), ('Mike', 'Trout', 'Los Angeles Dodgers'),
-    ('Giancarlo', 'Stanton', 'Miami Marlins'), ('Adam', 'Lind', 'Toronto Blue Jays')
-              ]
+    ('Robinson', 'Cano', 'Seattle Mariners'), ('Mike', 'Trout', 'Los Angeles Dodgers')]
+    # ('Giancarlo', 'Stanton', 'Miami Marlins'), ('Adam', 'Lind', 'Toronto Blue Jays')
+    #           ]
 print df
 while len(updatedAccounts) != len(df):
     updatedUsernames = [account[0] for account in updatedAccounts]
@@ -35,25 +35,29 @@ while len(updatedAccounts) != len(df):
         if username in updatedUsernames:
             continue
         try: 
-            print "-->Choosing players for account {} of {}. U: {}".format(
+            print "\n-->Choosing players for account {} of {}. U: {}".format(
                          index+1, len(df), username)
+            print "------> Done: {}({}%)".format(len(updatedUsernames), 
+                                                 float(len(updatedUsernames))/len(df))
             bot = Bot(str(username), str(password))
             p1 = random.choice(somePlayers)
             p2 = random.choice(somePlayers)
             bot.choose_players(p1=p1, p2=p2)
         except NoPlayerFoundException as e:
+            bot.browser.quit()
             raise e
         except Exception as e:
+            bot.browser.quit()
             print "-->Failure."
             print "-->Error Message: {}".format(e.message)
             continue
         else:
-            print "-->Success!"
+            print "----->Success!"
             updatedAccounts.append((username, p1, p2))            
 
 ## Update the accounts file to reflect the updates
 print "-->Updating accounts file: {}".format(Filepath.get_accounts_file())
-today = str(datetime.today.month()) + '-' + str(datetime.today.day())
+today = str(datetime.today().month) + '-' + str(datetime.today().day)
 fullDF = pd.read_excel(Filepath.get_accounts_file(), sheetname='Production')
 accountInfoL = []
 for index, updatedAccount in enumerate(updatedAccounts):
@@ -61,5 +65,6 @@ for index, updatedAccount in enumerate(updatedAccounts):
     assert updatedAccount[0] == fullDF.Email[index]
     accountInfoL.append( 'Done. 1: {}, 2: {}'.format(
                          updatedAccount[1], updatedAccount[2]))
-newDF = pd.concat([fullDF, pd.Series(accountInfoL, name=today)])
+newDF = pd.concat([fullDF, pd.Series(accountInfoL, name=today)], axis=1)
 newDF.to_excel(Filepath.get_accounts_file(), sheet_name='Production', index=False)
+
