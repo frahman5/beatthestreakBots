@@ -295,6 +295,7 @@ if __name__ == '__main__':
     """
      ## webdriver needs a display to run. This sets up a virtual "fake" one
     if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+        print "--> Starting Display"
         display = Display(visible=0, size=(1024, 768))
         display.start()
     assert len(sys.argv) == 2
@@ -315,4 +316,5 @@ if __name__ == '__main__':
             numAccounts -= blockSize
 
     if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+        print "--> Stopping Display"
         display.stop()
