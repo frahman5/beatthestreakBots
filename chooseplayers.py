@@ -287,7 +287,7 @@ if __name__ == '__main__':
     ## Assign players to accounts in chunks of 20 so that in case something
     ## bad happens, we remain robust
     origCount = get_num_accounts(sN=sN, vMN=vMN, getRemaining=True)
-    blockSize = 2
+    blockSize = 20
     numLeft = origCount
     funcDict = {
         5: { 'select_func': todaysRecommendedPicks, 
