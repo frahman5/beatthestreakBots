@@ -30,7 +30,7 @@ def make_espn_bts_account(username, password):
         display.start()
     browser = webdriver.Chrome()
 
-    print "-->Making BTS account for u, p: {0}, {1}\n".format(username, password)
+    print "--> Making BTS account for u, p: {0}, {1}\n".format(username, password)
 
     ## get the gmail create account page
     url = 'https://secure.mlb.com/enterworkflow.do?flowId=fantasy.bts.' + \
@@ -102,7 +102,6 @@ def main(N):
     If any account gets to over 40 hits in a row, we'll go and MANUALLY
     make an email account and validate it. 
     """
-    global browser
     newUsernamesL = []
     newMLBPasswordsL = []
     usernameStarters = [ 'faiyam', 'rahman', 'bts', 'metro', 'williams', 
@@ -131,15 +130,13 @@ def main(N):
         i += 1
 
     for username in newUsernamesL:
-        time.sleep(10) # give it some time to clean things up
-        print "\nFinishing account number: {0} of {1}".format(newUsernamesL.index(username) + 1, len(newUsernamesL))
-
-        ## get a new firefox browser
-        browser = webdriver.Chrome()
+        time.sleep(5) # give it some time to clean things up
+        print "\n--> Finishing account number: {0} of {1}".format(newUsernamesL.index(username) + 1, len(newUsernamesL))
         
         ## Wrap this in a try except in case selenium fails us
         accountMade, mulliganClaimed = (False, False)
         while True:
+            attemptNum = 0
             try:
                 ## Create a beatthestreak account on espn and kill the browser
                 if not accountMade:
@@ -149,10 +146,13 @@ def main(N):
                 ## Claim the bots mulligan 
                 if not mulliganClaimed:
                     claim_mulligan(username, password) # uses its own browser
-                    print "-->Mulligan claimed :)"
+                    print "--> Mulligan claimed :)"
                     mulliganClaimed = True
             except Exception as e:
-                print e.message
+                attemptNum += 1
+                if attemptNum > 5: # if we've tried this u and p more than 5 times
+                    raise e
+                print e
                 continue
             else:
                 break
