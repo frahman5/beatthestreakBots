@@ -298,12 +298,13 @@ if __name__ == '__main__':
     origCount = numAccounts
     # make accounts in sets of 50 so that in case something bad happens,
     #  we dont lose e.g 1000 accounts
+    blockSize = 20
     while numAccounts > 0:
-        if numAccounts < 50:
+        if numAccounts < blockSize:
             main(numAccounts)
             break
         else: 
-            print "********** CREATING IN CHUNKS OF FIFTY:. Completed {} of {} ***********".format(
-               origCount-numAccounts, origCount) 
-            main(50)
-            numAccounts -= 50
+            print "********** CREATING IN CHUNKS OF {}:. Completed {} of {} ***********".format(
+                  blockSize, origCount-numAccounts, origCount) 
+            main(blockSize)
+            numAccounts -= blockSize
