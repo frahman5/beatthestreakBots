@@ -326,6 +326,7 @@ class Bot(object):
         """
         self.browser.quit()
         if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+            print "--> Closing Bot Display"
             self.display.stop()
             
     def _get_chosen_players(self):
