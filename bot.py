@@ -165,6 +165,7 @@ class Bot(object):
 
         # tuplify the list and return it
         return tuple(recommendedPlayers)
+
     def claim_mulligan(self):
         print "-->Claiming Mulligan for u, p: {0}, {1}\n".format(self.username, self.password)
 
@@ -190,9 +191,12 @@ class Bot(object):
             )
         claimMul.click()
         
-        # give it some time, then quit the browser
+        # give it some time, then quit the browser and if necessary, stop the display
         time.sleep(10)
         self.browser.quit()
+        if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+            print "--> Stopping Display"
+            self.display.stop()
 
     def has_claimed_mulligan(self):
         """

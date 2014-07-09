@@ -14,122 +14,6 @@ from bot import Bot
 from filepath import Filepath
 from config import GDUSERNAME, GDPASSWORD, OUTLOOKPW, ROOT
 
-## A globally shared browser for all activites
-browser = None
-
-def make_outlook365_email_addys(N):
-    """
-    int -> ListOfStrings
-
-    Creates N new email addresses on outlook365 for admin account
-    faiyam@faiyamrahman.com and returns a list of the new addresses
-    """
-    print "Let's make some email addresses!"
-    global browser 
-    browser = webdriver.Firefox()
-    newUsernamesL = []
-
-    usernameStarters = [ 'faiyam', 'rahman', 'bts', 'metro', 'williams', 
-                         'grassfed', 'daft', 'fossil', 'water', 'earth']
-    try : 
-        ## get to manage aliases page
-            # goDaddy account page
-        browser.get('http://www.godaddy.com/')
-
-            # get the login form to dropdown
-        aButton = WebDriverWait(browser, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, 'oi-group1'))
-            )
-        oiButtons = browser.find_elements_by_class_name('oi-group1')
-        for button in oiButtons:
-            if button.text == "Sign In\nRegister":
-                button.click()
-                break
-
-            # login
-        login = WebDriverWait(browser, 10).until(
-            EC.presence_of_element_located((By.ID, 'loginname')))
-        login.send_keys(GDUSERNAME)
-        password = WebDriverWait(browser, 10).until(
-            EC.presence_of_element_located((By.ID, 'password')))
-        password.send_keys(GDPASSWORD)
-        browser.find_element_by_class_name('sign-in-btn').click()
-        assert browser.title == 'My Account'
-
-            # launch outlook365 manager
-        buttons = browser.find_elements_by_class_name('mr10')
-        for button in buttons:
-            if button.get_attribute('title') == "Office 365 Email and Productivity Control Center":
-                button.click()
-                break
-
-            # get to manage aliases page
-        gearIcon = WebDriverWait(browser, 10).until(
-            EC.presence_of_element_located((By.ID, 'gearIcon_faiyam@faiyamrahman.com')))
-        gearIcon.click()
-        accountManagement = WebDriverWait(browser, 10).until(
-            EC.presence_of_element_located((By.ID, 'account_management'))
-            )
-        links = accountManagement.find_elements_by_tag_name('a')
-        for link in links:
-            if link.text == 'Manage aliases':
-                link.click()
-                break
-        browser.switch_to_window(browser.window_handles[1]) # hitting the manage aliases link opens a new window
-        browser.find_element_by_id('password').send_keys(OUTLOOKPW)
-        browser.find_element_by_id('submitBtn').click()
-        
-        print "About to enter the loop"
-        ## enter in the N addy's
-        i = 1
-        while (i <= N):
-               # randomly choose one of the two available domain names
-            selectBox = WebDriverWait(browser, 10).until(
-                EC.presence_of_element_located((By.ID, 'ddlDomainsAliases_dropdown')))
-            options = selectBox.find_elements_by_tag_name('option')
-            domain = random.choice(options)
-            domain.click()
-
-                # construct a random email and try to add it
-            username = random.choice(usernameStarters) + "." + \
-                       random.choice(usernameStarters) + "." + \
-                       str(random.randint(1,2014))
-            aliasBox = WebDriverWait(browser, 10).until(
-                EC.presence_of_element_located((By.ID, 'tbEmailAlias')))
-            aliasBox.send_keys(username)
-
-                # if it doesn't work, try again
-            dialogueBoxes = browser.find_elements_by_id('dialogBodyArea')
-            for box in dialogueBoxes:
-                if box.text == "Please try again later.":
-                    browser.find_element_by_id('DialogManager1_dialogAcceptButton_0').click()
-                    aliasBox.clear()
-                    continue
-
-                # otherwise continue forward young man!
-            browser.find_element_by_id('SmtpAddButton').click()
-            newUsernamesL.append(username + '@' + domain.text)  
-            i += 1
-
-        ## hit save and wait for it to work, prompting user to check
-        browser.find_element_by_id('MultiPageLayout_Save').click()
-        success = ''
-        while success not in ('done', 'again'):
-            print "Have these addresses been added?: Answer in 1 minute"
-            print newUsernamesL
-            time.sleep(60)
-            success = raw_input('Hit "done" if the additions worked, or "again"' +\
-                                'if we need to try again\n')
-        if success == 'again':
-            browser.quit()
-            make_outlook365_email_addys(N)
-    except Exception as e:
-        raise e
-    finally:
-        ## return the newEmailAddys and close the browser
-        browser.quit()
-        return newUsernamesL
-
 def make_espn_bts_account(username, password):
     """
     string string -> None
@@ -138,8 +22,15 @@ def make_espn_bts_account(username, password):
 
     Assumes browser is already launched
     """
+    ## Open up shop
+         # webdriver needs a display to run. This sets up a virtual "fake" one
+    if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+        print "--> Starting Display"
+        display = Display(visible=0, size=(1024, 768))
+        display.start()
+    browser = webdriver.Chrome()
+
     print "-->Making BTS account for u, p: {0}, {1}\n".format(username, password)
-    global browser
 
     ## get the gmail create account page
     url = 'https://secure.mlb.com/enterworkflow.do?flowId=fantasy.bts.' + \
@@ -182,13 +73,20 @@ def make_espn_bts_account(username, password):
     browser.find_element_by_id('submit_btn').click()
     assert browser.title == 'Beat The Streak | MLB.com: Fantasy'
 
+    ## Close up shop
+    browser.quit()
+    if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+        print "--> Stopping Display"
+        display.stop()
+    
+
 def claim_mulligan(username, password):
     """
     string string -> None
 
-    Creates a bot with username and password and then claims the bots claim_mulligan
+    Creates a bot with username and password and then claims the bots mulligan
 
-    Assumes browser is already launched
+    Bot launches and closes its own display and browser
     """
     bot = Bot(str(username), password)
     bot.claim_mulligan()
@@ -247,7 +145,6 @@ def main(N):
                 if not accountMade:
                     password = 'beatthestreak1'
                     make_espn_bts_account(username, password)
-                    browser.quit()
                     accountMade = True
                 ## Claim the bots mulligan 
                 if not mulliganClaimed:
@@ -293,11 +190,6 @@ if __name__ == '__main__':
     """
     Usage: ./accounts.py N
     """
-     ## webdriver needs a display to run. This sets up a virtual "fake" one
-    if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
-        print "--> Starting Display"
-        display = Display(visible=0, size=(1024, 768))
-        display.start()
     assert len(sys.argv) == 2
     
     numAccounts = int(sys.argv[1])
@@ -314,7 +206,3 @@ if __name__ == '__main__':
                   blockSize, origCount-numAccounts, origCount) 
             main(blockSize)
             numAccounts -= blockSize
-
-    if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
-        print "--> Stopping Display"
-        display.stop()
