@@ -194,7 +194,7 @@ if __name__ == '__main__':
     
     numAccounts = int(sys.argv[1])
     origCount = numAccounts
-    # make accounts in sets of 50 so that in case something bad happens,
+    # make accounts in sets of 20 so that in case something bad happens,
     #  we dont lose e.g 1000 accounts
     blockSize = 20
     while numAccounts > 0:

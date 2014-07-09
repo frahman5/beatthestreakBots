@@ -6,41 +6,42 @@ from config import ADMIN, PASSWORD
 from handlers import TlsSMTPHandler
 from filepath import Filepath
 
-
-class logErrors(object):
+class smoothBotError(object):
     """
+    decorator for Bot functions. If any bot method throws an exception, 
+    the bot's browser quits, and the exception is reraised so it can pass through
+    to the upper-level logging logic
+    """ 
+    def __init__(self, f):
+        self.f = f
 
-    function -> function
-    Wraps a function such that if there is an error during the course
-    of the function execution, an email is sent to admin Email, and
-    the errors are logged to btsReal/log.txt
-    """
-    def __init__(self, test=False):
-        self.test = test
+    def __get__(self, instance, owner):
+        """ Supports instance methods """
+        self.cls = owner
+        self.obj = instance
 
-    def __call__(self, f):
-        ## Create logger that handles emails and file logging
-        logger = logging.getLogger()
-            # handler to send emails
-        smtpHandler = TlsSMTPHandler(
-            mailhost=("smtp.gmail.com", 587), 
-            fromaddr=ADMIN,
-            toaddrs=(ADMIN,),
-            subject=u'Beat the streak error!', 
-            credentials=(ADMIN, PASSWORD))
-             # handler to write to logs
-        fileHandler = logging.FileHandler(Filepath.get_log_file(test=self.test))
-        formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-        fileHandler.setFormatter(formatter)
-             # add handlers to logger
-        logger.addHandler(smtpHandler)
-        logger.addHandler(fileHandler)
+        return self.__call__
 
-        @wraps(f) # So that the .__name__ and .__doc__ of f don't change
+    def __call__(self):
+        @wraps(self.f) # So that the .__name__ and .__doc__ of f don't change
         def wrapper(*args, **kwargs):
             try:
-                f(*args, **kwargs)
-            except Exception as e:
-                logger.error(e)
-
+                self.f.__call__(*args, **kwargs)
+            except:
+                self.obj.quit_browser() # also closes display, if appropriate
+                raise
         return wrapper
+
+# def smoothBotError(func):
+#     @wraps(func) # So that the .__name__ and .__doc__ of f don't change
+#     def decorator(self, *args, **kwargs):
+#         print 'instance %s of class %s is now decorated whee!' % (
+#            self.username, self.__class__
+#         )
+#         try:
+#             func(*args, **kwargs)
+#         except:
+#             self.quit_browser() # also closes display, if appropriate
+#             raise
+
+#         return decorator

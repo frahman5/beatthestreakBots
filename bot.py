@@ -9,12 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from datetime import datetime, timedelta
 
-
 from exception import NoPlayerFoundException, SameNameException
-from decorators import logErrors
 from config import ROOT
-
-
 
 class Bot(object):
     ## make sure you logout after logging in. 
@@ -52,7 +48,6 @@ class Bot(object):
         if self.dev:
             self.today = self.today + timedelta(days=1)
 
-        
         # Create a logger so that we don't get blasted with unnecessary info
         # on every error in a test suite. Instead, we only get high priority shit
         seleniumLogger = logging.getLogger('selenium.webdriver.remote.remote_connection')
@@ -68,23 +63,6 @@ class Bot(object):
             'hou', 'nym', 'cin', 'sd', 'tex', 'det', 'sea', 'sf', 'col',
             'pit', 'laa', 'wsh', 'chc', 'bos', 'tb', 'ari', 'atl', 
             'mil', 'min', 'kc', 'bal')
-        # self.teams = {
-        #     'Los Angeles Angels': 'ana', 'Baltimore Orioles': 'bal', 
-        #     'Boston Red Sox': 'bos', 'Chicago White Sox': 'cws', 
-        #     'Cleveland Indians': 'cle', 'Detroit Tigers': 'det',
-        #     'Houston Astros': 'hou',  'Kansas City Royals': 'kc', 
-        #     'Minnesota Twins': 'min', 'New York Yankees': 'nyy',
-        #     'Oakland Athletics': 'oak', 'Seattle Mariners': 'sea',
-        #     'Tampa Bay Rays': 'tb', 'Texas Rangers': 'tex',
-        #     'Toronto Blue Jays': 'tor', 'Arizona Diamondbacks': 'ari',
-        #     'Atlanta Braves': 'atl', 'Chicago Cubs': 'chc',
-        #     'Cincinnati Reds': 'cin',  'Colorado Rockies': 'col',
-        #     'Los Angeles Dodgers': 'la', 'Miami Marlins': 'mia',
-        #     'Milwaukee Brewers': 'mil',  'New York Mets': 'nym',
-        #     'Philadelphia Phillies': 'phi', 'Pittsburgh Pirates': 'pit',
-        #     'San Diego Padres': 'sd', 'San Francisco Giants': 'sf',
-        #     'St. Louis Cardinals': 'stl', 'Washington Nationals': 'was'
-        #     }
 
     def choose_players(self, p1=(), p2=()):
         """
@@ -162,6 +140,9 @@ class Bot(object):
                 str( playerInfo.find_element_by_class_name('team').text).lower()
                           )  
             recommendedPlayers.append(playerTuple)
+
+        ## Close up shop
+        self.quit_browser()
 
         # tuplify the list and return it
         return tuple(recommendedPlayers)
@@ -338,13 +319,13 @@ class Bot(object):
                    if elem.get_attribute('class') == 'remove-action player-row']
         time.sleep(3)
 
-    def _quit_browser(self):
+    def quit_browser(self):
         """
         Closes self.browser
         """
+        self.browser.quit()
         if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
             self.display.stop()
-        self.browser.quit()
             
     def _get_chosen_players(self):
         """
