@@ -1,0 +1,93 @@
+1) N globalSeasonBatAveP minPA serial-deterministic static 
+    Parameters: simYear, batAveYear, N, P, minPA, doubleDown=True|False
+      N: N accounts are created
+      globalSeasonBatAveP minPA: P "globally" top players with respect to season 
+         batting average in a given season are calculated at the start of 
+         the simulation. Players only qualify if they have more plate 
+         appearances than minPA
+      serial deterministic: Each day, those P players are distributed to the 
+         N accounts deterministically, by assigning all P players in order from 
+         top batting average to lowest batting average to bots with lowest to 
+         highest index, and repeating players if N is greater than P
+      static: For the duration of the simulation, all bots either consisttently
+         play singleDowns or doubleDonws
+
+    Example: 
+       Parameters: 2009, 2008, 20, 10, 500 (singleDown)
+
+       20 accounts are created. the 10 players with top 2008 season batting
+       averages and greater than or equal to 500 plate appearances are calculated. 
+       On a given day, if e.g 7 (p1-p7) of the top 10 playres are active, 
+       bots 1-20 are assigned players as follows"
+          b1: p1   b6: p6   b11:p4   b16:p2
+          b2: p2   b7: p7   b12:p5   b17:p3
+          b3: p3   b8: p1   b13:p6   b18:p4
+          b4: p4   b9: p2   b14:p7   b19:p5
+          b5: p5   b10: p3  b15:p1   b20:p6
+
+2) N P:globalSeasonBatAve-minPA Random Static
+    Parameters: simYear, batAveYear, N, P, minPA, doubleDown=True|False
+      N: N accounts are created
+      globalSeasonBatAveP minPA: P "globally" top players with respect to season 
+         batting average in a given season are calculated at the start of 
+         the simulation. Players only qualify if they have more plate 
+         appearances than minPA
+      Random: Each day, those P players are distributed to the 
+         N accounts randomly. 
+      Static: Each day, all bots either do a singledown play or a doubledown play
+
+       Example: See Above (method 1), except randomly distribute playres to bots
+
+3) N P:(globalSeasonBatAve-minPA)&(perGameERA-minERA) serial-deterministic static
+    Parameters: simYear, batAveYear, N, P, minPA, minERA, douleDown=True|False
+        N: N accounts are created
+        P:(globalSeasonBatAve-minPA)&(perGameERA-minERA): P "globally" top players
+            with respect to season batting average in a given season are calculated at
+            the start of the simulation. Players only qualify if they have more
+            plate apperances than minPA. To be eligible to be picked by an account on 
+            a given day, the opposing starting pitcher must have had an ERA ON THAT DAY
+            that is higher than minERA.
+       serial-deterministic: Each day, the players that qualify are distributed to the 
+         N accounts deterministically, by assigning all players in order from 
+         top batting average to lowest batting average to bots with lowest to 
+         highest index, and repeating players if necessary. 
+       Static: Each day, all bots either do a singledown play or a doubledown play
+
+    Example:
+        Parameters: 2010, 2009, 20, 10, 400, 3.0 (singleDown)
+
+        20 accounts are created; the top 10 players with respect to 2009 season batting average
+        that had more than 400 plate appearances are calculated and stored. On a given day, 
+        if e.g 7 of the top 10 players are active and 4 of those 7 are facing pitchers with 
+        in-season ERAs greater than 3.0, accounts 1-20 are assigned players as follows:
+            b1: p1   b6: p2   b11:p3   b16:p4
+            b2: p2   b7: p3   b12:p4   b17:p1
+            b3: p3   b8: p4   b13:p1   b18:p2
+            b4: p4   b9: p1   b14:p2   b19:p3
+            b5: p1   b10: p2  b15:p3   b20:p4
+4) N P:(globalSeasonBatAve-minPA)&(perGameERA-minERA) Random Static
+     Parameters: simYear, batAveYear, N, P, minPA, minERA, doubleDown=True|False
+        N: N accounts are created
+        P:(globalSeasonBatAve-minPA)&(perGameERA-minERA): P "globally" top players
+            with respect to season batting average in a given season are calculated at
+            the start of the simulation. Players only qualify if they have more
+            plate apperances than minPA. To be eligible to be picked by an account on 
+            a given day, the opposing starting pitcher must have had an ERA ON THAT DAY
+            that is higher than minERA.
+        Random: Each day, qualifying playres are distributed to the N accounts randomly. 
+        Static: Each day, all bots either do a singledown play or a doubledown play
+
+    Example: See above (method 3), except randomly distribute playres to bots
+
+5) N P:MLB-Recommended Random Random
+     Parameters: Production strategy
+     N: N Accounts are created
+     P:MLB-Recommended: Which P players are "recommended" by the MLB
+        BTS website are elected to be the eligible players
+     Random: Each day, qualifying players are distributed to the N accounts randomly
+     Random: Each day, it is randomly decided whether or not a bot will double down
+
+
+
+
+

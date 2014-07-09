@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 from exception import NoPlayerFoundException, SameNameException
@@ -19,8 +19,7 @@ from config import ROOT
 class Bot(object):
     ## make sure you logout after logging in. 
 
-    # @logErrors
-    def __init__(self, username, password):
+    def __init__(self, username, password, dev=False):
         """
         string string -> None
             username: str | username on beat the streak
@@ -29,6 +28,9 @@ class Bot(object):
             pageTitles: dict | dictionary of page titles for key pages
             teams: dict | keys: team full names (e.g Boston Red Sox), values:
                3 digit abbrevations used in beatthestreak html code
+            dev: Indicates we are using this in dev mode, which changes
+               "today" to "tomorrow", so that we don't run into the issue
+               of player selections becoming locked
 
         Instantiates the bot, which represents an account
         on MLB's beat the streak
@@ -41,36 +43,49 @@ class Bot(object):
             self.display = Display(visible=0, size=(1024, 768))
             self.display.start()
 
+        ## Set core attributes
         self.username = username
         self.password = password
         self.browser = webdriver.Chrome()
         self.today = datetime.today()
+        self.dev = dev
+        if self.dev:
+            self.today = self.today + timedelta(days=1)
+
+        
+        # Create a logger so that we don't get blasted with unnecessary info
+        # on every error in a test suite. Instead, we only get high priority shit
         seleniumLogger = logging.getLogger('selenium.webdriver.remote.remote_connection')
-        # Only display possible problems
         seleniumLogger.setLevel(logging.WARNING)
 
+           # used to check if we are on the right page at the right time
         self.pageTitles = {
             'login':'Account Management - Login/Register | MLB.com: Account', 
             'picks': 'Beat The Streak | MLB.com: Fantasy'}
-        self.teams = {
-            'Los Angeles Angels': 'ana', 'Baltimore Orioles': 'bal', 
-            'Boston Red Sox': 'bos', 'Chicago White Sox': 'cws', 
-            'Cleveland Indians': 'cle', 'Detroit Tigers': 'det',
-            'Houston Astros': 'hou',  'Kansas City Royals': 'kc', 
-            'Minnesota Twins': 'min', 'New York Yankees': 'nyy',
-            'Oakland Athletics': 'oak', 'Seattle Mariners': 'sea',
-            'Tampa Bay Rays': 'tb', 'Texas Rangers': 'tex',
-            'Toronto Blue Jays': 'tor', 'Arizona Diamondbacks': 'ari',
-            'Atlanta Braves': 'atl', 'Chicago Cubs': 'chc',
-            'Cincinnati Reds': 'cin',  'Colorado Rockies': 'col',
-            'Los Angeles Dodgers': 'la', 'Miami Marlins': 'mia',
-            'Milwaukee Brewers': 'mil',  'New York Mets': 'nym',
-            'Philadelphia Phillies': 'phi', 'Pittsburgh Pirates': 'pit',
-            'San Diego Padres': 'sd', 'San Francisco Giants': 'sf',
-            'St. Louis Cardinals': 'stl', 'Washington Nationals': 'was'
-            }
+           # used to check that we don't enter a bogus team name
+        self.teams = (
+            'mia', 'cws', 'nyy', 'lad', 'tor', 'phi', 'cle', 'stl', 'oak', 
+            'hou', 'nym', 'cin', 'sd', 'tex', 'det', 'sea', 'sf', 'col',
+            'pit', 'laa', 'wsh', 'chc', 'bos', 'tb', 'ari', 'atl', 
+            'mil', 'min', 'kc', 'bal')
+        # self.teams = {
+        #     'Los Angeles Angels': 'ana', 'Baltimore Orioles': 'bal', 
+        #     'Boston Red Sox': 'bos', 'Chicago White Sox': 'cws', 
+        #     'Cleveland Indians': 'cle', 'Detroit Tigers': 'det',
+        #     'Houston Astros': 'hou',  'Kansas City Royals': 'kc', 
+        #     'Minnesota Twins': 'min', 'New York Yankees': 'nyy',
+        #     'Oakland Athletics': 'oak', 'Seattle Mariners': 'sea',
+        #     'Tampa Bay Rays': 'tb', 'Texas Rangers': 'tex',
+        #     'Toronto Blue Jays': 'tor', 'Arizona Diamondbacks': 'ari',
+        #     'Atlanta Braves': 'atl', 'Chicago Cubs': 'chc',
+        #     'Cincinnati Reds': 'cin',  'Colorado Rockies': 'col',
+        #     'Los Angeles Dodgers': 'la', 'Miami Marlins': 'mia',
+        #     'Milwaukee Brewers': 'mil',  'New York Mets': 'nym',
+        #     'Philadelphia Phillies': 'phi', 'Pittsburgh Pirates': 'pit',
+        #     'San Diego Padres': 'sd', 'San Francisco Giants': 'sf',
+        #     'St. Louis Cardinals': 'stl', 'Washington Nationals': 'was'
+        #     }
 
-    # @logErrors
     def choose_players(self, p1=(), p2=()):
         """
         TupleOfStrings TupleOfStrings -> None
@@ -91,14 +106,14 @@ class Bot(object):
         assert len(p1) == 3
         for item in p1:
             assert type(item) == str
-        assert p1[2] in self.teams.keys()
+        assert p1[2] in self.teams
            # p2 should be of length 0 or 3, and in the later case contain strings
            # and have a valid team
         assert len(p2) in (0,3)
         if len(p2) == 3:
             for item in p2:
                 assert type(item) == str
-            assert p2[2] in self.teams.keys()
+            assert p2[2] in self.teams
         
         # Reset selections and then choose players
         print "------> Removing any currently selected players"
@@ -114,10 +129,42 @@ class Bot(object):
                       if len(player) != 0}
         assert set(self._get_chosen_players()) == playerSet
 
-        # Close up shop
-        self.browser.quit()
+        # Close up shop, unless we're devving, in case we want to keep the 
+        # screen open for testing
+        if not self.dev:
+            self.browser.close()
 
-    # @logErrors
+    def get_todays_recommended_players(self):
+        """
+        None -> TupleOfTupleOfStrings
+
+        Returns a tuple of players (firstName, lastName, teamAbbrev) corresponding
+        to the players recommended by MLB today
+        """
+        recommendedPlayers = []
+
+        # Make sure we are on the make picks page and check that the 
+        # recommendedPlayers player grid has dropped down
+        self._get_player_selection_dropdown()
+        WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.ID, 'bts-players-grid')))
+
+        # get rows correspodning to recommended players
+        playerGrid = self.browser.find_element_by_id('bts-players-grid')
+        playerRows = playerGrid.find_elements_by_tag_name('tr')[1:] # 0th elem is header of table
+
+        # collect information about recommended players
+        for row in playerRows:
+            playerInfo = row.find_element_by_class_name('player-team')
+            playerTuple = (
+                str( playerInfo.find_element_by_class_name('first-name').text), 
+                str( playerInfo.find_element_by_class_name('last-name').text), 
+                str( playerInfo.find_element_by_class_name('team').text).lower()
+                          )  
+            recommendedPlayers.append(playerTuple)
+
+        # tuplify the list and return it
+        return tuple(recommendedPlayers)
     def claim_mulligan(self):
         print "-->Claiming Mulligan for u, p: {0}, {1}\n".format(self.username, self.password)
 
@@ -177,15 +224,12 @@ class Bot(object):
 
         return False
 
-    # @logErrors
     def get_username(self):
         return self.username
 
-    # @logErrors
     def get_password(self): 
         return self.password
 
-    # @logErrors
     def _get_login_page(self):
         """
         Opens a web broswer and navigates to the beat the streak login page
@@ -197,7 +241,6 @@ class Bot(object):
         time.sleep(3)
         assert self.browser.title == self.pageTitles['login']
 
-    # @logErrors
     def _get_make_picks_page(self):
         """
         Logs in to mlb beat the streak site
@@ -224,13 +267,9 @@ class Bot(object):
         submit = WebDriverWait(self.browser, 10).until(
             EC.presence_of_element_located((By.NAME, 'submit')))
         submit.click()
-        # self.browser.find_element_by_id('login_email').send_keys(self.username)
-        # self.browser.find_element_by_id('login_password').send_keys(self.password)
-        # self.browser.find_element_by_name('submit').click()
         time.sleep(3)
         assert self.browser.title == self.pageTitles['picks']
 
-    # @logErrors
     def _click_make_pick_today(self):
         """
         Clicks on make pick for today's date
@@ -245,7 +284,6 @@ class Bot(object):
         todayPlayerInfoRow.click()
         time.sleep(3)
 
-    # @logErrors
     def _get_player_selection_dropdown(self):
         """
         Gets the player selection dropdown box. Should be used from the make picks
@@ -260,7 +298,6 @@ class Bot(object):
         else:
             self._click_make_pick_today() # includes a sleep at the end
 
-    # @logErrors
     def _reset_selections(self):
         """
         If this bot has already made some selections today, removes
@@ -297,7 +334,6 @@ class Bot(object):
                    if elem.get_attribute('class') == 'remove-action player-row']
         time.sleep(3)
 
-    # @logErrors
     def _quit_browser(self):
         """
         Closes self.browser
@@ -306,7 +342,6 @@ class Bot(object):
             self.display.stop()
         self.browser.quit()
             
-    # @logErrors
     def _get_chosen_players(self):
         """
         None -> Tuple
@@ -348,8 +383,6 @@ class Bot(object):
 
         return todayRow
 
-
-    # @logErrors
     def __choose_single_player(self, player, doubleDown=False):
         """
         TupleOfStrings bool -> None
@@ -361,7 +394,7 @@ class Bot(object):
         ## Type checking
         assert type(player) == tuple
         assert len(player) == 3
-        assert player[2] in self.teams.keys()
+        assert player[2] in self.teams
 
         firstName, lastName, team = player
 
@@ -375,8 +408,7 @@ class Bot(object):
         time.sleep(3)
             # click on desired team
         team = WebDriverWait(self.browser, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, self.teams[team])))
-        # team = self.browser.find_element_by_class_name(self.teams[team])
+            EC.presence_of_element_located((By.CLASS_NAME, team)))
         team.click()
         time.sleep(3)
 
