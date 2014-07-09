@@ -22,3 +22,7 @@ class TestFilepath(unittest.TestCase):
 		self.assertEqual(F.get_log_file(test=True), testLog)
 		# Case 2: Production
 		self.assertEqual(F.get_log_file(), prodLog)
+
+	def test_get_minion_account_file(self):
+		self.assertEqual( F.get_minion_account_file(sN=1, vMN=3), 
+						  ROOT + '/minionAccountFiles/sN=1,vMN=3.xlsx' )

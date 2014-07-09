@@ -1,9 +1,7 @@
-import os            # for error handling
-import sys           # for error handling
 import random        # random player selections
-import logging       # error logging
 import pandas as pd  # excel spreadsheet manipulation
 
+from types import FunctionType # to type check function inputs that we expect to be functions
 from datetime import datetime # to get today's date
 
 from filepath import Filepath 
@@ -11,100 +9,97 @@ from bot import Bot
 from config import ROOT
 from exception import NoPlayerFoundException, FailedAccountException, \
                       FailedUpdateException
+from errorlogging import getLogger, logError, logFailedAccounts
 
-def getLogger():
-    ## Create logger that handles file logging
-    logger = logging.getLogger()
-         # handler to write to logs
-    fileHandler = logging.FileHandler(Filepath.get_log_file())
-    formatter = logging.Formatter('%(asctime)s %(message)s\n')
-    fileHandler.setFormatter(formatter)
-         # add handlers to logger
-    logger.addHandler(fileHandler)
-
-    return logger
-
-def logError(username, password, p1, p2, exception, logger):
+def log_updated_accounts(updatedAccounts):
     """
-    string string TupleOfStrings TupleOfStrings Exception logger -> None
-        username: str | username of account being updated at the time of exception
-        password: str | password of account being updated at the time of exception
-        p1: TupleOfStrings | (firstName, lastName, team) of first player
-            being added to account at time of exception
-        p2: TupleOfStrings | (firstName, lastName, team) of second player 
-            being added to account at time of exception (possible empty)
-        exception: Exception | the exception raised 
-        logger: logger | logger to use to log errors
-
-    Logs the error to file
+    ListOfTuples -> None
+       updatedAccounts: ListOfTuples | A list of the accounts that were
+       updated in the choosePlayers function. Format: 
+           (username, p1, p2) 
+       where p2 and p2 are TuplesOfStrings of format 
+           (firstName, lastName, teamAbbreviation)
     """
-       # we don't check the type of exception because i don't know how to do that
-    assert type(username) == str
-    assert type(password) == str
-    assert type(p1) == tuple
-    assert type(p2) == tuple
-    assert type(logger) == logging.RootLogger
+    ## Get the full production spreadsheet
+    today = str(datetime.today().month) + '-' + str(datetime.today().day)
+    fullDF = pd.read_excel(Filepath.get_accounts_file(), sheetname='Production')
 
-    logger.error("Unit account update failure: {}, {}".format(username, password))
-    logger.error("    p1, p2: {}, {}".format(p1, p2))
-    logger.error(exception, exc_info=True)
+    ## Create the series corresponding to today's player selections
+    if today in fullDF.columns: 
+        accountInfoL = list(fullDF[today])
+        del fullDF[today]
+    else:
+        accountInfoL = ['' for i in range(len(fullDF))]
+    for updatedAccount in updatedAccounts:
+        accountIndex = fullDF.Email[fullDF.Email == updatedAccount[0]].index[0]
+            # make sure shit is lined up correctly
+        accountInfoL[accountIndex] = 'Done. 1: {}, 2: {}'.format(
+                                         updatedAccount[1], updatedAccount[2])
 
-def logFailedAccounts(failedAccounts, numTotalAccounts, logger):
+    ## Put the dataframe together and print it to file
+    newDF = pd.concat([fullDF, pd.Series(accountInfoL, name=today)], axis=1)
+    newDF.to_excel( Filepath.get_accounts_file(), 
+                    sheet_name='Production', 
+                    index=False # we don't want an extra column of row indices
+                  )
+def choosePlayers(**kwargs):
     """
-    list int logger -> None
-       failedAccounts: ListOfTuples | Each Tuple is a (username, password)
-           if a failed Account
-       numTotalAccounts: int | the total number of accounts that we attempted
-           to update
-       logger: logger | logger to use to log errors
+    kwargs -> None
+        kwargs;
+        funcDict(REQUIRED): dict | a dictionary with key, value pairs of:
+            strategyNumber: (selection_func, distribution_func). See below
+            for descriptions of selection_func and distribution_func
+                selection_func: Function | Takes today's date, 
+                   returns a tuple of players eligible for distribution 
+                   to the various accounts.
+                distribution_func: Function | Takes a bot, and a list of 
+                   distribution-eligible players, and assigns the appropriate 
+                   players to that bot. Returns a tuple (p1, p2) of the 
+                   players that were assigned to the bot
+        sN(REQUIRED): int | "strategy number" (see strategyNumber.txt)
+        vMN(REQUIRED): int | Indicates which of n virtual machines responsible
+           for executing sN is currently calling choosePlayers. For example,
+           we might have 2 VMs responsible for executing strategy 3 for 1000
+           accounts. The first VM will be responsible for the first 500 accounts, 
+           and the second Vm will be responsible for the last 500 accounts.
 
-    Logs the failedAccounts to today's error log in the event that the main 
-    while loop failed to update all players
+    Reads in the accounts from Filepath.get_accounts_file() that correspond
+    to sN, vMN, and then updates those accounts accordingly
     """
-    # check that we got an appropriate input
-    assert len(failedAccounts) != 0
-    assert type(failedAccounts) == list
-    for elem in failedAccounts:
-        assert type(elem) == tuple
-        for thing in elem:
-            assert type(thing) == str
+    ###### Get our arguments: #####
+    funcDict = kwargs['funcDict']
+    sN = kwargs['sN']
+    vMN = kwargs['vMN']
 
-    # log those errors baby
-    logger.error("{} of {} accounts failed".format(
-                    len(failedAccounts), numTotalAccounts))
-    for failedAccount in failedAccounts:
-        logger.error("    U, P: {}, {}".format(failedAccount[0], failedAccount[1]))
-
-def main():
-    ## get an error logger for this run
-    print "\n-->Creating Error Logger"
+    ###### get an error logger #####
+    print "\n--> Creating Error Logger"
     logger = getLogger()
 
-    ## get list of accounts you need
-    print "-->Getting accounts file {}".format(Filepath.get_accounts_file())
+    ##### get list of accounts you need #####
+    print "--> Getting accounts file {}".format(Filepath.get_accounts_file())
+        # read in the master accounts file
     df = pd.read_excel( Filepath.get_accounts_file(), sheetname='Production',
                         parse_cols= 'B,' + # Email (i.e username)
-                                    'D'    # MLBPassword)
-                  )
+                                    'D,'  + # MLBPassword)
+                                    'E,'  + # Strategy
+                                    'F'    # VM
+                       )
+        # parse it down to only include those accounts with this strategy
+        # number and virtual machine number
+    df = df[df.Strategy == sN][df.VM == vMN]
 
-    ## update each of the accounts
-        # list of tuples: (username, firstPlayerChoice, secondPlayerChoice)
-    updatedAccounts=[]
-    somePlayers = [ 
-                    ('Robinson', 'Cano', 'Seattle Mariners'), 
-                    ('Paul', 'Goldschmidt', 'Arizona Diamondbacks'),
-                    ('Giancarlo', 'Stanton', 'Miami Marlins'), 
-                    ('Adam', 'Lind', 'Toronto Blue Jays')
-                  ]
-
+    ###### update each of the accounts #####
+    print "--> Getting today's eligible players"
+    eligiblePlayers = funcDict[sN]['select_func'](datetime.today().date())
+    failedAccounts = [] # in case we fail to update some accounts
+    updatedAccounts = [] # to keep track of which accounts we need to log to file!
     lenDF = len(df)
     numIters = 0
-    failedAccounts = [] # in case we fail to update some accounts
     while len(updatedAccounts) != lenDF:
 
         ## If we've run the loop "too many" times, exit out
         if numIters > (2 * lenDF):
-            for index, username, password in df.itertuples():
+            for index, username, password, sN, vMN in df.itertuples():
                 if username not in updatedUsernames:
                     failedAccounts.append((str(username), str(password)))
             logFailedAccounts(failedAccounts, lenDF, logger)
@@ -114,28 +109,27 @@ def main():
         updatedUsernames = [account[0] for account in updatedAccounts]
 
         ## Update those accounts baby!
-        for index, username, password in df.itertuples():
+        for index, username, password, sN, vMN in df.itertuples():
 
             # don't update the same account twice
             if username in updatedUsernames: 
                 continue
 
-            numIters += 1
             # try to update the account 
+            numIters += 1
             try: 
-                print "\n-->Iteration {} of {}".format(numIters, 2 * lenDF)
-                print "-->Choosing players for account {} of {}. U: {}".format(
-                             index+1, lenDF, username)
+                # print update information
+                print "\n--> Iteration {} of {}".format(numIters, 2 * lenDF)
+                print "--> Choosing players for account {} of {}. U: {}".format(
+                             len(updatedAccounts)+1, lenDF, username)
                 print "------> Accounts Done: {0}({1:.2f}%)".format(
                             len(updatedAccounts), 
                             float(len(updatedAccounts))/float(lenDF))
-                bot = None # in case we throw an exception while constructing Bot
+
+                # make the appropriate bot and update him
+                bot, p1, p2 = (None, None, None) # in case we throw an exception before they get assigned
                 bot = Bot(str(username), str(password))
-                p1 = random.choice(somePlayers)
-                p2 = p1
-                while p1 == p2:
-                    p2 = random.choice(somePlayers)
-                bot.choose_players(p1=p1, p2=p2)
+                p1, p2 = funcDict[sN]['dist_func'](bot, eligiblePlayers)
 
             # this should never happen
             except NoPlayerFoundException as e:
@@ -161,28 +155,54 @@ def main():
 
     ## Update the accounts file to reflect the updates
     print "--> Updating accounts file: {}".format(Filepath.get_accounts_file())
-
-        # Get the full production spreadsheet
-    today = str(datetime.today().month) + '-' + str(datetime.today().day)
-    fullDF = pd.read_excel(Filepath.get_accounts_file(), sheetname='Production')
-    if today in fullDF.columns: # if we had to redo the day, clear the column from the DF
-        del fullDF[today]
-
-        # Create the series correspodning to today's player selections
-    accountInfoL = [ 'NOT DONE' for i in range(len(fullDF)) ]
-    for updatedAccount in updatedAccounts:
-        accountIndex = fullDF.Email[fullDF.Email == updatedAccount[0]].index[0]
-            # make sure shit is lined up correctly
-        accountInfoL[accountIndex] = 'Done. 1: {}, 2: {}'.format(
-                                         updatedAccount[1], updatedAccount[2])
-
-        # Put the dataframe together and print it to file
-    newDF = pd.concat([fullDF, pd.Series(accountInfoL, name=today)], axis=1)
-    newDF.to_excel( Filepath.get_accounts_file(), 
-                    sheet_name='Production', 
-                    index=False # we don't want an extra column of row indices
-                  )
+    log_updated_accounts(updatedAccounts)
 
 
 if __name__ == '__main__':
-    main()
+    """
+    Usage:
+        1) python chooseplayers.py -sN={strategyNumber} -vMN={virtualMachineNumber}
+    """
+    import re
+    import sys
+
+    from selectfunctions import todaysRecommendedPicks
+    from distributionfunctions import randDownRandPlayers
+
+    ## What strategyNumber and virtualMachine Number are we using?
+    options = [arg for arg in sys.argv if '-' in arg]
+
+        # Get the strategy number
+    sNPattern = re.compile(r"""
+        -sN=            # strategy number
+        [1-5]           # method number must be in (1, 2, 3, 4, 5)
+        """, re.VERBOSE)
+    matches = [ sNPattern.match(option) for option in 
+                options if sNPattern.match(option)]
+    print [match.string for match in matches]
+    assert len(matches) == 1
+    sN = int(matches[0].string[4:])
+    options.remove(matches[0].string)
+
+        # Get the virtualMachine Number
+    vMNPattern = re.compile(r"""
+        -vMN=            # virtual machine number
+        [1-9]            # first digit must be nonzero
+        [0-9]*           # arbitrary number of digits
+        """, re.VERBOSE)
+    matches = [ vMNPattern.match(option) for option in 
+                options if vMNPattern.match(option)]
+    assert len(matches) == 1
+    vMN = int(matches[0].string[5:])
+    options.remove(matches[0].string)
+
+    ## Check that we didn't get any bogus options:
+    if len(options) != 0:
+        raise KeyError("Invalid options: " + str(options))
+
+    funcDict = {
+        5: { 'select_func': todaysRecommendedPicks, 
+             'dist_func'  : randDownRandPlayers }
+                }
+    print "\n******Choosing players for strategy, VM: {}, {}******".format(sN, vMN)
+    choosePlayers( funcDict=funcDict, sN=sN, vMN=vMN )

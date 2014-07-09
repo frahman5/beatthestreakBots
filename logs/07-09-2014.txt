@@ -1,0 +1,86 @@
+2014-07-09 01:15:04,528 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-09 01:15:04,529     p1, p2: None, None
+
+2014-07-09 01:15:04,529 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 101, in choosePlayers
+    p1, p2 = funcDict[sN]['dist_func'](bot, eligiblePlayers)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 26, in randDownRandPlayers
+    bot.choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 102, in choose_players
+    assert p1[2] in self.teams.keys()
+AssertionError
+2014-07-09 01:15:06,424 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-09 01:15:06,425     p1, p2: None, None
+
+2014-07-09 01:15:06,425 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 101, in choosePlayers
+    p1, p2 = funcDict[sN]['dist_func'](bot, eligiblePlayers)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 26, in randDownRandPlayers
+    bot.choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 102, in choose_players
+    assert p1[2] in self.teams.keys()
+AssertionError
+2014-07-09 01:15:08,179 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-09 01:15:08,180     p1, p2: None, None
+
+2014-07-09 01:15:08,180 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 101, in choosePlayers
+    p1, p2 = funcDict[sN]['dist_func'](bot, eligiblePlayers)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 26, in randDownRandPlayers
+    bot.choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 102, in choose_players
+    assert p1[2] in self.teams.keys()
+AssertionError
+2014-07-09 01:15:08,250 1 of 1 accounts failed
+
+2014-07-09 01:15:08,250     U, P: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-09 01:48:44,644 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-09 01:48:44,644     p1, p2: None, None
+
+2014-07-09 01:48:44,644 tuple index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 130, in choosePlayers
+    p1, p2 = funcDict[sN]['dist_func'](bot, eligiblePlayers)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 17, in randDownRandPlayers
+    p1 = random.choice(eligiblePlayers)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/random.py", line 274, in choice
+    return seq[int(self.random() * len(seq))]  # raises IndexError if seq is empty
+IndexError: tuple index out of range
+2014-07-09 01:48:46,406 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-09 01:48:46,406     p1, p2: None, None
+
+2014-07-09 01:48:46,406 tuple index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 130, in choosePlayers
+    p1, p2 = funcDict[sN]['dist_func'](bot, eligiblePlayers)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 17, in randDownRandPlayers
+    p1 = random.choice(eligiblePlayers)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/random.py", line 274, in choice
+    return seq[int(self.random() * len(seq))]  # raises IndexError if seq is empty
+IndexError: tuple index out of range
+2014-07-09 01:48:49,217 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-09 01:48:49,217     p1, p2: None, None
+
+2014-07-09 01:48:49,217 tuple index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 130, in choosePlayers
+    p1, p2 = funcDict[sN]['dist_func'](bot, eligiblePlayers)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 17, in randDownRandPlayers
+    p1 = random.choice(eligiblePlayers)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/random.py", line 274, in choice
+    return seq[int(self.random() * len(seq))]  # raises IndexError if seq is empty
+IndexError: tuple index out of range
+2014-07-09 01:48:49,380 1 of 1 accounts failed
+
+2014-07-09 01:48:49,380     U, P: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+

@@ -25,10 +25,12 @@ class TestBot(unittest.TestCase):
         if self.id() in testsWithSAndDBots:
             self.dBotVals = df[df.ID == 'doubleBot']
             self.sBotVals = df[df.ID == 'singleBot']
-            self.dBot = Bot(str(self.dBotVals.Email.item()), 
-                        str(self.dBotVals.MLBPassword.item()))
-            self.sBot = Bot(str(self.sBotVals.Email.item()), 
-                            str(self.sBotVals.MLBPassword.item()))
+            self.dBot = Bot( str(self.dBotVals.Email.item()), 
+                             str(self.dBotVals.MLBPassword.item()), 
+                             dev=True)
+            self.sBot = Bot( str(self.sBotVals.Email.item()), 
+                             str(self.sBotVals.MLBPassword.item()), 
+                             dev=True)
             self.sBot.browser.set_window_position(34, 52) # for accessibility
         else:
             self.sBot = None
@@ -39,16 +41,18 @@ class TestBot(unittest.TestCase):
         self.eBotVals = df[df.ID == 'emptyBot']
         print "eBotEmail: " + str(self.eBotVals.Email.item())
         print "eBotPassword: " + str(self.eBotVals.MLBPassword.item())
-        self.eBot = Bot(str(self.eBotVals.Email.item()), 
-                        str(self.eBotVals.MLBPassword.item()))
+        self.eBot = Bot( str(self.eBotVals.Email.item()), 
+                         str(self.eBotVals.MLBPassword.item()), 
+                         dev=True)
         self.eBot.browser.set_window_position(64, 82) # for accessibility
 
     def tearDown(self):
         self.eBot._quit_browser()
         if self.sBot:
-            self.sBot._quit_browser()
+                self.sBot._quit_browser()
+
         if self.dBot:
-            self.dBot._quit_browser()
+                self.dBot._quit_browser()
 
     def test_has_claimed_mulligan(self):
         self.assertTrue(self.sBot.has_claimed_mulligan())
@@ -285,3 +289,17 @@ class TestBot(unittest.TestCase):
                      botString, selString)
             answer = raw_input()
 
+    def test_get_todays_recommended_players(self):
+        self.eBot._get_make_picks_page() # give the tester somehwere to look
+
+        recommendedPlayers = []
+        while True:
+            answer = raw_input("Enter the next recommended player for tomorrow" + 
+                " Format: (firstName, lastName, teamAbbrevation). If there" + 
+                " are no more players, enter 'done'\n")
+            if answer == 'done':
+                break
+            recommendedPlayers.append(tuple(answer.split()))
+
+        self.assertEqual( set(recommendedPlayers), 
+                          set(self.eBot.get_todays_recommended_players()) )
