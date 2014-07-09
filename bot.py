@@ -40,6 +40,7 @@ class Bot(object):
 
         ## webdriver needs a display to run. This sets up a virtual "fake" one
         if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+            print "--> Starting BOT display"
             self.display = Display(visible=0, size=(1024, 768))
             self.display.start()
 
@@ -195,7 +196,7 @@ class Bot(object):
         time.sleep(10)
         self.browser.quit()
         if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
-            print "--> Stopping Display"
+            print "--> Stopping BOT Display"
             self.display.stop()
 
     def has_claimed_mulligan(self):
