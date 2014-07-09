@@ -1,7 +1,7 @@
+import os
+
 from config import ROOT
 from datetime import datetime
-import logging
-import logging.handlers
 
 class Filepath(object):
 
@@ -39,3 +39,25 @@ class Filepath(object):
             return self.get_root() + '/tests/logs/' + today + '.txt'
         else:
             return self.get_root() + '/logs/' + today + '.txt'
+
+    @classmethod
+    def get_minion_account_file(self, sN=None, vMN=None):
+        """
+        int int -> None
+           sN: int | strategy number
+           vMN: int | virtual machine number
+        Returns the path of the .xlsx file that holds account info
+        for accounts operating under strategy number sN and controlled
+        by virtual machine vMN
+        """
+        ## Type checking
+        assert type(sN) == int
+        assert type(sN) == int
+
+        ## If the dir doesn't exist, create it
+        dirpath = self.get_root() + '/minionAccountFiles'
+        if not os.path.isdir(dirpath):
+            os.mkdir(dirpath)
+
+        ## Return the formmatted file name for this specific sN and vMN
+        return dirpath + '/sN={},vMN={}.xlsx'.format(sN, vMN)

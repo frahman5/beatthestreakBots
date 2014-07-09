@@ -9,6 +9,8 @@ def randDownRandPlayers(bot, eligiblePlayers):
     players to assign to bot. Returns the assigned players
     """
     import random
+    
+    assert len(eligiblePlayers) != 0
 
     # Pseudo-randomly choose whether or not to doubleDown
     doubleDown = random.choice((True, False))

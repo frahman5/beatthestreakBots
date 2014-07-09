@@ -11,6 +11,37 @@ from exception import NoPlayerFoundException, FailedAccountException, \
                       FailedUpdateException
 from errorlogging import getLogger, logError, logFailedAccounts
 
+def log_updated_accounts(updatedAccounts):
+    """
+    ListOfTuples -> None
+       updatedAccounts: ListOfTuples | A list of the accounts that were
+       updated in the choosePlayers function. Format: 
+           (username, p1, p2) 
+       where p2 and p2 are TuplesOfStrings of format 
+           (firstName, lastName, teamAbbreviation)
+    """
+    ## Get the full production spreadsheet
+    today = str(datetime.today().month) + '-' + str(datetime.today().day)
+    fullDF = pd.read_excel(Filepath.get_accounts_file(), sheetname='Production')
+
+    ## Create the series corresponding to today's player selections
+    if today in fullDF.columns: 
+        accountInfoL = list(fullDF[today])
+        del fullDF[today]
+    else:
+        accountInfoL = ['' for i in range(len(fullDF))]
+    for updatedAccount in updatedAccounts:
+        accountIndex = fullDF.Email[fullDF.Email == updatedAccount[0]].index[0]
+            # make sure shit is lined up correctly
+        accountInfoL[accountIndex] = 'Done. 1: {}, 2: {}'.format(
+                                         updatedAccount[1], updatedAccount[2])
+
+    ## Put the dataframe together and print it to file
+    newDF = pd.concat([fullDF, pd.Series(accountInfoL, name=today)], axis=1)
+    newDF.to_excel( Filepath.get_accounts_file(), 
+                    sheet_name='Production', 
+                    index=False # we don't want an extra column of row indices
+                  )
 def choosePlayers(**kwargs):
     """
     kwargs -> None
@@ -41,11 +72,11 @@ def choosePlayers(**kwargs):
     vMN = kwargs['vMN']
 
     ###### get an error logger #####
-    print "\n-->Creating Error Logger"
+    print "\n--> Creating Error Logger"
     logger = getLogger()
 
     ##### get list of accounts you need #####
-    print "-->Getting accounts file {}".format(Filepath.get_accounts_file())
+    print "--> Getting accounts file {}".format(Filepath.get_accounts_file())
         # read in the master accounts file
     df = pd.read_excel( Filepath.get_accounts_file(), sheetname='Production',
                         parse_cols= 'B,' + # Email (i.e username)
@@ -58,7 +89,7 @@ def choosePlayers(**kwargs):
     df = df[df.Strategy == sN][df.VM == vMN]
 
     ###### update each of the accounts #####
-    print "-->Getting today's eligible players"
+    print "--> Getting today's eligible players"
     eligiblePlayers = funcDict[sN]['select_func'](datetime.today().date())
     failedAccounts = [] # in case we fail to update some accounts
     updatedAccounts = [] # to keep track of which accounts we need to log to file!
@@ -88,9 +119,9 @@ def choosePlayers(**kwargs):
             numIters += 1
             try: 
                 # print update information
-                print "\n-->Iteration {} of {}".format(numIters, 2 * lenDF)
-                print "-->Choosing players for account {} of {}. U: {}".format(
-                             index+1, lenDF, username)
+                print "\n--> Iteration {} of {}".format(numIters, 2 * lenDF)
+                print "--> Choosing players for account {} of {}. U: {}".format(
+                             len(updatedAccounts)+1, lenDF, username)
                 print "------> Accounts Done: {0}({1:.2f}%)".format(
                             len(updatedAccounts), 
                             float(len(updatedAccounts))/float(lenDF))
@@ -124,27 +155,7 @@ def choosePlayers(**kwargs):
 
     ## Update the accounts file to reflect the updates
     print "--> Updating accounts file: {}".format(Filepath.get_accounts_file())
-
-        # Get the full production spreadsheet
-    today = str(datetime.today().month) + '-' + str(datetime.today().day)
-    fullDF = pd.read_excel(Filepath.get_accounts_file(), sheetname='Production')
-    if today in fullDF.columns: # if we had to redo the day, clear the column from the DF
-        del fullDF[today]
-
-        # Create the series corresponding to today's player selections
-    accountInfoL = [ 'NOT DONE' for i in range(len(fullDF)) ]
-    for updatedAccount in updatedAccounts:
-        accountIndex = fullDF.Email[fullDF.Email == updatedAccount[0]].index[0]
-            # make sure shit is lined up correctly
-        accountInfoL[accountIndex] = 'Done. 1: {}, 2: {}'.format(
-                                         updatedAccount[1], updatedAccount[2])
-
-        # Put the dataframe together and print it to file
-    newDF = pd.concat([fullDF, pd.Series(accountInfoL, name=today)], axis=1)
-    newDF.to_excel( Filepath.get_accounts_file(), 
-                    sheet_name='Production', 
-                    index=False # we don't want an extra column of row indices
-                  )
+    log_updated_accounts(updatedAccounts)
 
 
 if __name__ == '__main__':
