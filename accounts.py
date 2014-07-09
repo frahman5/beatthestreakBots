@@ -1,9 +1,10 @@
-#!bvenv/bin/python
+#! /usr/bin/python
 import sys
 import random
 import pandas as pd
 import time
 
+from pyvirtualdisplay import Display
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -11,7 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from bot import Bot
 from filepath import Filepath
-from config import GDUSERNAME, GDPASSWORD, OUTLOOKPW
+from config import GDUSERNAME, GDPASSWORD, OUTLOOKPW, ROOT
 
 ## A globally shared browser for all activites
 browser = None
@@ -292,6 +293,10 @@ if __name__ == '__main__':
     """
     Usage: ./accounts.py N
     """
+     ## webdriver needs a display to run. This sets up a virtual "fake" one
+    if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+        display = Display(visible=0, size=(1024, 768))
+        display.start()
     assert len(sys.argv) == 2
     
     numAccounts = int(sys.argv[1])
@@ -304,7 +309,10 @@ if __name__ == '__main__':
             main(numAccounts)
             break
         else: 
-            print "********** CREATING IN CHUNKS OF {}:. Completed {} of {} ***********".format(
+            print "********** CREATING IN CHUNKS OF {}:.Completed {} of {} ***********".format(
                   blockSize, origCount-numAccounts, origCount) 
             main(blockSize)
             numAccounts -= blockSize
+
+    if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+        display.stop()
