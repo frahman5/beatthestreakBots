@@ -31,6 +31,8 @@ def todaysTopPBatters(**kwargs):
         then only includes players who are facing a starting pitcher with
         ERA >= minERA
     """
+    import logging 
+    
     from pyvirtualdisplay import Display
     from datetime import datetime
     from selenium import webdriver
@@ -54,7 +56,12 @@ def todaysTopPBatters(**kwargs):
         display = Display(visible=0, size=(1024, 768))
         display.start()
     browser = webdriver.Chrome()
- 
+
+    # Create a logger so that we don't get blasted with unnecessary info
+    # on every error in a test suite. Instead, we only get high priority shit
+    seleniumLogger = logging.getLogger('selenium.webdriver.remote.remote_connection')
+    seleniumLogger.setLevel(logging.WARNING) 
+
     players = []
     # if anything happens and we exit prematurely, quit the browser, then reraise
     try:
@@ -82,7 +89,7 @@ def todaysTopPBatters(**kwargs):
             nextPlayer = [ str(name) for name in cells[1].text.split() ]
                 # cell[2].text is player's 3DigitTeamAbbrev
             nextPlayer.append( str( cells[2].text.lower() ) )
-        players.append( tuple(nextPlayer) )
+            players.append( tuple(nextPlayer) )
     except:
         browser.quit()
         if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
@@ -96,4 +103,5 @@ def todaysTopPBatters(**kwargs):
         print "--> Stopping display for get batters"
         display.stop()
 
+    print tuple(players)
     return tuple(players)

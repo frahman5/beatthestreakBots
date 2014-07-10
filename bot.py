@@ -60,7 +60,7 @@ class Bot(object):
         self.teams = (
             'mia', 'cws', 'nyy', 'lad', 'tor', 'phi', 'cle', 'stl', 'oak', 
             'hou', 'nym', 'cin', 'sd', 'tex', 'det', 'sea', 'sf', 'col',
-            'pit', 'laa', 'wsh', 'chc', 'bos', 'tb', 'ari', 'atl', 
+            'pit', 'ana', 'wsh', 'chc', 'bos', 'tb', 'ari', 'atl', 
             'mil', 'min', 'kc', 'bal')
 
     def choose_players(self, p1=(), p2=()):
@@ -133,12 +133,11 @@ class Bot(object):
         # collect information about recommended players
         for row in playerRows:
             playerInfo = row.find_element_by_class_name('player-team')
-            firstName = str( playerInfo.find_element_by_class_name('first-name').text)
-            lastName = str( playerInfo.find_element_by_class_name('last-name').text)
-            teamName = str( playerInfo.find_element_by_class_name('team').text).lower()
-            if teamName == 'laa': # los angeles angels maps to ana in the team selection
-                teamName = 'ana'
-            playerTuple = ( firstName, lastName, teamName )  
+            playerTuple =  ( 
+                str( playerInfo.find_element_by_class_name('first-name').text)
+                str( playerInfo.find_element_by_class_name('last-name').text)
+                str( playerInfo.find_element_by_class_name('team').text).lower()
+                            )  
             recommendedPlayers.append(playerTuple)
 
         ## Close up shop
@@ -386,6 +385,10 @@ class Bot(object):
         assert player[2] in self.teams
 
         firstName, lastName, team = player
+
+        ## Necessary team conversions
+        if team == 'laa': # los angeles angels of anaheim
+            team == 'ana'
 
         ## Make sure the player selection dropdown has been dropped
         self._get_player_selection_dropdown()

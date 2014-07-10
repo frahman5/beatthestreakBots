@@ -51,8 +51,8 @@ class TestBot(unittest.TestCase):
 
         ## Run tests
         today = datetime.datetime.today().date()
-        import pdb
-        pdb.set_trace()
+        # import pdb
+        # pdb.set_trace()
         self.assertEqual( todaysTopPBatters( p=10, 
                                             today=today, 
                                             filt={'minEra':3.0}), 
