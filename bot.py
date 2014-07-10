@@ -1,20 +1,18 @@
-from pyvirtualdisplay import Display
 import time
 import logging
 
+from datetime import datetime, timedelta
+from pyvirtualdisplay import Display
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from datetime import datetime, timedelta
 
 from exception import NoPlayerFoundException, SameNameException
 from config import ROOT
 
 class Bot(object):
-    ## make sure you logout after logging in. 
-
     def __init__(self, username, password, dev=False):
         """
         string string -> None
@@ -135,15 +133,19 @@ class Bot(object):
         # collect information about recommended players
         for row in playerRows:
             playerInfo = row.find_element_by_class_name('player-team')
-            playerTuple = (
-                str( playerInfo.find_element_by_class_name('first-name').text), 
-                str( playerInfo.find_element_by_class_name('last-name').text), 
-                str( playerInfo.find_element_by_class_name('team').text).lower()
-                          )  
+            firstName = str( playerInfo.find_element_by_class_name('first-name').text)
+            lastName = str( playerInfo.find_element_by_class_name('last-name').text)
+            teamName = str( playerInfo.find_element_by_class_name('team').text).lower()
+            if teamName == 'laa': # los angeles angels maps to ana in the team selection
+                teamName = 'ana'
+            playerTuple = ( firstName, lastName, teamName )  
             recommendedPlayers.append(playerTuple)
 
         ## Close up shop
         self.quit_browser()
+        if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+            print "--> Stopping BOT Display"
+            self.display.stop()
 
         # tuplify the list and return it
         return tuple(recommendedPlayers)
