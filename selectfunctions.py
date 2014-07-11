@@ -130,6 +130,8 @@ def _whoIsEligibleToday(players, filt=None, browser=None):
     Assumes a display is open if necessary
     """
     from datetime import datetime, time, timedelta
+    from pytz import timezone
+
         ## type check
     assert type(players) == list
     for thing1, thing2, thing3 in players:
@@ -178,7 +180,8 @@ def _whoIsEligibleToday(players, filt=None, browser=None):
         if timePeriod.lower() == 'pm':
             hour += 12
         gameTimeO = time(hour, minute) 
-        twentyMinFromNow = datetime.now() + timedelta(minutes=20)
+        twentyMinFromNow = datetime.now(timezone('US/Eastern')) + timedelta(minutes=20)
+        print "20 min from now: {}".format(twentyMinFromNow)
         if twentyMinFromNow.time() > gameTimeO:
             activePlayers.remove(player)
             continue
