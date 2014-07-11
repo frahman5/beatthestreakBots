@@ -13,12 +13,16 @@ class Filepath(object):
         return ROOT
 
     @classmethod
+    def get_accounts_dir(self):
+        return self.get_root() + '/accountFiles'
+
+    @classmethod
     def get_accounts_file(self):
         """
         Returns the path of the excel file containing account info
         for emails and beatthestreak accounts on mlb.com
         """
-        return self.get_root() + '/btsAccounts.xlsx'
+        return self.get_accounts_dir() + '/btsAccounts.xlsx'
 
     @classmethod
     def get_test_file(self):
@@ -26,7 +30,7 @@ class Filepath(object):
         Returns the path of the excel file containing account info
         for test accounts on mlb.com
         """
-        return self.get_root() + "/nonProductionBtsAccounts.xlsx"
+        return self.get_accounts_dir()  + "/nonProductionBtsAccounts.xlsx"
 
     @classmethod
     def get_log_file(self, test=False):
@@ -55,7 +59,7 @@ class Filepath(object):
         assert type(sN) == int
 
         ## If the dir doesn't exist, create it
-        dirpath = self.get_root() + '/minionAccountFiles'
+        dirpath = self.get_accounts_dir() + '/minionAccountFiles'
         if not os.path.isdir(dirpath):
             os.mkdir(dirpath)
 

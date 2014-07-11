@@ -1,0 +1,1053 @@
+2014-07-11 17:39:38,064 Unit account update failure: grassfed.rahman.1676@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:39:38,064     p1, p2: None, None
+
+2014-07-11 17:39:38,064 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:39:39,759 Unit account update failure: fossil.water.1459@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:39:39,760     p1, p2: None, None
+
+2014-07-11 17:39:39,760 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:39:41,491 Unit account update failure: grassfed.williams.855@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:39:41,491     p1, p2: None, None
+
+2014-07-11 17:39:41,492 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:39:43,227 Unit account update failure: daft.bts.431@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:39:43,228     p1, p2: None, None
+
+2014-07-11 17:39:43,228 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:39:45,012 Unit account update failure: water.faiyam.327@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:39:45,012     p1, p2: None, None
+
+2014-07-11 17:39:45,013 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:39:46,832 Unit account update failure: grassfed.rahman.1151@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:39:46,832     p1, p2: None, None
+
+2014-07-11 17:39:46,832 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:39:48,635 Unit account update failure: williams.daft.693@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:39:48,635     p1, p2: None, None
+
+2014-07-11 17:39:48,635 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:39:50,321 Unit account update failure: fossil.rahman.63@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:39:50,321     p1, p2: None, None
+
+2014-07-11 17:39:50,321 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:39:52,120 Unit account update failure: earth.fossil.827@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:39:52,120     p1, p2: None, None
+
+2014-07-11 17:39:52,120 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:39:53,892 Unit account update failure: williams.faiyam.1254@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:39:53,892     p1, p2: None, None
+
+2014-07-11 17:39:53,892 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:39:55,699 Unit account update failure: water.williams.1128@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:39:55,699     p1, p2: None, None
+
+2014-07-11 17:39:55,700 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:39:57,451 Unit account update failure: bts.earth.827@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:39:57,451     p1, p2: None, None
+
+2014-07-11 17:39:57,451 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:39:59,325 Unit account update failure: faiyam.earth.11@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:39:59,325     p1, p2: None, None
+
+2014-07-11 17:39:59,325 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:01,120 Unit account update failure: bts.metro.1810@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:01,120     p1, p2: None, None
+
+2014-07-11 17:40:01,120 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:02,920 Unit account update failure: metro.grassfed.1558@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:02,920     p1, p2: None, None
+
+2014-07-11 17:40:02,920 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:04,705 Unit account update failure: faiyam.williams.790@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:04,705     p1, p2: None, None
+
+2014-07-11 17:40:04,705 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:06,493 Unit account update failure: fossil.daft.1331@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:06,493     p1, p2: None, None
+
+2014-07-11 17:40:06,493 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:08,310 Unit account update failure: earth.grassfed.1169@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:08,311     p1, p2: None, None
+
+2014-07-11 17:40:08,311 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:10,056 Unit account update failure: williams.water.1870@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:10,056     p1, p2: None, None
+
+2014-07-11 17:40:10,056 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:11,784 Unit account update failure: fossil.williams.1601@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:11,784     p1, p2: None, None
+
+2014-07-11 17:40:11,785 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:13,553 Unit account update failure: faiyam.rahman.146@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:13,554     p1, p2: None, None
+
+2014-07-11 17:40:13,554 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:15,261 Unit account update failure: grassfed.metro.765@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:15,262     p1, p2: None, None
+
+2014-07-11 17:40:15,262 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:16,972 Unit account update failure: water.grassfed.1129@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:16,972     p1, p2: None, None
+
+2014-07-11 17:40:16,972 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:18,655 Unit account update failure: rahman.grassfed.1644@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:18,656     p1, p2: None, None
+
+2014-07-11 17:40:18,656 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:20,496 Unit account update failure: bts.bts.1530@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:20,496     p1, p2: None, None
+
+2014-07-11 17:40:20,496 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:22,160 Unit account update failure: williams.grassfed.1271@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:22,160     p1, p2: None, None
+
+2014-07-11 17:40:22,160 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:23,899 Unit account update failure: faiyam.water.1889@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:23,899     p1, p2: None, None
+
+2014-07-11 17:40:23,899 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:25,581 Unit account update failure: rahman.water.1005@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:25,581     p1, p2: None, None
+
+2014-07-11 17:40:25,582 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:27,391 Unit account update failure: faiyam.williams.657@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:27,392     p1, p2: None, None
+
+2014-07-11 17:40:27,392 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:29,211 Unit account update failure: water.grassfed.1262@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:29,211     p1, p2: None, None
+
+2014-07-11 17:40:29,212 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:30,964 Unit account update failure: rahman.metro.1019@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:30,964     p1, p2: None, None
+
+2014-07-11 17:40:30,964 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(eligiblePlayers) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:32,712 Unit account update failure: rahman.williams.1907@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:32,712     p1, p2: None, None
+
+2014-07-11 17:40:32,712 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(kwargs['eligiblePlayers']) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:34,442 Unit account update failure: rahman.earth.635@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:34,443     p1, p2: None, None
+
+2014-07-11 17:40:34,443 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(kwargs['eligiblePlayers']) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:36,224 Unit account update failure: fossil.daft.1781@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:36,225     p1, p2: None, None
+
+2014-07-11 17:40:36,225 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(kwargs['eligiblePlayers']) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:38,022 Unit account update failure: bts.rahman.347@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:38,022     p1, p2: None, None
+
+2014-07-11 17:40:38,022 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(kwargs['eligiblePlayers']) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:40:39,762 Unit account update failure: water.williams.952@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:40:39,762     p1, p2: None, None
+
+2014-07-11 17:40:39,762 global name 'eligiblePlayers' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 33, in staticDownRandPlayers
+    assert len(kwargs['eligiblePlayers']) != 0
+NameError: global name 'eligiblePlayers' is not defined
+2014-07-11 17:47:38,868 Unit account update failure: grassfed.rahman.1676@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:47:38,868     p1, p2: None, None
+
+2014-07-11 17:47:38,868 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:47:40,758 Unit account update failure: fossil.water.1459@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:47:40,758     p1, p2: None, None
+
+2014-07-11 17:47:40,758 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:47:42,517 Unit account update failure: grassfed.williams.855@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:47:42,517     p1, p2: None, None
+
+2014-07-11 17:47:42,517 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:47:44,200 Unit account update failure: daft.bts.431@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:47:44,200     p1, p2: None, None
+
+2014-07-11 17:47:44,200 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:47:46,012 Unit account update failure: water.faiyam.327@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:47:46,012     p1, p2: None, None
+
+2014-07-11 17:47:46,012 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:47:47,808 Unit account update failure: grassfed.rahman.1151@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:47:47,808     p1, p2: None, None
+
+2014-07-11 17:47:47,809 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:47:49,634 Unit account update failure: williams.daft.693@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:47:49,634     p1, p2: None, None
+
+2014-07-11 17:47:49,634 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:47:51,527 Unit account update failure: fossil.rahman.63@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:47:51,527     p1, p2: None, None
+
+2014-07-11 17:47:51,528 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:47:53,315 Unit account update failure: earth.fossil.827@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:47:53,315     p1, p2: None, None
+
+2014-07-11 17:47:53,315 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:47:55,089 Unit account update failure: williams.faiyam.1254@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:47:55,089     p1, p2: None, None
+
+2014-07-11 17:47:55,089 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:47:56,876 Unit account update failure: water.williams.1128@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:47:56,876     p1, p2: None, None
+
+2014-07-11 17:47:56,876 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:47:58,671 Unit account update failure: bts.earth.827@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:47:58,672     p1, p2: None, None
+
+2014-07-11 17:47:58,672 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:00,408 Unit account update failure: faiyam.earth.11@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:00,408     p1, p2: None, None
+
+2014-07-11 17:48:00,408 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:02,193 Unit account update failure: bts.metro.1810@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:02,193     p1, p2: None, None
+
+2014-07-11 17:48:02,193 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:03,964 Unit account update failure: metro.grassfed.1558@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:03,964     p1, p2: None, None
+
+2014-07-11 17:48:03,964 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:05,639 Unit account update failure: faiyam.williams.790@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:05,639     p1, p2: None, None
+
+2014-07-11 17:48:05,639 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:07,360 Unit account update failure: fossil.daft.1331@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:07,360     p1, p2: None, None
+
+2014-07-11 17:48:07,360 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:09,054 Unit account update failure: earth.grassfed.1169@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:09,054     p1, p2: None, None
+
+2014-07-11 17:48:09,054 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:10,770 Unit account update failure: williams.water.1870@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:10,770     p1, p2: None, None
+
+2014-07-11 17:48:10,770 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:12,528 Unit account update failure: fossil.williams.1601@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:12,529     p1, p2: None, None
+
+2014-07-11 17:48:12,529 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:14,356 Unit account update failure: faiyam.rahman.146@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:14,357     p1, p2: None, None
+
+2014-07-11 17:48:14,357 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:16,076 Unit account update failure: grassfed.metro.765@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:16,077     p1, p2: None, None
+
+2014-07-11 17:48:16,077 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:17,856 Unit account update failure: water.grassfed.1129@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:17,856     p1, p2: None, None
+
+2014-07-11 17:48:17,856 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:19,791 Unit account update failure: rahman.grassfed.1644@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:19,792     p1, p2: None, None
+
+2014-07-11 17:48:19,792 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:21,478 Unit account update failure: bts.bts.1530@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:21,478     p1, p2: None, None
+
+2014-07-11 17:48:21,479 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:23,278 Unit account update failure: williams.grassfed.1271@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:23,278     p1, p2: None, None
+
+2014-07-11 17:48:23,279 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:25,045 Unit account update failure: faiyam.water.1889@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:25,046     p1, p2: None, None
+
+2014-07-11 17:48:25,046 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:26,735 Unit account update failure: rahman.water.1005@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:26,736     p1, p2: None, None
+
+2014-07-11 17:48:26,736 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:28,461 Unit account update failure: faiyam.williams.657@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:28,461     p1, p2: None, None
+
+2014-07-11 17:48:28,461 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:30,148 Unit account update failure: water.grassfed.1262@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:30,148     p1, p2: None, None
+
+2014-07-11 17:48:30,148 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers'] != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:31,878 Unit account update failure: rahman.metro.1019@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:31,878     p1, p2: None, None
+
+2014-07-11 17:48:31,879 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers']) != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:33,647 Unit account update failure: rahman.williams.1907@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:33,647     p1, p2: None, None
+
+2014-07-11 17:48:33,647 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers']) != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:35,401 Unit account update failure: rahman.earth.635@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:35,401     p1, p2: None, None
+
+2014-07-11 17:48:35,401 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers']) != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:37,083 Unit account update failure: fossil.daft.1781@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:37,084     p1, p2: None, None
+
+2014-07-11 17:48:37,084 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers']) != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:38,821 Unit account update failure: bts.rahman.347@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:38,821     p1, p2: None, None
+
+2014-07-11 17:48:38,821 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers']) != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:40,540 Unit account update failure: water.williams.952@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:40,540     p1, p2: None, None
+
+2014-07-11 17:48:40,540 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers']) != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:42,228 Unit account update failure: water.grassfed.768@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:42,228     p1, p2: None, None
+
+2014-07-11 17:48:42,229 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers']) != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:43,957 Unit account update failure: faiyam.bts.1947@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:43,958     p1, p2: None, None
+
+2014-07-11 17:48:43,958 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers']) != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:45,715 Unit account update failure: water.rahman.1367@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:45,715     p1, p2: None, None
+
+2014-07-11 17:48:45,715 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers']) != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:47,443 Unit account update failure: rahman.water.1370@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:47,443     p1, p2: None, None
+
+2014-07-11 17:48:47,443 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers']) != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:48:49,173 Unit account update failure: earth.rahman.542@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:48:49,174     p1, p2: None, None
+
+2014-07-11 17:48:49,174 object of type 'bool' has no len()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 237, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 38, in staticDownRandPlayers
+    if kwargs['doubleDown'] and len(kwargs['eligiblePlayers']) != 1):
+TypeError: object of type 'bool' has no len()
+2014-07-11 17:49:38,891 Unit account update failure: grassfed.rahman.1676@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:49:38,892     p1, p2: None, None
+
+2014-07-11 17:49:38,892 global name 'bot' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 238, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 46, in staticDownRandPlayers
+    bot.choose_players(p1=p1, p2=p2)
+NameError: global name 'bot' is not defined
+2014-07-11 17:49:40,693 Unit account update failure: fossil.water.1459@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:49:40,693     p1, p2: None, None
+
+2014-07-11 17:49:40,693 global name 'bot' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 238, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 46, in staticDownRandPlayers
+    bot.choose_players(p1=p1, p2=p2)
+NameError: global name 'bot' is not defined
+2014-07-11 17:49:42,170 Unit account update failure: grassfed.williams.855@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:49:42,170     p1, p2: None, None
+
+2014-07-11 17:49:42,170 [Errno 54] Connection reset by peer
+Traceback (most recent call last):
+  File "chooseplayers.py", line 232, in choosePlayers
+    bot = Bot(str(username), str(password))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 47, in __init__
+    self.browser = webdriver.Chrome()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 67, in __init__
+    self.quit()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 82, in quit
+    self.service.stop()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/service.py", line 97, in stop
+    url_request.urlopen("http://127.0.0.1:%d/shutdown" % self.port)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 127, in urlopen
+    return _opener.open(url, data, timeout)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 404, in open
+    response = self._open(req, data)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 422, in _open
+    '_open', req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 382, in _call_chain
+    result = func(*args)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1214, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1187, in do_open
+    r = h.getresponse(buffering=True)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 1045, in getresponse
+    response.begin()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 409, in begin
+    version, status, reason = self._read_status()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 365, in _read_status
+    line = self.fp.readline(_MAXLINE + 1)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 476, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 54] Connection reset by peer
+2014-07-11 17:49:43,822 Unit account update failure: daft.bts.431@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:49:43,822     p1, p2: None, None
+
+2014-07-11 17:49:43,822 global name 'bot' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 238, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 46, in staticDownRandPlayers
+    bot.choose_players(p1=p1, p2=p2)
+NameError: global name 'bot' is not defined
+2014-07-11 17:49:45,599 Unit account update failure: water.faiyam.327@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:49:45,599     p1, p2: None, None
+
+2014-07-11 17:49:45,599 global name 'bot' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 238, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 46, in staticDownRandPlayers
+    bot.choose_players(p1=p1, p2=p2)
+NameError: global name 'bot' is not defined
+2014-07-11 17:49:47,273 Unit account update failure: grassfed.rahman.1151@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:49:47,273     p1, p2: None, None
+
+2014-07-11 17:49:47,273 global name 'bot' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 238, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 46, in staticDownRandPlayers
+    bot.choose_players(p1=p1, p2=p2)
+NameError: global name 'bot' is not defined
+2014-07-11 17:49:48,945 Unit account update failure: williams.daft.693@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:49:48,945     p1, p2: None, None
+
+2014-07-11 17:49:48,945 global name 'bot' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 238, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 46, in staticDownRandPlayers
+    bot.choose_players(p1=p1, p2=p2)
+NameError: global name 'bot' is not defined
+2014-07-11 17:49:50,697 Unit account update failure: fossil.rahman.63@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:49:50,697     p1, p2: None, None
+
+2014-07-11 17:49:50,697 global name 'bot' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 238, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 46, in staticDownRandPlayers
+    bot.choose_players(p1=p1, p2=p2)
+NameError: global name 'bot' is not defined
+2014-07-11 17:49:52,463 Unit account update failure: earth.fossil.827@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:49:52,464     p1, p2: None, None
+
+2014-07-11 17:49:52,464 global name 'bot' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 238, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 46, in staticDownRandPlayers
+    bot.choose_players(p1=p1, p2=p2)
+NameError: global name 'bot' is not defined
+2014-07-11 17:49:54,177 Unit account update failure: williams.faiyam.1254@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:49:54,177     p1, p2: None, None
+
+2014-07-11 17:49:54,177 global name 'bot' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 238, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 46, in staticDownRandPlayers
+    bot.choose_players(p1=p1, p2=p2)
+NameError: global name 'bot' is not defined
+2014-07-11 17:49:55,865 Unit account update failure: water.williams.1128@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:49:55,866     p1, p2: None, None
+
+2014-07-11 17:49:55,866 global name 'bot' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 238, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 46, in staticDownRandPlayers
+    bot.choose_players(p1=p1, p2=p2)
+NameError: global name 'bot' is not defined
+2014-07-11 17:49:57,576 Unit account update failure: bts.earth.827@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:49:57,577     p1, p2: None, None
+
+2014-07-11 17:49:57,577 global name 'bot' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 238, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 46, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+NameError: global name 'bot' is not defined
+2014-07-11 17:49:59,391 Unit account update failure: faiyam.earth.11@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:49:59,391     p1, p2: None, None
+
+2014-07-11 17:49:59,391 global name 'bot' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 238, in choosePlayers
+    doubleDown=True )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 46, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+NameError: global name 'bot' is not defined
+2014-07-11 17:50:01,081 Unit account update failure: bts.metro.1810@faiyamrahman.com, beatthestreak1
+
+2014-07-11 17:50:01,082     p1, p2: None, None
+
+2014-07-11 17:50:01,082 [Errno 54] Connection reset by peer
+Traceback (most recent call last):
+  File "chooseplayers.py", line 232, in choosePlayers
+    bot = Bot(str(username), str(password))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 47, in __init__
+    self.browser = webdriver.Chrome()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 67, in __init__
+    self.quit()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 82, in quit
+    self.service.stop()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/service.py", line 97, in stop
+    url_request.urlopen("http://127.0.0.1:%d/shutdown" % self.port)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 127, in urlopen
+    return _opener.open(url, data, timeout)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 404, in open
+    response = self._open(req, data)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 422, in _open
+    '_open', req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 382, in _call_chain
+    result = func(*args)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1214, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1187, in do_open
+    r = h.getresponse(buffering=True)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 1045, in getresponse
+    response.begin()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 409, in begin
+    version, status, reason = self._read_status()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 365, in _read_status
+    line = self.fp.readline(_MAXLINE + 1)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 476, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 54] Connection reset by peer

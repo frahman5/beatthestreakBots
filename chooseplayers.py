@@ -107,7 +107,7 @@ def log_updated_accounts(updatedAccounts, sN=None, vMN=None):
 
 def choosePlayers(**kwargs):
     """
-    kwargs -> None
+    kwargs -> str|None
         kwargs;
         funcDict(REQUIRED): dict | a dictionary with key, value pairs of:
             strategyNumber: (selection_func, distribution_func). See below
@@ -129,6 +129,8 @@ def choosePlayers(**kwargs):
 
     Reads in the accounts from Filepath.get_accounts_file() that correspond
     to sN, vMN, and then updates num of those accounts accordingly
+
+    Returns 'done' if done, else None
     """
     import os
 
@@ -159,17 +161,32 @@ def choosePlayers(**kwargs):
     today = str(datetime.today().month) + '-' + str(datetime.today().day)
     if today in df.columns:
         df = df[pd.isnull(df[today])] # pd.isnull checks for nans, which in our case indicate today's virgin accounts
-        # Parse it down to only include num of those accounts
-    df = df[0:num] # if num = 7, this gives us rows 0 (the header) through 7
-        # Lastly, parse it down to only include the columns we want
+        # Parse it down to only include the columns we want
     df = df[['ID', 'Email', 'MLBPassword', 'Strategy', 'VM']]
+    fulldf = df # in case there are no more eligible players left
+        # Lastly, Parse it down to only include num of those accounts
+    df = df[0:num] # if num = 7, this gives us rows 0 (the header) through 7
+    
 
     # Get today's eligible players    
     print "--> Getting today's eligible players"
-    eligiblePlayers = funcDict[sN]['select_func'](datetime.today().date())
+    if sN == 5:
+        eligiblePlayers = funcDict[sN]['select_func'](datetime.today().date())
+    elif sN in (6, 7):
+        eligiblePlayers = funcDict[sN]['select_func']( p=2, 
+                                                       today=datetime.today().date(),
+                                                       filt={ 'minERA': 2.7 } )
     print "--> Today's eligible Players: "
     for player in eligiblePlayers:
         print "          " + str(player)
+    if len(eligiblePlayers) == 0: # report that there's no more selections today
+        updatedAccounts = \
+            [ (username, ('NOELIGIBLE'), ('NOELIGIBLE')) for 
+                 dummyIndex, index, username, password, sN, vMN in 
+                 fulldf.itertuples() ]
+        print "--> NO PLAYERS LEFT TODAY. LOGGING AND EXITING"
+        log_updated_accounts(updatedAccounts, sN=kwargs['sN'], vMN=kwargs['vMN'])
+        return 'done'
 
     ###### update each of the accounts #####
     failedAccounts = [] # in case we fail to update some accounts
@@ -212,8 +229,12 @@ def choosePlayers(**kwargs):
                 # make the appropriate bot and update him
                 bot, p1, p2 = (None, None, None) # in case we throw an exception before they get assigned
                 bot = Bot(str(username), str(password))
-                p1, p2 = funcDict[sN]['dist_func'](bot, eligiblePlayers)
-
+                if sN in (5, 6):
+                    p1, p2 = funcDict[sN]['dist_func'](bot, eligiblePlayers)
+                elif sN == 7:
+                    p1, p2 = funcDict[sN]['dist_func']( bot=bot, 
+                                                        eligiblePlayers=eligiblePlayers, 
+                                                        doubleDown=True )
             # this should never happen
             except NoPlayerFoundException as e:
                 if bot:
@@ -241,6 +262,8 @@ def choosePlayers(**kwargs):
         # in the while loop
     log_updated_accounts(updatedAccounts, sN=kwargs['sN'], vMN=kwargs['vMN'])
 
+    return 'done'
+
 
 if __name__ == '__main__':
     """
@@ -250,8 +273,8 @@ if __name__ == '__main__':
     import re
     import sys
 
-    from selectfunctions import todaysRecommendedPicks
-    from distributionfunctions import randDownRandPlayers
+    from selectfunctions import todaysRecommendedPicks, todaysTopPBatters
+    from distributionfunctions import randDownRandPlayers, staticDownRandPlayers
 
     ## What strategyNumber and virtualMachine Number are we using?
     options = [arg for arg in sys.argv if '-' in arg]
@@ -259,7 +282,7 @@ if __name__ == '__main__':
         # Get the strategy number
     sNPattern = re.compile(r"""
         -sN=            # strategy number
-        [1-5]           # method number must be in (1, 2, 3, 4, 5)
+        [1-7]           # method number must be in (1, 2, 3, 4, 5)
         """, re.VERBOSE)
     matches = [ sNPattern.match(option) for option in 
                 options if sNPattern.match(option)]
@@ -284,24 +307,33 @@ if __name__ == '__main__':
     if len(options) != 0:
         raise KeyError("Invalid options: " + str(options))
 
-    ## Assign players to accounts in chunks of 20 so that in case something
+    ## Assign players to accounts in chunks of 50 so that in case something
     ## bad happens, we remain robust
-    origCount = get_num_accounts(sN=sN, vMN=vMN, getRemaining=True)
-    blockSize = 20
+    origCount = get_num_accounts( sN=sN, vMN=vMN, getRemaining=True )
+    blockSize = 50
     numLeft = origCount
     funcDict = {
         5: { 'select_func': todaysRecommendedPicks, 
-             'dist_func'  : randDownRandPlayers }
+             'dist_func'  : randDownRandPlayers }, 
+        6: {'select_func': todaysTopPBatters, 
+            'dist_func': randDownRandPlayers }, 
+        7: {'select_func': todaysTopPBatters, 
+            'dist_func': staticDownRandPlayers }
                 }
+    doneYet = ''
     while numLeft > 0:
+        if doneYet == 'done': # mostly for when there are no eligible players left
+            numLeft = 0
+            break
         if numLeft < blockSize:
             print "\n****** Assigning to final {} accounts".format(numLeft) + \
                   " for Strategy, VM: {}, {}******".format(sN, vMN)
-            choosePlayers( funcDict=funcDict, sN=sN, vMN=vMN, num=numLeft)
+            doneYet = choosePlayers( funcDict=funcDict, sN=sN, vMN=vMN, num=numLeft)
             break
         else: 
             print "\n********** Assigning IN CHUNKS OF {}".format(blockSize) + \
                   ":.Completed {} of {}".format(origCount-numLeft, origCount) + \
                   " Strategy, VM: {}, {} ***********".format(sN, vMN) 
-            choosePlayers( funcDict=funcDict, sN=sN, vMN=vMN, num=blockSize)
+            doneYet = choosePlayers( funcDict=funcDict, sN=sN, vMN=vMN, num=blockSize)
             numLeft -= blockSize
+

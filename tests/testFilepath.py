@@ -11,7 +11,7 @@ class TestFilepath(unittest.TestCase):
 		self.assertEqual(F.get_root(), ROOT)
 
 	def test_get_accounts_file(self):
-		accountsFile = ROOT + '/btsAccounts.xlsx'
+		accountsFile = ROOT +  '/accountFiles/btsAccounts.xlsx'
 		self.assertEqual(F.get_accounts_file(), accountsFile)
 
 	def test_get_log_file(self):
@@ -25,4 +25,4 @@ class TestFilepath(unittest.TestCase):
 
 	def test_get_minion_account_file(self):
 		self.assertEqual( F.get_minion_account_file(sN=1, vMN=3), 
-						  ROOT + '/minionAccountFiles/sN=1,vMN=3.xlsx' )
+						  ROOT + '/accountFiles/minionAccountFiles/sN=1,vMN=3.xlsx' )

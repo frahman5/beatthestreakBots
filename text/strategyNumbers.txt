@@ -87,7 +87,13 @@
      Random: Each day, qualifying players are distributed to the N accounts randomly
      Random: Each day, it is randomly decided whether or not a bot will double down
 
-
+6) N P:(currentBatAve)&(perGameERA-minERA) Random Random 
+     Parameters: Production strategy
+     N: N Accounts are created
+     P(currentBatAve)&(perGameERA-minERA): Which P players have the highest current in season
+       batting average and are facing a pitcher with ERA >= minERA
+     Random: Each day, qualifying playres are distributred to the N accounts randomly
+     Random: Each day, it is randomly decided whether or not a bot will double down
 
 
 

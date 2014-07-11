@@ -30,18 +30,18 @@ def staticDownRandPlayers(**kwargs):
     ## check arguments
     assert type(kwargs['bot'] == Bot)
     assert type(kwargs['eligiblePlayers'] == list)
-    assert len(eligiblePlayers) != 0
+    assert len(kwargs['eligiblePlayers']) != 0
     assert type(kwargs['doubleDown'] == bool)
 
     # Pseudo-randomly choose playres
-    p1 = random.choice(eligiblePlayers)
-    if kwargs['doubleDown']:
+    p1 = random.choice(kwargs['eligiblePlayers'])
+    if kwargs['doubleDown'] and (len(kwargs['eligiblePlayers']) != 1):
         p2 = p1
         while (p1 == p2):
-            p2 = random.choice(eligiblePlayers)
+            p2 = random.choice(kwargs['eligiblePlayers'])
     else:
         p2 = ()
 
     # Assign the players to the bot and return them to the caller
-    bot.choose_players(p1=p1, p2=p2)
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
     return p1, p2

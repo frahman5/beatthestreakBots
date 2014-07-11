@@ -63,7 +63,7 @@ class Bot(object):
         self.teams = (
             'mia', 'cws', 'nyy', 'lad', 'tor', 'phi', 'cle', 'stl', 'oak', 
             'hou', 'nym', 'cin', 'sd', 'tex', 'det', 'sea', 'sf', 'col',
-            'pit', 'ana', 'wsh', 'chc', 'bos', 'tb', 'ari', 'atl', 
+            'pit', 'laa', 'wsh', 'chc', 'bos', 'tb', 'ari', 'atl', 
             'mil', 'min', 'kc', 'bal')
 
     def choose_players(self, p1=(), p2=()):
@@ -114,6 +114,8 @@ class Bot(object):
         if not self.dev:
             self.browser.close()
 
+        return p1, p2
+
     def get_todays_recommended_players(self):
         """
         None -> TupleOfTupleOfStrings
@@ -149,76 +151,35 @@ class Bot(object):
         # tuplify the list and return it
         return tuple(recommendedPlayers)
 
-    # def _whosPlaying(self, players):
-    #     """
-    #     ListOfTuples -> ListOfTuples:
-    #         players: ListOfTuples | Each tuple is of format
-    #            (firstName, lastName, 3DigitTeamAbbrev)
+    def get_opposing_pitcher_era(self, p1=()):
+        """
+        TupleOfStrings  -> float
+           p1 and p2: A tuple of format
+              (firstName, lastName, teamAbbreviation) 
+              where firstName and lastName define a player in the MLB and 
+              teamAbbrevations is the team abbreviation used in beatthestreak's 
+              html code, as defined in self.teams
 
-    #     Filters out all players who aren't starting today, and returns the
-    #     resultant list
-    #     """
-    #     try:
-    #         ## type check
-    #         assert type(players) == list
-    #         for thing1, thing2, thing3 in players:
-    #             assert type(thing1) == str
-    #             assert type(thing2) == str
-    #             assert type(thing3) == str
+        Returns the ERA of the starting pitcher facing player today
 
-    #         ## Get that player selection dropdown baby
-    #         self._get_player_selection_dropdown()
+        Assumes the player is playing today
+        """
+        firstName, lastName, team = p1
+        assert team in self.teams
 
-    #         ## For each player, check if his squad is playing, and then check
-    #         ## if he's in the lineup
-    #         # import pdb
-    #         # pdb.set_trace()
-    #         activePlayers = [player for player in players]
-    #         for player in players:
-    #             # click on "select teams"
-    #             selectTeam = WebDriverWait(self.browser, 10).until(
-    #                 EC.presence_of_element_located((By.ID, 'team-name')))
-    #             selectTeam.click()
-    #             firstName, lastName, teamName = player
-    #             # if firstName == 'Matt':
-    #                 # import pdb
-    #                 # pdb.set_trace()
-    #             print player
-    #             try:
-    #                 team = WebDriverWait(self.browser, 10).until(
-    #                               EC.presence_of_element_located(
-    #                               (By.CLASS_NAME, self.__convert_team(teamName))))
-    #             # his squad isn't playing, filter him out
-    #             except ( TimeoutException,           # team not playing today
-    #                      ElementNotVisibleException): # team already started game 
-    #                 activePlayers.remove(player)
-    #                 continue
-    #             else:
-    #                 # get lists of firstNames, lastNames
-    #                 team.click()
-    #                 namesThereYet = WebDriverWait(self.browser, 10).until(
-    #                                     EC.presence_of_element_located(
-    #                                         (By.CLASS_NAME, "last-name")))
-    #                 lastNameElems = self.browser.find_elements_by_class_name("last-name")
-    #                 firstNameElems = self.browser.find_elements_by_class_name("first-name")
-    #                 firstNameMatch, lastNameMatch = (False, False)
-    #                 for firstNameElem in firstNameElems:
-    #                     if firstNameElem.text == firstName:
-    #                         firstNameMatch = True
-    #                         break
-    #                 if firstNameMatch:
-    #                     for lastNameElem in lastNameElems:
-    #                         if lastNameElem.text == lastName:
-    #                             lastNameMatch = True
-    #                             break
-    #                 if not lastNameMatch: # he's not playing today
-    #                     players.remove(player)
-    #     except:
-    #         self.quit_browser()
-    #         raise
+        # Get team selection dropdwon
+        self.__get_team_selection_dropdown(team)
 
-    #     return activePlayers
+        # Get the era and return it
+        eraElem = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'era')))
+        eraText = eraElem.text # e.g u'4.12 ERA'
+        era = float(eraText.split()[0])
 
+        print era
+        self.quit_browser()
+        return era
+    
     def __convert_team(self, team):
         """
         MLB and ESPN have some discrepancies in how they list players to viewers
@@ -466,22 +427,8 @@ class Bot(object):
 
         firstName, lastName, team = player
 
-        ## Necessary team conversions
-        team = self.__convert_team(team)
-
-        ## Make sure the player selection dropdown has been dropped
-        self._get_player_selection_dropdown()
-            # click on "select teams"
-        selectTeam = WebDriverWait(self.browser, 10).until(
-            EC.presence_of_element_located((By.ID, 'team-name')))
-        # selectTeam = self.browser.find_element_by_id('team-name')
-        selectTeam.click()
-        time.sleep(3)
-            # click on desired team
-        team = WebDriverWait(self.browser, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, team)))
-        team.click()
-        time.sleep(3)
+        # Get team selection dropdwon
+        self.__get_team_selection_dropdown(team)
 
         ## Make pick
             # get lists of firstNames, lastNames, and select Buttons
@@ -524,4 +471,23 @@ class Bot(object):
             buttons = self.browser.find_elements_by_class_name('ui-button-text-only')
             buttons[0].click()
 
+        time.sleep(3)
+
+
+    def __get_team_selection_dropdown(self, team):
+        ## Necessary team conversions
+        team = self.__convert_team(team)
+
+        ## Make sure the player selection dropdown has been dropped
+        self._get_player_selection_dropdown()
+            # click on "select teams"
+        selectTeam = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.ID, 'team-name')))
+        # selectTeam = self.browser.find_element_by_id('team-name')
+        selectTeam.click()
+        time.sleep(3)
+            # click on desired team
+        team = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, team)))
+        team.click()
         time.sleep(3)

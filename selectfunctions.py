@@ -1,5 +1,11 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 from config import BTSUSERNAME, BTSPASSWORD
 from bot import Bot
+from exception import NoPlayerFoundException
+
 
 def todaysRecommendedPicks(today):
     """
@@ -48,7 +54,7 @@ def todaysTopPBatters(**kwargs):
     if 'filt' in kwargs.keys():
         assert (type(kwargs['filt']) == dict)
         if 'minERA' in kwargs['filt'].keys():
-            assert type(filt['minERA'] == float)
+            assert type(kwargs['filt']['minERA'] == float)
 
     ## start a display if necessary, and start the browser
     if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
@@ -96,6 +102,7 @@ def todaysTopPBatters(**kwargs):
         _quit_browser(browser, display, 'get_batters')
         raise
 
+    print "today's top {} players: {}".format(kwargs['p'], str(players))
     # filter out the players who aren't starting and apply any other used
     # requested filters
     players = _whoIsEligibleToday(players, filt=kwargs['filt'], browser=browser)
@@ -103,7 +110,6 @@ def todaysTopPBatters(**kwargs):
     ## Close the browser, stop the display if necessary
     _quit_browser(browser, display, 'get_batters')
 
-    print tuple(players)
     return tuple(players)
 
 def _whoIsEligibleToday(players, filt=None, browser=None):
@@ -131,7 +137,6 @@ def _whoIsEligibleToday(players, filt=None, browser=None):
         assert type(thing2) == str
         assert type(thing3) == str
     assert type(filt) == dict
-    assert type(browser) == WebDriver
 
     ## Are we going to filter by minERA?
     if 'minERA' in filt.keys():
@@ -141,6 +146,8 @@ def _whoIsEligibleToday(players, filt=None, browser=None):
 
     today = datetime.today()
     activePlayers = [player for player in players]
+    # import pdb
+    # pdb.set_trace()
     for player in players:
         firstName, lastName, team = player
 
@@ -150,68 +157,56 @@ def _whoIsEligibleToday(players, filt=None, browser=None):
         # Get info for the game the team is playing
         nextGameBox = WebDriverWait(browser, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, 'current')))
-        dateTimeOfNextGame = nextGameBox.find_elements_by_tag_name('h4')
-        dateTime = str(dateOfNextGame.text)
+        dateTimeOfNextGame = nextGameBox.find_element_by_tag_name('h4')
+        dateTime = str(dateTimeOfNextGame.text)
 
         # If they aren't playing a game today, remove the player and continue
-        weekday, month, day, gameTimeS = dateTime.split() #['weekday', 'month', 'day', 'time', 'AM/PM', 'Timezone']
+        print "Game info for {}: {}".format(firstName, dateTime.split())
+            #['weekday,', 'month', 'day', 'time', 'AM/PM', 'Timezone']
+        weekday, month, day, gameTimeS, timePeriod = dateTime.split()[0:5] 
+        weekday = weekday.strip(',') # e.g Fri, -> Fri
         if ( weekday.lower() != today.strftime('%a').lower() ) or \
-           ( month.lower() !=   today.strftime('%b').lower())
+           ( month.lower() != today.strftime('%b').lower() ) or \
            ( int(day) != today.day):
             activePlayers.remove(player)
             continue
 
-        # If the team is playing, but the game starts in less than 20 minutes from now, 
-        # remove the player and continue on
-        gameTimeO = time( int(gameTimeS.split(':')[0]), 
-                          int(gameTimeS.split(':')[0]) )
+        # If the team is playing, but the game starts in less than 20 minutes 
+        # from now, remove the player and continue on
+        hour = int(gameTimeS.split(':')[0])
+        minute = int(gameTimeS.split(':')[1])
+        if timePeriod.lower() == 'pm':
+            hour += 12
+        gameTimeO = time(hour, minute) 
         twentyMinFromNow = datetime.now() + timedelta(minutes=20)
-        if twentyMinFromNow > gameTime0:
+        if twentyMinFromNow.time() > gameTimeO:
             activePlayers.remove(player)
             continue
 
-        # Go the game's boscore page
-        nextGameBox.find_element_by_partial_link_text('Lineup').click()
-
-        # Get the team's boxscore
-           # 4 mlbBoxes, 2 for each time (batting lineup, starting pitcher)
-        mlbBoxes = browser.find_elements_by_class_name('mlb-box') 
-        boxscore = None
-        pitcherBoxScore = None
-        for mlbBox in mlbBoxes:
-            topHeader = mlbBox.find_elements_by_tag_name('thead')[0].text
-            if (__get_team_nickname(team) in topHeader):
-                if 'Hitters' in topHeader:
-                    boxscore = mlbBox
-                if 'Pitchers' in topHeader:
-                    pitcherBoxScore = mlbBox
-
-        assert boxscore
-        boxscoreBody = boxscore.find_element_by_tag_name('tbody')
-
         # If the team is playing, but the player's not in the lineup, 
         # remove the player and continue on
-        playerInLineup = False
-        formattedName = firstName[0] + ' ' + lastName
-        rows = boxscoreBody.find_elements_by_tag_name('tr')
-        for row in rows:
-            if ([] != row.find_elements_by_partial_link_text(formattedName)):
-                playerInLineup = True
-        if not playerInLineup:
-            activePlayers.remove(playerInLineup)
+        researchBot = Bot(BTSUSERNAME, BTSPASSWORD)
+        players = None
+        while players is None: # sometimes other errors come up, we need to try again
+            try:
+                players = researchBot.choose_players(p1=player, p2=())
+            except NoPlayerFoundException:
+                activePlayers.remove(player)
+                break
+            except:
+                continue
+        if player not in activePlayers:
             continue
 
         # If we're asked to filter by minERA, and the player is playing, 
         # and the opponent's starting pitcher's ERA is too high, 
-        # remove the player and continue on
-        if not pitcherBoxScore:
-            continue
-        pBSBody = pitcherBoxScore.find_element_by_tag_name('tbody')
-        onlyRow = pBSBody.find_elements_by_tag_name('tr')
-        cells = onlyRow.find_element_by_tag_name('td')
-        era = float(cells[-1])
-        if era < kwargs['minEra']:
-            activePlayers.remove(player)
+        # remove the player and continue ons
+        researchBot = Bot(BTSUSERNAME, BTSPASSWORD)
+        if filt and 'minERA' in filt.keys():
+            opERA = researchBot.get_opposing_pitcher_era(p1=player)
+            minERA = filt['minERA']
+            if opERA < minERA:
+                activePlayers.remove(player)
 
     return activePlayers
 def _quit_browser(browser, display, funcName):
@@ -233,4 +228,36 @@ def _get_espn_clubhouse_url(team):
 
     Produces the url of the espn clubhouse page for the given team
     """
-    return ''
+    answers = {
+        'mia': 'http://espn.go.com/mlb/team/_/name/mia/miami-marlins', 
+        'cws': 'http://espn.go.com/mlb/team/_/name/chw/chicago-white-sox', 
+        'nyy': 'http://espn.go.com/mlb/team/_/name/nyy/new-york-yankees', 
+        'lad': 'http://espn.go.com/mlb/team/_/name/lad/los-angeles-dodgers', 
+        'tor': 'http://espn.go.com/mlb/team/_/name/tor/toronto-blue-jays', 
+        'phi': 'http://espn.go.com/mlb/team/_/name/phi/philadelphia-phillies',  
+        'cle': 'http://espn.go.com/mlb/team/_/name/cle/cleveland-indians', 
+        'stl': 'http://espn.go.com/mlb/team/_/name/stl/st-louis-cardinals', 
+        'oak': 'http://espn.go.com/mlb/team/_/name/oak/oakland-athletics', 
+        'hou': 'http://espn.go.com/mlb/team/_/name/hou/houston-astros',  
+        'nym': 'http://espn.go.com/mlb/team/_/name/nym/new-york-mets', 
+        'cin': 'http://espn.go.com/mlb/team/_/name/cin/cincinnati-reds', 
+        'sd': 'http://espn.go.com/mlb/team/_/name/sdg/san-diego-padres', 
+        'tex': 'http://espn.go.com/mlb/team/_/name/tex/texas-rangers', 
+        'det': 'http://espn.go.com/mlb/team/_/name/det/detroit-tigers', 
+        'sea': 'http://espn.go.com/mlb/team/_/name/sea/seattle-mariners', 
+        'sf': 'http://espn.go.com/mlb/team/_/name/sfo/san-francisco-giants',
+        'col': 'http://espn.go.com/mlb/team/_/name/col/colorado-rockies', 
+        'pit': 'http://espn.go.com/mlb/team/_/name/pit/pittsburgh-pirates', 
+        'laa': 'http://espn.go.com/mlb/team/_/name/laa/los-angeles-angels', 
+        'wsh': 'http://espn.go.com/mlb/team/_/name/was/washington-nationals', 
+        'chc': 'http://espn.go.com/mlb/team/_/name/chc/chicago-cubs', 
+        'bos': 'http://espn.go.com/mlb/team/_/name/bos/boston-red-sox', 
+        'tb': 'http://espn.go.com/mlb/team/_/name/tam/tampa-bay-rays', 
+        'ari': 'http://espn.go.com/mlb/team/_/name/ari/arizona-diamondbacks', 
+        'atl': 'http://espn.go.com/mlb/team/_/name/atl/atlanta-braves', 
+        'mil': 'http://espn.go.com/mlb/team/_/name/mil/milwaukee-brewers', 
+        'min': 'http://espn.go.com/mlb/team/_/name/min/minnesota-twins', 
+        'kc': 'http://espn.go.com/mlb/team/_/name/kan/kansas-city-royals', 
+        'bal': 'http://espn.go.com/mlb/team/_/name/bal/baltimore-orioles'
+    }
+    return answers[team]
