@@ -173,9 +173,9 @@ def choosePlayers(**kwargs):
     if sN == 5:
         eligiblePlayers = funcDict[sN]['select_func'](datetime.today().date())
     elif sN in (6, 7):
-        eligiblePlayers = funcDict[sN]['select_func']( p=2, 
+        eligiblePlayers = funcDict[sN]['select_func']( p=20, 
                                                        today=datetime.today().date(),
-                                                       filt={ 'minERA': 2.7 } )
+                                                       filt={ 'minERA': 4.0 } )
     print "--> Today's eligible Players: "
     for player in eligiblePlayers:
         print "          " + str(player)
