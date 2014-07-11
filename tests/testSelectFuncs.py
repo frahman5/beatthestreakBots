@@ -1,8 +1,9 @@
 import datetime
 import unittest
 
-from beatthestreakBots.selectfunctions import todaysTopPBatters
-class TestBot(unittest.TestCase):
+from beatthestreakBots.selectfunctions import todaysTopPBatters, _whoIsEligibleToday
+
+class TestSelectFuncs(unittest.TestCase):
 
     def test_todaysTopPBatters(self):
         # Test only works on Jul 10th, 2014. Need to change
@@ -61,3 +62,25 @@ class TestBot(unittest.TestCase):
                                             today=today,
                                             filt={'minERA':4.0}),
                           top20_4)
+
+    def test__whosPlaying(self):
+        ## The top 10 players by batting average on July 10th, 2014
+        top10 = [
+                  ('Troy', 'Tulowitzki', 'col'),
+                  ('Jose', 'Altuve', 'hou'), 
+                  ('Matt', 'Adams', 'stl'),
+                  ('Adrian', 'Beltre', 'tex'),
+                  ('Victor', 'Martinez', 'det'),
+                  ('Jonathan', 'Lucroy', 'mil'),
+                  ('Michael', 'Brantley', 'cle'),
+                  ('Lonnie', 'Chisenhall', 'cle'),
+                  ('Robinson', 'Cano', 'sea'),
+                  ('Casey', 'McGehee', 'mia')
+                ]
+        ## The top 10 players, with players not starting on 7/10/2014 filtered out
+        Troy, Jose, Matt, Adrian, Victor, Jonathan, Michael, Lonnie, Robinson, Casey = top10
+        top10Starting = [player for player in top10]
+        for player in (Troy, Jose, Casey, Jonathan):
+          top10Starting.remove(player)
+
+        self.assertEqual(_whoIsEligibleToday(top10), top10Starting)

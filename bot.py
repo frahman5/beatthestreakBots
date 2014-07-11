@@ -1,5 +1,6 @@
 import time
 import logging
+import random # to do random waits everywhere
 
 from datetime import datetime, timedelta
 from pyvirtualdisplay import Display
@@ -7,7 +8,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, ElementNotVisibleException
 
 from exception import NoPlayerFoundException, SameNameException
 from config import ROOT
@@ -37,6 +38,8 @@ class Bot(object):
             print "--> Starting BOT display"
             self.display = Display(visible=0, size=(1024, 768))
             self.display.start()
+        else:
+            self.display = None
 
         ## Set core attributes
         self.username = username
@@ -134,20 +137,101 @@ class Bot(object):
         for row in playerRows:
             playerInfo = row.find_element_by_class_name('player-team')
             playerTuple =  ( 
-                str( playerInfo.find_element_by_class_name('first-name').text)
-                str( playerInfo.find_element_by_class_name('last-name').text)
-                str( playerInfo.find_element_by_class_name('team').text).lower()
-                            )  
+                str( playerInfo.find_element_by_class_name('first-name').text),
+                str( playerInfo.find_element_by_class_name('last-name').text),
+                str( playerInfo.find_element_by_class_name('team').text).lower(),
+                           )  
             recommendedPlayers.append(playerTuple)
 
         ## Close up shop
         self.quit_browser()
-        if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
-            print "--> Stopping BOT Display"
-            self.display.stop()
 
         # tuplify the list and return it
         return tuple(recommendedPlayers)
+
+    # def _whosPlaying(self, players):
+    #     """
+    #     ListOfTuples -> ListOfTuples:
+    #         players: ListOfTuples | Each tuple is of format
+    #            (firstName, lastName, 3DigitTeamAbbrev)
+
+    #     Filters out all players who aren't starting today, and returns the
+    #     resultant list
+    #     """
+    #     try:
+    #         ## type check
+    #         assert type(players) == list
+    #         for thing1, thing2, thing3 in players:
+    #             assert type(thing1) == str
+    #             assert type(thing2) == str
+    #             assert type(thing3) == str
+
+    #         ## Get that player selection dropdown baby
+    #         self._get_player_selection_dropdown()
+
+    #         ## For each player, check if his squad is playing, and then check
+    #         ## if he's in the lineup
+    #         # import pdb
+    #         # pdb.set_trace()
+    #         activePlayers = [player for player in players]
+    #         for player in players:
+    #             # click on "select teams"
+    #             selectTeam = WebDriverWait(self.browser, 10).until(
+    #                 EC.presence_of_element_located((By.ID, 'team-name')))
+    #             selectTeam.click()
+    #             firstName, lastName, teamName = player
+    #             # if firstName == 'Matt':
+    #                 # import pdb
+    #                 # pdb.set_trace()
+    #             print player
+    #             try:
+    #                 team = WebDriverWait(self.browser, 10).until(
+    #                               EC.presence_of_element_located(
+    #                               (By.CLASS_NAME, self.__convert_team(teamName))))
+    #             # his squad isn't playing, filter him out
+    #             except ( TimeoutException,           # team not playing today
+    #                      ElementNotVisibleException): # team already started game 
+    #                 activePlayers.remove(player)
+    #                 continue
+    #             else:
+    #                 # get lists of firstNames, lastNames
+    #                 team.click()
+    #                 namesThereYet = WebDriverWait(self.browser, 10).until(
+    #                                     EC.presence_of_element_located(
+    #                                         (By.CLASS_NAME, "last-name")))
+    #                 lastNameElems = self.browser.find_elements_by_class_name("last-name")
+    #                 firstNameElems = self.browser.find_elements_by_class_name("first-name")
+    #                 firstNameMatch, lastNameMatch = (False, False)
+    #                 for firstNameElem in firstNameElems:
+    #                     if firstNameElem.text == firstName:
+    #                         firstNameMatch = True
+    #                         break
+    #                 if firstNameMatch:
+    #                     for lastNameElem in lastNameElems:
+    #                         if lastNameElem.text == lastName:
+    #                             lastNameMatch = True
+    #                             break
+    #                 if not lastNameMatch: # he's not playing today
+    #                     players.remove(player)
+    #     except:
+    #         self.quit_browser()
+    #         raise
+
+    #     return activePlayers
+
+    def __convert_team(self, team):
+        """
+        MLB and ESPN have some discrepancies in how they list players to viewers
+        and how they list them in their html code. THis function converts it
+        from viewer format to html code format, if necessary
+        """
+        ## Type check/sanity check
+        assert team in self.teams
+
+        if team == 'laa': # los angeles angels of anaheim
+            team = 'ana'
+
+        return team
 
     def claim_mulligan(self):
         print "-->Claiming Mulligan for u, p: {0}, {1}\n".format(self.username, self.password)
@@ -177,9 +261,6 @@ class Bot(object):
         # give it some time, then quit the browser and if necessary, stop the display
         time.sleep(10)
         self.browser.quit()
-        if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
-            print "--> Stopping BOT Display"
-            self.display.stop()
 
     def has_claimed_mulligan(self):
         """
@@ -326,8 +407,7 @@ class Bot(object):
         Closes self.browser
         """
         self.browser.quit()
-        if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
-            print "--> Closing Bot Display"
+        if self.display:
             self.display.stop()
             
     def _get_chosen_players(self):
@@ -387,8 +467,7 @@ class Bot(object):
         firstName, lastName, team = player
 
         ## Necessary team conversions
-        if team == 'laa': # los angeles angels of anaheim
-            team == 'ana'
+        team = self.__convert_team(team)
 
         ## Make sure the player selection dropdown has been dropped
         self._get_player_selection_dropdown()

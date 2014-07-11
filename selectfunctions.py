@@ -32,7 +32,7 @@ def todaysTopPBatters(**kwargs):
         ERA >= minERA
     """
     import logging 
-    
+
     from pyvirtualdisplay import Display
     from datetime import datetime
     from selenium import webdriver
@@ -55,6 +55,8 @@ def todaysTopPBatters(**kwargs):
         print "--> Starting display to get batters"
         display = Display(visible=0, size=(1024, 768))
         display.start()
+    else:
+        display = None
     browser = webdriver.Chrome()
 
     # Create a logger so that we don't get blasted with unnecessary info
@@ -91,17 +93,144 @@ def todaysTopPBatters(**kwargs):
             nextPlayer.append( str( cells[2].text.lower() ) )
             players.append( tuple(nextPlayer) )
     except:
-        browser.quit()
-        if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
-            print "--> Stopping display for get batters"
-            display.stop()
+        _quit_browser(browser, display, 'get_batters')
         raise
 
+    # filter out the players who aren't starting and apply any other used
+    # requested filters
+    players = _whoIsEligibleToday(players, filt=kwargs['filt'], browser=browser)
+
     ## Close the browser, stop the display if necessary
-    browser.quit()
-    if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
-        print "--> Stopping display for get batters"
-        display.stop()
+    _quit_browser(browser, display, 'get_batters')
 
     print tuple(players)
     return tuple(players)
+
+def _whoIsEligibleToday(players, filt=None, browser=None):
+    """
+    ListOfTuples None|dict WebDriver -> ListOfTuples:
+        players: ListOfTuples | Each tuple is of format
+           (firstName, lastName, 3DigitTeamAbbrev)
+        filt: dict | key, value pairs are
+           typeOfFilter (str), relevantParameter
+           e.g: {'minERA': 4.0} filters out players who are playing against
+           a starting pitcher with ERA less than 4
+        browser: Webdriver | A selenium webdriver to use for finding the
+           necessary info
+
+    Filters out all players who aren't starting today, as well as filters
+    by any conditions provided in Filt
+
+    Assumes a display is open if necessary
+    """
+    from datetime import datetime, time, timedelta
+        ## type check
+    assert type(players) == list
+    for thing1, thing2, thing3 in players:
+        assert type(thing1) == str
+        assert type(thing2) == str
+        assert type(thing3) == str
+    assert type(filt) == dict
+    assert type(browser) == WebDriver
+
+    ## Are we going to filter by minERA?
+    if 'minERA' in filt.keys():
+        filterERA = True
+    else:
+        filterERA = False
+
+    today = datetime.today()
+    activePlayers = [player for player in players]
+    for player in players:
+        firstName, lastName, team = player
+
+        # Go the ESPN clubhouse page
+        browser.get(_get_espn_clubhouse_url(team))
+
+        # Get info for the game the team is playing
+        nextGameBox = WebDriverWait(browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'current')))
+        dateTimeOfNextGame = nextGameBox.find_elements_by_tag_name('h4')
+        dateTime = str(dateOfNextGame.text)
+
+        # If they aren't playing a game today, remove the player and continue
+        weekday, month, day, gameTimeS = dateTime.split() #['weekday', 'month', 'day', 'time', 'AM/PM', 'Timezone']
+        if ( weekday.lower() != today.strftime('%a').lower() ) or \
+           ( month.lower() !=   today.strftime('%b').lower())
+           ( int(day) != today.day):
+            activePlayers.remove(player)
+            continue
+
+        # If the team is playing, but the game starts in less than 20 minutes from now, 
+        # remove the player and continue on
+        gameTimeO = time( int(gameTimeS.split(':')[0]), 
+                          int(gameTimeS.split(':')[0]) )
+        twentyMinFromNow = datetime.now() + timedelta(minutes=20)
+        if twentyMinFromNow > gameTime0:
+            activePlayers.remove(player)
+            continue
+
+        # Go the game's boscore page
+        nextGameBox.find_element_by_partial_link_text('Lineup').click()
+
+        # Get the team's boxscore
+           # 4 mlbBoxes, 2 for each time (batting lineup, starting pitcher)
+        mlbBoxes = browser.find_elements_by_class_name('mlb-box') 
+        boxscore = None
+        pitcherBoxScore = None
+        for mlbBox in mlbBoxes:
+            topHeader = mlbBox.find_elements_by_tag_name('thead')[0].text
+            if (__get_team_nickname(team) in topHeader):
+                if 'Hitters' in topHeader:
+                    boxscore = mlbBox
+                if 'Pitchers' in topHeader:
+                    pitcherBoxScore = mlbBox
+
+        assert boxscore
+        boxscoreBody = boxscore.find_element_by_tag_name('tbody')
+
+        # If the team is playing, but the player's not in the lineup, 
+        # remove the player and continue on
+        playerInLineup = False
+        formattedName = firstName[0] + ' ' + lastName
+        rows = boxscoreBody.find_elements_by_tag_name('tr')
+        for row in rows:
+            if ([] != row.find_elements_by_partial_link_text(formattedName)):
+                playerInLineup = True
+        if not playerInLineup:
+            activePlayers.remove(playerInLineup)
+            continue
+
+        # If we're asked to filter by minERA, and the player is playing, 
+        # and the opponent's starting pitcher's ERA is too high, 
+        # remove the player and continue on
+        if not pitcherBoxScore:
+            continue
+        pBSBody = pitcherBoxScore.find_element_by_tag_name('tbody')
+        onlyRow = pBSBody.find_elements_by_tag_name('tr')
+        cells = onlyRow.find_element_by_tag_name('td')
+        era = float(cells[-1])
+        if era < kwargs['minEra']:
+            activePlayers.remove(player)
+
+    return activePlayers
+def _quit_browser(browser, display, funcName):
+    """
+    webdriver None|Display string -> None
+
+    Closes the browser, stops the display if necessary, and prints to 
+    stdout to let the user know
+    """
+    browser.quit()
+    if display:
+        print "--> Stopping display for {}".format(funcName)
+        display.stop()
+
+def _get_espn_clubhouse_url(team):
+    """
+    str -> str
+       team: str | 3 digit abbreviation of team 
+
+    Produces the url of the espn clubhouse page for the given team
+    """
+    return ''
