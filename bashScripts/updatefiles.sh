@@ -9,8 +9,8 @@ googleAccountFilesDir=/home/faiyamrahman/programming/Python/beatthestreakBots/
 minionAccountFilesSuffix=minionAccountFiles/
 googleMinionDir=$googleAccountFilesDir$minionAccountFilesSuffix
    # instance names
-strat5Instance1='production-instance-a'
-strat5Instance2="production-instance-b"
+strat5Instance1='sn5vmn1'
+strat5Instance2="sn5vmn2"
 accountMakerInstance="production-instance-c"
 
 ## Home computer parameters
@@ -25,4 +25,12 @@ gcutil pull $projectFlag $strat5Instance2 $googleMinionDir$suffix2 $homeMinionDi
 
 # master account file
 suffix3="btsAccounts.xlsx"
-gcutil pull $projectFlag $accountMakerInstance $googleAccountFilesDir$suffix3 $homeAccountFilesDir 
+gcutil pull $projectFlag $accountMakerInstance $googleAccountFilesDir$suffix3 $homeAccountFilesDir
+
+# open the account files for inspection
+for file in $homeMinionDir'*'
+do 
+    echo 
+    echo "--> opening file"
+    open $file
+done 

@@ -25,7 +25,7 @@ class Filepath(object):
         return self.get_accounts_dir() + '/btsAccounts.xlsx'
 
     @classmethod
-    def get_test_file(self):
+    def get_test_accounts_file(self):
         """
         Returns the path of the excel file containing account info
         for test accounts on mlb.com

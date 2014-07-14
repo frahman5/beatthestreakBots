@@ -1,6 +1,7 @@
 import logging
 
 from filepath import Filepath
+
 def getLogger():
     ## Create logger that handles file logging
     logger = logging.getLogger()
@@ -38,28 +39,40 @@ def logError(username, password, p1, p2, exception, logger):
     logger.error("    p1, p2: {}, {}".format(p1, p2))
     logger.error(exception, exc_info=True)
 
-def logFailedAccounts(failedAccounts, numTotalAccounts, logger):
+                logFailedAccounts( df=df, 
+                               updatedUsernames=updatedUsernames, 
+                               logger=logger )
+            for dummyIndex, index, username, password, sN, vMN in df.itertuples():
+                if username not in updatedUsernames:
+                    failedAccounts.append((str(username), str(password)))
+            logFailedAccounts(failedAccounts, lenDF, logger)
+            
+def logFailedAccounts(**kwargs):
     """
-    list int logger -> None
-       failedAccounts: ListOfTuples | Each Tuple is a (username, password)
-           if a failed Account
-       numTotalAccounts: int | the total number of accounts that we attempted
-           to update
-       logger: logger | logger to use to log errors
+    kwargs -> None
+        df: dataframe containing all the accounts
+        updatedUsernames: tuple of succesffuly updated usernames
+        logger: logger object
 
-    Logs the failedAccounts to today's error log in the event that the main 
-    while loop failed to update all players
+    Logs the failedAccounts to today's error log in the event that
+    the main while loop in chooseplayers.py failed to update all playres
     """
-    # check that we got an appropriate input
-    assert len(failedAccounts) != 0
-    assert type(failedAccounts) == list
-    for elem in failedAccounts:
-        assert type(elem) == tuple
-        for thing in elem:
-            assert type(thing) == str
+    import pandas as pd
+
+    ## Type check
+    assert type(kwargs['df']) == pd.DataFrame
+    assert type(kwargs['updatedUsernames']) == tuple
+    assert type(kwargs['logger']) == logging.Logger
+
+    ## Get a list of the failed accounts
+    failedAccounts = []
+    for dummyIndex, index, username, password, sN, vMN in kwargs['df'].itertuples():
+        if username not in kwargs['updatedUsernames']:
+            failedAccounts.append(str(username), str(password))
+
 
     # log those errors baby
     logger.error("{} of {} accounts failed".format(
-                    len(failedAccounts), numTotalAccounts))
+                    len(failedAccounts), len(df)))
     for failedAccount in failedAccounts:
         logger.error("    U, P: {}, {}".format(failedAccount[0], failedAccount[1]))

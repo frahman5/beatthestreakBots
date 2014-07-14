@@ -6,31 +6,48 @@ from config import BTSUSERNAME, BTSPASSWORD
 from bot import Bot
 from exception import NoPlayerFoundException
 
+cbsFormattingDict = {
+        'mia': 'miami',         'cws': 'chi. white sox', 
+        'nyy': 'n.y. yankees',  'lad': 'l.a. dodgers', 
+        'tor': 'toronto',       'phi': 'philadelphia', 
+        'cle': 'cleveland',     'stl': 'st. louis', 
+        'oak': 'oakland',       'hou': 'houston', 
+        'nym': 'n.y. mets',     'cin': 'cincinnati', 
+        'sd':  'san diego',     'tex': 'texas', 
+        'det': 'detroit',       'sea': 'seattle', 
+        'sf':  'san francisco', 'col': 'colorado',
+        'pit': 'pittsburgh',    'laa': 'l.a. angels', 
+        'wsh': 'washington',    'chc': 'chi. cubs',  
+        'bos': 'boston',        'tb':  'tampa bay', 
+        'ari': 'arizona',       'atl': 'atlanta',  
+        'mil': 'milwaukee',     'min': 'minnesota', 
+        'kc':  'kansas city',   'bal': 'baltimore'
+    }
 
-def todaysRecommendedPicks(today):
+def getRecommendedPicks(d):
     """
     datetime.date int -> listOfTuples
         today: datetime.date | today's date
 
     Produces a TupleOfTuples where each tuple is of format:
         (firstName, lastName, teamAbbrevations)
-        for a player that is on today's "recommended picks" dropdwown
+        for a player that is on given date's "recommended picks" dropdwown
         on the MLB beat the streak player selection page
     """
     bot = Bot(BTSUSERNAME, BTSPASSWORD)
-    return bot.get_todays_recommended_players()
+    return bot.get_recommended_players(d)
 
-def todaysTopPBatters(**kwargs):
+def topPBatters(**kwargs):
     """
     kwargs -> listOfTuples
         P: int | the number of players to return 
-        today: datetime.date | today's date 
+        activeDate: datetime.date | today's date 
         filt: Dict | possible entries...
                     -> "minERA": float | exclude all players who are facing a 
                        starting pitcher with an ERA below this number
 
 
-    Produces a TupleOfTuples where each tuple if of format:
+    Produces a TupleOfTuples where each tuple is of format:
         (firstName, lastName, teamAbbreviations)
         for a player that is among the top P players by batting average
         this season and is starting today. If "minERA" is in kwargs[filter], 
@@ -50,11 +67,17 @@ def todaysTopPBatters(**kwargs):
 
     ## type check
     assert type(kwargs['p'] == int)
-    assert type(kwargs['today'] == datetime.date)
     if 'filt' in kwargs.keys():
         assert (type(kwargs['filt']) == dict)
         if 'minERA' in kwargs['filt'].keys():
             assert type(kwargs['filt']['minERA'] == float)
+
+    ## Sanity check
+    if kwargs['activeDate'] != datetime.today().date():
+        print "\nWARNING: As you are selecting on a future date," + \
+           " the top batters w.r.t batting average will be from TODAY" + \
+           " and we will filter out the players who aren't starting or" + \
+           " are facing a pitcher with too high an ERA using the given date"
 
     ## start a display if necessary, and start the browser
     if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
@@ -78,9 +101,7 @@ def todaysTopPBatters(**kwargs):
         browser.get('http://espn.go.com/mlb/stats/batting')
             # Table of players
         table = browser.find_element_by_tag_name('table')
-            # Body of that table
         tablebody = table.find_element_by_tag_name('tbody')
-            # rows of that table
         oddRows = tablebody.find_elements_by_class_name('oddrow')
         evenRows = tablebody.find_elements_by_class_name('evenrow')
         allRows = []
@@ -98,25 +119,29 @@ def todaysTopPBatters(**kwargs):
                 # cell[2].text is player's 3DigitTeamAbbrev
             nextPlayer.append( str( cells[2].text.lower() ) )
             players.append( tuple(nextPlayer) )
+        # filter out the players who aren't starting and apply any other used
+        # requested filters
+        players = _whoIsEligible( players=players, 
+                                  activeDate=kwargs['activeDate'], 
+                                  filt=kwargs['filt'], 
+                                  browser=browser)
     except:
         _quit_browser(browser, display, 'get_batters')
         raise
 
     print "today's top {} players: {}".format(kwargs['p'], str(players))
-    # filter out the players who aren't starting and apply any other used
-    # requested filters
-    players = _whoIsEligibleToday(players, filt=kwargs['filt'], browser=browser)
 
     ## Close the browser, stop the display if necessary
     _quit_browser(browser, display, 'get_batters')
 
     return tuple(players)
 
-def _whoIsEligibleToday(players, filt=None, browser=None):
+def _whoIsEligible(**kwargs):
     """
-    ListOfTuples None|dict WebDriver -> ListOfTuples:
+    kwargs -> ListOfTuples:
         players: ListOfTuples | Each tuple is of format
            (firstName, lastName, 3DigitTeamAbbrev)
+        activeDate: datetime.date | date for which we are retrieving eligibility
         filt: dict | key, value pairs are
            typeOfFilter (str), relevantParameter
            e.g: {'minERA': 4.0} filters out players who are playing against
@@ -124,94 +149,142 @@ def _whoIsEligibleToday(players, filt=None, browser=None):
         browser: Webdriver | A selenium webdriver to use for finding the
            necessary info
 
-    Filters out all players who aren't starting today, as well as filters
-    by any conditions provided in Filt
+    Filters out all players who aren't starting on activeDate, as well as filters
+    by any conditions provided in Filt. Can only handle activeDates that are <= 
+    2 days from now. E.g if today is the 8th, can hanlde the 8th, 9th, and 10th
 
     Assumes a display is open if necessary
     """
     from datetime import datetime, time, timedelta
-    from pytz import timezone
 
-        ## type check
-    assert type(players) == list
-    for thing1, thing2, thing3 in players:
+    ## type check
+    assert type(kwargs['players']) == list
+    for thing1, thing2, thing3 in kwargs['players']:
         assert type(thing1) == str
         assert type(thing2) == str
         assert type(thing3) == str
-    assert type(filt) == dict
+    assert type(kwargs['filt']) == dict
 
     ## Are we going to filter by minERA?
-    if 'minERA' in filt.keys():
+    if 'minERA' in kwargs['filt'].keys():
         filterERA = True
     else:
         filterERA = False
 
-    today = datetime.today()
-    activePlayers = [player for player in players]
-    # import pdb
-    # pdb.set_trace()
-    for player in players:
+    ## Get scheduling info for today
+    browser = kwargs['browser']
+        ## Get the html document with schedule tables
+    browser.get('http://www.cbssports.com/mlb/schedules')
+    iFrames = browser.find_elements_by_tag_name('iframe')
+    for frame in iFrames:
+        if 'schedule' in frame.get_attribute('src'):
+            browser.switch_to_frame(frame)
+            break
+
+        ## Get the schedule table for activeDate
+    tables = browser.find_elements_by_tag_name('table')
+    activeTable = None
+    for table in tables:
+        tableDate = _datify(
+                       str(table.find_element_by_class_name('title').text) )
+        if tableDate == kwargs['activeDate']:
+            activeTable = table
+            break
+    assert activeTable is not None
+
+        ## See if player's team is playing. Get opposing ERA
+            # dict structures: 'teamName': opposing pitcher's ERA
+    awayTeams = {}
+    homeTeams = {}
+    for row in activeTable.find_elements_by_tag_name('tr'):
+        if "row" in row.get_attribute('class'): # game row
+            ## Get relevant variables
+            cells = row.find_elements_by_tag_name('td')
+            awayTeam = str(cells[0].text).lower()
+            homeTeam = str(cells[1].text).lower()
+            time = _timify(str(cells[2].text))
+            if 'ERA' not in str(cells[3].text):
+                print "WARNING: {} pitcher unannounced".format(awayTeam)
+                awayERA = 0.0
+            else:
+                awayERA = float(cells[3].text.split()[-2])
+            if 'ERA' not in str(cells[4].text):
+                print "WARNING: {} pitcher unannounced".format(homeTeam)
+                homeERA = 0.0
+            else:
+                homeERA = float(cells[4].text.split()[-2])
+            awayTeams[awayTeam] = (time, homeERA)
+            homeTeams[homeTeam] = (time, awayERA) 
+
+    ## Sanity/coding check
+    allTeams = []
+    allTeams.extend(awayTeams.keys())
+    allTeams.extend(homeTeams.keys())
+    for team in allTeams:
+        if team not in cbsFormattingDict.values():
+            raise ValueError("{} not in cvsFormattingDict".format(team))
+            
+
+    ## remove ineligible players
+    activePlayers = [ player for player in kwargs['players'] ]
+    filt = kwargs['filt']
+    for player in activePlayers:
         firstName, lastName, team = player
+        teamFormatted = _formatTeam(team)
+        today = datetime.today().date()
+        twentyMinFromNow = (datetime.now() + timedelta(minutes=20)).time()
 
-        # Go the ESPN clubhouse page
-        browser.get(_get_espn_clubhouse_url(team))
-
-        # Get info for the game the team is playing
-        nextGameBox = WebDriverWait(browser, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, 'current')))
-        dateTimeOfNextGame = nextGameBox.find_element_by_tag_name('h4')
-        dateTime = str(dateTimeOfNextGame.text)
-
-        # If they aren't playing a game today, remove the player and continue
-        print "Game info for {}: {}".format(firstName, dateTime.split())
-            #['weekday,', 'month', 'day', 'time', 'AM/PM', 'Timezone']
-        weekday, month, day, gameTimeS, timePeriod = dateTime.split()[0:5] 
-        weekday = weekday.strip(',') # e.g Fri, -> Fri
-        if ( weekday.lower() != today.strftime('%a').lower() ) or \
-           ( month.lower() != today.strftime('%b').lower() ) or \
-           ( int(day) != today.day):
+        # is the player's team playing
+        if teamFormatted in awayTeams.keys():
+            relevantTeams = awayTeams
+        elif teamFormatted in homeTeams.keys():
+            relevantTeams = homeTeams
+        else:
             activePlayers.remove(player)
-            continue
+            break
 
-        # If the team is playing, but the game starts in less than 20 minutes 
-        # from now, remove the player and continue on
-        hour = int(gameTimeS.split(':')[0])
-        minute = int(gameTimeS.split(':')[1])
-        if timePeriod.lower() == 'pm':
-            hour += 12
-        gameTimeO = time(hour, minute) 
-        twentyMinFromNow = datetime.now(timezone('US/Eastern')) + timedelta(minutes=20)
-        print "20 min from now: {}".format(twentyMinFromNow)
-        if twentyMinFromNow.time() > gameTimeO:
+        # Player's team is playing... is the game locked?
+        if today == kwargs['activeDate'] and \
+              relevantTeams[teamFormatted][0] < twentyMinFromNow:
             activePlayers.remove(player)
-            continue
-
-        # If the team is playing, but the player's not in the lineup, 
-        # remove the player and continue on
-        researchBot = Bot(BTSUSERNAME, BTSPASSWORD)
-        players = None
-        while players is None: # sometimes other errors come up, we need to try again
-            try:
-                players = researchBot.choose_players(p1=player, p2=())
-            except NoPlayerFoundException:
-                activePlayers.remove(player)
-                break
-            except:
-                continue
-        if player not in activePlayers:
-            continue
-
-        # If we're asked to filter by minERA, and the player is playing, 
-        # and the opponent's starting pitcher's ERA is too high, 
-        # remove the player and continue ons
-        researchBot = Bot(BTSUSERNAME, BTSPASSWORD)
-        if filt and 'minERA' in filt.keys():
-            opERA = researchBot.get_opposing_pitcher_era(p1=player)
-            minERA = filt['minERA']
-            if opERA < minERA:
-                activePlayers.remove(player)
+        # Player's team is playing... is the opposing pitcher ERA high enough?
+        elif filterERA and (relevantTeams[teamFormatted][1] <= filt['minERA']):
+            activePlayers.remove(player)
 
     return activePlayers
+
+def _timify(timeString):
+    """
+    string -> datetime.time
+        timeString | time expressed in format e.g '7:05 pm'
+
+    returns a datetime.time object that encodes the given time
+    """
+    import datetime
+
+    time, ampm = timeString.split()
+    hour, minute = time.split(':')
+    hour = int(hour)
+    minute = int(minute)
+    if ampm == 'pm':
+        hour += 12 
+
+    return datetime.time(hour=hour, minute=minute)
+    
+    
+def _formatTeam(teamString):
+    """
+    string -> string
+       teamString: string | 3 digit team abbrevation, compliant with self.teams
+       in bot.py
+
+    Returns the team, formatted to comply with the way cbssports writes
+    team names on their schedule page
+    """
+    from bot import Bot
+    assert teamString in Bot.teams
+
+    return cbsFormattingDict[teamString]
 def _quit_browser(browser, display, funcName):
     """
     webdriver None|Display string -> None
@@ -224,43 +297,26 @@ def _quit_browser(browser, display, funcName):
         print "--> Stopping display for {}".format(funcName)
         display.stop()
 
-def _get_espn_clubhouse_url(team):
+def _datify(dateString):
     """
-    str -> str
-       team: str | 3 digit abbreviation of team 
+    string -> datetime.date
+        dateString: string | a string that writes out a date in format
+           Month date, year (e.g JULY 15, 2014)
 
-    Produces the url of the espn clubhouse page for the given team
+    Converts the english-formatted date string to a datetime.date object
+    and returns it 
+
+    Only works for july through november
     """
-    answers = {
-        'mia': 'http://espn.go.com/mlb/team/_/name/mia/miami-marlins', 
-        'cws': 'http://espn.go.com/mlb/team/_/name/chw/chicago-white-sox', 
-        'nyy': 'http://espn.go.com/mlb/team/_/name/nyy/new-york-yankees', 
-        'lad': 'http://espn.go.com/mlb/team/_/name/lad/los-angeles-dodgers', 
-        'tor': 'http://espn.go.com/mlb/team/_/name/tor/toronto-blue-jays', 
-        'phi': 'http://espn.go.com/mlb/team/_/name/phi/philadelphia-phillies',  
-        'cle': 'http://espn.go.com/mlb/team/_/name/cle/cleveland-indians', 
-        'stl': 'http://espn.go.com/mlb/team/_/name/stl/st-louis-cardinals', 
-        'oak': 'http://espn.go.com/mlb/team/_/name/oak/oakland-athletics', 
-        'hou': 'http://espn.go.com/mlb/team/_/name/hou/houston-astros',  
-        'nym': 'http://espn.go.com/mlb/team/_/name/nym/new-york-mets', 
-        'cin': 'http://espn.go.com/mlb/team/_/name/cin/cincinnati-reds', 
-        'sd': 'http://espn.go.com/mlb/team/_/name/sdg/san-diego-padres', 
-        'tex': 'http://espn.go.com/mlb/team/_/name/tex/texas-rangers', 
-        'det': 'http://espn.go.com/mlb/team/_/name/det/detroit-tigers', 
-        'sea': 'http://espn.go.com/mlb/team/_/name/sea/seattle-mariners', 
-        'sf': 'http://espn.go.com/mlb/team/_/name/sfo/san-francisco-giants',
-        'col': 'http://espn.go.com/mlb/team/_/name/col/colorado-rockies', 
-        'pit': 'http://espn.go.com/mlb/team/_/name/pit/pittsburgh-pirates', 
-        'laa': 'http://espn.go.com/mlb/team/_/name/laa/los-angeles-angels', 
-        'wsh': 'http://espn.go.com/mlb/team/_/name/was/washington-nationals', 
-        'chc': 'http://espn.go.com/mlb/team/_/name/chc/chicago-cubs', 
-        'bos': 'http://espn.go.com/mlb/team/_/name/bos/boston-red-sox', 
-        'tb': 'http://espn.go.com/mlb/team/_/name/tam/tampa-bay-rays', 
-        'ari': 'http://espn.go.com/mlb/team/_/name/ari/arizona-diamondbacks', 
-        'atl': 'http://espn.go.com/mlb/team/_/name/atl/atlanta-braves', 
-        'mil': 'http://espn.go.com/mlb/team/_/name/mil/milwaukee-brewers', 
-        'min': 'http://espn.go.com/mlb/team/_/name/min/minnesota-twins', 
-        'kc': 'http://espn.go.com/mlb/team/_/name/kan/kansas-city-royals', 
-        'bal': 'http://espn.go.com/mlb/team/_/name/bal/baltimore-orioles'
-    }
-    return answers[team]
+    from datetime import date
+
+    ## Extract variables
+    month, day, year = dateString.split()
+    month = month.lower()
+    day = int(day.replace(',', ''))
+    year = int(year)
+
+    ## make the date and return it
+    monthDict = { 'july': 7, 'august': 8, 'september': 9, 
+                  'october': 10, 'november': 11 }
+    return date(year, monthDict[month], day)

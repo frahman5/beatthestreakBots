@@ -14,6 +14,12 @@ from exception import NoPlayerFoundException, SameNameException
 from config import ROOT
 
 class Bot(object):
+    teams = (
+            'mia', 'cws', 'nyy', 'lad', 'tor', 'phi', 'cle', 'stl', 'oak', 
+            'hou', 'nym', 'cin', 'sd', 'tex', 'det', 'sea', 'sf', 'col',
+            'pit', 'laa', 'wsh', 'chc', 'bos', 'tb', 'ari', 'atl', 
+            'mil', 'min', 'kc', 'bal')
+    
     def __init__(self, username, password, dev=False):
         """
         string string -> None
@@ -59,21 +65,17 @@ class Bot(object):
         self.pageTitles = {
             'login':'Account Management - Login/Register | MLB.com: Account', 
             'picks': 'Beat The Streak | MLB.com: Fantasy'}
-           # used to check that we don't enter a bogus team name
-        self.teams = (
-            'mia', 'cws', 'nyy', 'lad', 'tor', 'phi', 'cle', 'stl', 'oak', 
-            'hou', 'nym', 'cin', 'sd', 'tex', 'det', 'sea', 'sf', 'col',
-            'pit', 'laa', 'wsh', 'chc', 'bos', 'tb', 'ari', 'atl', 
-            'mil', 'min', 'kc', 'bal')
 
-    def choose_players(self, p1=(), p2=()):
+    def choose_players(self, p1=(), p2=(), returnERA=False):
         """
-        TupleOfStrings TupleOfStrings -> None
+        TupleOfStrings TupleOfStrings bool -> None|TupleOfFloats
            p1 and p2: Either the empty tuple or a tuple of format
               (firstName, lastName, teamAbbreviation) where firstName and
               lastName define a player in the MLB and teamAbbrevations
               is the team abbreviation used in beatthestreak's html code, 
               as defined in self.teams
+           returnERA: bool | If true, return opponent starting pitchers in
+              the format (p1ERA, p2ERA).
 
         If p1 and p2 are both nonEmpty, choose p1 and p2. Else, we choose
         p1, which should be nonempty. 
@@ -96,38 +98,39 @@ class Bot(object):
             assert p2[2] in self.teams
         
         # Reset selections and then choose players
+        p1ERA, p2ERA = (None, None)
         print "------> Removing any currently selected players"
         self._reset_selections()
         assert self.browser.title == self.pageTitles['picks'] 
-        print "------> Choosing player: {}".format(p1)
-        self.__choose_single_player(p1)
+        p1ERA = self.__choose_single_player(p1, returnERA=returnERA)
         if len(p2) == 3:
-            print "------> Choosing player: {}".format(p2)
-            self.__choose_single_player(p2, doubleDown=True)
-        # check that the players have been chosen
-        playerSet = {player[0] + ' ' + player[1] for player in (p1, p2)
-                      if len(player) != 0}
-        assert set(self._get_chosen_players()) == playerSet
+            p2ERA = self.__choose_single_player( p2, doubleDown=True, 
+                                                 returnERA=returnERA )
 
         # Close up shop, unless we're devving, in case we want to keep the 
         # screen open for testing
         if not self.dev:
-            self.browser.close()
+            self.quit_browser()
 
         return p1, p2
 
-    def get_todays_recommended_players(self):
+    def get_recommended_players(self, d):
         """
-        None -> TupleOfTupleOfStrings
+        datetime.date -> TupleOfTupleOfStrings
+            d: datetime.date | date for which we want the recommended players
 
         Returns a tuple of players (firstName, lastName, teamAbbrev) corresponding
         to the players recommended by MLB today
         """
+        ## Type check
+        assert type(d) == datetime.date
+
+        # Variable initializations
         recommendedPlayers = []
 
         # Make sure we are on the make picks page and check that the 
         # recommendedPlayers player grid has dropped down
-        self._get_player_selection_dropdown()
+        self._get_player_selection_dropdown(d)
         WebDriverWait(self.browser, 10).until(
             EC.presence_of_element_located((By.ID, 'bts-players-grid')))
 
@@ -176,7 +179,6 @@ class Bot(object):
         eraText = eraElem.text # e.g u'4.12 ERA'
         era = float(eraText.split()[0])
 
-        print era
         self.quit_browser()
         return era
     
@@ -299,24 +301,33 @@ class Bot(object):
         time.sleep(3)
         assert self.browser.title == self.pageTitles['picks']
 
-    def _click_make_pick_today(self):
+    def _click_make_pick_for_date(self, d):
         """
-        Clicks on make pick for today's date
+        datetime.date -> None
+           d: datetime.date  | Date of interest
+
+        Clicks on make pick for given date
         """
+        ## Type check
+        assert type(d) == datetime.date
+
         ## make sure we're on the right page
         self._get_make_picks_page()
 
-        # get today's row
-        todayRow = self.__get_todays_make_pick_row()
+        # get date's row
+        dateRow = self.__get_date_make_pick_row(d)
 
-        todayPlayerInfoRow = todayRow.find_element_by_class_name('player-info-rows')
-        todayPlayerInfoRow.click()
+        datePlayerInfoRow = dateRow.find_element_by_class_name('player-info-rows')
+        datePlayerInfoRow.click()
         time.sleep(3)
 
-    def _get_player_selection_dropdown(self):
+    def _get_player_selection_dropdown(self, d):
         """
-        Gets the player selection dropdown box. Should be used from the make picks
-        page
+        datetime.date -> None
+           d: datetime.date  | Date of interest
+
+        Gets the player selection dropdown box for date date.
+             Should be used from the make picks page
         """
         # make sure we're on the make picks page
         self._get_make_picks_page()
@@ -325,7 +336,7 @@ class Bot(object):
         if selectTeamBox.is_displayed():
             return
         else:
-            self._click_make_pick_today() # includes a sleep at the end
+            self._click_make_pick_for_date(d) # includes a sleep at the end
 
     def _reset_selections(self):
         """
@@ -393,10 +404,12 @@ class Bot(object):
                     'Double Down', 'Make Pick')]
         return tuple(players)
 
-    def __get_todays_make_pick_row(self):
+    def __get_date_make_pick_row(self, d):
         """
-        None -> WebElement
-           Returns the row on the make picks page corresponding to today
+        datetime.date -> WebElement
+           d: datetime.date  | Date of interest
+
+         Returns the row on the make picks page corresponding to given date
         """
         # make sure we are on the get make picks page
         self._get_make_picks_page()
@@ -406,17 +419,19 @@ class Bot(object):
             EC.presence_of_element_located((By.TAG_NAME, 'tr')))
         rows = self.browser.find_elements_by_tag_name('tr')
             ## date in 'mm/dd/yyyy' format
-        todayFormatted = self.today.date().strftime('%m/%d/%Y')
-        todayRow = [ row for row in rows if 
-                     row.get_attribute('data-date') == todayFormatted][0]
+        dateFormatted = d.strftime('%m/%d/%Y')
+        dateRow = [ row for row in rows if 
+                     row.get_attribute('data-date') == dateFormatted][0]
 
-        return todayRow
+        return dateRow
 
-    def __choose_single_player(self, player, doubleDown=False):
+    def __choose_single_player(self, player, doubleDown=False, returnERA=False):
         """
         TupleOfStrings bool -> None
             player: (firstName, lastName, teamAbbreviation)
             doubleDown: True if this is a doubleDown pick, False otherwise
+            returnERA: bool | If true, return the value of the starting opposing
+               pitcher's ERA
 
         Assigns player player to bot.
         """
@@ -425,6 +440,10 @@ class Bot(object):
         assert len(player) == 3
         assert player[2] in self.teams
 
+        ## Let the player know what's up
+        print "------> Choosing player: {}".format(player)
+
+        ## Variable assignments
         firstName, lastName, team = player
 
         # Get team selection dropdwon
@@ -473,20 +492,26 @@ class Bot(object):
 
         time.sleep(3)
 
+        if returnERA:
+            opERA = get_opposing_pitcher_era(p1=player)
+            return opERA
+
 
     def __get_team_selection_dropdown(self, team):
+        ## Typecheck
+        assert type(team) == str
+
         ## Necessary team conversions
         team = self.__convert_team(team)
 
         ## Make sure the player selection dropdown has been dropped
         self._get_player_selection_dropdown()
-            # click on "select teams"
         selectTeam = WebDriverWait(self.browser, 10).until(
             EC.presence_of_element_located((By.ID, 'team-name')))
-        # selectTeam = self.browser.find_element_by_id('team-name')
         selectTeam.click()
         time.sleep(3)
-            # click on desired team
+
+        # click on desired team
         team = WebDriverWait(self.browser, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, team)))
         team.click()
