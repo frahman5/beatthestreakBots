@@ -273,34 +273,39 @@ class Bot(object):
         Returns a tuple of players (firstName, lastName, teamAbbrev) corresponding
         to the players recommended by MLB for date self.activeDate
         """
-        # Variable initializations
-        recommendedPlayers = []
+        try: 
+            # Variable initializations
+            recommendedPlayers = []
 
-        # Make sure we are on the make picks page and check that the 
-        # recommendedPlayers player grid has dropped down
-        self._get_player_selection_dropdown()
-        WebDriverWait(self.browser, 10).until(
-            EC.presence_of_element_located((By.ID, 'bts-players-grid')))
+            # Make sure we are on the make picks page and check that the 
+            # recommendedPlayers player grid has dropped down
+            self._get_player_selection_dropdown()
+            WebDriverWait(self.browser, 10).until(
+                EC.presence_of_element_located((By.ID, 'bts-players-grid')))
 
-        # get rows correspodning to recommended players
-        playerGrid = self.browser.find_element_by_id('bts-players-grid')
-        playerRows = playerGrid.find_elements_by_tag_name('tr')[1:] # 0th elem is header of table
+            # get rows correspodning to recommended players
+            playerGrid = self.browser.find_element_by_id('bts-players-grid')
+            playerRows = playerGrid.find_elements_by_tag_name('tr')[1:] # 0th elem is header of table
 
-        # collect information about recommended players
-        for row in playerRows:
-            playerInfo = row.find_element_by_class_name('player-team')
-            playerTuple =  ( 
-                str( playerInfo.find_element_by_class_name('first-name').text),
-                str( playerInfo.find_element_by_class_name('last-name').text),
-                str( playerInfo.find_element_by_class_name('team').text).lower(),
-                           )  
-            recommendedPlayers.append(playerTuple)
+            # collect information about recommended players
+            for row in playerRows:
+                playerInfo = row.find_element_by_class_name('player-team')
+                playerTuple =  ( 
+                    str( playerInfo.find_element_by_class_name('first-name').text),
+                    str( playerInfo.find_element_by_class_name('last-name').text),
+                    str( playerInfo.find_element_by_class_name('team').text).lower(),
+                               )  
+                recommendedPlayers.append(playerTuple)
+        except:
+            self.quit_browser()
+            raise
 
         ## Close up shop
         self.quit_browser()
 
         # tuplify the list and return it
         return tuple(recommendedPlayers)
+
 
     def get_opposing_pitcher_era(self, p1=()):
         """

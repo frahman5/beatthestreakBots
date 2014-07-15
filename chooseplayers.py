@@ -206,7 +206,7 @@ def get_num_accounts(sN=None, vMN=None, getRemaining=True):
     ## return the length of the dataframe
     return len(minionDF)
 
-def log_updated_accounts(updatedAccounts, sN=None, vMN=None):
+def log_updated_accounts(updatedAccounts, sN=None, vMN=None, activeDate=None):
     """
     ListOfTuples -> None
        updatedAccounts: ListOfTuples | A list of the accounts that were
@@ -225,6 +225,7 @@ def log_updated_accounts(updatedAccounts, sN=None, vMN=None):
     assert type(updatedAccounts) == list
     assert type(sN) == int
     assert type(vMN) == int
+    assert type(activeDate) == date
 
     ## Let the user know which account file we are updating
     minionAF = Filepath.get_minion_account_file(sN=sN, vMN=vMN)
@@ -242,14 +243,14 @@ def log_updated_accounts(updatedAccounts, sN=None, vMN=None):
                          ) 
 
     ## Get the minion spreadsheet corresponding to this sN and vMN
-    today = __get_date_formatted_for_excel(datetime.today())
+    dateFormatted = __get_date_formatted_for_excel(activeDate)
     minionDF = pd.read_excel( minionAF, 
                               sheetname='Production' )
 
     ## Create the series corresponding to today's player selections
-    if today in minionDF.columns: 
-        accountInfoL = list(minionDF[today])
-        del minionDF[today]
+    if dateFormatted in minionDF.columns: 
+        accountInfoL = list(minionDF[dateFormatted])
+        del minionDF[dateFormatted]
     else:
         accountInfoL = ['' for i in range(len(minionDF))]
     for account in updatedAccounts:
@@ -260,7 +261,7 @@ def log_updated_accounts(updatedAccounts, sN=None, vMN=None):
 
     ## Put the dataframe together and print it to file
     newDF = pd.concat( [minionDF, 
-                        pd.Series(accountInfoL, name=today)], 
+                        pd.Series(accountInfoL, name=dateFormatted)], 
                         axis=1)
     newDF.to_excel( minionAF, 
                     sheet_name='Production', 
@@ -294,7 +295,7 @@ def choosePlayers(**kwargs):
     Reads in the accounts from Filepath.get_accounts_file() that correspond
     to sN, vMN, and then updates num of those accounts accordingly
 
-    Returns 'done' when done
+    Returns 'noneLeft' if no players are eligible anymore
     """
     import os
 
@@ -321,7 +322,7 @@ def choosePlayers(**kwargs):
         __report_no_more_selections( fulldf=fulldf, 
                                      sN=kwargs['sN'], 
                                      vMN=kwargs['vMN'] )
-        return 'done'
+        return 'noneLeft'
 
     ###### update each of the accounts #####
     numIters = 0          # if we iterate too many times, exit gracefully
@@ -394,9 +395,8 @@ def choosePlayers(**kwargs):
         # we use the dictionary variables instead of the one's we retrieved
         # at the top of the function because sN and vMN take on new values
         # in the while loop
-    log_updated_accounts( updatedAccounts, sN=kwargs['sN'], vMN=kwargs['vMN'] )
-
-    return 'done'
+    log_updated_accounts( updatedAccounts, sN=kwargs['sN'], 
+                          vMN=kwargs['vMN'], activeDate=kwargs['activeDate'] )
 
 if __name__ == '__main__':
     """
@@ -455,7 +455,7 @@ if __name__ == '__main__':
     ## Assign players to accounts in chunks of 50 so that in case something
     ## bad happens, we finish as many players as possible
     doneYet = ''
-    blockSize = 50
+    blockSize = 2
     origCount = get_num_accounts( 
                   sN=sN, vMN=vMN, getRemaining=True )
     numLeft = origCount
@@ -468,7 +468,7 @@ if __name__ == '__main__':
             'dist_func': staticDownRandPlayers }
                 }    
     while numLeft > 0:
-        if doneYet == 'done': # mostly for when there are no eligible players left
+        if doneYet == 'noneLeft': # if there are no eligible players left
             numLeft = 0
             break
         if numLeft < blockSize:
