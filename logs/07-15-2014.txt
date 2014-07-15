@@ -1,0 +1,1487 @@
+2014-07-15 10:53:43,255 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:53:43,256     p1, p2: None, None
+
+2014-07-15 10:53:43,256 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:53:45,107 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:53:45,108     p1, p2: None, None
+
+2014-07-15 10:53:45,108 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:53:46,943 Unit account update failure: faiyam.earth.1200@NETORG112903.onmicrosoft.com, beatthestreak1
+
+2014-07-15 10:53:46,943     p1, p2: None, None
+
+2014-07-15 10:53:46,944 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:53:48,728 Unit account update failure: metro.grassfed.828@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:53:48,728     p1, p2: None, None
+
+2014-07-15 10:53:48,728 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:53:50,538 Unit account update failure: grassfed.bts.398@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:53:50,538     p1, p2: None, None
+
+2014-07-15 10:53:50,538 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:53:52,340 Unit account update failure: rahman.williams.325@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:53:52,341     p1, p2: None, None
+
+2014-07-15 10:53:52,341 <urlopen error [Errno 61] Connection refused>
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    bot = Bot(str(username), str(password))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 53, in __init__
+    self.browser = webdriver.Chrome()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 67, in __init__
+    self.quit()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 82, in quit
+    self.service.stop()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/service.py", line 97, in stop
+    url_request.urlopen("http://127.0.0.1:%d/shutdown" % self.port)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 127, in urlopen
+    return _opener.open(url, data, timeout)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 404, in open
+    response = self._open(req, data)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 422, in _open
+    '_open', req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 382, in _call_chain
+    result = func(*args)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1214, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1184, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 61] Connection refused>
+2014-07-15 10:57:27,167 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:57:27,168     p1, p2: None, None
+
+2014-07-15 10:57:27,168 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:57:28,931 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:57:28,932     p1, p2: None, None
+
+2014-07-15 10:57:28,932 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:57:30,692 Unit account update failure: faiyam.earth.1200@NETORG112903.onmicrosoft.com, beatthestreak1
+
+2014-07-15 10:57:30,692     p1, p2: None, None
+
+2014-07-15 10:57:30,693 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:57:32,443 Unit account update failure: metro.grassfed.828@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:57:32,444     p1, p2: None, None
+
+2014-07-15 10:57:32,445 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:57:34,239 Unit account update failure: grassfed.bts.398@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:57:34,239     p1, p2: None, None
+
+2014-07-15 10:57:34,240 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:57:36,036 Unit account update failure: rahman.williams.325@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:57:36,037     p1, p2: None, None
+
+2014-07-15 10:57:36,037 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:57:37,740 Unit account update failure: williams.daft.741@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:57:37,741     p1, p2: None, None
+
+2014-07-15 10:57:37,741 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:58:49,852 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:58:49,853     p1, p2: None, None
+
+2014-07-15 10:58:49,853 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:58:51,653 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:58:51,653     p1, p2: None, None
+
+2014-07-15 10:58:51,653 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:58:53,684 Unit account update failure: faiyam.earth.1200@NETORG112903.onmicrosoft.com, beatthestreak1
+
+2014-07-15 10:58:53,684     p1, p2: None, None
+
+2014-07-15 10:58:53,684 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:58:55,420 Unit account update failure: metro.grassfed.828@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:58:55,420     p1, p2: None, None
+
+2014-07-15 10:58:55,420 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    funcDict=funcDict, bot=bot, sN=sN,
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:58:57,245 Unit account update failure: grassfed.bts.398@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:58:57,245     p1, p2: None, None
+
+2014-07-15 10:58:57,245 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    funcDict=funcDict, bot=bot, sN=sN,
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:58:59,090 Unit account update failure: rahman.williams.325@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:58:59,090     p1, p2: None, None
+
+2014-07-15 10:58:59,090 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    funcDict=funcDict, bot=bot, sN=sN,
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:59:01,823 Unit account update failure: williams.daft.741@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:59:01,823     p1, p2: None, None
+
+2014-07-15 10:59:01,823 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    funcDict=funcDict, bot=bot, sN=sN,
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:59:03,491 Unit account update failure: bts.metro.1385@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:59:03,492     p1, p2: None, None
+
+2014-07-15 10:59:03,492 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    funcDict=funcDict, bot=bot, sN=sN,
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:59:05,263 Unit account update failure: daft.earth.1870@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:59:05,264     p1, p2: None, None
+
+2014-07-15 10:59:05,264 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    funcDict=funcDict, bot=bot, sN=sN,
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:59:07,043 Unit account update failure: williams.daft.1832@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:59:07,043     p1, p2: None, None
+
+2014-07-15 10:59:07,043 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    funcDict=funcDict, bot=bot, sN=sN,
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 10:59:08,768 Unit account update failure: earth.williams.1801@faiyamrahman.com, beatthestreak1
+
+2014-07-15 10:59:08,768     p1, p2: None, None
+
+2014-07-15 10:59:08,769 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    funcDict=funcDict, bot=bot, sN=sN,
+  File "chooseplayers.py", line 152, in __distribute_eligible_players
+    assert type(kwargs['sN']) == int
+AssertionError
+2014-07-15 11:00:19,099 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:00:19,100     p1, p2: None, None
+
+2014-07-15 11:00:19,100 'eligiblePlayers'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 153, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+KeyError: 'eligiblePlayers'
+2014-07-15 11:00:20,852 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:00:20,853     p1, p2: None, None
+
+2014-07-15 11:00:20,853 'eligiblePlayers'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    activeDate=activeDate)
+  File "chooseplayers.py", line 153, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+KeyError: 'eligiblePlayers'
+2014-07-15 11:01:19,439 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:01:19,439     p1, p2: None, None
+
+2014-07-15 11:01:19,439 global name 'random' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 18, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+NameError: global name 'random' is not defined
+2014-07-15 11:01:21,208 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:01:21,208     p1, p2: None, None
+
+2014-07-15 11:01:21,208 global name 'random' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 18, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+NameError: global name 'random' is not defined
+2014-07-15 11:01:59,950 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:01:59,950     p1, p2: None, None
+
+2014-07-15 11:01:59,950 global name 'datetime' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 39, in staticDownRandPlayers
+    assert type(kwargs['activeDate'] == datetime.date)
+NameError: global name 'datetime' is not defined
+2014-07-15 11:02:01,728 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:02:01,728     p1, p2: None, None
+
+2014-07-15 11:02:01,728 global name 'datetime' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 39, in staticDownRandPlayers
+    assert type(kwargs['activeDate'] == datetime.date)
+NameError: global name 'datetime' is not defined
+2014-07-15 11:02:03,513 Unit account update failure: faiyam.earth.1200@NETORG112903.onmicrosoft.com, beatthestreak1
+
+2014-07-15 11:02:03,513     p1, p2: None, None
+
+2014-07-15 11:02:03,514 global name 'datetime' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 39, in staticDownRandPlayers
+    assert type(kwargs['activeDate'] == datetime.date)
+NameError: global name 'datetime' is not defined
+2014-07-15 11:02:37,265 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:02:37,266     p1, p2: None, None
+
+2014-07-15 11:02:37,266 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 21, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 52, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2, activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 104, in choose_players
+    assert type(activeDate) == datetime.date
+AssertionError
+2014-07-15 11:02:38,979 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:02:38,980     p1, p2: None, None
+
+2014-07-15 11:02:38,980 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 21, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 52, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2, activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 104, in choose_players
+    assert type(activeDate) == datetime.date
+AssertionError
+2014-07-15 11:03:23,121 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:03:23,122     p1, p2: None, None
+
+2014-07-15 11:03:23,122 _get_player_selection_dropdown() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 21, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 52, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2, activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 481, in _reset_selections
+    self._get_player_selection_dropdown() # make the remove Buttons show up
+TypeError: _get_player_selection_dropdown() takes exactly 2 arguments (1 given)
+2014-07-15 11:03:24,936 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:03:24,937     p1, p2: None, None
+
+2014-07-15 11:03:24,937 _get_player_selection_dropdown() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 21, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 52, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2, activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 481, in _reset_selections
+    self._get_player_selection_dropdown() # make the remove Buttons show up
+TypeError: _get_player_selection_dropdown() takes exactly 2 arguments (1 given)
+2014-07-15 11:06:01,320 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:06:01,321     p1, p2: None, None
+
+2014-07-15 11:06:01,321 'Bot' object has no attribute '_Bot__get_todays_make_pick_row'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 21, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 52, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2, activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections(activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 487, in _reset_selections
+    if len(self._get_chosen_players()) == 0:
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 532, in _get_chosen_players
+    todayRow = self.__get_todays_make_pick_row()
+AttributeError: 'Bot' object has no attribute '_Bot__get_todays_make_pick_row'
+2014-07-15 11:06:17,470 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:06:17,470     p1, p2: None, None
+
+2014-07-15 11:06:17,470 'Bot' object has no attribute '_Bot__get_todays_make_pick_row'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 21, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 52, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2, activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections(activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 487, in _reset_selections
+    if len(self._get_chosen_players()) == 0:
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 532, in _get_chosen_players
+    todayRow = self.__get_todays_make_pick_row()
+AttributeError: 'Bot' object has no attribute '_Bot__get_todays_make_pick_row'
+2014-07-15 11:06:34,834 Unit account update failure: faiyam.earth.1200@NETORG112903.onmicrosoft.com, beatthestreak1
+
+2014-07-15 11:06:34,834     p1, p2: None, None
+
+2014-07-15 11:06:34,834 'Bot' object has no attribute '_Bot__get_todays_make_pick_row'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 21, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 52, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2, activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections(activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 487, in _reset_selections
+    if len(self._get_chosen_players()) == 0:
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 532, in _get_chosen_players
+    # Find the players selected for today
+AttributeError: 'Bot' object has no attribute '_Bot__get_todays_make_pick_row'
+2014-07-15 11:06:51,250 Unit account update failure: metro.grassfed.828@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:06:51,250     p1, p2: None, None
+
+2014-07-15 11:06:51,251 'Bot' object has no attribute '_Bot__get_todays_make_pick_row'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 21, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 52, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2, activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections(activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 487, in _reset_selections
+    if len(self._get_chosen_players()) == 0:
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 532, in _get_chosen_players
+    # Find the players selected for today
+AttributeError: 'Bot' object has no attribute '_Bot__get_todays_make_pick_row'
+2014-07-15 11:07:07,209 Unit account update failure: grassfed.bts.398@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:07:07,209     p1, p2: None, None
+
+2014-07-15 11:07:07,210 'Bot' object has no attribute '_Bot__get_todays_make_pick_row'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 21, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 52, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2, activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections(activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 487, in _reset_selections
+    if len(self._get_chosen_players()) == 0:
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 532, in _get_chosen_players
+    # Find the players selected for today
+AttributeError: 'Bot' object has no attribute '_Bot__get_todays_make_pick_row'
+2014-07-15 11:07:23,949 Unit account update failure: rahman.williams.325@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:07:23,949     p1, p2: None, None
+
+2014-07-15 11:07:23,949 'Bot' object has no attribute '_Bot__get_todays_make_pick_row'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers, activeDate=activeDate)
+  File "chooseplayers.py", line 161, in __distribute_eligible_players
+    activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 21, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 52, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2, activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections(activeDate=kwargs['activeDate'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 487, in _reset_selections
+    if len(self._get_chosen_players(activeDate=activeDate)) == 0:
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 532, in _get_chosen_players
+    # Find the players selected for today
+AttributeError: 'Bot' object has no attribute '_Bot__get_todays_make_pick_row'
+2014-07-15 11:25:33,830 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:25:33,830     p1, p2: None, None
+
+2014-07-15 11:25:33,830 'activeDate'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 154, in __distribute_eligible_players
+    assert type(kwargs['activeDate']) == date
+KeyError: 'activeDate'
+2014-07-15 11:25:35,603 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:25:35,604     p1, p2: None, None
+
+2014-07-15 11:25:35,604 'activeDate'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 154, in __distribute_eligible_players
+    assert type(kwargs['activeDate']) == date
+KeyError: 'activeDate'
+2014-07-15 11:25:37,374 Unit account update failure: faiyam.earth.1200@NETORG112903.onmicrosoft.com, beatthestreak1
+
+2014-07-15 11:25:37,375     p1, p2: None, None
+
+2014-07-15 11:25:37,375 'activeDate'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 366, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 154, in __distribute_eligible_players
+    assert type(kwargs['activeDate']) == date
+KeyError: 'activeDate'
+2014-07-15 11:26:33,771 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:26:33,771     p1, p2: None, None
+
+2014-07-15 11:26:33,771 global name 'activeDate' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 105, in choose_players
+    assert type(activeDate) == date
+NameError: global name 'activeDate' is not defined
+2014-07-15 11:26:35,581 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:26:35,581     p1, p2: None, None
+
+2014-07-15 11:26:35,581 global name 'activeDate' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 105, in choose_players
+    assert type(activeDate) == date
+NameError: global name 'activeDate' is not defined
+2014-07-15 11:27:13,078 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:13,078     p1, p2: None, None
+
+2014-07-15 11:27:13,078 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:14,833 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:14,833     p1, p2: None, None
+
+2014-07-15 11:27:14,833 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:16,504 Unit account update failure: faiyam.earth.1200@NETORG112903.onmicrosoft.com, beatthestreak1
+
+2014-07-15 11:27:16,505     p1, p2: None, None
+
+2014-07-15 11:27:16,505 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:18,290 Unit account update failure: metro.grassfed.828@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:18,290     p1, p2: None, None
+
+2014-07-15 11:27:18,290 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:20,029 Unit account update failure: grassfed.bts.398@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:20,029     p1, p2: None, None
+
+2014-07-15 11:27:20,029 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:21,759 Unit account update failure: rahman.williams.325@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:21,760     p1, p2: None, None
+
+2014-07-15 11:27:21,760 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:23,522 Unit account update failure: williams.daft.741@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:23,522     p1, p2: None, None
+
+2014-07-15 11:27:23,522 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:25,206 Unit account update failure: bts.metro.1385@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:25,206     p1, p2: None, None
+
+2014-07-15 11:27:25,206 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:27,002 Unit account update failure: daft.earth.1870@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:27,002     p1, p2: None, None
+
+2014-07-15 11:27:27,002 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:28,773 Unit account update failure: williams.daft.1832@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:28,773     p1, p2: None, None
+
+2014-07-15 11:27:28,773 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:30,599 Unit account update failure: earth.williams.1801@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:30,599     p1, p2: None, None
+
+2014-07-15 11:27:30,599 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:32,389 Unit account update failure: faiyam.water.1983@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:32,389     p1, p2: None, None
+
+2014-07-15 11:27:32,389 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:34,247 Unit account update failure: fossil.williams.764@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:34,247     p1, p2: None, None
+
+2014-07-15 11:27:34,247 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:35,988 Unit account update failure: water.rahman.227@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:35,989     p1, p2: None, None
+
+2014-07-15 11:27:35,989 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:37,772 Unit account update failure: faiyam.daft.1515@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:37,772     p1, p2: None, None
+
+2014-07-15 11:27:37,772 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:39,545 Unit account update failure: williams.daft.1299@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:39,546     p1, p2: None, None
+
+2014-07-15 11:27:39,546 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:41,247 Unit account update failure: rahman.bts.286@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:41,248     p1, p2: None, None
+
+2014-07-15 11:27:41,248 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:43,006 Unit account update failure: water.metro.1851@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:43,006     p1, p2: None, None
+
+2014-07-15 11:27:43,006 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:44,792 Unit account update failure: grassfed.faiyam.995@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:44,792     p1, p2: None, None
+
+2014-07-15 11:27:44,792 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:46,553 Unit account update failure: fossil.fossil.1475@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:46,554     p1, p2: None, None
+
+2014-07-15 11:27:46,554 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:48,297 Unit account update failure: fossil.bts.393@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:48,297     p1, p2: None, None
+
+2014-07-15 11:27:48,297 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:50,068 Unit account update failure: metro.rahman.458@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:50,068     p1, p2: None, None
+
+2014-07-15 11:27:50,068 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:51,822 Unit account update failure: water.fossil.1322@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:51,822     p1, p2: None, None
+
+2014-07-15 11:27:51,822 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:53,599 Unit account update failure: water.grassfed.1741@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:53,599     p1, p2: None, None
+
+2014-07-15 11:27:53,600 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:55,280 Unit account update failure: rahman.williams.622@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:55,280     p1, p2: None, None
+
+2014-07-15 11:27:55,280 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:57,081 Unit account update failure: rahman.faiyam.1263@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:57,081     p1, p2: None, None
+
+2014-07-15 11:27:57,081 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:27:58,871 Unit account update failure: fossil.bts.1000@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:27:58,871     p1, p2: None, None
+
+2014-07-15 11:27:58,871 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:28:00,722 Unit account update failure: rahman.williams.945@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:28:00,722     p1, p2: None, None
+
+2014-07-15 11:28:00,722 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:28:02,514 Unit account update failure: fossil.water.1797@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:28:02,514     p1, p2: None, None
+
+2014-07-15 11:28:02,514 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:28:04,329 Unit account update failure: bts.daft.330@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:28:04,330     p1, p2: None, None
+
+2014-07-15 11:28:04,330 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:28:06,129 Unit account update failure: grassfed.metro.1133@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:28:06,129     p1, p2: None, None
+
+2014-07-15 11:28:06,129 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:28:07,903 Unit account update failure: fossil.bts.571@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:28:07,903     p1, p2: None, None
+
+2014-07-15 11:28:07,903 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:28:09,661 Unit account update failure: rahman.rahman.752@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:28:09,661     p1, p2: None, None
+
+2014-07-15 11:28:09,661 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:28:11,497 Unit account update failure: water.bts.1186@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:28:11,498     p1, p2: None, None
+
+2014-07-15 11:28:11,498 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:28:13,710 Unit account update failure: fossil.fossil.419@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:28:13,710     p1, p2: None, None
+
+2014-07-15 11:28:13,710 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:28:15,424 Unit account update failure: metro.water.1461@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:28:15,424     p1, p2: None, None
+
+2014-07-15 11:28:15,424 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:28:17,264 Unit account update failure: earth.fossil.804@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:28:17,264     p1, p2: None, None
+
+2014-07-15 11:28:17,264 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:28:19,059 Unit account update failure: williams.faiyam.1376@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:28:19,059     p1, p2: None, None
+
+2014-07-15 11:28:19,060 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:28:20,821 Unit account update failure: metro.faiyam.1250@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:28:20,822     p1, p2: None, None
+
+2014-07-15 11:28:20,822 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:28:22,624 Unit account update failure: fossil.grassfed.1702@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:28:22,624     p1, p2: None, None
+
+2014-07-15 11:28:22,624 _reset_selections() takes exactly 2 arguments (1 given)
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+TypeError: _reset_selections() takes exactly 2 arguments (1 given)
+2014-07-15 11:29:24,076 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:29:24,076     p1, p2: None, None
+
+2014-07-15 11:29:24,076 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 154, in __choose_single_player
+    assert len(lastNameElems) == len(selectButtons) * 2
+AssertionError
+2014-07-15 11:29:46,331 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:29:46,331     p1, p2: None, None
+
+2014-07-15 11:29:46,332 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 154, in __choose_single_player
+    assert len(lastNameElems) == len(selectButtons) * 2
+AssertionError
+2014-07-15 11:33:41,267 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:33:41,267     p1, p2: None, None
+
+2014-07-15 11:33:41,267 'Player Robinson Cano on team sea was not found'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 173, in __choose_single_player
+    firstName, lastName, team) + " was not found")
+NoPlayerFoundException: 'Player Robinson Cano on team sea was not found'
+2014-07-15 11:36:36,925 Unit account update failure: fossil.williams.1140@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:36:36,925     p1, p2: None, None
+
+2014-07-15 11:36:36,925 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 162, in __choose_single_player
+    teamLastNameElems = [elem for elem in lastNameElems
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 162, in __choose_single_player
+    teamLastNameElems = [elem for elem in lastNameElems
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+BdbQuit
+2014-07-15 11:40:05,993 Unit account update failure: faiyam@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:40:05,994     p1, p2: None, None
+
+2014-07-15 11:40:05,994 'Player Robinson Cano on team sea was not found'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 363, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 181, in __choose_single_player
+    firstName, lastName, team) + " was not found")
+NoPlayerFoundException: 'Player Robinson Cano on team sea was not found'
+2014-07-15 11:49:41,375 Unit account update failure: faiyam.earth.1200@NETORG112903.onmicrosoft.com, beatthestreak1
+
+2014-07-15 11:49:41,375     p1, p2: None, None
+
+2014-07-15 11:49:41,375 [Errno 54] Connection reset by peer
+Traceback (most recent call last):
+  File "chooseplayers.py", line 360, in choosePlayers
+    bot = Bot(str(username), str(password), activeDate)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 55, in __init__
+    self.browser = webdriver.Chrome()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 67, in __init__
+    self.quit()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 82, in quit
+    self.service.stop()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/service.py", line 97, in stop
+    url_request.urlopen("http://127.0.0.1:%d/shutdown" % self.port)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 127, in urlopen
+    return _opener.open(url, data, timeout)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 404, in open
+    response = self._open(req, data)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 422, in _open
+    '_open', req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 382, in _call_chain
+    result = func(*args)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1214, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1187, in do_open
+    r = h.getresponse(buffering=True)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 1045, in getresponse
+    response.begin()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 409, in begin
+    version, status, reason = self._read_status()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 365, in _read_status
+    line = self.fp.readline(_MAXLINE + 1)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 476, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 54] Connection reset by peer
+2014-07-15 11:49:42,388 Unit account update failure: metro.grassfed.828@faiyamrahman.com, beatthestreak1
+
+2014-07-15 11:49:42,389     p1, p2: None, None
+
+2014-07-15 11:49:42,389 <urlopen error [Errno 32] Broken pipe>
+Traceback (most recent call last):
+  File "chooseplayers.py", line 360, in choosePlayers
+    bot = Bot(str(username), str(password), activeDate)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 55, in __init__
+    self.browser = webdriver.Chrome()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 67, in __init__
+    self.quit()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 82, in quit
+    self.service.stop()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/service.py", line 97, in stop
+    url_request.urlopen("http://127.0.0.1:%d/shutdown" % self.port)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 127, in urlopen
+    return _opener.open(url, data, timeout)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 404, in open
+    response = self._open(req, data)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 422, in _open
+    '_open', req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 382, in _call_chain
+    result = func(*args)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1214, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1184, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 32] Broken pipe>

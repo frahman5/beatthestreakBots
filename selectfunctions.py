@@ -34,8 +34,8 @@ def getRecommendedPicks(d):
         for a player that is on given date's "recommended picks" dropdwown
         on the MLB beat the streak player selection page
     """
-    bot = Bot(BTSUSERNAME, BTSPASSWORD)
-    return bot.get_recommended_players(d)
+    bot = Bot(BTSUSERNAME, BTSPASSWORD, activeDate=d)
+    return bot.get_recommended_players()
 
 def topPBatters(**kwargs):
     """
@@ -111,7 +111,7 @@ def topPBatters(**kwargs):
         for index, row in enumerate( allRows ):
             # if we're done, get outta there
             if index == kwargs['p']:
-                break
+                beatthestreakBots
                 # row cells 
             cells = row.find_elements_by_tag_name('td')
                 # cell[1].text is player's first and last name

@@ -38,14 +38,6 @@ def logError(username, password, p1, p2, exception, logger):
     logger.error("Unit account update failure: {}, {}".format(username, password))
     logger.error("    p1, p2: {}, {}".format(p1, p2))
     logger.error(exception, exc_info=True)
-
-                logFailedAccounts( df=df, 
-                               updatedUsernames=updatedUsernames, 
-                               logger=logger )
-            for dummyIndex, index, username, password, sN, vMN in df.itertuples():
-                if username not in updatedUsernames:
-                    failedAccounts.append((str(username), str(password)))
-            logFailedAccounts(failedAccounts, lenDF, logger)
             
 def logFailedAccounts(**kwargs):
     """

@@ -1,17 +1,22 @@
+import random 
+import datetime
+
 from bot import Bot
 
-def randDownRandPlayers(bot, eligiblePlayers):
+def randDownRandPlayers(**kwargs):
     """
-    Bot ListOfTuples int -> None
+    kwargs -> None
         bot: Bot | the bot to which we need to assign players
         eligiblePlayers: ListOfTuples | List of distribution-eligible
            players. Format: (firstName, lastName, 3digitTeamAbbreviation)
+        activeDate: datetimedate | date for which we are making selections
 
     Randomly decides whether or not to doubleDown, and randomly chooses
     players to assign to bot. Returns the assigned players
     """
     # Update the bot and return the players
-    return staticDownRandPlayers( bot=bot, eligiblePlayers=eligiblePlayers, 
+    return staticDownRandPlayers( bot=kwargs['bot'], 
+                                  eligiblePlayers=kwargs['eligiblePlayers'], 
                                   doubleDown=random.choice((True, False)) )
 
 def staticDownRandPlayers(**kwargs):
@@ -25,8 +30,6 @@ def staticDownRandPlayers(**kwargs):
     Given a type of Down, randomly chooses playres to assign to bot. Returns
     the assigned players
     """
-    import random
-
     ## check arguments
     assert type(kwargs['bot'] == Bot)
     assert type(kwargs['eligiblePlayers'] == list)

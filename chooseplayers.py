@@ -1,8 +1,7 @@
-
 import pandas as pd  # excel spreadsheet manipulation
 
 from types import FunctionType # to type check function inputs that we expect to be functions
-from datetime import datetime, timedelta # to get today's date
+from datetime import datetime, timedelta, date # to get today's date
 
 from filepath import Filepath 
 from bot import Bot
@@ -18,7 +17,7 @@ def __get_date_formatted_for_excel(d):
 
     Produces the date of interest in month-day format. e.g july 7th -> 7-7
     """
-    return str(d.month) '-' + str(d.day)
+    return str(d.month) +  '-' + str(d.day)
 
 def __get_dataframes_for_choose_players(**kwargs):
     """
@@ -32,11 +31,13 @@ def __get_dataframes_for_choose_players(**kwargs):
     corresponding to strategy sN and virtual machine vMN. The second holds
     all unhandled accounts corresponding to strategy sN and virtual machine vMN
     """
+    import os 
+
     ### Type check
     assert type(kwargs['sN']) == int
     assert type(kwargs['vMN']) == int
     assert type(kwargs['num']) == int
-    assert type(kwargs['activeDate']) == datetime.date
+    assert type(kwargs['activeDate']) == date
 
     ### Let the user know what's up
     print "--> Getting accounts file {}".format(Filepath.get_accounts_file())
@@ -65,7 +66,7 @@ def __get_dataframes_for_choose_players(**kwargs):
         # Only include the columns we want
     df = df[['ID', 'Email', 'MLBPassword', 'Strategy', 'VM']]
 
-    return df[0:num], df
+    return df[0:kwargs['num']], df
 
 def __get_eligible_players(**kwargs):
     """
@@ -82,7 +83,7 @@ def __get_eligible_players(**kwargs):
     """
     ### Type check
     assert type(kwargs['sN']) == int
-    assert type(kwargs['activeDate']) == datetime.date
+    assert type(kwargs['activeDate']) == date
     assert type(kwargs['funcDict']) == dict
 
     ### Variable assignments
@@ -90,7 +91,7 @@ def __get_eligible_players(**kwargs):
     minERAVal = 4.0 # Minimum ERA op pitcher must have for strats 6 and 7
 
     ### Get the tuple of players
-    print "--> Getting today's eligible players"
+    print "--> Getting {}'s eligible players".format(kwargs['activeDate'])
     selectionFunction = kwargs['funcDict'][kwargs['sN']]['select_func']
     if sN == 5:
         eligiblePlayers = selectionFunction(kwargs['activeDate'])
@@ -143,6 +144,7 @@ def __distribute_eligible_players(**kwargs):
         bot: Bot | bot to which we are distributing players
         sN: int | strategy number
         eligiblePlayers: tupleOfTupleOfStrings | players to be distributed
+        activeDate: datetime.date | date for which we are to select players
     """
     ### Type check
     assert type(kwargs['funcDict']) == dict
@@ -150,14 +152,15 @@ def __distribute_eligible_players(**kwargs):
     assert type(kwargs['sN']) == int
     assert type(kwargs['eligiblePlayers']) == tuple
 
-    ## Distribute the playres
+    ## Distribute the players
     distributionFunction = funcDict[kwargs['sN']]['dist_func']
     if kwargs['sN'] in (5, 6):
-        p1, p2 = distributionFunction(bot, eligiblePlayers)
+        p1, p2 = distributionFunction( bot=kwargs['bot'], 
+                                       eligiblePlayers=kwargs['eligiblePlayers'])
     elif sN == 7:
-        p1, p2 = distributionFunction( 
-                   bot=kwargs['bot'], eligiblePlayers=kwargs['eligiblePlayers'], 
-                   doubleDown=True )
+        p1, p2 = distributionFunction( bot=kwargs['bot'], 
+                                       eligiblePlayers=kwargs['eligiblePlayers'],
+                                       doubleDown=True )
 
     return p1, p2
 
@@ -311,7 +314,7 @@ def choosePlayers(**kwargs):
                      sN=sN, vMN=vMN, num=num, activeDate=activeDate)
     
     ##### Get today's eligible players #### 
-    eligiblePlayers = __get_eligible_players( d=activeDate, 
+    eligiblePlayers = __get_eligible_players( activeDate=activeDate, 
                                               funcDict = funcDict, 
                                               sN=sN )
     if len(eligiblePlayers) == 0: # report as much and exit gracefully
@@ -319,7 +322,7 @@ def choosePlayers(**kwargs):
                                      sN=kwargs['sN'], 
                                      vMN=kwargs['vMN'] )
         return 'done'
-------> Pick up from here
+
     ###### update each of the accounts #####
     numIters = 0          # if we iterate too many times, exit gracefully
     lenDF = len(df)       # for keeping track of how much we have left
@@ -327,7 +330,7 @@ def choosePlayers(**kwargs):
     updatedAccounts = []  # to keep track accounts to log to file
     while len(updatedAccounts) != lenDF:
 
-        # If we've run the loop "too many" times, exit out
+        ## If we've run the loop "too many" times, exit out
         if numIters > (2 * lenDF):
             logFailedAccounts( df=df, updatedUsernames=updatedUsernames, 
                                logger=logger )
@@ -354,16 +357,23 @@ def choosePlayers(**kwargs):
 
                 # make the appropriate bot and update him
                 bot, p1, p2 = (None, None, None) # in case we throw an exception before they get assigned
-                bot = Bot(str(username), str(password))
+                bot = Bot(str(username), str(password), activeDate)
                 p1, p2 = __distribute_eligible_players( 
-                             funcDict=funcDict, bot=bot, sN=sN,
-                             eligiblePlayers=eligiblePlayers)
+                    funcDict=funcDict, bot=bot, sN=kwargs['sN'],
+                    eligiblePlayers=eligiblePlayers)
 
             # this should never happen
             except NoPlayerFoundException as e:
+                logError( str(username), str(password), p1, p2, e, logger)
                 if bot:
                     bot.quit_browser() # closes display as well, if necessary
-                raise e
+                raise
+
+            # if the user interferes, exit
+            except KeyboardInterrupt:
+                if bot:
+                    bot.quit_browser() # closes display as well, if necessary
+                raise
 
             # sometimes unstable browsers raise exceptions. Just try again
             except Exception as e:
@@ -468,6 +478,7 @@ if __name__ == '__main__':
                                      num=numLeft, activeDate=activeDate)
             break
         else: 
+            assert type(sN) == int
             print "\n********** Assigning IN CHUNKS OF {}".format(blockSize) + \
                   ":.Completed {} of {}".format(origCount-numLeft, origCount) + \
                   " Strategy, VM: {}, {} ***********".format(sN, vMN) 
