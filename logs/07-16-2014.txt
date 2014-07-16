@@ -189,3 +189,57 @@ Traceback (most recent call last):
   File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
     raise TimeoutException(message)
 TimeoutException: Message: '' 
+2014-07-16 14:10:44,874 Unit account update failure: faiyam.faiyam.1412@faiyamrahman.com, beatthestreak1
+
+2014-07-16 14:10:44,874 Unit account update failure: faiyam.faiyam.1412@faiyamrahman.com, beatthestreak1
+
+2014-07-16 14:10:44,874     p1, p2: None, None
+
+2014-07-16 14:10:44,874     p1, p2: None, None
+
+2014-07-16 14:10:44,874 Message: '' 
+Traceback (most recent call last):
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 468, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 242, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 252, in _click_make_pick_for_date
+    dateRow = self.__get_date_make_pick_row()
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 267, in __get_date_make_pick_row
+    EC.presence_of_element_located((By.TAG_NAME, 'tr')))
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-16 14:10:44,874 Message: '' 
+Traceback (most recent call last):
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 468, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 242, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 252, in _click_make_pick_for_date
+    dateRow = self.__get_date_make_pick_row()
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 267, in __get_date_make_pick_row
+    EC.presence_of_element_located((By.TAG_NAME, 'tr')))
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
