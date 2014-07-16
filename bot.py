@@ -157,12 +157,14 @@ class Bot(object):
         lastNameElems = self.browser.find_elements_by_class_name("last-name")
         firstNameElems = self.browser.find_elements_by_class_name("first-name")
         selectButtons = self.browser.find_elements_by_class_name("select-action")
-            # for each player on team team, the opposing pitcher's name shows
-            # up once (in both name lists). Sift out the repeated last name of the 
-            # opposing starting pitcher so that the index of a lastName in 
-            # teamLastNames (resp. firstName in teamFirstNames) is the index
-            # of the select button in selectButtons for the corresponding player
-        if len(lastNameElems) == (2 * len(selectButtons)): # pitcher is displayed:        
+
+            # If necessary, sift out the appearances of the pitchers name
+        pitcherDisplayed = ( len(lastNameElems) == (2 * len(selectButtons)) )
+                # If this is a double down, and the first selection was for a player
+                # on the same team as this one, then one of the "select buttons" 
+                # is now a remove button, so the condition is slightly altered
+        pitcherDisplayedPlusSameTeam = ( len(lastNameElems) == (2 * (len(selectButtons) + 1)) )
+        if  pitcherDisplayed or pitcherDisplayedPlusSameTeam: 
             teamLastNameElems = [elem for elem in lastNameElems
                 if lastNameElems.index(elem) % 2 == 0]
             teamFirstNameElems = [elem for elem in firstNameElems
