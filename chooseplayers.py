@@ -164,7 +164,7 @@ def __distribute_eligible_players(**kwargs):
 
     return p1, p2
 
-def get_num_accounts(sN=None, vMN=None, getRemaining=True):
+def get_num_accounts(sN=None, vMN=None, getRemaining=True, activeDate=None):
     """
     int int bool -> int 
        sN: Strategy Number
@@ -184,7 +184,7 @@ def get_num_accounts(sN=None, vMN=None, getRemaining=True):
     assert type(getRemaining) == bool
 
     ## Assign initial variables
-    today = __get_date_formatted_for_excel(datetime.today())
+    day = __get_date_formatted_for_excel(activeDate)
     minionPath = Filepath.get_minion_account_file(sN=sN, vMN=vMN)
 
     ## If the minion account File exists, get it
@@ -192,9 +192,9 @@ def get_num_accounts(sN=None, vMN=None, getRemaining=True):
         minionDF = pd.read_excel( minionPath, 
                                   sheetname="Production")
         # If appropriate, parse out all accounts that have already been handled
-        if getRemaining and (today in minionDF.columns): 
+        if getRemaining and (day in minionDF.columns): 
             # pd.isnull checks for NaNs
-            minionDF = minionDF[pd.isnull(minionDF[today])]
+            minionDF = minionDF[pd.isnull(minionDF[day])]
 
     ## Otherwise get the accounts from the master accounts file
     else:    
@@ -467,7 +467,9 @@ if __name__ == '__main__':
     doneYet = ''
     blockSize = 20
     origCount = get_num_accounts( 
-                  sN=sN, vMN=vMN, getRemaining=True )
+                  sN=sN, vMN=vMN, getRemaining=True, activeDate=activeDate )
+    if origCount == 0:
+        print "We already done playboy!"
     numLeft = origCount
     funcDict = {
         5: { 'select_func': getRecommendedPicks, 
