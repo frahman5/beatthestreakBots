@@ -123,7 +123,7 @@ def main(N):
     while (i < N):
         username = random.choice(usernameStarters) + "." + \
                     random.choice(usernameStarters) + "." + \
-                    str(random.randint(1,2014)) + '@faiyamrahman.com'
+                    str(random.randint(1,2014000)) + '@faiyamrahman.com'
         # make sure we don't repeat an address
         if (username in listOfEmails) or (username in newUsernamesL):
             continue
