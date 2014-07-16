@@ -298,6 +298,7 @@ def choosePlayers(**kwargs):
     Returns 'noneLeft' if no players are eligible anymore
     """
     import os
+    import subprocess
 
     ###### Get our arguments: #####
     funcDict = kwargs['funcDict']
@@ -308,7 +309,7 @@ def choosePlayers(**kwargs):
 
     ###### get an error logger #####
     print "\n--> Creating Error Logger"
-    logger = getLogger()
+    logger = getLogger(kwargs['activeDate'])
 
     ##### get list of accounts you need #####
     df, fulldf = __get_dataframes_for_choose_players( 
@@ -340,6 +341,9 @@ def choosePlayers(**kwargs):
         ## Update those accounts baby!
         updatedUsernames = [ account[0] for account in updatedAccounts] 
         for dummyIndex, index, username, password, sN, vMN in df.itertuples():
+
+            # log ps -A, for debugging purposes
+            logger.info(subprocess.call(['ps', '-A']))
 
             # don't update the same account twice
             if username in updatedUsernames: 
