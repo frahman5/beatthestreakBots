@@ -87,7 +87,9 @@ def claim_mulligan(username, password):
 
     Bot launches and closes its own display and browser
     """
-    bot = Bot(str(username), password)
+    from datetime import datetime
+    
+    bot = Bot(str(username), password, activeDate=datetime.today().date())
     bot.claim_mulligan()
 
 def main(N):
