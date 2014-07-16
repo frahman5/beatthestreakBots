@@ -343,7 +343,13 @@ def choosePlayers(**kwargs):
         for dummyIndex, index, username, password, sN, vMN in df.itertuples():
 
             # log ps -A, for debugging purposes
-            logger.info(subprocess.call(['ps', '-A']))
+            with open(Filepath.get_log_file(kwargs['activeDate']), "a") as f:
+                f.write('\n\n\n')
+                f.write('ITER: {} with u, p: {}, {}\n'.format(
+                            numIters, username, password))
+                f.write('TIME: {}\n'.format(datetime.now().time()))
+                f.flush()
+                subprocess.call(['ps', '-A'], stdout=f)
 
             # don't update the same account twice
             if username in updatedUsernames: 

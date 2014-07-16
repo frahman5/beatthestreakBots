@@ -37,14 +37,16 @@ def staticDownRandPlayers(**kwargs):
     assert type(kwargs['doubleDown'] == bool)
 
     # Pseudo-randomly choose playres
-    p1 = random.choice(kwargs['eligiblePlayers'])
-    if kwargs['doubleDown'] and (len(kwargs['eligiblePlayers']) != 1):
-        p2 = p1
-        while (p1 == p2):
-            p2 = random.choice(kwargs['eligiblePlayers'])
-    else:
-        p2 = ()
-
-    # Assign the players to the bot and return them to the caller
-    kwargs['bot'].choose_players(p1=p1, p2=p2)
-    return p1, p2
+    try: 
+        p1 = random.choice(kwargs['eligiblePlayers'])
+        if kwargs['doubleDown'] and (len(kwargs['eligiblePlayers']) != 1):
+            p2 = p1
+            while (p1 == p2):
+                p2 = random.choice(kwargs['eligiblePlayers'])
+        else:
+            p2 = ()
+        # Assign the players to the bot and return them to the caller
+        kwargs['bot'].choose_players(p1=p1, p2=p2)
+        return p1, p2
+    except Exception as e:
+        raise type(e)(e.message + ' with players {} and {}'.format(p1, p2))
