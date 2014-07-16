@@ -126,6 +126,9 @@ class Bot(object):
 
         Assigns player player to bot.
         """
+        if 'Lucroy' in kwargs['player']:
+            import pdb
+            pdb.set_trace()
         ## Extract variables
         player = kwargs['player']
         doubleDown = kwargs['doubleDown']
@@ -173,8 +176,8 @@ class Bot(object):
         lastNameMatches = [teamLastNameElems.index(elem) for elem 
             in teamLastNameElems if elem.text == lastName]
         fullNameMatches = [ index for index in lastNameMatches if 
-            (index in lastNameMatches) or # pitcher is displayed 
-            ( (index * 2) in lastNameMatches)]  # pitcher is not displayed 
+            (index in firstNameMatches) or # pitcher is displayed 
+            ( (index * 2) in firstNameMatches)]  # pitcher is not displayed 
             
         numMatches = len(fullNameMatches)
         if numMatches == 0: 

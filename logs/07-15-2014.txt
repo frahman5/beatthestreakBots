@@ -2250,3 +2250,1791 @@ Traceback (most recent call last):
   File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
     raise exception_class(message, screen, stacktrace)
 TimeoutException: Message: u'timeout: Timed out receiving message from renderer: 290.995\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 17:56:41,802 Unit account update failure: faiyam.water.1983@faiyamrahman.com, beatthestreak1
+
+2014-07-15 17:56:41,826     p1, p2: None, None
+
+2014-07-15 17:56:41,826 Message: u'element not visible\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 480, in _reset_selections
+    removeButtons[0].click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+ElementNotVisibleException: Message: u'element not visible\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 18:12:40,949 Unit account update failure: fossil.water.1797@faiyamrahman.com, beatthestreak1
+
+2014-07-15 18:12:40,949 Unit account update failure: fossil.water.1797@faiyamrahman.com, beatthestreak1
+
+2014-07-15 18:12:40,950     p1, p2: None, None
+
+2014-07-15 18:12:40,950     p1, p2: None, None
+
+2014-07-15 18:12:40,950 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 247, in _click_make_pick_for_date
+    dateRow = self.__get_date_make_pick_row()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 262, in __get_date_make_pick_row
+    EC.presence_of_element_located((By.TAG_NAME, 'tr')))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 18:12:40,950 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 247, in _click_make_pick_for_date
+    dateRow = self.__get_date_make_pick_row()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 262, in __get_date_make_pick_row
+    EC.presence_of_element_located((By.TAG_NAME, 'tr')))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 18:26:10,282 Unit account update failure: bts.bts.1358@faiyamrahman.com, beatthestreak1
+
+2014-07-15 18:26:10,282 Unit account update failure: bts.bts.1358@faiyamrahman.com, beatthestreak1
+
+2014-07-15 18:26:10,282 Unit account update failure: bts.bts.1358@faiyamrahman.com, beatthestreak1
+
+2014-07-15 18:26:10,282     p1, p2: None, None
+
+2014-07-15 18:26:10,282     p1, p2: None, None
+
+2014-07-15 18:26:10,282     p1, p2: None, None
+
+2014-07-15 18:26:10,283 Message: u'stale element reference: element is not attached to the page document\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 172, in __choose_single_player
+    in teamFirstNameElems if elem.text == firstName]
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 56, in text
+    return self._execute(Command.GET_ELEMENT_TEXT)['value']
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+StaleElementReferenceException: Message: u'stale element reference: element is not attached to the page document\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 18:26:10,283 Message: u'stale element reference: element is not attached to the page document\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 172, in __choose_single_player
+    in teamFirstNameElems if elem.text == firstName]
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 56, in text
+    return self._execute(Command.GET_ELEMENT_TEXT)['value']
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+StaleElementReferenceException: Message: u'stale element reference: element is not attached to the page document\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 18:26:10,283 Message: u'stale element reference: element is not attached to the page document\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 172, in __choose_single_player
+    in teamFirstNameElems if elem.text == firstName]
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 56, in text
+    return self._execute(Command.GET_ELEMENT_TEXT)['value']
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+StaleElementReferenceException: Message: u'stale element reference: element is not attached to the page document\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 18:28:07,593 Unit account update failure: fossil.water.1802@faiyamrahman.com, beatthestreak1
+
+2014-07-15 18:28:07,593 Unit account update failure: fossil.water.1802@faiyamrahman.com, beatthestreak1
+
+2014-07-15 18:28:07,593 Unit account update failure: fossil.water.1802@faiyamrahman.com, beatthestreak1
+
+2014-07-15 18:28:07,593     p1, p2: None, None
+
+2014-07-15 18:28:07,593     p1, p2: None, None
+
+2014-07-15 18:28:07,593     p1, p2: None, None
+
+2014-07-15 18:28:07,594 Message: u'unknown error: Element is not clickable at point (838, 523). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 222, in __get_team_selection_dropdown
+    team.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (838, 523). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 18:28:07,594 Message: u'unknown error: Element is not clickable at point (838, 523). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 222, in __get_team_selection_dropdown
+    team.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (838, 523). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 18:28:07,594 Message: u'unknown error: Element is not clickable at point (838, 523). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 222, in __get_team_selection_dropdown
+    team.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (838, 523). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 18:43:58,815 Unit account update failure: rahman.daft.1729@faiyamrahman.com, beatthestreak1
+
+2014-07-15 18:43:58,815 Unit account update failure: rahman.daft.1729@faiyamrahman.com, beatthestreak1
+
+2014-07-15 18:43:58,815 Unit account update failure: rahman.daft.1729@faiyamrahman.com, beatthestreak1
+
+2014-07-15 18:43:58,815 Unit account update failure: rahman.daft.1729@faiyamrahman.com, beatthestreak1
+
+2014-07-15 18:43:58,816     p1, p2: None, None
+
+2014-07-15 18:43:58,816     p1, p2: None, None
+
+2014-07-15 18:43:58,816     p1, p2: None, None
+
+2014-07-15 18:43:58,816     p1, p2: None, None
+
+2014-07-15 18:43:58,816 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 221, in __get_team_selection_dropdown
+    EC.presence_of_element_located((By.CLASS_NAME, team)))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 18:43:58,816 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 221, in __get_team_selection_dropdown
+    EC.presence_of_element_located((By.CLASS_NAME, team)))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 18:43:58,816 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 221, in __get_team_selection_dropdown
+    EC.presence_of_element_located((By.CLASS_NAME, team)))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 18:43:58,816 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 221, in __get_team_selection_dropdown
+    EC.presence_of_element_located((By.CLASS_NAME, team)))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 19:50:16,323 Unit account update failure: bts.grassfed.1311@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:16,323 Unit account update failure: bts.grassfed.1311@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:16,323 Unit account update failure: bts.grassfed.1311@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:16,323 Unit account update failure: bts.grassfed.1311@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:16,323 Unit account update failure: bts.grassfed.1311@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:16,323 Unit account update failure: bts.grassfed.1311@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:16,324     p1, p2: None, None
+
+2014-07-15 19:50:16,324     p1, p2: None, None
+
+2014-07-15 19:50:16,324     p1, p2: None, None
+
+2014-07-15 19:50:16,324     p1, p2: None, None
+
+2014-07-15 19:50:16,324     p1, p2: None, None
+
+2014-07-15 19:50:16,324     p1, p2: None, None
+
+2014-07-15 19:50:16,324 Message: u'unknown error: Element is not clickable at point (427, 322). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 213, in __get_team_selection_dropdown
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 250, in _click_make_pick_for_date
+    datePlayerInfoRow.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (427, 322). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 19:50:16,324 Message: u'unknown error: Element is not clickable at point (427, 322). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 213, in __get_team_selection_dropdown
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 250, in _click_make_pick_for_date
+    datePlayerInfoRow.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (427, 322). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 19:50:16,324 Message: u'unknown error: Element is not clickable at point (427, 322). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 213, in __get_team_selection_dropdown
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 250, in _click_make_pick_for_date
+    datePlayerInfoRow.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (427, 322). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 19:50:16,324 Message: u'unknown error: Element is not clickable at point (427, 322). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 213, in __get_team_selection_dropdown
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 250, in _click_make_pick_for_date
+    datePlayerInfoRow.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (427, 322). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 19:50:16,324 Message: u'unknown error: Element is not clickable at point (427, 322). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 213, in __get_team_selection_dropdown
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 250, in _click_make_pick_for_date
+    datePlayerInfoRow.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (427, 322). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 19:50:16,324 Message: u'unknown error: Element is not clickable at point (427, 322). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 213, in __get_team_selection_dropdown
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 250, in _click_make_pick_for_date
+    datePlayerInfoRow.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (427, 322). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 19:50:25,116 Unit account update failure: grassfed.metro.1425@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:25,116 Unit account update failure: grassfed.metro.1425@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:25,116 Unit account update failure: grassfed.metro.1425@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:25,116 Unit account update failure: grassfed.metro.1425@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:25,116 Unit account update failure: grassfed.metro.1425@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:25,116 Unit account update failure: grassfed.metro.1425@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:25,117     p1, p2: None, None
+
+2014-07-15 19:50:25,117     p1, p2: None, None
+
+2014-07-15 19:50:25,117     p1, p2: None, None
+
+2014-07-15 19:50:25,117     p1, p2: None, None
+
+2014-07-15 19:50:25,117     p1, p2: None, None
+
+2014-07-15 19:50:25,117     p1, p2: None, None
+
+2014-07-15 19:50:25,117 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 438, in _get_make_picks_page
+    self._get_login_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 426, in _get_login_page
+    assert self.browser.title == self.pageTitles['login']
+AssertionError
+2014-07-15 19:50:25,117 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 438, in _get_make_picks_page
+    self._get_login_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 426, in _get_login_page
+    assert self.browser.title == self.pageTitles['login']
+AssertionError
+2014-07-15 19:50:25,117 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 438, in _get_make_picks_page
+    self._get_login_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 426, in _get_login_page
+    assert self.browser.title == self.pageTitles['login']
+AssertionError
+2014-07-15 19:50:25,117 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 438, in _get_make_picks_page
+    self._get_login_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 426, in _get_login_page
+    assert self.browser.title == self.pageTitles['login']
+AssertionError
+2014-07-15 19:50:25,117 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 438, in _get_make_picks_page
+    self._get_login_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 426, in _get_login_page
+    assert self.browser.title == self.pageTitles['login']
+AssertionError
+2014-07-15 19:50:25,117 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 438, in _get_make_picks_page
+    self._get_login_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 426, in _get_login_page
+    assert self.browser.title == self.pageTitles['login']
+AssertionError
+2014-07-15 19:50:30,506 Unit account update failure: grassfed.fossil.708@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:30,506 Unit account update failure: grassfed.fossil.708@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:30,506 Unit account update failure: grassfed.fossil.708@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:30,506 Unit account update failure: grassfed.fossil.708@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:30,506 Unit account update failure: grassfed.fossil.708@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:30,506 Unit account update failure: grassfed.fossil.708@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:50:30,507     p1, p2: None, None
+
+2014-07-15 19:50:30,507     p1, p2: None, None
+
+2014-07-15 19:50:30,507     p1, p2: None, None
+
+2014-07-15 19:50:30,507     p1, p2: None, None
+
+2014-07-15 19:50:30,507     p1, p2: None, None
+
+2014-07-15 19:50:30,507     p1, p2: None, None
+
+2014-07-15 19:50:30,507 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 438, in _get_make_picks_page
+    self._get_login_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 426, in _get_login_page
+    assert self.browser.title == self.pageTitles['login']
+AssertionError
+2014-07-15 19:50:30,507 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 438, in _get_make_picks_page
+    self._get_login_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 426, in _get_login_page
+    assert self.browser.title == self.pageTitles['login']
+AssertionError
+2014-07-15 19:50:30,507 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 438, in _get_make_picks_page
+    self._get_login_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 426, in _get_login_page
+    assert self.browser.title == self.pageTitles['login']
+AssertionError
+2014-07-15 19:50:30,507 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 438, in _get_make_picks_page
+    self._get_login_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 426, in _get_login_page
+    assert self.browser.title == self.pageTitles['login']
+AssertionError
+2014-07-15 19:50:30,507 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 438, in _get_make_picks_page
+    self._get_login_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 426, in _get_login_page
+    assert self.browser.title == self.pageTitles['login']
+AssertionError
+2014-07-15 19:50:30,507 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 438, in _get_make_picks_page
+    self._get_login_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 426, in _get_login_page
+    assert self.browser.title == self.pageTitles['login']
+AssertionError
+2014-07-15 19:59:55,412 Unit account update failure: faiyam.fossil.153@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:59:55,412 Unit account update failure: faiyam.fossil.153@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:59:55,412 Unit account update failure: faiyam.fossil.153@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:59:55,412 Unit account update failure: faiyam.fossil.153@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:59:55,412 Unit account update failure: faiyam.fossil.153@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:59:55,412 Unit account update failure: faiyam.fossil.153@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:59:55,412 Unit account update failure: faiyam.fossil.153@faiyamrahman.com, beatthestreak1
+
+2014-07-15 19:59:55,413     p1, p2: None, None
+
+2014-07-15 19:59:55,413     p1, p2: None, None
+
+2014-07-15 19:59:55,413     p1, p2: None, None
+
+2014-07-15 19:59:55,413     p1, p2: None, None
+
+2014-07-15 19:59:55,413     p1, p2: None, None
+
+2014-07-15 19:59:55,413     p1, p2: None, None
+
+2014-07-15 19:59:55,413     p1, p2: None, None
+
+2014-07-15 19:59:55,413 Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 216, in __get_team_selection_dropdown
+    selectTeam.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 19:59:55,413 Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 216, in __get_team_selection_dropdown
+    selectTeam.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 19:59:55,413 Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 216, in __get_team_selection_dropdown
+    selectTeam.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 19:59:55,413 Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 216, in __get_team_selection_dropdown
+    selectTeam.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 19:59:55,413 Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 216, in __get_team_selection_dropdown
+    selectTeam.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 19:59:55,413 Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 216, in __get_team_selection_dropdown
+    selectTeam.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 19:59:55,413 Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 216, in __get_team_selection_dropdown
+    selectTeam.click()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 60, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 370, in _execute
+    return self._parent.execute(command, params)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 173, in execute
+    self.error_handler.check_response(response)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: Element is not clickable at point (869, 262). Other element would receive the click: <div class="wait-indicator" style="display: block;" id="spinner">...</div>\n  (Session info: chrome=35.0.1916.153)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+2014-07-15 20:01:24,117 Unit account update failure: williams.earth.1048@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:01:24,117 Unit account update failure: williams.earth.1048@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:01:24,117 Unit account update failure: williams.earth.1048@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:01:24,117 Unit account update failure: williams.earth.1048@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:01:24,117 Unit account update failure: williams.earth.1048@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:01:24,117 Unit account update failure: williams.earth.1048@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:01:24,117 Unit account update failure: williams.earth.1048@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:01:24,118     p1, p2: None, None
+
+2014-07-15 20:01:24,118     p1, p2: None, None
+
+2014-07-15 20:01:24,118     p1, p2: None, None
+
+2014-07-15 20:01:24,118     p1, p2: None, None
+
+2014-07-15 20:01:24,118     p1, p2: None, None
+
+2014-07-15 20:01:24,118     p1, p2: None, None
+
+2014-07-15 20:01:24,118     p1, p2: None, None
+
+2014-07-15 20:01:24,118 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:01:24,118 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:01:24,118 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:01:24,118 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:01:24,118 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:01:24,118 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:01:24,118 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:17:20,864 Unit account update failure: faiyam.williams.524@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:17:20,864 Unit account update failure: faiyam.williams.524@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:17:20,864 Unit account update failure: faiyam.williams.524@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:17:20,864 Unit account update failure: faiyam.williams.524@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:17:20,864 Unit account update failure: faiyam.williams.524@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:17:20,864 Unit account update failure: faiyam.williams.524@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:17:20,864 Unit account update failure: faiyam.williams.524@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:17:20,864 Unit account update failure: faiyam.williams.524@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:17:20,865     p1, p2: None, None
+
+2014-07-15 20:17:20,865     p1, p2: None, None
+
+2014-07-15 20:17:20,865     p1, p2: None, None
+
+2014-07-15 20:17:20,865     p1, p2: None, None
+
+2014-07-15 20:17:20,865     p1, p2: None, None
+
+2014-07-15 20:17:20,865     p1, p2: None, None
+
+2014-07-15 20:17:20,865     p1, p2: None, None
+
+2014-07-15 20:17:20,865     p1, p2: None, None
+
+2014-07-15 20:17:20,866 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 247, in _click_make_pick_for_date
+    dateRow = self.__get_date_make_pick_row()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 262, in __get_date_make_pick_row
+    EC.presence_of_element_located((By.TAG_NAME, 'tr')))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 20:17:20,866 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 247, in _click_make_pick_for_date
+    dateRow = self.__get_date_make_pick_row()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 262, in __get_date_make_pick_row
+    EC.presence_of_element_located((By.TAG_NAME, 'tr')))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 20:17:20,866 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 247, in _click_make_pick_for_date
+    dateRow = self.__get_date_make_pick_row()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 262, in __get_date_make_pick_row
+    EC.presence_of_element_located((By.TAG_NAME, 'tr')))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 20:17:20,866 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 247, in _click_make_pick_for_date
+    dateRow = self.__get_date_make_pick_row()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 262, in __get_date_make_pick_row
+    EC.presence_of_element_located((By.TAG_NAME, 'tr')))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 20:17:20,866 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 247, in _click_make_pick_for_date
+    dateRow = self.__get_date_make_pick_row()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 262, in __get_date_make_pick_row
+    EC.presence_of_element_located((By.TAG_NAME, 'tr')))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 20:17:20,866 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 247, in _click_make_pick_for_date
+    dateRow = self.__get_date_make_pick_row()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 262, in __get_date_make_pick_row
+    EC.presence_of_element_located((By.TAG_NAME, 'tr')))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 20:17:20,866 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 247, in _click_make_pick_for_date
+    dateRow = self.__get_date_make_pick_row()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 262, in __get_date_make_pick_row
+    EC.presence_of_element_located((By.TAG_NAME, 'tr')))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 20:17:20,866 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 237, in _get_player_selection_dropdown
+    self._click_make_pick_for_date() # includes a sleep at the end
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 247, in _click_make_pick_for_date
+    dateRow = self.__get_date_make_pick_row()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 262, in __get_date_make_pick_row
+    EC.presence_of_element_located((By.TAG_NAME, 'tr')))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-15 20:32:51,817 Unit account update failure: daft.daft.560@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:32:51,817 Unit account update failure: daft.daft.560@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:32:51,817 Unit account update failure: daft.daft.560@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:32:51,817 Unit account update failure: daft.daft.560@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:32:51,817 Unit account update failure: daft.daft.560@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:32:51,817 Unit account update failure: daft.daft.560@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:32:51,817 Unit account update failure: daft.daft.560@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:32:51,817 Unit account update failure: daft.daft.560@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:32:51,817 Unit account update failure: daft.daft.560@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:32:51,818     p1, p2: None, None
+
+2014-07-15 20:32:51,818     p1, p2: None, None
+
+2014-07-15 20:32:51,818     p1, p2: None, None
+
+2014-07-15 20:32:51,818     p1, p2: None, None
+
+2014-07-15 20:32:51,818     p1, p2: None, None
+
+2014-07-15 20:32:51,818     p1, p2: None, None
+
+2014-07-15 20:32:51,818     p1, p2: None, None
+
+2014-07-15 20:32:51,818     p1, p2: None, None
+
+2014-07-15 20:32:51,818     p1, p2: None, None
+
+2014-07-15 20:32:51,818 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 455, in _get_make_picks_page
+    assert self.browser.title == self.pageTitles['picks']
+AssertionError
+2014-07-15 20:32:51,818 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 455, in _get_make_picks_page
+    assert self.browser.title == self.pageTitles['picks']
+AssertionError
+2014-07-15 20:32:51,818 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 455, in _get_make_picks_page
+    assert self.browser.title == self.pageTitles['picks']
+AssertionError
+2014-07-15 20:32:51,818 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 455, in _get_make_picks_page
+    assert self.browser.title == self.pageTitles['picks']
+AssertionError
+2014-07-15 20:32:51,818 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 455, in _get_make_picks_page
+    assert self.browser.title == self.pageTitles['picks']
+AssertionError
+2014-07-15 20:32:51,818 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 455, in _get_make_picks_page
+    assert self.browser.title == self.pageTitles['picks']
+AssertionError
+2014-07-15 20:32:51,818 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 455, in _get_make_picks_page
+    assert self.browser.title == self.pageTitles['picks']
+AssertionError
+2014-07-15 20:32:51,818 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 455, in _get_make_picks_page
+    assert self.browser.title == self.pageTitles['picks']
+AssertionError
+2014-07-15 20:32:51,818 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 108, in choose_players
+    self._reset_selections()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 463, in _reset_selections
+    self._get_player_selection_dropdown()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 231, in _get_player_selection_dropdown
+    self._get_make_picks_page()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 455, in _get_make_picks_page
+    assert self.browser.title == self.pageTitles['picks']
+AssertionError
+2014-07-15 20:48:34,721 Unit account update failure: earth.williams.767@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:48:34,721 Unit account update failure: earth.williams.767@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:48:34,721 Unit account update failure: earth.williams.767@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:48:34,721 Unit account update failure: earth.williams.767@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:48:34,721 Unit account update failure: earth.williams.767@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:48:34,721 Unit account update failure: earth.williams.767@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:48:34,721 Unit account update failure: earth.williams.767@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:48:34,721 Unit account update failure: earth.williams.767@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:48:34,721 Unit account update failure: earth.williams.767@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:48:34,721 Unit account update failure: earth.williams.767@faiyamrahman.com, beatthestreak1
+
+2014-07-15 20:48:34,722     p1, p2: None, None
+
+2014-07-15 20:48:34,722     p1, p2: None, None
+
+2014-07-15 20:48:34,722     p1, p2: None, None
+
+2014-07-15 20:48:34,722     p1, p2: None, None
+
+2014-07-15 20:48:34,722     p1, p2: None, None
+
+2014-07-15 20:48:34,722     p1, p2: None, None
+
+2014-07-15 20:48:34,722     p1, p2: None, None
+
+2014-07-15 20:48:34,722     p1, p2: None, None
+
+2014-07-15 20:48:34,722     p1, p2: None, None
+
+2014-07-15 20:48:34,722     p1, p2: None, None
+
+2014-07-15 20:48:34,722 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:48:34,722 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:48:34,722 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:48:34,722 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:48:34,722 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:48:34,722 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:48:34,722 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:48:34,722 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:48:34,722 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range
+2014-07-15 20:48:34,722 list index out of range
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 184, in __choose_single_player
+    selectButtons[fullNameMatches[0]].click()
+IndexError: list index out of range

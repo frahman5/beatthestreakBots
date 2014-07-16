@@ -74,10 +74,12 @@ def topPBatters(**kwargs):
 
     ## Sanity check
     if kwargs['activeDate'] != datetime.today().date():
+        today = datetime.today().date()
         print "\nWARNING: As you are selecting on a future date," + \
            " the top batters w.r.t batting average will be from TODAY" + \
-           " and we will filter out the players who aren't starting or" + \
-           " are facing a pitcher with too high an ERA using the given date"
+           " {} and we will filter out the players who".format(today) + \
+           " aren't starting or are facing a pitcher with too high an ERA" + \
+           " using the given date {}".format(kwargs['activeDate'])
 
     ## start a display if necessary, and start the browser
     if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
@@ -111,7 +113,7 @@ def topPBatters(**kwargs):
         for index, row in enumerate( allRows ):
             # if we're done, get outta there
             if index == kwargs['p']:
-                beatthestreakBots
+                break
                 # row cells 
             cells = row.find_elements_by_tag_name('td')
                 # cell[1].text is player's first and last name

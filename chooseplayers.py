@@ -97,7 +97,7 @@ def __get_eligible_players(**kwargs):
         eligiblePlayers = selectionFunction(kwargs['activeDate'])
     elif sN in (6, 7):
         eligiblePlayers = selectionFunction(p=pVal, 
-                                            today=kwargs['activeDate'],
+                                            activeDate=kwargs['activeDate'],
                                             filt={'minERA': minERAVal})
 
     ### Let the user know what's up
@@ -455,7 +455,7 @@ if __name__ == '__main__':
     ## Assign players to accounts in chunks of 50 so that in case something
     ## bad happens, we finish as many players as possible
     doneYet = ''
-    blockSize = 2
+    blockSize = 20
     origCount = get_num_accounts( 
                   sN=sN, vMN=vMN, getRemaining=True )
     numLeft = origCount

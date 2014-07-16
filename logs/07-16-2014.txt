@@ -1,0 +1,145 @@
+    2014-07-16 08:23:03,334 Unit account update failure: grassfed.metro.1733@faiyamrahman.com, beatthestreak1
+
+2014-07-16 08:23:03,336     p1, p2: None, None
+
+2014-07-16 08:23:03,336 'The det have two players with the same name: Victor Martinez'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 187, in __choose_single_player
+    "with the same name: {0} {1}".format(firstName, lastName))
+SameNameException: 'The det have two players with the same name: Victor Martinez'
+2014-07-16 08:24:46,510 Unit account update failure: metro.grassfed.930@faiyamrahman.com, beatthestreak1
+
+2014-07-16 08:24:46,511     p1, p2: None, None
+
+2014-07-16 08:24:46,511 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 145, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 221, in __get_team_selection_dropdown
+    EC.presence_of_element_located((By.CLASS_NAME, team)))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-16 08:25:22,832 Unit account update failure: water.fossil.712@faiyamrahman.com, beatthestreak1
+
+2014-07-16 08:25:22,832     p1, p2: None, None
+
+2014-07-16 08:25:22,833 'Player Jonathan Lucroy on team mil was not found'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 182, in __choose_single_player
+    firstName, lastName, team) + " was not found")
+NoPlayerFoundException: 'Player Jonathan Lucroy on team mil was not found'
+2014-07-16 08:31:20,371 Unit account update failure: grassfed.metro.1733@faiyamrahman.com, beatthestreak1
+
+2014-07-16 08:31:20,372     p1, p2: None, None
+
+2014-07-16 08:31:20,372 'The det have two players with the same name: Victor Martinez'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 190, in __choose_single_player
+    "with the same name: {0} {1}".format(firstName, lastName))
+SameNameException: 'The det have two players with the same name: Victor Martinez'
+2014-07-16 08:32:36,850 Unit account update failure: williams.metro.24@faiyamrahman.com, beatthestreak1
+
+2014-07-16 08:32:36,851     p1, p2: None, None
+
+2014-07-16 08:32:36,851 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 148, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 224, in __get_team_selection_dropdown
+    EC.presence_of_element_located((By.CLASS_NAME, team)))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
+2014-07-16 08:36:51,879 Unit account update failure: water.fossil.712@faiyamrahman.com, beatthestreak1
+
+2014-07-16 08:36:51,879     p1, p2: None, None
+
+2014-07-16 08:36:51,880 'The det have two players with the same name: Victor Martinez'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 112, in choose_players
+    self.__choose_single_player( player=p2, doubleDown=True)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 190, in __choose_single_player
+    "with the same name: {0} {1}".format(firstName, lastName))
+SameNameException: 'The det have two players with the same name: Victor Martinez'
+2014-07-16 08:37:33,498 Unit account update failure: rahman.grassfed.283@faiyamrahman.com, beatthestreak1
+
+2014-07-16 08:37:33,498     p1, p2: None, None
+
+2014-07-16 08:37:33,498 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 364, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 159, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 20, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 49, in staticDownRandPlayers
+    kwargs['bot'].choose_players(p1=p1, p2=p2)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 110, in choose_players
+    self.__choose_single_player( player=p1, doubleDown=False)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 148, in __choose_single_player
+    self.__get_team_selection_dropdown(team=team)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 224, in __get_team_selection_dropdown
+    EC.presence_of_element_located((By.CLASS_NAME, team)))
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/support/wait.py", line 71, in until
+    raise TimeoutException(message)
+TimeoutException: Message: '' 
