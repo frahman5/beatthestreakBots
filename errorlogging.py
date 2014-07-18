@@ -2,11 +2,11 @@ import logging
 
 from filepath import Filepath
 
-def getLogger(activeDate):
+def getLogger(activeDate, sN, vMN):
     ## Create logger that handles file logging
     logger = logging.getLogger()
          # handler to write to logs
-    fileHandler = logging.FileHandler(Filepath.get_log_file(activeDate))
+    fileHandler = logging.FileHandler(Filepath.get_log_file(activeDate, sN, vMN))
     formatter = logging.Formatter('%(asctime)s %(message)s\n')
     fileHandler.setFormatter(formatter)
          # add handlers to logger

@@ -33,7 +33,7 @@ class Filepath(object):
         return self.get_accounts_dir()  + "/nonProductionBtsAccounts.xlsx"
 
     @classmethod
-    def get_log_file(self, activeDate, test=False):
+    def get_log_file(self, activeDate, sN, vMN, test=False):
         """
         Returns the path of the .txt file containing logs
         """
@@ -41,9 +41,14 @@ class Filepath(object):
         # today = datetime.today().date().strftime('%m-%d-%Y')
 
         if test:
-            return self.get_root() + '/tests/logs/' + date + '.txt'
+            rootFolder = self.get_root() + '/tests/logs/sN{}vMN{}/',format(sN,vMN)
         else:
-            return self.get_root() + '/logs/' + date + '.txt'
+            rootFolder = self.get_root() + '/logs/sN{}vMN{}/'.format(sN, vMN)
+
+        if not os.path.isdir(rootFolder):
+            os.mkdir(rootFolder)
+
+        return rootFolder + date + '.txt'
 
     @classmethod
     def get_minion_account_file(self, sN=None, vMN=None):
