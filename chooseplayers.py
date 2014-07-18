@@ -333,9 +333,17 @@ def choosePlayers(**kwargs):
                      sN=sN, vMN=vMN, num=num, activeDate=activeDate)
     
     ##### Get today's eligible players #### 
-    eligiblePlayers = __get_eligible_players( activeDate=activeDate, 
-                                              funcDict = funcDict, 
-                                              sN=sN )
+    eligiblePlayers = None
+    while eligiblePlayers is None:
+        # wrap it in a try-except because sometimes the websites don't load
+        # and we need to try again
+        try: 
+            eligiblePlayers = __get_eligible_players( activeDate=activeDate, 
+                                                      funcDict = funcDict, 
+                                                      sN=sN )
+        except Exception as e:
+            logger.error(e)
+
     if len(eligiblePlayers) == 0: # report as much and exit gracefully
         __report_no_more_selections( fulldf=fulldf, 
                                      sN=kwargs['sN'], 
