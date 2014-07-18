@@ -390,12 +390,15 @@ def choosePlayers(**kwargs):
                     funcDict=funcDict, bot=bot, sN=kwargs['sN'],
                     eligiblePlayers=eligiblePlayers)
 
-            # this should never happen
-            except NoPlayerFoundException as e:
-                logError( str(username), str(password), p1, p2, e, logger)
-                if bot:
-                    bot.quit_browser() # closes display as well, if necessary
-                raise
+            # this should never happen. We now allow it to happen, because
+            # of ('Yadier', 'Molina', 'stl') on 07-18-2014. He is a catcher
+            #, and catchers get days off man!. We have to trust that our code
+            # isn't accidentally overlooking dudes
+            # except NoPlayerFoundException as e:
+            #     logError( str(username), str(password), p1, p2, e, logger)
+            #     if bot:
+            #         bot.quit_browser() # closes display as well, if necessary
+            #     raise
 
             # if the user interferes, exit
             except KeyboardInterrupt:
