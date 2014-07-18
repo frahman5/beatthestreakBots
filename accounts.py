@@ -30,54 +30,64 @@ def make_espn_bts_account(username, password):
         display.start()
     browser = webdriver.Chrome()
 
-    print "--> Making BTS account for u, p: {0}, {1}\n".format(username, password)
-    ## get the gmail create account page
-    url = 'https://secure.mlb.com/enterworkflow.do?flowId=fantasy.bts.' + \
-          'btsloginregister&forwardUrl=http://mlb.mlb.com/mlb/fantasy/bts/y2014/'
-    browser.get(url)
+    try: 
+        print "--> Making BTS account for u, p: {0}, {1}\n".format(username, password)
+        ## get the gmail create account page
+        url = 'https://secure.mlb.com/enterworkflow.do?flowId=fantasy.bts.' + \
+              'btsloginregister&forwardUrl=http://mlb.mlb.com/mlb/fantasy/bts/y2014/'
+        browser.get(url)
 
-    ## Enter in account information
-        # Handle all non dropdowns
-    browser.find_element_by_id('register_email').send_keys(username)
-    browser.find_element_by_id('register_pwd').send_keys(password)
-    browser.find_element_by_id('register_pwd_confirm').send_keys(password)
-    browser.find_element_by_id('select_register').click() 
-    browser.find_element_by_id('register_optin').click()
-        # Handle dropdowns
-    dropDowns = browser.find_elements_by_tag_name('select')
-            # 1) birthMonth
-    dropDowns[0].click() # make the month options clickable
-    dDowns = browser.find_elements_by_tag_name('select')
-    options = dDowns[0].find_elements_by_tag_name('option')
-    for option in options: # select month 3
-        if option.text == '3':
-            option.click()
+        ## Enter in account information
+            # Handle all non dropdowns
+        browser.find_element_by_id('register_email').send_keys(username)
+        browser.find_element_by_id('register_pwd').send_keys(password)
+        browser.find_element_by_id('register_pwd_confirm').send_keys(password)
+        browser.find_element_by_id('select_register').click() 
+        browser.find_element_by_id('register_optin').click()
+            # Handle dropdowns
+        dropDowns = browser.find_elements_by_tag_name('select')
+                # 1) birthMonth
+        dropDowns[0].click() # make the month options clickable
+        dDowns = browser.find_elements_by_tag_name('select')
+        options = dDowns[0].find_elements_by_tag_name('option')
+        for option in options: # select month 3
+            if option.text == '3':
+                option.click()
+                
+                # 2) birthDay
+        dropDowns[1].click() # make the day options clickable
+        dDowns = browser.find_elements_by_tag_name('select')
+        options = dDowns[1].find_elements_by_tag_name('option')
+        for option in options: # select day 5
+            if option.text == '5':
+                option.click()
+                # 3) birthYear
+        dropDowns[2].click() # make the year options clickable
+        dDowns = browser.find_elements_by_tag_name('select')
+        options = dDowns[2].find_elements_by_tag_name('option')
+        for option in options: # select year 1991
+            if option.text == '1991':
+                option.click()
+     
+        ## Hit the submit button
+        browser.find_element_by_id('submit_btn').click()
+        assert browser.title == 'Beat The Streak | MLB.com: Fantasy'
+
+        ## Close up shop
+        browser.quit()
+        if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+            print "--> Stopping Display"
+            display.stop()
             
-            # 2) birthDay
-    dropDowns[1].click() # make the day options clickable
-    dDowns = browser.find_elements_by_tag_name('select')
-    options = dDowns[1].find_elements_by_tag_name('option')
-    for option in options: # select day 5
-        if option.text == '5':
-            option.click()
-            # 3) birthYear
-    dropDowns[2].click() # make the year options clickable
-    dDowns = browser.find_elements_by_tag_name('select')
-    options = dDowns[2].find_elements_by_tag_name('option')
-    for option in options: # select year 1991
-        if option.text == '1991':
-            option.click()
- 
-    ## Hit the submit button
-    browser.find_element_by_id('submit_btn').click()
-    assert browser.title == 'Beat The Streak | MLB.com: Fantasy'
-
-    ## Close up shop
-    browser.quit()
-    if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
-        print "--> Stopping Display"
-        display.stop()
-    
+    except:
+        try:
+            brower.quit()
+            if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
+                print "--> Stopping Display"
+                display.stop()
+            raise
+        except:
+            raise
 
 def claim_mulligan(username, password):
     """

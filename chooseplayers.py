@@ -86,24 +86,37 @@ def __get_eligible_players(**kwargs):
     assert type(kwargs['activeDate']) == date
     assert type(kwargs['funcDict']) == dict
 
-    ### Variable assignments
-    pVal = 20 # Number of top players to return for strats 6 and 7
-    minERAVal = 4.0 # Minimum ERA op pitcher must have for strats 6 and 7
-
     ### Get the tuple of players
     print "--> Getting {}'s eligible players".format(kwargs['activeDate'])
     selectionFunction = kwargs['funcDict'][kwargs['sN']]['select_func']
     if sN == 5:
         eligiblePlayers = selectionFunction(kwargs['activeDate'])
-    elif sN in (6, 7):
-        eligiblePlayers = selectionFunction(p=pVal, 
-                                            activeDate=kwargs['activeDate'],
-                                            filt={'minERA': minERAVal})
+    elif sN in (6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17):
+        # Choose a pVal depending on the strategy
+        if sN in (6, 7, 8, 9, 10, 11):
+            pVal = 40
+        elif sN in (12, 13, 14, 15, 16, 17):
+            pVal = 80
+
+        # Choose a minERAVal depending on the strategy
+        if sN in (6, 7, 8, 12, 13, 14):
+            minERAVal = 4.0
+        elif sN in (9, 10, 11, 15, 16, 17):
+            minERAVal = 5.0
+
+        # Select the players
+        eligiblePlayers = selectionFunction( p=pVal, 
+                                             activeDate=kwargs['activeDate'],
+                                             filt={'minERA': minERAVal})
+
 
     ### Let the user know what's up
-    print "--> Today's eligible Players: "
-    for player in eligiblePlayers:
-        print "          " + str(player)
+    if sN !=5:
+        print "today's top {} players after weeding:".format(pVal)
+        for index, player in enumerate(eligiblePlayers):
+            print "    -->{}: {}".format(index + 1, player)
+    if sN ==5:
+        print "Today's eligible Players: {}".format(eligiblePlayers)
 
     ### Return it
     return eligiblePlayers
@@ -154,13 +167,17 @@ def __distribute_eligible_players(**kwargs):
 
     ## Distribute the players
     distributionFunction = funcDict[kwargs['sN']]['dist_func']
-    if kwargs['sN'] in (5, 6):
+    if kwargs['sN'] in (5, 6, 9, 12, 15): # Random Double Down choices
         p1, p2 = distributionFunction( bot=kwargs['bot'], 
                                        eligiblePlayers=kwargs['eligiblePlayers'])
-    elif sN == 7:
+    elif kwargs['sN'] in (7, 10, 13, 16): # Double Down every time
         p1, p2 = distributionFunction( bot=kwargs['bot'], 
                                        eligiblePlayers=kwargs['eligiblePlayers'],
                                        doubleDown=True )
+    elif kwargs['sN'] in (8, 11, 14, 17): # Single Down every time
+        p1, p2 = distributionFunction( bot=kwargs['bot'], 
+                                       eligiblePlayers=kwargs['eligiblePlayers'],
+                                       doubleDown=False )
 
     return p1, p2
 
@@ -425,7 +442,8 @@ if __name__ == '__main__':
         # Get the strategy number
     sNPattern = re.compile(r"""
         -sN=            # strategy number
-        [1-7]           # method number must be in (1, 2, 3, 4, 5)
+        [1-9]           # 1 digit in 1-9
+        [0-7]?          # 0 or 1 digits in (0,1,2,3,4,5,6,7)
         """, re.VERBOSE)
     matches = [ sNPattern.match(option) for option in options if 
                     sNPattern.match(option) ]
@@ -472,12 +490,32 @@ if __name__ == '__main__':
         print "We already done playboy!"
     numLeft = origCount
     funcDict = {
-        5: { 'select_func': getRecommendedPicks, 
-             'dist_func'  : randDownRandPlayers }, 
-        6: {'select_func': topPBatters, 
-            'dist_func': randDownRandPlayers }, 
-        7: {'select_func': topPBatters, 
-            'dist_func': staticDownRandPlayers }
+        5:  { 'select_func': getRecommendedPicks, 
+              'dist_func'  : randDownRandPlayers }, 
+        6:  { 'select_func': topPBatters, 
+              'dist_func'  : randDownRandPlayers }, 
+        7:  { 'select_func': topPBatters, 
+              'dist_func'  : staticDownRandPlayers }, 
+        8:  { 'select_func': topPBatters,
+              'dist_func'  : staticDownRandPlayers }, 
+        9:  { 'select_func': topPBatters, 
+              'dist_func'  : randDownRandPlayers },
+        10: { 'select_func': topPBatters, 
+              'dist_func'  : staticDownRandPlayers},
+        11: { 'select_func': topPBatters, 
+              'dist_func'  : staticDownRandPlayers},
+        12: { 'select_func': topPBatters, 
+              'dist_func'  : randDownRandPlayers },
+        13: { 'select_func': topPBatters, 
+              'dist_func'  : staticDownRandPlayers},
+        14: { 'select_func': topPBatters, 
+              'dist_func'  : staticDownRandPlayers},
+        15: { 'select_func': topPBatters, 
+              'dist_func'  : randDownRandPlayers},
+        16: { 'select_func': topPBatters, 
+              'dist_func'  : staticDownRandPlayers},
+        17: { 'select_func': topPBatters, 
+              'dist_func'  : staticDownRandPlayers}
                 }    
     while numLeft > 0:
         if doneYet == 'noneLeft': # if there are no eligible players left

@@ -40,7 +40,7 @@ def getRecommendedPicks(d):
 def topPBatters(**kwargs):
     """
     kwargs -> listOfTuples
-        P: int | the number of players to return 
+        p: int | the number of players to return 
         activeDate: datetime.date | today's date 
         filt: Dict | possible entries...
                     -> "minERA": float | exclude all players who are facing a 
@@ -54,6 +54,7 @@ def topPBatters(**kwargs):
         then only includes players who are facing a starting pitcher with
         ERA >= minERA
     """
+    print "topPBatters. P, minERA: {}, {}".format(kwargs['p'], kwargs['filt']['minERA'])
     import logging 
 
     from pyvirtualdisplay import Display
@@ -101,26 +102,47 @@ def topPBatters(**kwargs):
         ## Get top P players from espn website
             # get the batting page from espn
         browser.get('http://espn.go.com/mlb/stats/batting')
+        for passThrough in ('firstTime', 'secondTime'):
+
+            ## If it's greater than 40 players, click the next page
+            if passThrough == 'firstTime':
+                indexOffset = 0
+            elif passThrough == 'secondTime':
+                if kwargs['p'] <= 40: # we don't need a second passthrough!
+                    break
+                indexOffset = 40
+                browser.find_element_by_partial_link_text('NEXT').click()
+
             # Table of players
-        table = browser.find_element_by_tag_name('table')
-        tablebody = table.find_element_by_tag_name('tbody')
-        oddRows = tablebody.find_elements_by_class_name('oddrow')
-        evenRows = tablebody.find_elements_by_class_name('evenrow')
-        allRows = []
-        for rowPair in zip( oddRows, evenRows ):
-            allRows.extend( rowPair )
-            # extract player information from each row
-        for index, row in enumerate( allRows ):
-            # if we're done, get outta there
-            if index == kwargs['p']:
-                break
-                # row cells 
-            cells = row.find_elements_by_tag_name('td')
-                # cell[1].text is player's first and last name
-            nextPlayer = [ str(name) for name in cells[1].text.split() ]
-                # cell[2].text is player's 3DigitTeamAbbrev
-            nextPlayer.append( str( cells[2].text.lower() ) )
-            players.append( tuple(nextPlayer) )
+            table = WebDriverWait(browser, 10).until(
+                EC.presence_of_element_located((By.TAG_NAME, 'table')))
+            tablebody = table.find_element_by_tag_name('tbody')
+            oddRows = tablebody.find_elements_by_class_name('oddrow')
+            evenRows = tablebody.find_elements_by_class_name('evenrow')
+            allRows = []
+
+            for rowPair in zip( oddRows, evenRows ):
+                allRows.extend( rowPair )
+                # extract player information from each row
+            for index, row in enumerate( allRows ):
+                    # row cells 
+                cells = row.find_elements_by_tag_name('td')
+                    # cell[1].text is player's first and last name
+                nextPlayer = [ str(name) for name in cells[1].text.split() ]
+                    # cell[2].text is player's 3DigitTeamAbbrev
+                team = str( cells[2].text.lower() )
+                if team == 'chw': # convert for chicago white sox, to comply with boy.pt
+                    team = 'cws'
+                nextPlayer.append( team )
+                players.append( tuple(nextPlayer) )
+
+                    # if we're done, get outta there
+                if (index + indexOffset + 1) == kwargs['p']:
+                    break
+
+        print "today's top {} players before weeding:".format(kwargs['p'])
+        for index, player in enumerate(players):
+            print "    -->{}: {}".format(index + 1, player)
         # filter out the players who aren't starting and apply any other used
         # requested filters
         players = _whoIsEligible( players=players, 
@@ -131,7 +153,7 @@ def topPBatters(**kwargs):
         _quit_browser(browser, display, 'get_batters')
         raise
 
-    print "today's top {} players: {}".format(kwargs['p'], str(players))
+    
 
     ## Close the browser, stop the display if necessary
     _quit_browser(browser, display, 'get_batters')
@@ -157,6 +179,7 @@ def _whoIsEligible(**kwargs):
 
     Assumes a display is open if necessary
     """
+    import time as timetime
     from datetime import datetime, time, timedelta
 
     ## type check
@@ -184,6 +207,9 @@ def _whoIsEligible(**kwargs):
             break
 
         ## Get the schedule table for activeDate
+    waitForTable = WebDriverWait(browser, 10).until(
+        EC.presence_of_element_located((By.TAG_NAME, 'table')))
+    timetime.sleep(3) # to let tables load
     tables = browser.find_elements_by_tag_name('table')
     activeTable = None
     for table in tables:
@@ -201,6 +227,8 @@ def _whoIsEligible(**kwargs):
     for row in activeTable.find_elements_by_tag_name('tr'):
         if "row" in row.get_attribute('class'): # game row
             ## Get relevant variables
+            firstCell = WebDriverWait(browser, 10).until(
+                EC.presence_of_element_located((By.TAG_NAME, 'td')))
             cells = row.find_elements_by_tag_name('td')
             awayTeam = str(cells[0].text).lower()
             homeTeam = str(cells[1].text).lower()
@@ -228,9 +256,12 @@ def _whoIsEligible(**kwargs):
             
 
     ## remove ineligible players
-    activePlayers = [ player for player in kwargs['players'] ]
+       # we make two copies because if you alter a list as you iterate through it,
+       # things get messed up!
+    activePlayersIter = [ player for player in kwargs['players'] ]
+    activePlayersReturn = [ player for player in kwargs['players'] ]
     filt = kwargs['filt']
-    for player in activePlayers:
+    for player in activePlayersIter:
         firstName, lastName, team = player
         teamFormatted = _formatTeam(team)
         today = datetime.today().date()
@@ -242,18 +273,18 @@ def _whoIsEligible(**kwargs):
         elif teamFormatted in homeTeams.keys():
             relevantTeams = homeTeams
         else:
-            activePlayers.remove(player)
+            activePlayersReturn.remove(player)
             break
 
         # Player's team is playing... is the game locked?
         if today == kwargs['activeDate'] and \
               relevantTeams[teamFormatted][0] < twentyMinFromNow:
-            activePlayers.remove(player)
+            activePlayersReturn.remove(player)
         # Player's team is playing... is the opposing pitcher ERA high enough?
         elif filterERA and (relevantTeams[teamFormatted][1] <= filt['minERA']):
-            activePlayers.remove(player)
+            activePlayersReturn.remove(player)
 
-    return activePlayers
+    return activePlayersReturn
 
 def _timify(timeString):
     """

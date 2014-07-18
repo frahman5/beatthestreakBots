@@ -95,5 +95,27 @@
      Random: Each day, qualifying playres are distributred to the N accounts randomly
      Random: Each day, it is randomly decided whether or not a bot will double down
 
+7) N P(currentBatAve)&(perGameERA-minERA)
+
+PRODUCTION LEVEL STRATEGIES (For all, N=1000)
+   5)  N P:MLB-Recommended Random-distribution Random-DoubleDown
+
+   6)  N P(40):(currentBatAve)&(perGameERA(4.0)) Random-distribution Random-DoubleDown
+   7)  N P(40):(currentBatAve)&(perGameEra(4.0)) Random-distribution, True-DoubleDown
+   8)  N P(40):(currentBatAve)&(perGameEra(4.0)) Random-distribution, False-DoubleDown
+
+   9)  N P(40):(currentBatAve)&(perGameERA(5.0)) Random-distribution Random-DoubleDown
+   10) N P(40):(currentBatAve)&(perGameEra(5.0)) Random-distribution, True-DoubleDown
+   11) N P(40):(currentBatAve)&(perGameEra(5.0)) Random-distribution, False-DoubleDown
+
+   12) N P(80):(currentBatAve)&(perGameERA(4.0)) Random-distribution Random-DoubleDown
+   13) N P(80):(currentBatAve)&(perGameEra(4.0)) Random-distribution, True-DoubleDown
+   14) N P(80):(currentBatAve)&(perGameEra(4.0)) Random-distribution, False-DoubleDown
+   
+   15) N P(80):(currentBatAve)&(perGameERA(5.0)) Random-distribution Random-DoubleDown
+   16) N P(80):(currentBatAve)&(perGameEra(5.0)) Random-distribution, True-DoubleDown
+   17) N P(80):(currentBatAve)&(perGameEra(5.0)) Random-distribution, False-DoubleDown
+
+
 
 

@@ -14,6 +14,7 @@ def randDownRandPlayers(**kwargs):
     Randomly decides whether or not to doubleDown, and randomly chooses
     players to assign to bot. Returns the assigned players
     """
+    print "RANDOM DOWN"
     # Update the bot and return the players
     return staticDownRandPlayers( bot=kwargs['bot'], 
                                   eligiblePlayers=kwargs['eligiblePlayers'], 
@@ -30,6 +31,7 @@ def staticDownRandPlayers(**kwargs):
     Given a type of Down, randomly chooses playres to assign to bot. Returns
     the assigned players
     """
+    print "STATIC DOWN : {}".format(kwargs['doubleDown'])
     ## check arguments
     assert type(kwargs['bot'] == Bot)
     assert type(kwargs['eligiblePlayers'] == list)

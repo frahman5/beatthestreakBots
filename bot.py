@@ -356,32 +356,39 @@ class Bot(object):
 
     def claim_mulligan(self):
         print "-->Claiming Mulligan for u, p: {0}, {1}\n".format(self.username, self.password)
+ 
+        try: 
+            ## navigate to claim mulligan page
+            self._get_make_picks_page()
+            more = WebDriverWait(self.browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "last"))
+                )
+            more.click()
+            button1 = WebDriverWait(self.browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "bam-button-primary"))
+                )
+            buttons = self.browser.find_elements_by_class_name('bam-button-primary')
+            buttons[3].click()
 
-        ## navigate to claim mulligan page
-        self._get_make_picks_page()
-        more = WebDriverWait(self.browser, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "last"))
-            )
-        more.click()
-        button1 = WebDriverWait(self.browser, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "bam-button-primary"))
-            )
-        buttons = self.browser.find_elements_by_class_name('bam-button-primary')
-        buttons[3].click()
-
-        ## Claim the mulligan
-        mulOption = WebDriverWait(self.browser, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "mulligan-list")) 
-            )
-        mulOption.click()
-        claimMul = WebDriverWait(self.browser, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, 'claim-mulligan-btn'))
-            )
-        claimMul.click()
-        
-        # give it some time, then quit the browser and if necessary, stop the display
-        time.sleep(10)
-        self.browser.quit()
+            ## Claim the mulligan
+            mulOption = WebDriverWait(self.browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "mulligan-list")) 
+                )
+            mulOption.click()
+            claimMul = WebDriverWait(self.browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, 'claim-mulligan-btn'))
+                )
+            claimMul.click()
+            
+            # give it some time, then quit the browser and if necessary, stop the display
+            time.sleep(10)
+            self.quit_browser()
+        except:
+            try:
+                self.quit_browser()
+                raise
+            except:
+                raise
 
     def has_claimed_mulligan(self):
         """
@@ -523,3 +530,4 @@ class Bot(object):
                     elem.tag_name == 'li' and elem.text not in ('Date Locked', 
                     'Double Down', 'Make Pick')]
         return tuple(players)
+    
