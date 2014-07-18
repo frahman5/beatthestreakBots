@@ -39,9 +39,6 @@ def __get_dataframes_for_choose_players(**kwargs):
     assert type(kwargs['num']) == int
     assert type(kwargs['activeDate']) == date
 
-    ### Let the user know what's up
-    print "--> Getting accounts file {}".format(Filepath.get_accounts_file())
-
     ### Read in the minion accounts file if available
     minionPath = Filepath.get_minion_account_file(
                      sN=kwargs['sN'], vMN=kwargs['vMN'])
@@ -51,6 +48,9 @@ def __get_dataframes_for_choose_players(**kwargs):
     else:
         dfPath = Filepath.get_accounts_file()
     df = pd.read_excel( dfPath, sheetname='Production' )
+
+    ### Let the user know what's up
+    print "--> Getting accounts file {}".format(dfPath)
 
     ### Parse it down to include only what we want
         # If it's the master accounts file, only include 
