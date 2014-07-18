@@ -326,7 +326,7 @@ def choosePlayers(**kwargs):
 
     ###### get an error logger #####
     print "\n--> Creating Error Logger"
-    logger = getLogger(kwargs['activeDate'], kwargs['sN'], kwargs['vMN'])
+    logger = getLogger(kwargs['activeDate'], kwargs['sN'], kwargs[''])
 
     ##### get list of accounts you need #####
     df, fulldf = __get_dataframes_for_choose_players( 
@@ -359,14 +359,14 @@ def choosePlayers(**kwargs):
         updatedUsernames = [ account[0] for account in updatedAccounts] 
         for dummyIndex, index, username, password, sN, vMN in df.itertuples():
 
-            # log ps -A, for debugging purposes
-            with open(Filepath.get_log_file(kwargs['activeDate']), "a") as f:
-                f.write('\n\n\n')
-                f.write('ITER: {} with u, p: {}, {}\n'.format(
-                            numIters, username, password))
-                f.write('TIME: {}\n'.format(datetime.now().time()))
-                f.flush()
-                subprocess.call(['ps', '-A'], stdout=f)
+            # # log ps -A, for debugging purposes
+            # with open(Filepath.get_log_file(kwargs['activeDate']), "a") as f:
+            #     f.write('\n\n\n')
+            #     f.write('ITER: {} with u, p: {}, {}\n'.format(
+            #                 numIters, username, password))
+            #     f.write('TIME: {}\n'.format(datetime.now().time()))
+            #     f.flush()
+            #     subprocess.call(['ps', '-A'], stdout=f)
 
             # don't update the same account twice
             if username in updatedUsernames: 
