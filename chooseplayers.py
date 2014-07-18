@@ -326,7 +326,7 @@ def choosePlayers(**kwargs):
 
     ###### get an error logger #####
     print "\n--> Creating Error Logger"
-    logger = getLogger(kwargs['activeDate'], kwargs['sN'], kwargs[''])
+    logger = getLogger(kwargs['activeDate'], kwargs['sN'], kwargs['vMN'])
 
     ##### get list of accounts you need #####
     df, fulldf = __get_dataframes_for_choose_players( 
