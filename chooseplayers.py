@@ -368,7 +368,8 @@ def choosePlayers(**kwargs):
         for dummyIndex, index, username, password, sN, vMN in df.itertuples():
 
             # log ps -A, for debugging purposes
-            with open(Filepath.get_log_file(kwargs['activeDate']), "a") as f:
+            with open( Filepath.get_log_file(kwargs['activeDate', 
+                       kwargs'sN', kwargs['vMN']), "a") as f:
                 f.write('\n\n\n')
                 f.write('ITER: {} with u, p: {}, {}\n'.format(
                             numIters, username, password))
