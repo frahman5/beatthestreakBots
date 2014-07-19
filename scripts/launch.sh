@@ -66,7 +66,7 @@ do
     gcutil push $p $instance go.sh /home/faiyamrahman 
         # push the minion account files
     gcutil push $p $instance $finalMinionDir$minion1 $googleMinionDir 
-    gcutil push $p $instance $finalMinionDir$minion1 $googleMinionDir 
+    gcutil push $p $instance $finalMinionDir$minion2 $googleMinionDir 
         # ssh in and launch both strategies. REMEMBER:
             # Launch a screen, run go.sh for vmn 1, then another screen
             # then go.sh for vmn2, then ctrl+a, d to detach from the screen,

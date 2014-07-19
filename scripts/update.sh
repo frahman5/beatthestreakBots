@@ -18,6 +18,9 @@ strat5Instance2="sn5vmn2"
 homeMinionDir=/Users/faiyamrahman/Desktop/final/minions/
 homeLogDir=/Users/faiyamrahman/Desktop/final/logs/
 
+## User input values
+dateNum=$1
+
 for triplet in  "sn5 sN=5,vMN=1.xlsx sN5vMN1/" "sn5 sN=5,vMN=2.xlsx sN5vMN2/" \
                 "sn6 sN=6,vMN=1.xlsx sN6vMN1/" "sn6 sN=6,vMN=2.xlsx sN6vMN2/" \
                 "sn7 sN=7,vMN=1.xlsx sN7vMN1/" "sn7 sN=7,vMN=2.xlsx sN7vMN2/" \
@@ -39,5 +42,5 @@ done
 
 # let me know which strategies ran to completion
 source /Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/bin/activate
-python update.py $homeMinionDir $1
+python update.py $homeMinionDir $dateNum
 
