@@ -10,40 +10,40 @@ def main():
     sys.path.append('/Users/faiyamrahman/programming/Python/')
     from beatthestreakBots.bot import Bot
 
-    # ## Retrieve usernames and passwords from master accounts file
-    path = '/Users/faiyamrahman/Desktop/final/master/btsAccountsTest.xlsx'
-    # df = pd.read_excel( path, 
-    #                     sheetname='Production', 
-    #                     parse_cols='B,' + # usernames
-    #                                'D')   # passwords
+    ## Retrieve usernames and passwords from master accounts file
+    path = '/Users/faiyamrahman/Desktop/final/master/btsAccounts.xlsx'
+    df = pd.read_excel( path, 
+                        sheetname='Production', 
+                        parse_cols='B,' + # usernames
+                                   'D')   # passwords
 
     # ## Make series with streak lengths for each account
-    # lenDF = len(df)
+    lenDF = len(df)
     yesterday = datetime.today().date() - timedelta(days=1)
-    # streakLengths = [ None for i in range(lenDF) ]
-    # for index, username, password in df.itertuples():  
-    #     print "--> Retrieving streak for account {} of {}".format(index + 1, lenDF)
-    #     streakLength = None
-    #     while streakLength is None:
-    #         try: 
-    #             bot = Bot(str(username), str(password), activeDate=yesterday)
-    #             streakLength = bot.get_streak_length()
-    #         except KeyboardInterrupt:
-    #             break
-    #             raise 
-    #         except:
-    #             exc_type = sys.exc_info()[0]
-    #             print "------> Failure: {}".format(exc_type)
-    #             continue
-    #     streakLengths[index] = streakLength
+    streakLengths = [ None for i in range(lenDF) ]
+    for index, username, password in df.itertuples():  
+        print "--> Retrieving streak for account {} of {}".format(index + 1, lenDF)
+        streakLength = None
+        while streakLength is None:
+            try: 
+                bot = Bot(str(username), str(password), activeDate=yesterday)
+                streakLength = bot.get_streak_length()
+            except KeyboardInterrupt:
+                break
+                raise 
+            except:
+                exc_type = sys.exc_info()[0]
+                print "------> Failure: {}".format(exc_type)
+                continue
+        streakLengths[index] = streakLength
 
     dateFormatted = str(yesterday.month) + '-' + str(yesterday.day)
     # streakLengthSeries = pd.Series(streakLengths, name=dateFormatted)
 
-    # ## Update the accounts file with streak lengths
-    # fulldf = pd.read_excel( path, sheetname='Production')
-    # df = pd.concat([fulldf, streakLengthSeries], axis=1)
-    # df.to_excel( path, sheet_name='Production', index=False)
+    ## Update the accounts file with streak lengths
+    fulldf = pd.read_excel( path, sheetname='Production')
+    df = pd.concat([fulldf, streakLengthSeries], axis=1)
+    df.to_excel( path, sheet_name='Production', index=False)
 
     ## Report info about top ballers to file
     df = pd.read_excel( path, sheetname="Production")
@@ -61,13 +61,9 @@ def main():
     for strategy in range(5, 18):
              # already sorted by streak length!
         localStreakInfo = [ info for info in streakInfo if info[1] == strategy]
-        if localStreakInfo == []:
-            continue
         topFile.write('\n')
         topFile.write("Top 5 Accounts for Strategy {}\n".format(strategy))
         for i in range(5):
-            if len(localStreakInfo) < i:
-                beatthestreakBots
             topFile.write("    {}: {}, {}\n".format(
                 i + 1, localStreakInfo[i][0], localStreakInfo[i][2]))
     topFile.close()

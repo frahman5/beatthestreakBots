@@ -533,6 +533,7 @@ class Bot(object):
         """
         self.browser.quit()
         if self.display:
+            print "--> Closing Bot display"
             self.display.stop()
             
     def _get_chosen_players(self):
