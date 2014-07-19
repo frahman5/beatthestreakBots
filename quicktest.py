@@ -3,14 +3,15 @@ from config import BTSUSERNAME, BTSPASSWORD
 from datetime import date
 
 def main():
-    bot = Bot(BTSUSERNAME, BTSPASSWORD, activeDate=date(2014,7,19))
+    bot = Bot(BTSUSERNAME, BTSPASSWORD, activeDate=date(2014,7,18))
     # bot.choose_players(p1=('Victor', 'Martinez', 'det'), p2=())
     # import pdb
     # pdb.set_trace()
     # bot.choose_players(p1=('Adrian', 'Beltre', 'tex'), 
     #                    p2=('Alex', 'Rios', 'tex'))
-    bot.choose_players( p1=('Yadier', 'Molina', 'stl'), 
-                        p2=())
+    # bot.choose_players( p1=('Yadier', 'Molina', 'stl'), 
+    #                     p2=())
+    print bot.get_streak_length()
 
 if __name__ == '__main__':
     main()

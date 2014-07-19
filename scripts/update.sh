@@ -42,6 +42,8 @@ pullFiles 15 & pullFiles 16 & pullFiles 17 & wait
 echo "*********** FILES PULLED! ************"
 
 # let me know which strategies ran to completion
+echo
+echo "*********** READING MINION ACCOUNT FILES **************"
 source /Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/bin/activate
 python update.py $homeMinionDir $1
 

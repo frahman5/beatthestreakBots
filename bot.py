@@ -118,6 +118,31 @@ class Bot(object):
 
         return p1, p2
 
+    def get_streak_length(self):
+        """
+        Returns the current streak length for the bot
+        """
+        ## Make sure the bot was initalized with the correct date
+        assert self.activeDate == datetime.today().date() - timedelta(days=1)
+        
+        try:
+            # Get yesterday's make pick row
+            yesterdayRow = self.__get_date_make_pick_row()
+
+            # Get the streak length
+            streakElem = yesterdayRow.find_element_by_class_name('streak')
+            streak = int(streakElem.text)
+
+            ## Close the browser and return the value
+            self.quit_browser()
+            return streak
+        except:
+            try:
+                self.quit_browser()
+                raise
+            except:
+                raise
+
     def __choose_single_player(self, **kwargs):
         """
         TupleOfStrings bool -> None
@@ -310,7 +335,6 @@ class Bot(object):
 
         # tuplify the list and return it
         return tuple(recommendedPlayers)
-
 
     def get_opposing_pitcher_era(self, p1=()):
         """
