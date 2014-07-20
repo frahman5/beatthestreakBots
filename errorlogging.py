@@ -55,7 +55,7 @@ def logFailedAccounts(**kwargs):
     failedAccounts = []
     for dummyIndex, index, username, password, sN, vMN in kwargs['df'].itertuples():
         if username not in kwargs['updatedUsernames']:
-            failedAccounts.append(str(username), str(password))
+            failedAccounts.append((str(username), str(password))
 
 
     # log those errors baby
