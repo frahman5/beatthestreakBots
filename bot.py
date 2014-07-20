@@ -151,9 +151,6 @@ class Bot(object):
 
         Assigns player player to bot.
         """
-        if 'Lucroy' in kwargs['player']:
-            import pdb
-            pdb.set_trace()
         ## Extract variables
         player = kwargs['player']
         doubleDown = kwargs['doubleDown']
