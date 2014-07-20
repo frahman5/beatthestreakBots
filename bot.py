@@ -372,6 +372,8 @@ class Bot(object):
 
         if team == 'laa': # los angeles angels of anaheim
             team = 'ana'
+        elif team == 'lad': # los angeles dodgers
+            team = 'la'
 
         return team
 
