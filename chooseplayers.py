@@ -357,14 +357,16 @@ def choosePlayers(**kwargs):
     updatedAccounts = []  # to keep track accounts to log to file
     while len(updatedAccounts) != lenDF:
 
+        ## Who have we already updated?
+        updatedUsernames = [ account[0] for account in updatedAccounts]
+
         ## If we've run the loop "too many" times, exit out
         if numIters > (2 * lenDF):
             logFailedAccounts( df=df, updatedUsernames=updatedUsernames, 
                                logger=logger )
             break
 
-        ## Update those accounts baby!
-        updatedUsernames = [ account[0] for account in updatedAccounts] 
+        ## Update those accounts baby! 
         for dummyIndex, index, username, password, sN, vMN in df.itertuples():
 
             # log ps -A, for debugging purposes

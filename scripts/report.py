@@ -41,11 +41,13 @@ def main():
     # streakLengthSeries = pd.Series(streakLengths, name=dateFormatted)
 
     ## Update the accounts file with streak lengths
+    print "**** UPDATING ACCOUNTS FILE TO INCLUDE STREAK LENGTHS"
     fulldf = pd.read_excel( path, sheetname='Production')
     df = pd.concat([fulldf, streakLengthSeries], axis=1)
     df.to_excel( path, sheet_name='Production', index=False)
 
     ## Report info about top ballers to file
+    print "***** PRINTING INFO ON TOP BALLERS TO FILE *****"
     df = pd.read_excel( path, sheetname="Production")
     streakInfo = zip(df.Email, df.Strategy, df[dateFormatted])
     topFile = open('/Users/faiyamrahman/Desktop/final/logs/top({}).txt'.format(
