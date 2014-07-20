@@ -51,11 +51,6 @@ def logFailedAccounts(**kwargs):
     """
     import pandas as pd
 
-    ## Type check
-    assert type(kwargs['df']) == pd.DataFrame
-    assert type(kwargs['updatedUsernames']) == tuple
-    assert type(kwargs['logger']) == logging.Logger
-
     ## Get a list of the failed accounts
     failedAccounts = []
     for dummyIndex, index, username, password, sN, vMN in kwargs['df'].itertuples():
