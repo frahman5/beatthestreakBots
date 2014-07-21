@@ -66,8 +66,9 @@ makeInstance 17 & wait
 echo "**************** INSTANCES CREATED! ****************"
 
 # Sleep for a bit to make sure instances are ready to receive files
-echo "\n-->Sleeping for 60 seconds to allow instances to be ready to receive files"
-sleep 60 
+sleepTime=30
+echo "\n-->Sleeping for $sleepTime seconds to allow instances to be ready to receive files"
+sleep $sleepTime
 
 ## Push all the files in parallel
 pushFiles 5 & pushFiles 6 & pushFiles 7 & pushFiles 8 & pushFiles 9 & pushFiles 10 & \

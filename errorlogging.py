@@ -51,6 +51,8 @@ def logFailedAccounts(**kwargs):
     """
     import pandas as pd
 
+    logger = kwargs['logger']
+    
     ## Get a list of the failed accounts
     failedAccounts = []
     for dummyIndex, index, username, password, sN, vMN in kwargs['df'].itertuples():
