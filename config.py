@@ -16,7 +16,7 @@ GDPASSWORD = 'Fymze812305'
 OUTLOOKPW = 'helloGoe234!'
 
 # Master BTS Account, used for looking up information
-BTSUSERNAME = 'faiyam@faiyamrahman.com'
-BTSPASSWORD = 'beatthestreak1'
+BTSUSERNAME = 'frahman305@gmail.com'    
+BTSPASSWORD = 'fymze812'
 
 ## here's a comment

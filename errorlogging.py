@@ -62,6 +62,6 @@ def logFailedAccounts(**kwargs):
 
     # log those errors baby
     logger.error("{} of {} accounts failed".format(
-                    len(failedAccounts), len(df)))
+                    len(failedAccounts), len(kwargs['df'])))
     for failedAccount in failedAccounts:
         logger.error("    U, P: {}, {}".format(failedAccount[0], failedAccount[1]))

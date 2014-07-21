@@ -7,7 +7,7 @@ def main():
     # bot.choose_players(p1=('Victor', 'Martinez', 'det'), p2=())
     # import pdb
     # pdb.set_trace()
-    bot.choose_players( p1=('Dee', 'Gordon', 'lad'), 
+    bot.choose_players( p1=('Brandon', 'Phillips', 'cin'), 
                         p2=())
     # bot.choose_players( p1=('Yadier', 'Molina', 'stl'), 
     #                     p2=())
