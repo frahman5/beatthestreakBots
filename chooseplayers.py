@@ -498,10 +498,11 @@ if __name__ == '__main__':
     ## bad happens, we finish as many players as possible
     doneYet = ''
     blockSize = 20
-    numLeft = get_num_accounts( 
+    origCount = get_num_accounts( 
                   sN=sN, vMN=vMN, getRemaining=True, activeDate=activeDate )
-    if numLeft == 0:
+    if origCount == 0:
         print "We already done playboy!"
+    numLeft = origCount
     funcDict = {
         5:  { 'select_func': getRecommendedPicks, 
               'dist_func'  : randDownRandPlayers }, 
