@@ -548,7 +548,7 @@ if __name__ == '__main__':
                   " Strategy, VM: {}, {} ***********".format(sN, vMN) 
             doneYet = choosePlayers( funcDict=funcDict, sN=sN, vMN=vMN, 
                                      num=blockSize, activeDate=activeDate)
-            numLeft -= get_num_accounts( 
+            numLeft = get_num_accounts( 
                              sN=sN, vMN=vMN, 
                              getRemaining=True, activeDate=activeDate )
 

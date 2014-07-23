@@ -7,7 +7,7 @@ googleMinionDir=/home/faiyamrahman/programming/Python/beatthestreakBots/accountF
 sv=--service_version="v1"
 p=--project="faiyam-bts-1"
 zone=--zone="us-central1-a"
-snapshot=--source_snapshot="sims-chromedriver-clientalive-strats-5-6-7"
+snapshot=--source_snapshot="sims-chromedriver-clientalive-strats-5-17"
 disktype=--disk_type="pd-ssd"
 machinetype=--machine_type="n1-standard-1"
 network=--network="default"
@@ -66,7 +66,7 @@ makeInstance 17 & wait
 echo "**************** INSTANCES CREATED! ****************"
 
 # Sleep for a bit to make sure instances are ready to receive files
-sleepTime=30
+sleepTime=15
 echo "\n-->Sleeping for $sleepTime seconds to allow instances to be ready to receive files"
 sleep $sleepTime
 
