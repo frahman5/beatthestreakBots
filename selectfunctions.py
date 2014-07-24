@@ -261,6 +261,8 @@ def _whoIsEligible(**kwargs):
     activePlayersIter = [ player for player in kwargs['players'] ]
     activePlayersReturn = [ player for player in kwargs['players'] ]
     filt = kwargs['filt']
+    import pdb
+    pdb.set_trace()
     for player in activePlayersIter:
         firstName, lastName, team = player
         teamFormatted = _formatTeam(team)
@@ -274,7 +276,7 @@ def _whoIsEligible(**kwargs):
             relevantTeams = homeTeams
         else:
             activePlayersReturn.remove(player)
-            break
+            continue
 
         # Player's team is playing... is the game locked?
         if today == kwargs['activeDate'] and \
@@ -294,7 +296,7 @@ def _timify(timeString):
     returns a datetime.time object that encodes the given time
     """
     import datetime
-
+ 
     time, ampm = timeString.split()
     hour, minute = time.split(':')
     hour = int(hour)
