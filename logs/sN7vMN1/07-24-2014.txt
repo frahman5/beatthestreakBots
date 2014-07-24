@@ -1,0 +1,20 @@
+2014-07-24 10:38:46,148 hour must be in 0..23
+
+2014-07-24 10:39:00,256 hour must be in 0..23
+
+2014-07-24 10:39:04,659 [Errno 54] Connection reset by peer
+
+2014-07-24 10:40:11,053 
+
+2014-07-24 10:40:30,061 <urlopen error [Errno 61] Connection refused>
+
+2014-07-24 10:40:31,096 [Errno 54] Connection reset by peer
+
+2014-07-24 10:43:49,475 <urlopen error [Errno 61] Connection refused>
+
+2014-07-24 10:43:50,597 [Errno 54] Connection reset by peer
+
+2014-07-24 10:44:09,681 <urlopen error [Errno 61] Connection refused>
+
+2014-07-24 10:46:01,660 <urlopen error [Errno 61] Connection refused>
+

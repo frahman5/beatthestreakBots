@@ -295,12 +295,15 @@ def _timify(timeString):
     """
     import datetime
 
+    import pdb
+    pdb.set_trace()
     time, ampm = timeString.split()
     hour, minute = time.split(':')
     hour = int(hour)
     minute = int(minute)
     if ampm == 'pm':
-        hour += 12 
+        if hour != 12:
+            hour += 12
 
     return datetime.time(hour=hour, minute=minute)
     
