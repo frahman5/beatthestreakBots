@@ -295,8 +295,6 @@ def _timify(timeString):
     """
     import datetime
 
-    import pdb
-    pdb.set_trace()
     time, ampm = timeString.split()
     hour, minute = time.split(':')
     hour = int(hour)
