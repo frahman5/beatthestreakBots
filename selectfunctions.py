@@ -261,8 +261,6 @@ def _whoIsEligible(**kwargs):
     activePlayersIter = [ player for player in kwargs['players'] ]
     activePlayersReturn = [ player for player in kwargs['players'] ]
     filt = kwargs['filt']
-    import pdb
-    pdb.set_trace()
     for player in activePlayersIter:
         firstName, lastName, team = player
         teamFormatted = _formatTeam(team)
