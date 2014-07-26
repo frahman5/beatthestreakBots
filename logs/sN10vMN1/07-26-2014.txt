@@ -1,0 +1,26 @@
+2014-07-25 22:41:22,245 global name 'ignorePlayers' is not defined
+
+2014-07-25 22:41:41,678 global name 'ignorePlayers' is not defined
+
+2014-07-25 22:42:00,487 global name 'ignorePlayers' is not defined
+
+2014-07-25 22:42:05,076 [Errno 54] Connection reset by peer
+
+2014-07-25 22:44:04,505 
+
+2014-07-25 22:44:05,632 <urlopen error [Errno 54] Connection reset by peer>
+
+2014-07-25 22:47:50,513 
+
+2014-07-25 22:47:52,187 [Errno 54] Connection reset by peer
+
+2014-07-25 22:48:18,983 <urlopen error [Errno 61] Connection refused>
+
+2014-07-25 22:49:46,362 Message: u'no such frame: element is not a frame\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-25 22:50:00,716 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-25 22:55:32,872 Message: u'no such frame: element is not a frame\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-25 22:55:42,619 Message: u'no such frame: element is not a frame\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+

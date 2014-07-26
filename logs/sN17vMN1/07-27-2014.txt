@@ -1,0 +1,10 @@
+2014-07-26 00:04:30,622 Message: u'no such frame: element is not a frame\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-26 00:05:27,371 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-26 00:06:06,419 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-26 00:06:36,588 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-26 00:06:55,564 [Errno 54] Connection reset by peer
+

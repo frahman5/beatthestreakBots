@@ -2,6 +2,8 @@ import random
 import datetime
 
 from bot import Bot
+from config import playerExceptions, ignorePlayers
+from exception import NoPlayerFoundException
 
 def randDownRandPlayers(**kwargs):
     """
@@ -39,6 +41,10 @@ def staticDownRandPlayers(**kwargs):
     assert type(kwargs['doubleDown'] == bool)
 
     # Pseudo-randomly choose playres
+    global ignorePlayers                            # list of players to ignore
+    global playerExceptions                         # number of NoPlayerFoundExceptions for each player
+    print "iP: {}".format(ignorePlayers)
+    print "pE: {}".format(playerExceptions)
     try: 
         p1 = random.choice(kwargs['eligiblePlayers'])
         if kwargs['doubleDown'] and (len(kwargs['eligiblePlayers']) != 1):
@@ -48,7 +54,21 @@ def staticDownRandPlayers(**kwargs):
         else:
             p2 = ()
         # Assign the players to the bot and return them to the caller
+        print "we get to the player choice"
         kwargs['bot'].choose_players(p1=p1, p2=p2)
         return p1, p2
+    except NoPlayerFoundException as e:
+        ## Update the count of NoPlayerFoundExceptions for the players, and 
+        ## add them to ignroePlayers if necessary
+        for player in (p1, p2):
+            if player in playerExceptions.keys():
+                playerExceptions[player] += 1
+            else:
+                playerExceptions[player] = 1
+            if playerExceptions[player] == 10:
+                ignorePlayers.append(player)
+        e.args += (' with players {} and {}'.format(p1, p2),)
+        raise e
     except Exception as e:
-        raise type(e)(e.message + ' with players {} and {}'.format(p1, p2))
+        e.args += (' with players {} and {}'.format(p1, p2),)
+        raise e

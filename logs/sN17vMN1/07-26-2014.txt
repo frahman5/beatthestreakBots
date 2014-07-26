@@ -1,0 +1,1697 @@
+2014-07-25 23:01:39,048 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:01:39,049     p1, p2: None, None
+
+2014-07-25 23:01:39,049 global name 'NoPlayerFoundException' is not defined
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 56, in staticDownRandPlayers
+    return p1, p2
+NameError: global name 'NoPlayerFoundException' is not defined
+2014-07-25 23:02:27,493 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:02:27,493     p1, p2: None, None
+
+2014-07-25 23:02:27,493 Message: " with players ('Salvador', 'Perez', 'kc') and ()" 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise type(e)(e.message + ' with players {} and {}'.format(p1, p2))
+WebDriverException: Message: " with players ('Salvador', 'Perez', 'kc') and ()" 
+2014-07-25 23:02:56,723 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:02:56,723     p1, p2: None, None
+
+2014-07-25 23:02:56,723 __init__() takes exactly 2 arguments (1 given) with players ('Alex', 'Gordon', 'kc') and ()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise type(e)(e.message + ' with players {} and {}'.format(p1, p2))
+TypeError: __init__() takes exactly 2 arguments (1 given) with players ('Alex', 'Gordon', 'kc') and ()
+2014-07-25 23:03:15,512 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:03:15,512     p1, p2: None, None
+
+2014-07-25 23:03:15,512 __init__() takes exactly 2 arguments (1 given) with players ('Salvador', 'Perez', 'kc') and ()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise type(e)(e.message + ' with players {} and {}'.format(p1, p2))
+TypeError: __init__() takes exactly 2 arguments (1 given) with players ('Salvador', 'Perez', 'kc') and ()
+2014-07-25 23:03:34,949 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:03:34,949     p1, p2: None, None
+
+2014-07-25 23:03:34,949 __init__() takes exactly 2 arguments (1 given) with players ('Salvador', 'Perez', 'kc') and ()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise type(e)(e.message + ' with players {} and {}'.format(p1, p2))
+TypeError: __init__() takes exactly 2 arguments (1 given) with players ('Salvador', 'Perez', 'kc') and ()
+2014-07-25 23:06:24,881 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:06:24,882     p1, p2: None, None
+
+2014-07-25 23:06:24,882 can only concatenate tuple (not "str") to tuple
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    e.args += (' with players {} and {}'.format(p1, p2))
+TypeError: can only concatenate tuple (not "str") to tuple
+2014-07-25 23:06:42,924 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:06:42,924     p1, p2: None, None
+
+2014-07-25 23:06:42,924 can only concatenate tuple (not "str") to tuple
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    e.args += (' with players {} and {}'.format(p1, p2))
+TypeError: can only concatenate tuple (not "str") to tuple
+2014-07-25 23:07:37,484 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:07:37,484     p1, p2: None, None
+
+2014-07-25 23:07:37,484 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Salvador', 'Perez', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Salvador', 'Perez', 'kc') and ()")
+2014-07-25 23:07:56,479 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:07:56,479     p1, p2: None, None
+
+2014-07-25 23:07:56,479 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Salvador', 'Perez', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Salvador', 'Perez', 'kc') and ()")
+2014-07-25 23:08:16,165 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:08:16,166     p1, p2: None, None
+
+2014-07-25 23:08:16,166 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alcides', 'Escobar', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alcides', 'Escobar', 'kc') and ()")
+2014-07-25 23:08:27,719 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:08:27,719     p1, p2: None, None
+
+2014-07-25 23:08:27,719  with players ('Alex', 'Gordon', 'kc') and ()
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+AssertionError:  with players ('Alex', 'Gordon', 'kc') and ()
+2014-07-25 23:08:46,955 Unit account update failure: williams.earth.552528@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:08:46,955     p1, p2: None, None
+
+2014-07-25 23:08:46,955 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alcides', 'Escobar', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alcides', 'Escobar', 'kc') and ()")
+2014-07-25 23:09:06,364 Unit account update failure: williams.earth.57173@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:09:06,365     p1, p2: None, None
+
+2014-07-25 23:09:06,365 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alex', 'Gordon', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alex', 'Gordon', 'kc') and ()")
+2014-07-25 23:10:55,206 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:10:55,207     p1, p2: None, None
+
+2014-07-25 23:10:55,207 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alex', 'Gordon', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 72, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alex', 'Gordon', 'kc') and ()")
+2014-07-25 23:11:15,660 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:11:15,660     p1, p2: None, None
+
+2014-07-25 23:11:15,660 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Salvador', 'Perez', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 72, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Salvador', 'Perez', 'kc') and ()")
+2014-07-25 23:11:35,359 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-25 23:12:17,334 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:12:17,334     p1, p2: None, None
+
+2014-07-25 23:12:17,334 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alcides', 'Escobar', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 72, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alcides', 'Escobar', 'kc') and ()")
+2014-07-25 23:12:45,036 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:12:45,036     p1, p2: None, None
+
+2014-07-25 23:12:45,036 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Salvador', 'Perez', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 72, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Salvador', 'Perez', 'kc') and ()")
+2014-07-25 23:13:44,408 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:13:44,408     p1, p2: None, None
+
+2014-07-25 23:13:44,408 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alex', 'Gordon', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 72, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alex', 'Gordon', 'kc') and ()")
+2014-07-25 23:14:01,768 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:14:01,768     p1, p2: None, None
+
+2014-07-25 23:14:01,769 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Salvador', 'Perez', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 72, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Salvador', 'Perez', 'kc') and ()")
+2014-07-25 23:14:20,816 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:14:20,816     p1, p2: None, None
+
+2014-07-25 23:14:20,816 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alcides', 'Escobar', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 72, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alcides', 'Escobar', 'kc') and ()")
+2014-07-25 23:14:40,857 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:14:40,857     p1, p2: None, None
+
+2014-07-25 23:14:40,857 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alex', 'Gordon', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 72, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alex', 'Gordon', 'kc') and ()")
+2014-07-25 23:15:00,416 Unit account update failure: williams.earth.552528@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:15:00,417     p1, p2: None, None
+
+2014-07-25 23:15:00,417 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alcides', 'Escobar', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 72, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alcides', 'Escobar', 'kc') and ()")
+2014-07-25 23:15:49,629 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:15:49,629     p1, p2: None, None
+
+2014-07-25 23:15:49,629 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alex', 'Gordon', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 72, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alex', 'Gordon', 'kc') and ()")
+2014-07-25 23:16:10,883 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:16:10,883     p1, p2: None, None
+
+2014-07-25 23:16:10,883 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Salvador', 'Perez', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 72, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Salvador', 'Perez', 'kc') and ()")
+2014-07-25 23:16:29,561 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:16:29,561     p1, p2: None, None
+
+2014-07-25 23:16:29,561 ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alex', 'Gordon', 'kc') and ()")
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 72, in staticDownRandPlayers
+    raise e
+TypeError: ('__init__() takes exactly 2 arguments (1 given)', " with players ('Alex', 'Gordon', 'kc') and ()")
+2014-07-25 23:17:21,094 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:17:21,094     p1, p2: None, None
+
+2014-07-25 23:17:21,094 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 69, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:17:41,616 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:17:41,616     p1, p2: None, None
+
+2014-07-25 23:17:41,616 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 69, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:18:00,570 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:18:00,570     p1, p2: None, None
+
+2014-07-25 23:18:00,570 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 69, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:18:21,566 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:18:21,566     p1, p2: None, None
+
+2014-07-25 23:18:21,566 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 69, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:18:41,412 Unit account update failure: williams.earth.552528@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:18:41,412     p1, p2: None, None
+
+2014-07-25 23:18:41,412 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 69, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:19:17,920 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-25 23:19:36,996 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-25 23:20:18,431 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:20:18,431     p1, p2: None, None
+
+2014-07-25 23:20:18,431 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:20:41,666 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:20:41,666     p1, p2: None, None
+
+2014-07-25 23:20:41,666 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:21:03,156 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:21:03,157     p1, p2: None, None
+
+2014-07-25 23:21:03,157 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:21:22,354 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:21:22,354     p1, p2: None, None
+
+2014-07-25 23:21:22,354 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:21:41,779 Unit account update failure: williams.earth.552528@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:21:41,779     p1, p2: None, None
+
+2014-07-25 23:21:41,779 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:22:02,947 Unit account update failure: williams.earth.57173@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:22:02,947     p1, p2: None, None
+
+2014-07-25 23:22:02,947 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:22:20,045 Unit account update failure: williams.earth.580@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:22:20,045     p1, p2: None, None
+
+2014-07-25 23:22:20,045 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:22:41,127 Unit account update failure: williams.earth.581414@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:22:41,127     p1, p2: None, None
+
+2014-07-25 23:22:41,127 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:23:02,147 Unit account update failure: williams.earth.601197@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:23:02,147     p1, p2: None, None
+
+2014-07-25 23:23:02,147 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:23:20,630 Unit account update failure: williams.earth.630@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:23:20,630     p1, p2: None, None
+
+2014-07-25 23:23:20,630 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:23:40,930 Unit account update failure: williams.earth.64@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:23:40,930     p1, p2: None, None
+
+2014-07-25 23:23:40,930 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:23:59,144 Unit account update failure: williams.earth.657376@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:23:59,144     p1, p2: None, None
+
+2014-07-25 23:23:59,144 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:24:26,959 Unit account update failure: williams.earth.667@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:24:26,960     p1, p2: None, None
+
+2014-07-25 23:24:26,960 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:24:47,910 Unit account update failure: williams.earth.677496@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:24:47,910     p1, p2: None, None
+
+2014-07-25 23:24:47,910 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:25:09,626 Unit account update failure: williams.earth.682121@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:25:09,626     p1, p2: None, None
+
+2014-07-25 23:25:09,627 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:25:28,111 Unit account update failure: williams.earth.686612@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:25:28,111     p1, p2: None, None
+
+2014-07-25 23:25:28,111 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    p1, p2 = __distribute_eligible_players(
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:25:49,440 Unit account update failure: williams.earth.688350@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:25:49,440     p1, p2: None, None
+
+2014-07-25 23:25:49,440 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    bot, p1, p2 = (None, None, None) # in case we throw an exception before they get assigned
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:26:11,546 Unit account update failure: williams.earth.732@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:26:11,546     p1, p2: None, None
+
+2014-07-25 23:26:11,546 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    bot, p1, p2 = (None, None, None) # in case we throw an exception before they get assigned
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:26:32,750 Unit account update failure: williams.earth.733263@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:26:32,750     p1, p2: None, None
+
+2014-07-25 23:26:32,750 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:26:51,537 Unit account update failure: williams.earth.734348@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:26:51,537     p1, p2: None, None
+
+2014-07-25 23:26:51,537 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:27:11,273 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:27:11,273     p1, p2: None, None
+
+2014-07-25 23:27:11,273 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 407, in choosePlayers
+    
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:27:59,700 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:27:59,700     p1, p2: None, None
+
+2014-07-25 23:27:59,700 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 413, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:28:20,792 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:28:20,793     p1, p2: None, None
+
+2014-07-25 23:28:20,793 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 413, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:28:41,893 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:28:41,894     p1, p2: None, None
+
+2014-07-25 23:28:41,894 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 413, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:29:02,143 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:29:02,143     p1, p2: None, None
+
+2014-07-25 23:29:02,143 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 413, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:29:21,684 Unit account update failure: williams.earth.552528@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:29:21,684     p1, p2: None, None
+
+2014-07-25 23:29:21,684 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 413, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:29:41,329 Unit account update failure: williams.earth.57173@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:29:41,329     p1, p2: None, None
+
+2014-07-25 23:29:41,329 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 413, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:30:04,056 Unit account update failure: williams.earth.580@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:30:04,056     p1, p2: None, None
+
+2014-07-25 23:30:04,056 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 413, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:30:25,024 Unit account update failure: williams.earth.581414@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:30:25,024     p1, p2: None, None
+
+2014-07-25 23:30:25,025 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 413, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:30:45,295 Unit account update failure: williams.earth.601197@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:30:45,296     p1, p2: None, None
+
+2014-07-25 23:30:45,296 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 413, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:32:01,280 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:32:01,280     p1, p2: None, None
+
+2014-07-25 23:32:01,281 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:32:24,246 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:32:24,246     p1, p2: None, None
+
+2014-07-25 23:32:24,246 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:32:45,064 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:32:45,064     p1, p2: None, None
+
+2014-07-25 23:32:45,064 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:33:06,224 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:33:06,224     p1, p2: None, None
+
+2014-07-25 23:33:06,224 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:33:27,505 Unit account update failure: williams.earth.552528@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:33:27,505     p1, p2: None, None
+
+2014-07-25 23:33:27,505 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:33:46,203 Unit account update failure: williams.earth.57173@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:33:46,203     p1, p2: None, None
+
+2014-07-25 23:33:46,203 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:34:08,413 Message: u'no such frame: element is not a frame\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-25 23:34:54,510 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:34:54,510     p1, p2: None, None
+
+2014-07-25 23:34:54,510 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:35:16,040 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:35:16,041     p1, p2: None, None
+
+2014-07-25 23:35:16,041 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:35:35,412 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:35:35,413     p1, p2: None, None
+
+2014-07-25 23:35:35,413 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:36:13,665 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:36:13,666     p1, p2: None, None
+
+2014-07-25 23:36:13,666 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:36:36,116 Unit account update failure: williams.earth.552528@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:36:36,125     p1, p2: None, None
+
+2014-07-25 23:36:36,125 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:37:04,673 Unit account update failure: williams.earth.57173@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:37:04,682     p1, p2: None, None
+
+2014-07-25 23:37:04,682 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:37:28,458 Unit account update failure: williams.earth.580@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:37:28,458     p1, p2: None, None
+
+2014-07-25 23:37:28,458 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:37:53,632 Unit account update failure: williams.earth.581414@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:37:53,632     p1, p2: None, None
+
+2014-07-25 23:37:53,632 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:38:17,003 Unit account update failure: williams.earth.601197@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:38:17,003     p1, p2: None, None
+
+2014-07-25 23:38:17,003 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:38:39,031 Unit account update failure: williams.earth.630@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:38:39,031     p1, p2: None, None
+
+2014-07-25 23:38:39,031 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 414, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:41:57,142 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:41:57,143     p1, p2: None, None
+
+2014-07-25 23:41:57,143 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:42:30,636 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:42:30,637     p1, p2: None, None
+
+2014-07-25 23:42:30,637 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:42:59,365 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:42:59,365     p1, p2: None, None
+
+2014-07-25 23:42:59,365 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:43:31,110 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:43:31,111     p1, p2: None, None
+
+2014-07-25 23:43:31,111 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:44:17,973 Unit account update failure: williams.earth.552528@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:44:17,974     p1, p2: None, None
+
+2014-07-25 23:44:17,974 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:46:20,657 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:46:20,657     p1, p2: None, None
+
+2014-07-25 23:46:20,657 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:47:10,406 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:10,406     p1, p2: None, None
+
+2014-07-25 23:47:10,406 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:47:12,245 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:12,245     p1, p2: None, None
+
+2014-07-25 23:47:12,246 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:14,043 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:14,044     p1, p2: None, None
+
+2014-07-25 23:47:14,044 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:15,883 Unit account update failure: williams.earth.552528@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:15,883     p1, p2: None, None
+
+2014-07-25 23:47:15,883 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:17,667 Unit account update failure: williams.earth.57173@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:17,667     p1, p2: None, None
+
+2014-07-25 23:47:17,667 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:19,388 Unit account update failure: williams.earth.580@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:19,388     p1, p2: None, None
+
+2014-07-25 23:47:19,388 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:21,299 Unit account update failure: williams.earth.581414@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:21,299     p1, p2: None, None
+
+2014-07-25 23:47:21,299 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:23,253 Unit account update failure: williams.earth.601197@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:23,254     p1, p2: None, None
+
+2014-07-25 23:47:23,254 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:25,007 Unit account update failure: williams.earth.630@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:25,007     p1, p2: None, None
+
+2014-07-25 23:47:25,007 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:26,929 Unit account update failure: williams.earth.64@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:26,929     p1, p2: None, None
+
+2014-07-25 23:47:26,929 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:28,813 Unit account update failure: williams.earth.657376@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:28,813     p1, p2: None, None
+
+2014-07-25 23:47:28,813 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:30,504 Unit account update failure: williams.earth.667@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:30,504     p1, p2: None, None
+
+2014-07-25 23:47:30,504 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:32,439 Unit account update failure: williams.earth.677496@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:32,439     p1, p2: None, None
+
+2014-07-25 23:47:32,439 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:34,306 Unit account update failure: williams.earth.682121@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:34,306     p1, p2: None, None
+
+2014-07-25 23:47:34,306 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:36,348 Unit account update failure: williams.earth.686612@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:36,348     p1, p2: None, None
+
+2014-07-25 23:47:36,349 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:38,265 Unit account update failure: williams.earth.688350@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:38,265     p1, p2: None, None
+
+2014-07-25 23:47:38,266 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:40,067 Unit account update failure: williams.earth.732@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:40,067     p1, p2: None, None
+
+2014-07-25 23:47:40,067 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:41,970 Unit account update failure: williams.earth.733263@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:41,971     p1, p2: None, None
+
+2014-07-25 23:47:41,971 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:44,053 Unit account update failure: williams.earth.734348@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:44,053     p1, p2: None, None
+
+2014-07-25 23:47:44,053 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:45,798 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:45,798     p1, p2: None, None
+
+2014-07-25 23:47:45,798 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:47,593 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:47,593     p1, p2: None, None
+
+2014-07-25 23:47:47,593 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:49,374 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:49,374     p1, p2: None, None
+
+2014-07-25 23:47:49,374 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:51,350 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:51,351     p1, p2: None, None
+
+2014-07-25 23:47:51,351 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:53,229 Unit account update failure: williams.earth.552528@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:53,229     p1, p2: None, None
+
+2014-07-25 23:47:53,229 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:54,934 Unit account update failure: williams.earth.57173@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:54,935     p1, p2: None, None
+
+2014-07-25 23:47:54,935 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:56,956 Unit account update failure: williams.earth.580@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:56,957     p1, p2: None, None
+
+2014-07-25 23:47:56,957 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:47:58,797 Unit account update failure: williams.earth.581414@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:47:58,798     p1, p2: None, None
+
+2014-07-25 23:47:58,798 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:48:00,866 Unit account update failure: williams.earth.601197@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:48:00,866     p1, p2: None, None
+
+2014-07-25 23:48:00,866 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 170, in __distribute_eligible_players
+    assert type(kwargs['eligiblePlayers']) == tuple
+AssertionError
+2014-07-25 23:48:02,319 Unit account update failure: williams.earth.630@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:48:02,319     p1, p2: None, None
+
+2014-07-25 23:48:02,319 [Errno 54] Connection reset by peer
+Traceback (most recent call last):
+  File "chooseplayers.py", line 415, in choosePlayers
+    bot = Bot(str(username), str(password), activeDate)
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bot.py", line 55, in __init__
+    self.browser = webdriver.Chrome()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 67, in __init__
+    self.quit()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/webdriver.py", line 82, in quit
+    self.service.stop()
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/bvenv/lib/python2.7/site-packages/selenium/webdriver/chrome/service.py", line 97, in stop
+    url_request.urlopen("http://127.0.0.1:%d/shutdown" % self.port)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 127, in urlopen
+    return _opener.open(url, data, timeout)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 404, in open
+    response = self._open(req, data)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 422, in _open
+    '_open', req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 382, in _call_chain
+    result = func(*args)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1214, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1187, in do_open
+    r = h.getresponse(buffering=True)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 1045, in getresponse
+    response.begin()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 409, in begin
+    version, status, reason = self._read_status()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py", line 365, in _read_status
+    line = self.fp.readline(_MAXLINE + 1)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 476, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 54] Connection reset by peer
+2014-07-25 23:48:34,722 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-25 23:49:02,318 Message: u'no such frame: element is not a frame\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-25 23:50:10,859 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:50:10,860     p1, p2: None, None
+
+2014-07-25 23:50:10,860 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:50:48,961 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:50:48,961     p1, p2: None, None
+
+2014-07-25 23:50:48,961 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:51:34,288 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:51:34,288     p1, p2: None, None
+
+2014-07-25 23:51:34,288 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:52:13,249 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:52:13,249     p1, p2: None, None
+
+2014-07-25 23:52:13,249 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-25 23:52:54,568 Unit account update failure: williams.earth.552528@faiyamrahman.com, beatthestreak1
+
+2014-07-25 23:52:54,568     p1, p2: None, None
+
+2014-07-25 23:52:54,568 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 418, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 74, in staticDownRandPlayers
+    raise e
+TimeoutException: Message: '' 
+2014-07-25 23:57:44,376 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-25 23:58:12,914 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-25 23:58:57,412 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-25 23:59:21,457 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-26 00:00:25,431 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:00:25,431     p1, p2: None, None
+
+2014-07-26 00:00:25,431 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 419, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-26 00:01:59,888 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:01:59,888     p1, p2: None, None
+
+2014-07-26 00:01:59,888 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 419, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-26 00:02:44,758 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:02:44,759     p1, p2: None, None
+
+2014-07-26 00:02:44,759 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 419, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-26 00:07:34,364 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-26 00:09:13,300 Message: u'no such element\n  (Session info: chrome=36.0.1985.125)\n  (Driver info: chromedriver=2.9.248307,platform=Mac OS X 10.9.2 x86_64)' 
+
+2014-07-26 00:11:40,672 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:11:40,672     p1, p2: None, None
+
+2014-07-26 00:11:40,672 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 421, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 74, in staticDownRandPlayers
+    raise e
+TimeoutException: Message: '' 
+2014-07-26 00:12:36,222 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:12:36,223     p1, p2: None, None
+
+2014-07-26 00:12:36,223 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 421, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 74, in staticDownRandPlayers
+    raise e
+TimeoutException: Message: '' 
+2014-07-26 00:13:46,370 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:13:46,370     p1, p2: None, None
+
+2014-07-26 00:13:46,370 Message: '' 
+Traceback (most recent call last):
+  File "chooseplayers.py", line 421, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 74, in staticDownRandPlayers
+    raise e
+TimeoutException: Message: '' 
+2014-07-26 00:14:49,100 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:14:49,100     p1, p2: None, None
+
+2014-07-26 00:14:49,100 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 421, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-26 00:15:34,627 Unit account update failure: williams.earth.552528@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:15:34,627     p1, p2: None, None
+
+2014-07-26 00:15:34,627 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 421, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-26 00:16:22,412 Unit account update failure: williams.earth.57173@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:16:22,412     p1, p2: None, None
+
+2014-07-26 00:16:22,412 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 421, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-26 00:17:14,673 Unit account update failure: williams.earth.580@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:17:14,674     p1, p2: None, None
+
+2014-07-26 00:17:14,674 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 421, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-26 00:19:50,633 Unit account update failure: williams.earth.52682@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:19:50,633     p1, p2: None, None
+
+2014-07-26 00:19:50,633 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 420, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-26 00:20:15,693 Unit account update failure: williams.earth.527474@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:20:15,693     p1, p2: None, None
+
+2014-07-26 00:20:15,694 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 420, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-26 00:20:41,322 Unit account update failure: williams.earth.539957@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:20:41,322     p1, p2: None, None
+
+2014-07-26 00:20:41,322 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 420, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-26 00:21:05,338 Unit account update failure: williams.earth.546092@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:21:05,339     p1, p2: None, None
+
+2014-07-26 00:21:05,339 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 420, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'
+2014-07-26 00:21:32,037 Unit account update failure: williams.earth.552528@faiyamrahman.com, beatthestreak1
+
+2014-07-26 00:21:32,037     p1, p2: None, None
+
+2014-07-26 00:21:32,038 'debug'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 420, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 184, in __distribute_eligible_players
+    doubleDown=False )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 71, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'debug'

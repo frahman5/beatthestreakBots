@@ -170,9 +170,6 @@ class Bot(object):
         self.__get_team_selection_dropdown(team=team)
 
         ## Make pick
-        # if firstName == 'Robinson':
-            # import pdb
-            # pdb.set_trace()
             # get lists of firstNames, lastNames, and select Buttons
         namesThereYet = WebDriverWait(self.browser, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, "last-name")))

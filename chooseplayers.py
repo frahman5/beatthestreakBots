@@ -5,10 +5,11 @@ from datetime import datetime, timedelta, date # to get today's date
 
 from filepath import Filepath 
 from bot import Bot
-from config import ROOT
+from config import ROOT, ignorePlayers
 from exception import NoPlayerFoundException, FailedAccountException, \
                       FailedUpdateException
 from errorlogging import getLogger, logError, logFailedAccounts
+
 
 def __get_date_formatted_for_excel(d):
     """
@@ -128,6 +129,7 @@ def __report_no_more_selections(**kwargs):
            accounts for sN and vMN
         sN: int | strategy Number
         vMN: int | virtual machine number  
+        activeDate: date | activeDate
 
     Assuming there are no more available selections today, puts the value
     "DONE: NOELIGIBLE, NOELIGIBLE" in todays column of the minion account file
@@ -137,6 +139,7 @@ def __report_no_more_selections(**kwargs):
     assert type(kwargs['fulldf']) == pd.DataFrame
     assert type(kwargs['sN']) == int
     assert type(kwargs['vMN']) == int
+    assert type(kwargs['activeDate']) == date
 
     ### Let the user know what's up
     print "--> NO PLAYERS LEFT TODAY. LOGGING AND EXITING"
@@ -144,8 +147,9 @@ def __report_no_more_selections(**kwargs):
     ### Log the finished accounts
     updatedAccounts = [ (username, ('NOELIGIBLE'), ('NOELIGIBLE')) for 
                           dummyIndex, index, username, password, sN, vMN in 
-                          fulldf.itertuples() ]
-    log_updated_accounts(updatedAccounts, sN=kwargs['sN'], vMN=kwargs['vMN'])
+                          kwargs['fulldf'].itertuples() ]
+    log_updated_accounts( updatedAccounts, sN=kwargs['sN'], 
+                          vMN=kwargs['vMN'], activeDate=kwargs['activeDate'])
 
 def __distribute_eligible_players(**kwargs):
     """
@@ -315,8 +319,10 @@ def choosePlayers(**kwargs):
     Returns 'noneLeft' if no players are eligible anymore
     """
     import os
-    import subprocess
+    import subprocess   
 
+    global ignorePlayers
+    
     ###### Get our arguments: #####
     funcDict = kwargs['funcDict']
     sN = kwargs['sN']
@@ -347,7 +353,8 @@ def choosePlayers(**kwargs):
     if len(eligiblePlayers) == 0: # report as much and exit gracefully
         __report_no_more_selections( fulldf=fulldf, 
                                      sN=kwargs['sN'], 
-                                     vMN=kwargs['vMN'] )
+                                     vMN=kwargs['vMN'],
+                                     activeDate=kwargs['activeDate'] )
         return 'noneLeft'
 
     ###### update each of the accounts #####
@@ -368,6 +375,7 @@ def choosePlayers(**kwargs):
 
         ## Update those accounts baby! 
         for dummyIndex, index, username, password, sN, vMN in df.itertuples():
+            print "eP: {}".format(eligiblePlayers)
 
             # log ps -A, for debugging purposes
             # with open( Filepath.get_log_file(kwargs['activeDate'], 
@@ -382,6 +390,16 @@ def choosePlayers(**kwargs):
             # don't update the same account twice
             if username in updatedUsernames: 
                 continue
+
+            # if ignorePlayers is nonEmpty, reflect that
+            if ignorePlayers != []:
+                ePList = list(eligiblePlayers)
+                for player in ignorePlayers:
+                    print "removing player: {}".format(player)
+                    if len(player) == 3:
+                        ePList.remove(player)
+                        ignorePlayers.remove(player)
+                eligiblePlayers = tuple(ePList)
 
             # try to update the account 
             numIters += 1

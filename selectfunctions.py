@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from config import BTSUSERNAME, BTSPASSWORD
+from config import BTSUSERNAME, BTSPASSWORD, ignorePlayers
 from bot import Bot
 from exception import NoPlayerFoundException
 
@@ -258,6 +258,7 @@ def _whoIsEligible(**kwargs):
     ## remove ineligible players
        # we make two copies because if you alter a list as you iterate through it,
        # things get messed up!
+    global ignorePlayers                        # global list of players to remove
     activePlayersIter = [ player for player in kwargs['players'] ]
     activePlayersReturn = [ player for player in kwargs['players'] ]
     filt = kwargs['filt']
@@ -282,6 +283,11 @@ def _whoIsEligible(**kwargs):
             activePlayersReturn.remove(player)
         # Player's team is playing... is the opposing pitcher ERA high enough?
         elif filterERA and (relevantTeams[teamFormatted][1] <= filt['minERA']):
+            activePlayersReturn.remove(player)
+
+        # Player's team is playing, opposing pitcher ERA high enough, 
+        # but they've caused too many NoPlayerFOundExceptions
+        if player in ignorePlayers:
             activePlayersReturn.remove(player)
 
     return activePlayersReturn

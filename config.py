@@ -1,8 +1,8 @@
 # FileSystem
     # on Faiyam's computer
-#ROOT = '/Users/faiyamrahman/programming/Python/beatthestreakBots' 
+ROOT = '/Users/faiyamrahman/programming/Python/beatthestreakBots' 
     # on Google Linux Instance 
-ROOT = '/home/faiyamrahman/programming/Python/beatthestreakBots'
+#ROOT = '/home/faiyamrahman/programming/Python/beatthestreakBots'
     # on D$$s computer
 # ROOT = '/Users/Dima/faiProgramming/Python/beatthestreakBots'
 
@@ -19,4 +19,7 @@ OUTLOOKPW = 'helloGoe234!'
 BTSUSERNAME = 'frahman305@gmail.com'    
 BTSPASSWORD = 'fymze812'
 
-## here's a comment
+## Global variables to help avoid picking players who constantly cause
+## NoPlayerFoundExceptions
+ignorePlayers = []
+playerExceptions = {}
