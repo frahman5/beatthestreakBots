@@ -553,12 +553,6 @@ if __name__ == '__main__':
         if doneYet == 'noneLeft': # if there are no eligible players left
             numLeft = 0
             break
-        if numLeft < blockSize:
-            print "\n****** Assigning to final {} accounts".format(numLeft) + \
-                  " for Strategy, VM: {}, {}******".format(sN, vMN)
-            doneYet = choosePlayers( funcDict=funcDict, sN=sN, vMN=vMN, 
-                                     num=numLeft, activeDate=activeDate)
-            break
         else: 
             assert type(sN) == int
             print "\n********** Assigning IN CHUNKS OF {}".format(blockSize) + \

@@ -38,5 +38,11 @@ makeInstance 5
 gcutil $sv $p ssh $zone sn5
 
 # update the snapshot
-gcutil --project='faiyam-bts-1' removesnapshot "sims-chromedriver-clientalive-strats-5-17"
-gcutil --project='faiyam-bts-1' addsnapshot --zone='us-central1-a'
+gcutil --project='faiyam-bts-1' deletesnapshot "sims-chromedriver-clientalive-strats-5-17"
+gcutil --project='faiyam-bts-1' addsnapshot --zone='us-central1-a' "sims-chromedriver-clientalive-strats-5-17"
+
+# delete the instance
+gcutil --project='faiyam-bts-1' deleteinstance sn5
+
+# list the snapshots
+gcutil --project='faiyam-bts-1' listsnapshots
