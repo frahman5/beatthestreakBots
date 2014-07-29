@@ -321,7 +321,7 @@ def choosePlayers(**kwargs):
     import os
     import subprocess   
 
-    global ignorePlayers
+    # global ignorePlayers
     
     ###### Get our arguments: #####
     funcDict = kwargs['funcDict']
@@ -362,7 +362,7 @@ def choosePlayers(**kwargs):
     lenDF = len(df)       # for keeping track of how much we have left
     failedAccounts = []   # in case we fail to update some accounts
     updatedAccounts = []  # to keep track accounts to log to file
-    ignorePlayersRead = False           # Have we processed ignorePlayers yet?
+    # ignorePlayersRead = False           # Have we processed ignorePlayers yet?
     while len(updatedAccounts) != lenDF:
 
         ## Who have we already updated?
@@ -393,14 +393,14 @@ def choosePlayers(**kwargs):
                 continue
 
             # if ignorePlayers is nonEmpty, reflect that
-            if (ignorePlayers != []) and (not ignorePlayersRead):
-                ePList = list(eligiblePlayers)
-                for player in ignorePlayers:
-                    print "removing player: {}".format(player)
-                    if len(player) == 3:
-                        ePList.remove(player)
-                eligiblePlayers = tuple(ePList)
-                ignorePlayersRead = True
+            # if (ignorePlayers != []) and (not ignorePlayersRead):
+            #     ePList = list(eligiblePlayers)
+            #     for player in ignorePlayers:
+            #         print "removing player: {}".format(player)
+            #         if len(player) == 3:
+            #             ePList.remove(player)
+            #     eligiblePlayers = tuple(ePList)
+            #     ignorePlayersRead = True
 
             # try to update the account 
             numIters += 1
