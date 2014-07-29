@@ -17,7 +17,7 @@ def main():
                         parse_cols='B,' + # usernames
                                    'D')   # passwords
 
-    # ## Make series with streak lengths for each account
+    ## Make series with streak lengths for each account
     lenDF = len(df)
     yesterday = datetime.today().date() - timedelta(days=1)
     streakLengths = [ None for i in range(lenDF) ]

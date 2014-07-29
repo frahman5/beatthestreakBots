@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, date # to get today's date
 
 from filepath import Filepath 
 from bot import Bot
-from config import ROOT, ignorePlayers
+from config import ROOT, ignorePlayers, eligiblePlayers
 from exception import NoPlayerFoundException, FailedAccountException, \
                       FailedUpdateException
 from errorlogging import getLogger, logError, logFailedAccounts
@@ -289,6 +289,55 @@ def log_updated_accounts(updatedAccounts, sN=None, vMN=None, activeDate=None):
                     index=False # no extra column for row indices
                   )
 
+def reportUnusedPlayers(sN, vMN, activeDate):
+    """
+    int int -> None
+    Comapares the global list "eligiblePlayers" to the listed players
+    in the minion Account file for sN and vMN and logs player selection 
+    rates to the log file
+
+    For example, if eligiblePlayers = (p1, p2, p3) and 3 accounts chose p1, 
+    5 accounts chose p2 and 0 accounts chose p3, then it will write:
+
+    **** Player Selection Rates ****
+    p2: 5
+    p1: 3
+    p3: 0
+    """
+    global eligiblePlayers
+    ### Let the user know what's up
+    print "--> Getting accounts file {} to report player selection rates".format(dfPath)
+
+    ### Read in the minion accounts file
+    minionPath = Filepath.get_minion_account_file(
+                     sN=kwargs['sN'], vMN=kwargs['vMN'])
+    df = pd.read_excel( minionPath, sheetname='Production' )
+
+    ### Only include column with today's selections
+    df = df[__get_date_formatted_for_excel(activeDate)]
+
+    ### Compare to eligible players and construct selection counts
+    playerCounts = {}
+    for player in eligiblePlayers:
+        playerCounts[player] = 0
+    for selection in df.itertuples():
+        for player in eligiblePlayers:
+            if player in selection:
+                playerCounts += 1
+
+    ### Organize the player counts
+    sortedPlayerCounts = []
+    for player, count in playerCounts:
+        sortedPlayerCounts.append((player, count))
+    sortedPlayerCounts.sort(key=lambda x: x[1])
+
+    ### Log counts to file
+    logger = getLogger(activeDate=activeDate, sN=sN, vMN=vMN)
+    info = """\n\n**** Player Selection Rates ****"""
+    for player, count in sortedPlayerCounts:
+        info = info + "\n    --->{}: {}".format(player, count)
+    logger.info(info)
+
 def choosePlayers(**kwargs):
     """
     kwargs -> str|None
@@ -564,4 +613,6 @@ if __name__ == '__main__':
             numLeft = get_num_accounts( 
                              sN=sN, vMN=vMN, 
                              getRemaining=True, activeDate=activeDate )
+
+    reportUnusedPlayers(sN=sN, vMN=vMN, activeDate=activeDate)
 
