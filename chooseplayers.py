@@ -305,13 +305,13 @@ def reportUnusedPlayers(sN, vMN, activeDate):
     p3: 0
     """
     global eligiblePlayers
-    ### Let the user know what's up
-    print "--> Getting accounts file {} to report player selection rates".format(dfPath)
 
     ### Read in the minion accounts file
-    minionPath = Filepath.get_minion_account_file(
-                     sN=kwargs['sN'], vMN=kwargs['vMN'])
+    minionPath = Filepath.get_minion_account_file(sN=sN, vMN=vMN)
     df = pd.read_excel( minionPath, sheetname='Production' )
+
+        ### Let the user know what's up
+    print "--> Reporting Player selection rates for {}".format(minionPath)
 
     ### Only include column with today's selections
     df = df[__get_date_formatted_for_excel(activeDate)]
@@ -320,22 +320,22 @@ def reportUnusedPlayers(sN, vMN, activeDate):
     playerCounts = {}
     for player in eligiblePlayers:
         playerCounts[player] = 0
-    for selection in df.itertuples():
+    for selection in df:
         for player in eligiblePlayers:
-            if player in selection:
-                playerCounts += 1
+            if str(player) in selection:
+                playerCounts[player] += 1
 
     ### Organize the player counts
     sortedPlayerCounts = []
-    for player, count in playerCounts:
+    for player, count in playerCounts.iteritems():
         sortedPlayerCounts.append((player, count))
     sortedPlayerCounts.sort(key=lambda x: x[1])
 
     ### Log counts to file
     logger = getLogger(activeDate=activeDate, sN=sN, vMN=vMN)
-    info = """\n\n**** Player Selection Rates ****"""
+    info = "\n\n**** Player Selection Rates ****\n"
     for player, count in sortedPlayerCounts:
-        info = info + "\n    --->{}: {}".format(player, count)
+        info = info + "\n --->{}: {}".format(player, count)
     logger.info(info)
 
 def choosePlayers(**kwargs):

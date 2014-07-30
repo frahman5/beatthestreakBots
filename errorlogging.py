@@ -12,6 +12,9 @@ def getLogger(activeDate, sN, vMN):
          # add handlers to logger
     logger.addHandler(fileHandler)
 
+    # Set logger level
+    logger.setLevel(20) # info level
+
     return logger
 
 def logError(username, password, p1, p2, exception, logger):

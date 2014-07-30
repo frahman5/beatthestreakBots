@@ -290,7 +290,7 @@ def _whoIsEligible(**kwargs):
         # but they've caused too many NoPlayerFOundExceptions
         if player in ignorePlayers:
             activePlayersReturn.remove(player)
-    if ignorePlayers = []:
+    if ignorePlayers == []:
         eligiblePlayers = activePlayersReturn
 
     return activePlayersReturn
