@@ -54,7 +54,6 @@ def staticDownRandPlayers(**kwargs):
         else:
             p2 = ()
         # Assign the players to the bot and return them to the caller
-        print "we get to the player choice"
         kwargs['bot'].choose_players(p1=p1, p2=p2)
         return p1, p2
     except NoPlayerFoundException as e:

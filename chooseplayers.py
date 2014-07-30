@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, date # to get today's date
 
 from filepath import Filepath 
 from bot import Bot
-from config import ROOT, ignorePlayers, eligiblePlayers
+from config import ROOT, ignorePlayers, logEligiblePlayers
 from exception import NoPlayerFoundException, FailedAccountException, \
                       FailedUpdateException
 from errorlogging import getLogger, logError, logFailedAccounts
@@ -304,7 +304,7 @@ def reportUnusedPlayers(sN, vMN, activeDate):
     p1: 3
     p3: 0
     """
-    global eligiblePlayers
+    global logEligiblePlayers
 
     ### Read in the minion accounts file
     minionPath = Filepath.get_minion_account_file(sN=sN, vMN=vMN)
@@ -318,10 +318,10 @@ def reportUnusedPlayers(sN, vMN, activeDate):
 
     ### Compare to eligible players and construct selection counts
     playerCounts = {}
-    for player in eligiblePlayers:
+    for player in logEligiblePlayers:
         playerCounts[player] = 0
     for selection in df:
-        for player in eligiblePlayers:
+        for player in logEligiblePlayers:
             if str(player) in selection:
                 playerCounts[player] += 1
 
@@ -333,6 +333,10 @@ def reportUnusedPlayers(sN, vMN, activeDate):
 
     ### Log counts to file
     logger = getLogger(activeDate=activeDate, sN=sN, vMN=vMN)
+
+    ### Tell us who the eligible players were
+    logger.info(str(logEligiblePlayers))
+
     info = "\n\n**** Player Selection Rates ****\n"
     for player, count in sortedPlayerCounts:
         info = info + "\n --->{}: {}".format(player, count)
@@ -370,7 +374,8 @@ def choosePlayers(**kwargs):
     import os
     import subprocess   
 
-    # global ignorePlayers
+    global logEligiblePlayers                       # to log player selection rates
+    global ignorePlayers
     
     ###### Get our arguments: #####
     funcDict = kwargs['funcDict']
@@ -399,6 +404,10 @@ def choosePlayers(**kwargs):
         except Exception as e:
             logger.error(e)
 
+    if len(ignorePlayers) == 0:                     # for player selection rate logging
+        logEligiblePlayers = [player for player in eligiblePlayers]
+
+
     if len(eligiblePlayers) == 0: # report as much and exit gracefully
         __report_no_more_selections( fulldf=fulldf, 
                                      sN=kwargs['sN'], 
@@ -411,7 +420,6 @@ def choosePlayers(**kwargs):
     lenDF = len(df)       # for keeping track of how much we have left
     failedAccounts = []   # in case we fail to update some accounts
     updatedAccounts = []  # to keep track accounts to log to file
-    # ignorePlayersRead = False           # Have we processed ignorePlayers yet?
     while len(updatedAccounts) != lenDF:
 
         ## Who have we already updated?

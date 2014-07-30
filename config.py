@@ -23,4 +23,4 @@ BTSPASSWORD = 'fymze812'
 ## NoPlayerFoundExceptions
 ignorePlayers = []
 playerExceptions = {}
-eligiblePlayers = [] # to report back which eligible players were never selected
+logEligiblePlayers = [] # to report back which eligible players were never selected

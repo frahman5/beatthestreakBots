@@ -1,0 +1,29 @@
+2014-07-30 09:51:51,095 []
+
+2014-07-30 09:51:51,095 
+
+**** Player Selection Rates ****
+
+
+2014-07-30 09:54:42,912 [('Mike', 'Trout', 'laa'), ('Charlie', 'Blackmon', 'col'), ('Miguel', 'Cabrera', 'det'), ('Yasiel', 'Puig', 'lad')]
+
+2014-07-30 09:54:42,912 [('Mike', 'Trout', 'laa'), ('Charlie', 'Blackmon', 'col'), ('Miguel', 'Cabrera', 'det'), ('Yasiel', 'Puig', 'lad')]
+
+2014-07-30 09:54:42,912 
+
+**** Player Selection Rates ****
+
+ --->('Mike', 'Trout', 'laa'): 174
+ --->('Charlie', 'Blackmon', 'col'): 179
+ --->('Miguel', 'Cabrera', 'det'): 199
+ --->('Yasiel', 'Puig', 'lad'): 203
+
+2014-07-30 09:54:42,912 
+
+**** Player Selection Rates ****
+
+ --->('Mike', 'Trout', 'laa'): 174
+ --->('Charlie', 'Blackmon', 'col'): 179
+ --->('Miguel', 'Cabrera', 'det'): 199
+ --->('Yasiel', 'Puig', 'lad'): 203
+

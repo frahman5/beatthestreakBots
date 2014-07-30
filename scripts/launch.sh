@@ -58,7 +58,7 @@ makeDisk 11 & makeDisk 12 & makeDisk 13 & makeDisk 14 & makeDisk 15 & makeDisk 1
 makeDisk 17 & wait 
 echo "**************** DISKS CREATED! ****************"
 
-## Create all the instances in parallel
+# Create all the instances in parallel
 makeInstance 5 & makeInstance 6 & makeInstance 7 & makeInstance 8 & \
 makeInstance 9 & makeInstance 10 & makeInstance 11 & makeInstance 12 & \
 makeInstance 13 & makeInstance 14 & makeInstance 15 & makeInstance 16 & \
