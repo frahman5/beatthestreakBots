@@ -11,7 +11,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, ElementNotVisibleException
 
 from exception import NoPlayerFoundException, SameNameException
-from config import ROOT
+from config import ROOT, playerExceptions
 
 class Bot(object):
     teams = (
@@ -151,72 +151,81 @@ class Bot(object):
 
         Assigns player player to bot.
         """
-        ## Extract variables
-        player = kwargs['player']
-        doubleDown = kwargs['doubleDown']
+        global playerExceptions
 
-        ## Type checking
-        assert type(player) == tuple
-        assert len(player) == 3
-        assert player[2] in self.teams
+        try: 
+            ## Extract variables
+            player = kwargs['player']
+            doubleDown = kwargs['doubleDown']
 
-        ## Let the player know what's up
-        print "------> Choosing player: {}".format(player)
+            ## Type checking
+            assert type(player) == tuple
+            assert len(player) == 3
+            assert player[2] in self.teams
 
-        ## Variable assignments
-        firstName, lastName, team = player
+            ## Let the player know what's up
+            print "------> Choosing player: {}".format(player)
 
-        # Get team selection dropdwon
-        self.__get_team_selection_dropdown(team=team)
+            ## Variable assignments
+            firstName, lastName, team = player
 
-        ## Make pick
-            # get lists of firstNames, lastNames, and select Buttons
-        namesThereYet = WebDriverWait(self.browser, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "last-name")))
-        lastNameElems = self.browser.find_elements_by_class_name("last-name")
-        firstNameElems = self.browser.find_elements_by_class_name("first-name")
-        selectButtons = self.browser.find_elements_by_class_name("select-action")
+            # Get team selection dropdwon
+            self.__get_team_selection_dropdown(team=team)
 
-            # If necessary, sift out the appearances of the pitchers name
-        pitcherDisplayed = ( len(lastNameElems) == (2 * len(selectButtons)) )
-                # If this is a double down, and the first selection was for a player
-                # on the same team as this one, then one of the "select buttons" 
-                # is now a remove button, so the condition is slightly altered
-        pitcherDisplayedPlusSameTeam = ( len(lastNameElems) == (2 * (len(selectButtons) + 1)) )
-        if  pitcherDisplayed or pitcherDisplayedPlusSameTeam: 
-            teamLastNameElems = [elem for elem in lastNameElems
-                if lastNameElems.index(elem) % 2 == 0]
-            teamFirstNameElems = [elem for elem in firstNameElems
-                if firstNameElems.index(elem) % 2 == 0]
-        else: # pitcher is not displayed
-            teamLastNameElems = lastNameElems
-            teamFirstNameElems = firstNameElems
+            ## Make pick
+                # get lists of firstNames, lastNames, and select Buttons
+            namesThereYet = WebDriverWait(self.browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "last-name")))
+            lastNameElems = self.browser.find_elements_by_class_name("last-name")
+            firstNameElems = self.browser.find_elements_by_class_name("first-name")
+            selectButtons = self.browser.find_elements_by_class_name("select-action")
 
-        firstNameMatches = [teamFirstNameElems.index(elem) for elem 
-            in teamFirstNameElems if elem.text == firstName]
-        lastNameMatches = [teamLastNameElems.index(elem) for elem 
-            in teamLastNameElems if elem.text == lastName]
-        fullNameMatches = [ index for index in lastNameMatches if 
-            (index in firstNameMatches) or # pitcher is displayed 
-            ( (index * 2) in firstNameMatches)]  # pitcher is not displayed 
-            
-        numMatches = len(fullNameMatches)
-        if numMatches == 0: 
-            raise NoPlayerFoundException("Player {0} {1} on team {2}".format(
-                firstName, lastName, team) + " was not found")
-        if numMatches == 1:
-            selectButtons[fullNameMatches[0]].click()
-        elif numMatches > 1: # pragma: no cover
-            raise SameNameException("The {0} have two players ".format(team) + \
-                        "with the same name: {0} {1}".format(firstName, lastName))
-        if doubleDown:
-            # first button : Double Down. SecondButton: Replace Selection
-            buttonsThereYet = WebDriverWait(self.browser, 10).until(
-                EC.presence_of_element_located((By.CLASS_NAME, 'ui-button-text-only')))
-            buttons = self.browser.find_elements_by_class_name('ui-button-text-only')
-            buttons[0].click()
+                # If necessary, sift out the appearances of the pitchers name
+            pitcherDisplayed = ( len(lastNameElems) == (2 * len(selectButtons)) )
+                    # If this is a double down, and the first selection was for a player
+                    # on the same team as this one, then one of the "select buttons" 
+                    # is now a remove button, so the condition is slightly altered
+            pitcherDisplayedPlusSameTeam = ( len(lastNameElems) == (2 * (len(selectButtons) + 1)) )
+            if  pitcherDisplayed or pitcherDisplayedPlusSameTeam: 
+                teamLastNameElems = [elem for elem in lastNameElems
+                    if lastNameElems.index(elem) % 2 == 0]
+                teamFirstNameElems = [elem for elem in firstNameElems
+                    if firstNameElems.index(elem) % 2 == 0]
+            else: # pitcher is not displayed
+                teamLastNameElems = lastNameElems
+                teamFirstNameElems = firstNameElems
 
-        time.sleep(3)
+            firstNameMatches = [teamFirstNameElems.index(elem) for elem 
+                in teamFirstNameElems if elem.text == firstName]
+            lastNameMatches = [teamLastNameElems.index(elem) for elem 
+                in teamLastNameElems if elem.text == lastName]
+            fullNameMatches = [ index for index in lastNameMatches if 
+                (index in firstNameMatches) or # pitcher is displayed 
+                ( (index * 2) in firstNameMatches)]  # pitcher is not displayed 
+                
+            numMatches = len(fullNameMatches)
+            if numMatches == 0: 
+                raise NoPlayerFoundException("Player {0} {1} on team {2}".format(
+                    firstName, lastName, team) + " was not found")
+            if numMatches == 1:
+                selectButtons[fullNameMatches[0]].click()
+            elif numMatches > 1: # pragma: no cover
+                raise SameNameException("The {0} have two players ".format(team) + \
+                            "with the same name: {0} {1}".format(firstName, lastName))
+            if doubleDown:
+                # first button : Double Down. SecondButton: Replace Selection
+                buttonsThereYet = WebDriverWait(self.browser, 10).until(
+                    EC.presence_of_element_located((By.CLASS_NAME, 'ui-button-text-only')))
+                buttons = self.browser.find_elements_by_class_name('ui-button-text-only')
+                buttons[0].click()
+
+            time.sleep(3)
+        except NoPlayerFoundException:
+            if player in playerExceptions.keys():
+                playerExceptions[player] += 1
+            else:
+                playerExceptions[player] = 1
+            raise
     
     def __get_team_selection_dropdown(self, **kwargs):
         """

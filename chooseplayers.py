@@ -305,6 +305,8 @@ def reportUnusedPlayers(sN, vMN, activeDate):
     p3: 0
     """
     global logEligiblePlayers
+    global ignorePlayers
+    global playerExceptions
 
     ### Read in the minion accounts file
     minionPath = Filepath.get_minion_account_file(sN=sN, vMN=vMN)
@@ -334,8 +336,10 @@ def reportUnusedPlayers(sN, vMN, activeDate):
     ### Log counts to file
     logger = getLogger(activeDate=activeDate, sN=sN, vMN=vMN)
 
-    ### Tell us who the eligible players were
-    logger.info(str(logEligiblePlayers))
+    ### Tell us what values the global variables had
+    logger.info("\n\n**** logEligiblePlayers ****\n" + str(logEligiblePlayers))
+    logger.info("\n\n**** ignorePlayers ****\n" + str(ignorePlayers))
+    logger.info("\n\n**** playerExceptions ****\n" + str(playerExceptions))
 
     info = "\n\n**** Player Selection Rates ****\n"
     for player, count in sortedPlayerCounts:
@@ -433,7 +437,6 @@ def choosePlayers(**kwargs):
 
         ## Update those accounts baby! 
         for dummyIndex, index, username, password, sN, vMN in df.itertuples():
-            print "eP: {}".format(eligiblePlayers)
 
             # log ps -A, for debugging purposes
             # with open( Filepath.get_log_file(kwargs['activeDate'], 
@@ -448,16 +451,6 @@ def choosePlayers(**kwargs):
             # don't update the same account twice
             if username in updatedUsernames: 
                 continue
-
-            # if ignorePlayers is nonEmpty, reflect that
-            # if (ignorePlayers != []) and (not ignorePlayersRead):
-            #     ePList = list(eligiblePlayers)
-            #     for player in ignorePlayers:
-            #         print "removing player: {}".format(player)
-            #         if len(player) == 3:
-            #             ePList.remove(player)
-            #     eligiblePlayers = tuple(ePList)
-            #     ignorePlayersRead = True
 
             # try to update the account 
             numIters += 1
@@ -573,7 +566,7 @@ if __name__ == '__main__':
     ## Assign players to accounts in chunks of 50 so that in case something
     ## bad happens, we finish as many players as possible
     doneYet = ''
-    blockSize = 20
+    blockSize = 2
     origCount = get_num_accounts( 
                   sN=sN, vMN=vMN, getRemaining=True, activeDate=activeDate )
     if origCount == 0:

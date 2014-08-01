@@ -153,8 +153,6 @@ def topPBatters(**kwargs):
         _quit_browser(browser, display, 'get_batters')
         raise
 
-    
-
     ## Close the browser, stop the display if necessary
     _quit_browser(browser, display, 'get_batters')
 
@@ -281,6 +279,7 @@ def _whoIsEligible(**kwargs):
         if today == kwargs['activeDate'] and \
               relevantTeams[teamFormatted][0] < twentyMinFromNow:
             activePlayersReturn.remove(player)
+
         # Player's team is playing... is the opposing pitcher ERA high enough?
         elif filterERA and (relevantTeams[teamFormatted][1] <= filt['minERA']):
             activePlayersReturn.remove(player)

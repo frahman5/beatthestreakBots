@@ -1,0 +1,288 @@
+2014-08-01 16:03:17,298 Unit account update failure: bts.rahman.540248@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:03:17,299     p1, p2: None, None
+
+2014-08-01 16:03:17,299 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:03:33,567 Unit account update failure: bts.rahman.565275@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:03:33,567     p1, p2: None, None
+
+2014-08-01 16:03:33,567 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:03:49,997 Unit account update failure: bts.rahman.540248@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:03:49,998     p1, p2: None, None
+
+2014-08-01 16:03:49,998 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:04:05,753 Unit account update failure: bts.rahman.565275@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:04:05,754     p1, p2: None, None
+
+2014-08-01 16:04:05,754 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:04:21,725 Unit account update failure: bts.rahman.540248@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:04:21,725     p1, p2: None, None
+
+2014-08-01 16:04:21,725 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:04:37,390 Unit account update failure: bts.rahman.565275@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:04:37,390     p1, p2: None, None
+
+2014-08-01 16:04:37,390 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:04:37,555 2 of 2 accounts failed
+
+2014-08-01 16:04:37,555     U, P: bts.rahman.540248@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:04:37,555     U, P: bts.rahman.565275@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:05:10,222 Unit account update failure: bts.rahman.540248@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:05:10,222 Unit account update failure: bts.rahman.540248@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:05:10,222     p1, p2: None, None
+
+2014-08-01 16:05:10,222     p1, p2: None, None
+
+2014-08-01 16:05:10,223 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:05:10,223 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:05:26,169 Unit account update failure: bts.rahman.565275@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:05:26,169 Unit account update failure: bts.rahman.565275@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:05:26,169     p1, p2: None, None
+
+2014-08-01 16:05:26,169     p1, p2: None, None
+
+2014-08-01 16:05:26,170 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:05:26,170 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:05:42,036 Unit account update failure: bts.rahman.540248@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:05:42,036 Unit account update failure: bts.rahman.540248@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:05:42,036     p1, p2: None, None
+
+2014-08-01 16:05:42,036     p1, p2: None, None
+
+2014-08-01 16:05:42,036 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:05:42,036 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:05:57,804 Unit account update failure: bts.rahman.565275@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:05:57,804 Unit account update failure: bts.rahman.565275@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:05:57,804     p1, p2: None, None
+
+2014-08-01 16:05:57,804     p1, p2: None, None
+
+2014-08-01 16:05:57,805 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:05:57,805 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:06:13,651 Unit account update failure: bts.rahman.540248@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:06:13,651 Unit account update failure: bts.rahman.540248@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:06:13,651     p1, p2: None, None
+
+2014-08-01 16:06:13,651     p1, p2: None, None
+
+2014-08-01 16:06:13,651 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:06:13,651 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:06:29,631 Unit account update failure: bts.rahman.565275@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:06:29,631 Unit account update failure: bts.rahman.565275@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:06:29,632     p1, p2: None, None
+
+2014-08-01 16:06:29,632     p1, p2: None, None
+
+2014-08-01 16:06:29,632 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:06:29,632 'test'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/Users/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'test'
+2014-08-01 16:06:29,765 2 of 2 accounts failed
+
+2014-08-01 16:06:29,765 2 of 2 accounts failed
+
+2014-08-01 16:06:29,765     U, P: bts.rahman.540248@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:06:29,765     U, P: bts.rahman.540248@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:06:29,766     U, P: bts.rahman.565275@faiyamrahman.com, beatthestreak1
+
+2014-08-01 16:06:29,766     U, P: bts.rahman.565275@faiyamrahman.com, beatthestreak1
+

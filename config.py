@@ -1,6 +1,6 @@
 # FileSystem
     # on Faiyam's computer
-ROOT = '/Users/faiyamrahman/programming/Python/beatthestreakBots' 
+#ROOT = '/Users/faiyamrahman/programming/Python/beatthestreakBots' 
     # on Google Linux Instance 
 #ROOT = '/home/faiyamrahman/programming/Python/beatthestreakBots'
     # on D$$s computer

@@ -18,6 +18,8 @@ def randDownRandPlayers(**kwargs):
     """
     print "RANDOM DOWN"
     # Update the bot and return the players
+    # import pdb
+    # pdb.set_trace()
     return staticDownRandPlayers( bot=kwargs['bot'], 
                                   eligiblePlayers=kwargs['eligiblePlayers'], 
                                   doubleDown=random.choice((True, False)) )
@@ -43,6 +45,7 @@ def staticDownRandPlayers(**kwargs):
     # Pseudo-randomly choose playres
     global ignorePlayers                            # list of players to ignore
     global playerExceptions                         # number of NoPlayerFoundExceptions for each player
+    print "eP: {}".format(kwargs['eligiblePlayers'])
     print "iP: {}".format(ignorePlayers)
     print "pE: {}".format(playerExceptions)
     try: 
@@ -57,14 +60,11 @@ def staticDownRandPlayers(**kwargs):
         kwargs['bot'].choose_players(p1=p1, p2=p2)
         return p1, p2
     except NoPlayerFoundException as e:
-        ## Update the count of NoPlayerFoundExceptions for the players, and 
-        ## add them to ignroePlayers if necessary
+        ## Add player to ignorePlayers, if necessary
         for player in (p1, p2):
-            if player in playerExceptions.keys():
-                playerExceptions[player] += 1
-            else:
-                playerExceptions[player] = 1
-            if playerExceptions[player] == 10:
+            if (player in playerExceptions.keys()) and \
+               (playerExceptions[player] == 2) and \
+               (player not in ignorePlayers):
                 ignorePlayers.append(player)
         e.args += (' with players {} and {}'.format(p1, p2),)
         raise e
