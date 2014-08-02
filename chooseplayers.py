@@ -518,6 +518,7 @@ if __name__ == '__main__':
 
     from selectfunctions import getRecommendedPicks, topPBatters
     from distributionfunctions import randDownRandPlayers, staticDownRandPlayers
+    from pytz import timezone
 
     ## What strategyNumber virtualMachineNumber, and date are we using?
     options = [arg for arg in sys.argv if '-' in arg]
@@ -557,7 +558,7 @@ if __name__ == '__main__':
     dateNUM = int(matches[0].string[3:])
     options.remove(matches[0].string)
        # e.g if dateNum == 4, activeDate is four days from now
-    activeDate = datetime.today().date() + timedelta(days=dateNUM)
+    activeDate = datetime.now(timezone('US/Eastern')).date() + timedelta(days=dateNUM)
 
     ## Check that we didn't get any bogus options:
     if len(options) != 0:

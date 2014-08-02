@@ -288,3 +288,5 @@ NoPlayerFoundException: 'test'
 
 2014-08-02 04:03:11,056 <urlopen error [Errno 111] Connection refused>
 
+2014-08-02 00:17:30,170 <urlopen error [Errno 61] Connection refused>
+
