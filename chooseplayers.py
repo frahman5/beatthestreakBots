@@ -567,7 +567,7 @@ if __name__ == '__main__':
     ## Assign players to accounts in chunks of 50 so that in case something
     ## bad happens, we finish as many players as possible
     doneYet = ''
-    blockSize = 2
+    blockSize = 20
     origCount = get_num_accounts( 
                   sN=sN, vMN=vMN, getRemaining=True, activeDate=activeDate )
     if origCount == 0:
