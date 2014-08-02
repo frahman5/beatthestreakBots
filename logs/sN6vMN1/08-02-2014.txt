@@ -286,3 +286,5 @@ NoPlayerFoundException: 'test'
 
 2014-08-01 16:06:29,766     U, P: bts.rahman.565275@faiyamrahman.com, beatthestreak1
 
+2014-08-02 04:03:11,056 <urlopen error [Errno 111] Connection refused>
+
