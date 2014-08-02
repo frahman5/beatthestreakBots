@@ -179,6 +179,7 @@ def _whoIsEligible(**kwargs):
     """
     import time as timetime
     from datetime import datetime, time, timedelta
+    from pytz import timezone
 
     ## type check
     assert type(kwargs['players']) == list
@@ -264,7 +265,8 @@ def _whoIsEligible(**kwargs):
         firstName, lastName, team = player
         teamFormatted = _formatTeam(team)
         today = datetime.today().date()
-        twentyMinFromNow = (datetime.now() + timedelta(minutes=20)).time()
+        twentyMinFromNow = (datetime.now(timezone('US/Eastern')) + timedelta(minutes=20)).time()
+        print "Twenty Min From Now: {}".format(twentyMinFromNow)
 
         # is the player's team playing
         if teamFormatted in awayTeams.keys():
