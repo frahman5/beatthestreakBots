@@ -285,11 +285,13 @@ def _whoIsEligible(**kwargs):
         # Player's team is playing... is the game locked?
         if today == kwargs['activeDate'] and \
               relevantTeams[teamFormatted][0] < twentyMinFromNow:
-            activePlayersReturn.remove(player)
+             activePlayersReturn.remove(player)
+             continue
 
         # Player's team is playing... is the opposing pitcher ERA high enough?
         elif filterERA and (relevantTeams[teamFormatted][1] <= filt['minERA']):
             activePlayersReturn.remove(player)
+            continue
 
         # Player's team is playing, opposing pitcher ERA high enough, 
         # but they've caused too many NoPlayerFOundExceptions

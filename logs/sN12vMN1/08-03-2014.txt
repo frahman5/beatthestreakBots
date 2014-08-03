@@ -2146,3 +2146,1853 @@
 
 2014-08-03 16:57:31,939 
 
+2014-08-03 16:57:58,250 
+
+2014-08-03 16:58:23,915 
+
+2014-08-03 16:58:29,557 <urlopen error [Errno 111] Connection refused>
+
+2014-08-03 17:01:50,463 Unit account update failure: grassfed.faiyam.832@faiyamrahman.com, beatthestreak1
+
+2014-08-03 17:01:50,463     p1, p2: None, None
+
+2014-08-03 17:01:50,463 'Player Edwin Encarnacion on team tor was not found'
+Traceback (most recent call last):
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'Player Edwin Encarnacion on team tor was not found'
+2014-08-03 17:07:25,258 Unit account update failure: grassfed.faiyam.961783@faiyamrahman.com, beatthestreak1
+
+2014-08-03 17:07:25,258     p1, p2: None, None
+
+2014-08-03 17:07:25,258 'Player Edwin Encarnacion on team tor was not found'
+Traceback (most recent call last):
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'Player Edwin Encarnacion on team tor was not found'
+2014-08-03 17:57:26,958 list.remove(x): x not in list
+
+2014-08-03 17:57:26,958 list.remove(x): x not in list
+
+2014-08-03 17:57:26,958 list.remove(x): x not in list
+
+2014-08-03 17:57:26,958 list.remove(x): x not in list
+
+2014-08-03 17:57:26,958 list.remove(x): x not in list
+
+2014-08-03 17:57:26,958 list.remove(x): x not in list
+
+2014-08-03 17:58:10,822 list.remove(x): x not in list
+
+2014-08-03 17:58:10,822 list.remove(x): x not in list
+
+2014-08-03 17:58:10,822 list.remove(x): x not in list
+
+2014-08-03 17:58:10,822 list.remove(x): x not in list
+
+2014-08-03 17:58:10,822 list.remove(x): x not in list
+
+2014-08-03 17:58:10,822 list.remove(x): x not in list
+
+2014-08-03 17:58:53,763 list.remove(x): x not in list
+
+2014-08-03 17:58:53,763 list.remove(x): x not in list
+
+2014-08-03 17:58:53,763 list.remove(x): x not in list
+
+2014-08-03 17:58:53,763 list.remove(x): x not in list
+
+2014-08-03 17:58:53,763 list.remove(x): x not in list
+
+2014-08-03 17:58:53,763 list.remove(x): x not in list
+
+2014-08-03 17:59:34,431 list.remove(x): x not in list
+
+2014-08-03 17:59:34,431 list.remove(x): x not in list
+
+2014-08-03 17:59:34,431 list.remove(x): x not in list
+
+2014-08-03 17:59:34,431 list.remove(x): x not in list
+
+2014-08-03 17:59:34,431 list.remove(x): x not in list
+
+2014-08-03 17:59:34,431 list.remove(x): x not in list
+
+2014-08-03 18:00:18,976 list.remove(x): x not in list
+
+2014-08-03 18:00:18,976 list.remove(x): x not in list
+
+2014-08-03 18:00:18,976 list.remove(x): x not in list
+
+2014-08-03 18:00:18,976 list.remove(x): x not in list
+
+2014-08-03 18:00:18,976 list.remove(x): x not in list
+
+2014-08-03 18:00:18,976 list.remove(x): x not in list
+
+2014-08-03 18:01:01,165 list.remove(x): x not in list
+
+2014-08-03 18:01:01,165 list.remove(x): x not in list
+
+2014-08-03 18:01:01,165 list.remove(x): x not in list
+
+2014-08-03 18:01:01,165 list.remove(x): x not in list
+
+2014-08-03 18:01:01,165 list.remove(x): x not in list
+
+2014-08-03 18:01:01,165 list.remove(x): x not in list
+
+2014-08-03 18:01:41,137 list.remove(x): x not in list
+
+2014-08-03 18:01:41,137 list.remove(x): x not in list
+
+2014-08-03 18:01:41,137 list.remove(x): x not in list
+
+2014-08-03 18:01:41,137 list.remove(x): x not in list
+
+2014-08-03 18:01:41,137 list.remove(x): x not in list
+
+2014-08-03 18:01:41,137 list.remove(x): x not in list
+
+2014-08-03 18:02:21,306 list.remove(x): x not in list
+
+2014-08-03 18:02:21,306 list.remove(x): x not in list
+
+2014-08-03 18:02:21,306 list.remove(x): x not in list
+
+2014-08-03 18:02:21,306 list.remove(x): x not in list
+
+2014-08-03 18:02:21,306 list.remove(x): x not in list
+
+2014-08-03 18:02:21,306 list.remove(x): x not in list
+
+2014-08-03 18:03:05,255 list.remove(x): x not in list
+
+2014-08-03 18:03:05,255 list.remove(x): x not in list
+
+2014-08-03 18:03:05,255 list.remove(x): x not in list
+
+2014-08-03 18:03:05,255 list.remove(x): x not in list
+
+2014-08-03 18:03:05,255 list.remove(x): x not in list
+
+2014-08-03 18:03:05,255 list.remove(x): x not in list
+
+2014-08-03 18:03:46,902 list.remove(x): x not in list
+
+2014-08-03 18:03:46,902 list.remove(x): x not in list
+
+2014-08-03 18:03:46,902 list.remove(x): x not in list
+
+2014-08-03 18:03:46,902 list.remove(x): x not in list
+
+2014-08-03 18:03:46,902 list.remove(x): x not in list
+
+2014-08-03 18:03:46,902 list.remove(x): x not in list
+
+2014-08-03 18:04:29,740 list.remove(x): x not in list
+
+2014-08-03 18:04:29,740 list.remove(x): x not in list
+
+2014-08-03 18:04:29,740 list.remove(x): x not in list
+
+2014-08-03 18:04:29,740 list.remove(x): x not in list
+
+2014-08-03 18:04:29,740 list.remove(x): x not in list
+
+2014-08-03 18:04:29,740 list.remove(x): x not in list
+
+2014-08-03 18:05:09,645 list.remove(x): x not in list
+
+2014-08-03 18:05:09,645 list.remove(x): x not in list
+
+2014-08-03 18:05:09,645 list.remove(x): x not in list
+
+2014-08-03 18:05:09,645 list.remove(x): x not in list
+
+2014-08-03 18:05:09,645 list.remove(x): x not in list
+
+2014-08-03 18:05:09,645 list.remove(x): x not in list
+
+2014-08-03 18:05:52,115 list.remove(x): x not in list
+
+2014-08-03 18:05:52,115 list.remove(x): x not in list
+
+2014-08-03 18:05:52,115 list.remove(x): x not in list
+
+2014-08-03 18:05:52,115 list.remove(x): x not in list
+
+2014-08-03 18:05:52,115 list.remove(x): x not in list
+
+2014-08-03 18:05:52,115 list.remove(x): x not in list
+
+2014-08-03 18:06:34,474 list.remove(x): x not in list
+
+2014-08-03 18:06:34,474 list.remove(x): x not in list
+
+2014-08-03 18:06:34,474 list.remove(x): x not in list
+
+2014-08-03 18:06:34,474 list.remove(x): x not in list
+
+2014-08-03 18:06:34,474 list.remove(x): x not in list
+
+2014-08-03 18:06:34,474 list.remove(x): x not in list
+
+2014-08-03 18:07:12,836 list.remove(x): x not in list
+
+2014-08-03 18:07:12,836 list.remove(x): x not in list
+
+2014-08-03 18:07:12,836 list.remove(x): x not in list
+
+2014-08-03 18:07:12,836 list.remove(x): x not in list
+
+2014-08-03 18:07:12,836 list.remove(x): x not in list
+
+2014-08-03 18:07:12,836 list.remove(x): x not in list
+
+2014-08-03 18:07:55,630 list.remove(x): x not in list
+
+2014-08-03 18:07:55,630 list.remove(x): x not in list
+
+2014-08-03 18:07:55,630 list.remove(x): x not in list
+
+2014-08-03 18:07:55,630 list.remove(x): x not in list
+
+2014-08-03 18:07:55,630 list.remove(x): x not in list
+
+2014-08-03 18:07:55,630 list.remove(x): x not in list
+
+2014-08-03 18:08:41,635 list.remove(x): x not in list
+
+2014-08-03 18:08:41,635 list.remove(x): x not in list
+
+2014-08-03 18:08:41,635 list.remove(x): x not in list
+
+2014-08-03 18:08:41,635 list.remove(x): x not in list
+
+2014-08-03 18:08:41,635 list.remove(x): x not in list
+
+2014-08-03 18:08:41,635 list.remove(x): x not in list
+
+2014-08-03 18:09:21,320 list.remove(x): x not in list
+
+2014-08-03 18:09:21,320 list.remove(x): x not in list
+
+2014-08-03 18:09:21,320 list.remove(x): x not in list
+
+2014-08-03 18:09:21,320 list.remove(x): x not in list
+
+2014-08-03 18:09:21,320 list.remove(x): x not in list
+
+2014-08-03 18:09:21,320 list.remove(x): x not in list
+
+2014-08-03 18:10:00,313 list.remove(x): x not in list
+
+2014-08-03 18:10:00,313 list.remove(x): x not in list
+
+2014-08-03 18:10:00,313 list.remove(x): x not in list
+
+2014-08-03 18:10:00,313 list.remove(x): x not in list
+
+2014-08-03 18:10:00,313 list.remove(x): x not in list
+
+2014-08-03 18:10:00,313 list.remove(x): x not in list
+
+2014-08-03 18:10:36,582 list.remove(x): x not in list
+
+2014-08-03 18:10:36,582 list.remove(x): x not in list
+
+2014-08-03 18:10:36,582 list.remove(x): x not in list
+
+2014-08-03 18:10:36,582 list.remove(x): x not in list
+
+2014-08-03 18:10:36,582 list.remove(x): x not in list
+
+2014-08-03 18:10:36,582 list.remove(x): x not in list
+
+2014-08-03 18:11:18,553 list.remove(x): x not in list
+
+2014-08-03 18:11:18,553 list.remove(x): x not in list
+
+2014-08-03 18:11:18,553 list.remove(x): x not in list
+
+2014-08-03 18:11:18,553 list.remove(x): x not in list
+
+2014-08-03 18:11:18,553 list.remove(x): x not in list
+
+2014-08-03 18:11:18,553 list.remove(x): x not in list
+
+2014-08-03 18:12:04,106 list.remove(x): x not in list
+
+2014-08-03 18:12:04,106 list.remove(x): x not in list
+
+2014-08-03 18:12:04,106 list.remove(x): x not in list
+
+2014-08-03 18:12:04,106 list.remove(x): x not in list
+
+2014-08-03 18:12:04,106 list.remove(x): x not in list
+
+2014-08-03 18:12:04,106 list.remove(x): x not in list
+
+2014-08-03 18:12:41,707 list.remove(x): x not in list
+
+2014-08-03 18:12:41,707 list.remove(x): x not in list
+
+2014-08-03 18:12:41,707 list.remove(x): x not in list
+
+2014-08-03 18:12:41,707 list.remove(x): x not in list
+
+2014-08-03 18:12:41,707 list.remove(x): x not in list
+
+2014-08-03 18:12:41,707 list.remove(x): x not in list
+
+2014-08-03 18:13:24,655 list.remove(x): x not in list
+
+2014-08-03 18:13:24,655 list.remove(x): x not in list
+
+2014-08-03 18:13:24,655 list.remove(x): x not in list
+
+2014-08-03 18:13:24,655 list.remove(x): x not in list
+
+2014-08-03 18:13:24,655 list.remove(x): x not in list
+
+2014-08-03 18:13:24,655 list.remove(x): x not in list
+
+2014-08-03 18:14:04,695 list.remove(x): x not in list
+
+2014-08-03 18:14:04,695 list.remove(x): x not in list
+
+2014-08-03 18:14:04,695 list.remove(x): x not in list
+
+2014-08-03 18:14:04,695 list.remove(x): x not in list
+
+2014-08-03 18:14:04,695 list.remove(x): x not in list
+
+2014-08-03 18:14:04,695 list.remove(x): x not in list
+
+2014-08-03 18:14:43,765 list.remove(x): x not in list
+
+2014-08-03 18:14:43,765 list.remove(x): x not in list
+
+2014-08-03 18:14:43,765 list.remove(x): x not in list
+
+2014-08-03 18:14:43,765 list.remove(x): x not in list
+
+2014-08-03 18:14:43,765 list.remove(x): x not in list
+
+2014-08-03 18:14:43,765 list.remove(x): x not in list
+
+2014-08-03 18:15:40,470 list.remove(x): x not in list
+
+2014-08-03 18:15:40,470 list.remove(x): x not in list
+
+2014-08-03 18:15:40,470 list.remove(x): x not in list
+
+2014-08-03 18:15:40,470 list.remove(x): x not in list
+
+2014-08-03 18:15:40,470 list.remove(x): x not in list
+
+2014-08-03 18:15:40,470 list.remove(x): x not in list
+
+2014-08-03 18:16:23,593 list.remove(x): x not in list
+
+2014-08-03 18:16:23,593 list.remove(x): x not in list
+
+2014-08-03 18:16:23,593 list.remove(x): x not in list
+
+2014-08-03 18:16:23,593 list.remove(x): x not in list
+
+2014-08-03 18:16:23,593 list.remove(x): x not in list
+
+2014-08-03 18:16:23,593 list.remove(x): x not in list
+
+2014-08-03 18:17:07,255 list.remove(x): x not in list
+
+2014-08-03 18:17:07,255 list.remove(x): x not in list
+
+2014-08-03 18:17:07,255 list.remove(x): x not in list
+
+2014-08-03 18:17:07,255 list.remove(x): x not in list
+
+2014-08-03 18:17:07,255 list.remove(x): x not in list
+
+2014-08-03 18:17:07,255 list.remove(x): x not in list
+
+2014-08-03 18:17:49,952 list.remove(x): x not in list
+
+2014-08-03 18:17:49,952 list.remove(x): x not in list
+
+2014-08-03 18:17:49,952 list.remove(x): x not in list
+
+2014-08-03 18:17:49,952 list.remove(x): x not in list
+
+2014-08-03 18:17:49,952 list.remove(x): x not in list
+
+2014-08-03 18:17:49,952 list.remove(x): x not in list
+
+2014-08-03 18:18:28,454 list.remove(x): x not in list
+
+2014-08-03 18:18:28,454 list.remove(x): x not in list
+
+2014-08-03 18:18:28,454 list.remove(x): x not in list
+
+2014-08-03 18:18:28,454 list.remove(x): x not in list
+
+2014-08-03 18:18:28,454 list.remove(x): x not in list
+
+2014-08-03 18:18:28,454 list.remove(x): x not in list
+
+2014-08-03 18:19:05,899 list.remove(x): x not in list
+
+2014-08-03 18:19:05,899 list.remove(x): x not in list
+
+2014-08-03 18:19:05,899 list.remove(x): x not in list
+
+2014-08-03 18:19:05,899 list.remove(x): x not in list
+
+2014-08-03 18:19:05,899 list.remove(x): x not in list
+
+2014-08-03 18:19:05,899 list.remove(x): x not in list
+
+2014-08-03 18:19:44,375 list.remove(x): x not in list
+
+2014-08-03 18:19:44,375 list.remove(x): x not in list
+
+2014-08-03 18:19:44,375 list.remove(x): x not in list
+
+2014-08-03 18:19:44,375 list.remove(x): x not in list
+
+2014-08-03 18:19:44,375 list.remove(x): x not in list
+
+2014-08-03 18:19:44,375 list.remove(x): x not in list
+
+2014-08-03 18:20:29,210 list.remove(x): x not in list
+
+2014-08-03 18:20:29,210 list.remove(x): x not in list
+
+2014-08-03 18:20:29,210 list.remove(x): x not in list
+
+2014-08-03 18:20:29,210 list.remove(x): x not in list
+
+2014-08-03 18:20:29,210 list.remove(x): x not in list
+
+2014-08-03 18:20:29,210 list.remove(x): x not in list
+
+2014-08-03 18:21:07,036 list.remove(x): x not in list
+
+2014-08-03 18:21:07,036 list.remove(x): x not in list
+
+2014-08-03 18:21:07,036 list.remove(x): x not in list
+
+2014-08-03 18:21:07,036 list.remove(x): x not in list
+
+2014-08-03 18:21:07,036 list.remove(x): x not in list
+
+2014-08-03 18:21:07,036 list.remove(x): x not in list
+
+2014-08-03 18:21:49,715 list.remove(x): x not in list
+
+2014-08-03 18:21:49,715 list.remove(x): x not in list
+
+2014-08-03 18:21:49,715 list.remove(x): x not in list
+
+2014-08-03 18:21:49,715 list.remove(x): x not in list
+
+2014-08-03 18:21:49,715 list.remove(x): x not in list
+
+2014-08-03 18:21:49,715 list.remove(x): x not in list
+
+2014-08-03 18:22:30,565 list.remove(x): x not in list
+
+2014-08-03 18:22:30,565 list.remove(x): x not in list
+
+2014-08-03 18:22:30,565 list.remove(x): x not in list
+
+2014-08-03 18:22:30,565 list.remove(x): x not in list
+
+2014-08-03 18:22:30,565 list.remove(x): x not in list
+
+2014-08-03 18:22:30,565 list.remove(x): x not in list
+
+2014-08-03 18:23:08,440 list.remove(x): x not in list
+
+2014-08-03 18:23:08,440 list.remove(x): x not in list
+
+2014-08-03 18:23:08,440 list.remove(x): x not in list
+
+2014-08-03 18:23:08,440 list.remove(x): x not in list
+
+2014-08-03 18:23:08,440 list.remove(x): x not in list
+
+2014-08-03 18:23:08,440 list.remove(x): x not in list
+
+2014-08-03 18:23:46,927 list.remove(x): x not in list
+
+2014-08-03 18:23:46,927 list.remove(x): x not in list
+
+2014-08-03 18:23:46,927 list.remove(x): x not in list
+
+2014-08-03 18:23:46,927 list.remove(x): x not in list
+
+2014-08-03 18:23:46,927 list.remove(x): x not in list
+
+2014-08-03 18:23:46,927 list.remove(x): x not in list
+
+2014-08-03 18:24:26,953 list.remove(x): x not in list
+
+2014-08-03 18:24:26,953 list.remove(x): x not in list
+
+2014-08-03 18:24:26,953 list.remove(x): x not in list
+
+2014-08-03 18:24:26,953 list.remove(x): x not in list
+
+2014-08-03 18:24:26,953 list.remove(x): x not in list
+
+2014-08-03 18:24:26,953 list.remove(x): x not in list
+
+2014-08-03 18:25:08,952 list.remove(x): x not in list
+
+2014-08-03 18:25:08,952 list.remove(x): x not in list
+
+2014-08-03 18:25:08,952 list.remove(x): x not in list
+
+2014-08-03 18:25:08,952 list.remove(x): x not in list
+
+2014-08-03 18:25:08,952 list.remove(x): x not in list
+
+2014-08-03 18:25:08,952 list.remove(x): x not in list
+
+2014-08-03 18:25:49,479 list.remove(x): x not in list
+
+2014-08-03 18:25:49,479 list.remove(x): x not in list
+
+2014-08-03 18:25:49,479 list.remove(x): x not in list
+
+2014-08-03 18:25:49,479 list.remove(x): x not in list
+
+2014-08-03 18:25:49,479 list.remove(x): x not in list
+
+2014-08-03 18:25:49,479 list.remove(x): x not in list
+
+2014-08-03 18:26:27,546 list.remove(x): x not in list
+
+2014-08-03 18:26:27,546 list.remove(x): x not in list
+
+2014-08-03 18:26:27,546 list.remove(x): x not in list
+
+2014-08-03 18:26:27,546 list.remove(x): x not in list
+
+2014-08-03 18:26:27,546 list.remove(x): x not in list
+
+2014-08-03 18:26:27,546 list.remove(x): x not in list
+
+2014-08-03 18:27:06,991 list.remove(x): x not in list
+
+2014-08-03 18:27:06,991 list.remove(x): x not in list
+
+2014-08-03 18:27:06,991 list.remove(x): x not in list
+
+2014-08-03 18:27:06,991 list.remove(x): x not in list
+
+2014-08-03 18:27:06,991 list.remove(x): x not in list
+
+2014-08-03 18:27:06,991 list.remove(x): x not in list
+
+2014-08-03 18:27:48,790 list.remove(x): x not in list
+
+2014-08-03 18:27:48,790 list.remove(x): x not in list
+
+2014-08-03 18:27:48,790 list.remove(x): x not in list
+
+2014-08-03 18:27:48,790 list.remove(x): x not in list
+
+2014-08-03 18:27:48,790 list.remove(x): x not in list
+
+2014-08-03 18:27:48,790 list.remove(x): x not in list
+
+2014-08-03 18:28:27,575 list.remove(x): x not in list
+
+2014-08-03 18:28:27,575 list.remove(x): x not in list
+
+2014-08-03 18:28:27,575 list.remove(x): x not in list
+
+2014-08-03 18:28:27,575 list.remove(x): x not in list
+
+2014-08-03 18:28:27,575 list.remove(x): x not in list
+
+2014-08-03 18:28:27,575 list.remove(x): x not in list
+
+2014-08-03 18:29:08,349 list.remove(x): x not in list
+
+2014-08-03 18:29:08,349 list.remove(x): x not in list
+
+2014-08-03 18:29:08,349 list.remove(x): x not in list
+
+2014-08-03 18:29:08,349 list.remove(x): x not in list
+
+2014-08-03 18:29:08,349 list.remove(x): x not in list
+
+2014-08-03 18:29:08,349 list.remove(x): x not in list
+
+2014-08-03 18:29:47,855 list.remove(x): x not in list
+
+2014-08-03 18:29:47,855 list.remove(x): x not in list
+
+2014-08-03 18:29:47,855 list.remove(x): x not in list
+
+2014-08-03 18:29:47,855 list.remove(x): x not in list
+
+2014-08-03 18:29:47,855 list.remove(x): x not in list
+
+2014-08-03 18:29:47,855 list.remove(x): x not in list
+
+2014-08-03 18:30:26,420 list.remove(x): x not in list
+
+2014-08-03 18:30:26,420 list.remove(x): x not in list
+
+2014-08-03 18:30:26,420 list.remove(x): x not in list
+
+2014-08-03 18:30:26,420 list.remove(x): x not in list
+
+2014-08-03 18:30:26,420 list.remove(x): x not in list
+
+2014-08-03 18:30:26,420 list.remove(x): x not in list
+
+2014-08-03 18:31:05,983 list.remove(x): x not in list
+
+2014-08-03 18:31:05,983 list.remove(x): x not in list
+
+2014-08-03 18:31:05,983 list.remove(x): x not in list
+
+2014-08-03 18:31:05,983 list.remove(x): x not in list
+
+2014-08-03 18:31:05,983 list.remove(x): x not in list
+
+2014-08-03 18:31:05,983 list.remove(x): x not in list
+
+2014-08-03 18:31:51,204 list.remove(x): x not in list
+
+2014-08-03 18:31:51,204 list.remove(x): x not in list
+
+2014-08-03 18:31:51,204 list.remove(x): x not in list
+
+2014-08-03 18:31:51,204 list.remove(x): x not in list
+
+2014-08-03 18:31:51,204 list.remove(x): x not in list
+
+2014-08-03 18:31:51,204 list.remove(x): x not in list
+
+2014-08-03 18:32:33,023 list.remove(x): x not in list
+
+2014-08-03 18:32:33,023 list.remove(x): x not in list
+
+2014-08-03 18:32:33,023 list.remove(x): x not in list
+
+2014-08-03 18:32:33,023 list.remove(x): x not in list
+
+2014-08-03 18:32:33,023 list.remove(x): x not in list
+
+2014-08-03 18:32:33,023 list.remove(x): x not in list
+
+2014-08-03 18:33:13,430 list.remove(x): x not in list
+
+2014-08-03 18:33:13,430 list.remove(x): x not in list
+
+2014-08-03 18:33:13,430 list.remove(x): x not in list
+
+2014-08-03 18:33:13,430 list.remove(x): x not in list
+
+2014-08-03 18:33:13,430 list.remove(x): x not in list
+
+2014-08-03 18:33:13,430 list.remove(x): x not in list
+
+2014-08-03 18:33:50,899 list.remove(x): x not in list
+
+2014-08-03 18:33:50,899 list.remove(x): x not in list
+
+2014-08-03 18:33:50,899 list.remove(x): x not in list
+
+2014-08-03 18:33:50,899 list.remove(x): x not in list
+
+2014-08-03 18:33:50,899 list.remove(x): x not in list
+
+2014-08-03 18:33:50,899 list.remove(x): x not in list
+
+2014-08-03 18:34:28,601 list.remove(x): x not in list
+
+2014-08-03 18:34:28,601 list.remove(x): x not in list
+
+2014-08-03 18:34:28,601 list.remove(x): x not in list
+
+2014-08-03 18:34:28,601 list.remove(x): x not in list
+
+2014-08-03 18:34:28,601 list.remove(x): x not in list
+
+2014-08-03 18:34:28,601 list.remove(x): x not in list
+
+2014-08-03 18:35:16,500 list.remove(x): x not in list
+
+2014-08-03 18:35:16,500 list.remove(x): x not in list
+
+2014-08-03 18:35:16,500 list.remove(x): x not in list
+
+2014-08-03 18:35:16,500 list.remove(x): x not in list
+
+2014-08-03 18:35:16,500 list.remove(x): x not in list
+
+2014-08-03 18:35:16,500 list.remove(x): x not in list
+
+2014-08-03 18:35:53,441 list.remove(x): x not in list
+
+2014-08-03 18:35:53,441 list.remove(x): x not in list
+
+2014-08-03 18:35:53,441 list.remove(x): x not in list
+
+2014-08-03 18:35:53,441 list.remove(x): x not in list
+
+2014-08-03 18:35:53,441 list.remove(x): x not in list
+
+2014-08-03 18:35:53,441 list.remove(x): x not in list
+
+2014-08-03 18:36:32,921 list.remove(x): x not in list
+
+2014-08-03 18:36:32,921 list.remove(x): x not in list
+
+2014-08-03 18:36:32,921 list.remove(x): x not in list
+
+2014-08-03 18:36:32,921 list.remove(x): x not in list
+
+2014-08-03 18:36:32,921 list.remove(x): x not in list
+
+2014-08-03 18:36:32,921 list.remove(x): x not in list
+
+2014-08-03 18:37:12,743 list.remove(x): x not in list
+
+2014-08-03 18:37:12,743 list.remove(x): x not in list
+
+2014-08-03 18:37:12,743 list.remove(x): x not in list
+
+2014-08-03 18:37:12,743 list.remove(x): x not in list
+
+2014-08-03 18:37:12,743 list.remove(x): x not in list
+
+2014-08-03 18:37:12,743 list.remove(x): x not in list
+
+2014-08-03 18:38:00,109 list.remove(x): x not in list
+
+2014-08-03 18:38:00,109 list.remove(x): x not in list
+
+2014-08-03 18:38:00,109 list.remove(x): x not in list
+
+2014-08-03 18:38:00,109 list.remove(x): x not in list
+
+2014-08-03 18:38:00,109 list.remove(x): x not in list
+
+2014-08-03 18:38:00,109 list.remove(x): x not in list
+
+2014-08-03 18:38:39,664 list.remove(x): x not in list
+
+2014-08-03 18:38:39,664 list.remove(x): x not in list
+
+2014-08-03 18:38:39,664 list.remove(x): x not in list
+
+2014-08-03 18:38:39,664 list.remove(x): x not in list
+
+2014-08-03 18:38:39,664 list.remove(x): x not in list
+
+2014-08-03 18:38:39,664 list.remove(x): x not in list
+
+2014-08-03 18:39:19,302 list.remove(x): x not in list
+
+2014-08-03 18:39:19,302 list.remove(x): x not in list
+
+2014-08-03 18:39:19,302 list.remove(x): x not in list
+
+2014-08-03 18:39:19,302 list.remove(x): x not in list
+
+2014-08-03 18:39:19,302 list.remove(x): x not in list
+
+2014-08-03 18:39:19,302 list.remove(x): x not in list
+
+2014-08-03 18:40:03,247 list.remove(x): x not in list
+
+2014-08-03 18:40:03,247 list.remove(x): x not in list
+
+2014-08-03 18:40:03,247 list.remove(x): x not in list
+
+2014-08-03 18:40:03,247 list.remove(x): x not in list
+
+2014-08-03 18:40:03,247 list.remove(x): x not in list
+
+2014-08-03 18:40:03,247 list.remove(x): x not in list
+
+2014-08-03 18:40:41,709 list.remove(x): x not in list
+
+2014-08-03 18:40:41,709 list.remove(x): x not in list
+
+2014-08-03 18:40:41,709 list.remove(x): x not in list
+
+2014-08-03 18:40:41,709 list.remove(x): x not in list
+
+2014-08-03 18:40:41,709 list.remove(x): x not in list
+
+2014-08-03 18:40:41,709 list.remove(x): x not in list
+
+2014-08-03 18:41:22,912 list.remove(x): x not in list
+
+2014-08-03 18:41:22,912 list.remove(x): x not in list
+
+2014-08-03 18:41:22,912 list.remove(x): x not in list
+
+2014-08-03 18:41:22,912 list.remove(x): x not in list
+
+2014-08-03 18:41:22,912 list.remove(x): x not in list
+
+2014-08-03 18:41:22,912 list.remove(x): x not in list
+
+2014-08-03 18:42:00,146 list.remove(x): x not in list
+
+2014-08-03 18:42:00,146 list.remove(x): x not in list
+
+2014-08-03 18:42:00,146 list.remove(x): x not in list
+
+2014-08-03 18:42:00,146 list.remove(x): x not in list
+
+2014-08-03 18:42:00,146 list.remove(x): x not in list
+
+2014-08-03 18:42:00,146 list.remove(x): x not in list
+
+2014-08-03 18:42:42,211 list.remove(x): x not in list
+
+2014-08-03 18:42:42,211 list.remove(x): x not in list
+
+2014-08-03 18:42:42,211 list.remove(x): x not in list
+
+2014-08-03 18:42:42,211 list.remove(x): x not in list
+
+2014-08-03 18:42:42,211 list.remove(x): x not in list
+
+2014-08-03 18:42:42,211 list.remove(x): x not in list
+
+2014-08-03 18:43:22,319 list.remove(x): x not in list
+
+2014-08-03 18:43:22,319 list.remove(x): x not in list
+
+2014-08-03 18:43:22,319 list.remove(x): x not in list
+
+2014-08-03 18:43:22,319 list.remove(x): x not in list
+
+2014-08-03 18:43:22,319 list.remove(x): x not in list
+
+2014-08-03 18:43:22,319 list.remove(x): x not in list
+
+2014-08-03 18:44:01,075 list.remove(x): x not in list
+
+2014-08-03 18:44:01,075 list.remove(x): x not in list
+
+2014-08-03 18:44:01,075 list.remove(x): x not in list
+
+2014-08-03 18:44:01,075 list.remove(x): x not in list
+
+2014-08-03 18:44:01,075 list.remove(x): x not in list
+
+2014-08-03 18:44:01,075 list.remove(x): x not in list
+
+2014-08-03 18:44:45,052 list.remove(x): x not in list
+
+2014-08-03 18:44:45,052 list.remove(x): x not in list
+
+2014-08-03 18:44:45,052 list.remove(x): x not in list
+
+2014-08-03 18:44:45,052 list.remove(x): x not in list
+
+2014-08-03 18:44:45,052 list.remove(x): x not in list
+
+2014-08-03 18:44:45,052 list.remove(x): x not in list
+
+2014-08-03 18:45:27,521 list.remove(x): x not in list
+
+2014-08-03 18:45:27,521 list.remove(x): x not in list
+
+2014-08-03 18:45:27,521 list.remove(x): x not in list
+
+2014-08-03 18:45:27,521 list.remove(x): x not in list
+
+2014-08-03 18:45:27,521 list.remove(x): x not in list
+
+2014-08-03 18:45:27,521 list.remove(x): x not in list
+
+2014-08-03 18:46:11,732 list.remove(x): x not in list
+
+2014-08-03 18:46:11,732 list.remove(x): x not in list
+
+2014-08-03 18:46:11,732 list.remove(x): x not in list
+
+2014-08-03 18:46:11,732 list.remove(x): x not in list
+
+2014-08-03 18:46:11,732 list.remove(x): x not in list
+
+2014-08-03 18:46:11,732 list.remove(x): x not in list
+
+2014-08-03 18:46:55,972 list.remove(x): x not in list
+
+2014-08-03 18:46:55,972 list.remove(x): x not in list
+
+2014-08-03 18:46:55,972 list.remove(x): x not in list
+
+2014-08-03 18:46:55,972 list.remove(x): x not in list
+
+2014-08-03 18:46:55,972 list.remove(x): x not in list
+
+2014-08-03 18:46:55,972 list.remove(x): x not in list
+
+2014-08-03 18:47:38,043 list.remove(x): x not in list
+
+2014-08-03 18:47:38,043 list.remove(x): x not in list
+
+2014-08-03 18:47:38,043 list.remove(x): x not in list
+
+2014-08-03 18:47:38,043 list.remove(x): x not in list
+
+2014-08-03 18:47:38,043 list.remove(x): x not in list
+
+2014-08-03 18:47:38,043 list.remove(x): x not in list
+
+2014-08-03 18:48:15,665 list.remove(x): x not in list
+
+2014-08-03 18:48:15,665 list.remove(x): x not in list
+
+2014-08-03 18:48:15,665 list.remove(x): x not in list
+
+2014-08-03 18:48:15,665 list.remove(x): x not in list
+
+2014-08-03 18:48:15,665 list.remove(x): x not in list
+
+2014-08-03 18:48:15,665 list.remove(x): x not in list
+
+2014-08-03 18:48:53,692 list.remove(x): x not in list
+
+2014-08-03 18:48:53,692 list.remove(x): x not in list
+
+2014-08-03 18:48:53,692 list.remove(x): x not in list
+
+2014-08-03 18:48:53,692 list.remove(x): x not in list
+
+2014-08-03 18:48:53,692 list.remove(x): x not in list
+
+2014-08-03 18:48:53,692 list.remove(x): x not in list
+
+2014-08-03 18:49:33,194 list.remove(x): x not in list
+
+2014-08-03 18:49:33,194 list.remove(x): x not in list
+
+2014-08-03 18:49:33,194 list.remove(x): x not in list
+
+2014-08-03 18:49:33,194 list.remove(x): x not in list
+
+2014-08-03 18:49:33,194 list.remove(x): x not in list
+
+2014-08-03 18:49:33,194 list.remove(x): x not in list
+
+2014-08-03 18:50:19,616 list.remove(x): x not in list
+
+2014-08-03 18:50:19,616 list.remove(x): x not in list
+
+2014-08-03 18:50:19,616 list.remove(x): x not in list
+
+2014-08-03 18:50:19,616 list.remove(x): x not in list
+
+2014-08-03 18:50:19,616 list.remove(x): x not in list
+
+2014-08-03 18:50:19,616 list.remove(x): x not in list
+
+2014-08-03 18:51:03,927 list.remove(x): x not in list
+
+2014-08-03 18:51:03,927 list.remove(x): x not in list
+
+2014-08-03 18:51:03,927 list.remove(x): x not in list
+
+2014-08-03 18:51:03,927 list.remove(x): x not in list
+
+2014-08-03 18:51:03,927 list.remove(x): x not in list
+
+2014-08-03 18:51:03,927 list.remove(x): x not in list
+
+2014-08-03 18:51:44,639 list.remove(x): x not in list
+
+2014-08-03 18:51:44,639 list.remove(x): x not in list
+
+2014-08-03 18:51:44,639 list.remove(x): x not in list
+
+2014-08-03 18:51:44,639 list.remove(x): x not in list
+
+2014-08-03 18:51:44,639 list.remove(x): x not in list
+
+2014-08-03 18:51:44,639 list.remove(x): x not in list
+
+2014-08-03 18:52:20,621 list.remove(x): x not in list
+
+2014-08-03 18:52:20,621 list.remove(x): x not in list
+
+2014-08-03 18:52:20,621 list.remove(x): x not in list
+
+2014-08-03 18:52:20,621 list.remove(x): x not in list
+
+2014-08-03 18:52:20,621 list.remove(x): x not in list
+
+2014-08-03 18:52:20,621 list.remove(x): x not in list
+
+2014-08-03 18:52:58,293 list.remove(x): x not in list
+
+2014-08-03 18:52:58,293 list.remove(x): x not in list
+
+2014-08-03 18:52:58,293 list.remove(x): x not in list
+
+2014-08-03 18:52:58,293 list.remove(x): x not in list
+
+2014-08-03 18:52:58,293 list.remove(x): x not in list
+
+2014-08-03 18:52:58,293 list.remove(x): x not in list
+
+2014-08-03 18:53:39,680 list.remove(x): x not in list
+
+2014-08-03 18:53:39,680 list.remove(x): x not in list
+
+2014-08-03 18:53:39,680 list.remove(x): x not in list
+
+2014-08-03 18:53:39,680 list.remove(x): x not in list
+
+2014-08-03 18:53:39,680 list.remove(x): x not in list
+
+2014-08-03 18:53:39,680 list.remove(x): x not in list
+
+2014-08-03 18:54:20,648 list.remove(x): x not in list
+
+2014-08-03 18:54:20,648 list.remove(x): x not in list
+
+2014-08-03 18:54:20,648 list.remove(x): x not in list
+
+2014-08-03 18:54:20,648 list.remove(x): x not in list
+
+2014-08-03 18:54:20,648 list.remove(x): x not in list
+
+2014-08-03 18:54:20,648 list.remove(x): x not in list
+
+2014-08-03 18:54:58,894 list.remove(x): x not in list
+
+2014-08-03 18:54:58,894 list.remove(x): x not in list
+
+2014-08-03 18:54:58,894 list.remove(x): x not in list
+
+2014-08-03 18:54:58,894 list.remove(x): x not in list
+
+2014-08-03 18:54:58,894 list.remove(x): x not in list
+
+2014-08-03 18:54:58,894 list.remove(x): x not in list
+
+2014-08-03 18:55:36,584 list.remove(x): x not in list
+
+2014-08-03 18:55:36,584 list.remove(x): x not in list
+
+2014-08-03 18:55:36,584 list.remove(x): x not in list
+
+2014-08-03 18:55:36,584 list.remove(x): x not in list
+
+2014-08-03 18:55:36,584 list.remove(x): x not in list
+
+2014-08-03 18:55:36,584 list.remove(x): x not in list
+
+2014-08-03 18:56:15,826 list.remove(x): x not in list
+
+2014-08-03 18:56:15,826 list.remove(x): x not in list
+
+2014-08-03 18:56:15,826 list.remove(x): x not in list
+
+2014-08-03 18:56:15,826 list.remove(x): x not in list
+
+2014-08-03 18:56:15,826 list.remove(x): x not in list
+
+2014-08-03 18:56:15,826 list.remove(x): x not in list
+
+2014-08-03 18:56:57,852 list.remove(x): x not in list
+
+2014-08-03 18:56:57,852 list.remove(x): x not in list
+
+2014-08-03 18:56:57,852 list.remove(x): x not in list
+
+2014-08-03 18:56:57,852 list.remove(x): x not in list
+
+2014-08-03 18:56:57,852 list.remove(x): x not in list
+
+2014-08-03 18:56:57,852 list.remove(x): x not in list
+
+2014-08-03 18:57:36,285 list.remove(x): x not in list
+
+2014-08-03 18:57:36,285 list.remove(x): x not in list
+
+2014-08-03 18:57:36,285 list.remove(x): x not in list
+
+2014-08-03 18:57:36,285 list.remove(x): x not in list
+
+2014-08-03 18:57:36,285 list.remove(x): x not in list
+
+2014-08-03 18:57:36,285 list.remove(x): x not in list
+
+2014-08-03 18:58:16,606 list.remove(x): x not in list
+
+2014-08-03 18:58:16,606 list.remove(x): x not in list
+
+2014-08-03 18:58:16,606 list.remove(x): x not in list
+
+2014-08-03 18:58:16,606 list.remove(x): x not in list
+
+2014-08-03 18:58:16,606 list.remove(x): x not in list
+
+2014-08-03 18:58:16,606 list.remove(x): x not in list
+
+2014-08-03 18:58:56,124 list.remove(x): x not in list
+
+2014-08-03 18:58:56,124 list.remove(x): x not in list
+
+2014-08-03 18:58:56,124 list.remove(x): x not in list
+
+2014-08-03 18:58:56,124 list.remove(x): x not in list
+
+2014-08-03 18:58:56,124 list.remove(x): x not in list
+
+2014-08-03 18:58:56,124 list.remove(x): x not in list
+
+2014-08-03 18:59:35,363 list.remove(x): x not in list
+
+2014-08-03 18:59:35,363 list.remove(x): x not in list
+
+2014-08-03 18:59:35,363 list.remove(x): x not in list
+
+2014-08-03 18:59:35,363 list.remove(x): x not in list
+
+2014-08-03 18:59:35,363 list.remove(x): x not in list
+
+2014-08-03 18:59:35,363 list.remove(x): x not in list
+
+2014-08-03 19:00:17,343 list.remove(x): x not in list
+
+2014-08-03 19:00:17,343 list.remove(x): x not in list
+
+2014-08-03 19:00:17,343 list.remove(x): x not in list
+
+2014-08-03 19:00:17,343 list.remove(x): x not in list
+
+2014-08-03 19:00:17,343 list.remove(x): x not in list
+
+2014-08-03 19:00:17,343 list.remove(x): x not in list
+
+2014-08-03 19:01:00,945 list.remove(x): x not in list
+
+2014-08-03 19:01:00,945 list.remove(x): x not in list
+
+2014-08-03 19:01:00,945 list.remove(x): x not in list
+
+2014-08-03 19:01:00,945 list.remove(x): x not in list
+
+2014-08-03 19:01:00,945 list.remove(x): x not in list
+
+2014-08-03 19:01:00,945 list.remove(x): x not in list
+
+2014-08-03 19:01:40,003 list.remove(x): x not in list
+
+2014-08-03 19:01:40,003 list.remove(x): x not in list
+
+2014-08-03 19:01:40,003 list.remove(x): x not in list
+
+2014-08-03 19:01:40,003 list.remove(x): x not in list
+
+2014-08-03 19:01:40,003 list.remove(x): x not in list
+
+2014-08-03 19:01:40,003 list.remove(x): x not in list
+
+2014-08-03 19:02:20,204 list.remove(x): x not in list
+
+2014-08-03 19:02:20,204 list.remove(x): x not in list
+
+2014-08-03 19:02:20,204 list.remove(x): x not in list
+
+2014-08-03 19:02:20,204 list.remove(x): x not in list
+
+2014-08-03 19:02:20,204 list.remove(x): x not in list
+
+2014-08-03 19:02:20,204 list.remove(x): x not in list
+
+2014-08-03 19:03:04,155 list.remove(x): x not in list
+
+2014-08-03 19:03:04,155 list.remove(x): x not in list
+
+2014-08-03 19:03:04,155 list.remove(x): x not in list
+
+2014-08-03 19:03:04,155 list.remove(x): x not in list
+
+2014-08-03 19:03:04,155 list.remove(x): x not in list
+
+2014-08-03 19:03:04,155 list.remove(x): x not in list
+
+2014-08-03 19:03:52,171 list.remove(x): x not in list
+
+2014-08-03 19:03:52,171 list.remove(x): x not in list
+
+2014-08-03 19:03:52,171 list.remove(x): x not in list
+
+2014-08-03 19:03:52,171 list.remove(x): x not in list
+
+2014-08-03 19:03:52,171 list.remove(x): x not in list
+
+2014-08-03 19:03:52,171 list.remove(x): x not in list
+
+2014-08-03 19:04:32,944 list.remove(x): x not in list
+
+2014-08-03 19:04:32,944 list.remove(x): x not in list
+
+2014-08-03 19:04:32,944 list.remove(x): x not in list
+
+2014-08-03 19:04:32,944 list.remove(x): x not in list
+
+2014-08-03 19:04:32,944 list.remove(x): x not in list
+
+2014-08-03 19:04:32,944 list.remove(x): x not in list
+
+2014-08-03 19:05:13,510 list.remove(x): x not in list
+
+2014-08-03 19:05:13,510 list.remove(x): x not in list
+
+2014-08-03 19:05:13,510 list.remove(x): x not in list
+
+2014-08-03 19:05:13,510 list.remove(x): x not in list
+
+2014-08-03 19:05:13,510 list.remove(x): x not in list
+
+2014-08-03 19:05:13,510 list.remove(x): x not in list
+
+2014-08-03 19:05:54,238 list.remove(x): x not in list
+
+2014-08-03 19:05:54,238 list.remove(x): x not in list
+
+2014-08-03 19:05:54,238 list.remove(x): x not in list
+
+2014-08-03 19:05:54,238 list.remove(x): x not in list
+
+2014-08-03 19:05:54,238 list.remove(x): x not in list
+
+2014-08-03 19:05:54,238 list.remove(x): x not in list
+
+2014-08-03 19:06:30,254 list.remove(x): x not in list
+
+2014-08-03 19:06:30,254 list.remove(x): x not in list
+
+2014-08-03 19:06:30,254 list.remove(x): x not in list
+
+2014-08-03 19:06:30,254 list.remove(x): x not in list
+
+2014-08-03 19:06:30,254 list.remove(x): x not in list
+
+2014-08-03 19:06:30,254 list.remove(x): x not in list
+
+2014-08-03 19:07:10,906 list.remove(x): x not in list
+
+2014-08-03 19:07:10,906 list.remove(x): x not in list
+
+2014-08-03 19:07:10,906 list.remove(x): x not in list
+
+2014-08-03 19:07:10,906 list.remove(x): x not in list
+
+2014-08-03 19:07:10,906 list.remove(x): x not in list
+
+2014-08-03 19:07:10,906 list.remove(x): x not in list
+
+2014-08-03 19:07:52,206 list.remove(x): x not in list
+
+2014-08-03 19:07:52,206 list.remove(x): x not in list
+
+2014-08-03 19:07:52,206 list.remove(x): x not in list
+
+2014-08-03 19:07:52,206 list.remove(x): x not in list
+
+2014-08-03 19:07:52,206 list.remove(x): x not in list
+
+2014-08-03 19:07:52,206 list.remove(x): x not in list
+
+2014-08-03 19:08:31,647 list.remove(x): x not in list
+
+2014-08-03 19:08:31,647 list.remove(x): x not in list
+
+2014-08-03 19:08:31,647 list.remove(x): x not in list
+
+2014-08-03 19:08:31,647 list.remove(x): x not in list
+
+2014-08-03 19:08:31,647 list.remove(x): x not in list
+
+2014-08-03 19:08:31,647 list.remove(x): x not in list
+
+2014-08-03 19:09:13,663 list.remove(x): x not in list
+
+2014-08-03 19:09:13,663 list.remove(x): x not in list
+
+2014-08-03 19:09:13,663 list.remove(x): x not in list
+
+2014-08-03 19:09:13,663 list.remove(x): x not in list
+
+2014-08-03 19:09:13,663 list.remove(x): x not in list
+
+2014-08-03 19:09:13,663 list.remove(x): x not in list
+
+2014-08-03 19:09:57,345 list.remove(x): x not in list
+
+2014-08-03 19:09:57,345 list.remove(x): x not in list
+
+2014-08-03 19:09:57,345 list.remove(x): x not in list
+
+2014-08-03 19:09:57,345 list.remove(x): x not in list
+
+2014-08-03 19:09:57,345 list.remove(x): x not in list
+
+2014-08-03 19:09:57,345 list.remove(x): x not in list
+
+2014-08-03 19:10:36,394 list.remove(x): x not in list
+
+2014-08-03 19:10:36,394 list.remove(x): x not in list
+
+2014-08-03 19:10:36,394 list.remove(x): x not in list
+
+2014-08-03 19:10:36,394 list.remove(x): x not in list
+
+2014-08-03 19:10:36,394 list.remove(x): x not in list
+
+2014-08-03 19:10:36,394 list.remove(x): x not in list
+
+2014-08-03 19:11:15,991 list.remove(x): x not in list
+
+2014-08-03 19:11:15,991 list.remove(x): x not in list
+
+2014-08-03 19:11:15,991 list.remove(x): x not in list
+
+2014-08-03 19:11:15,991 list.remove(x): x not in list
+
+2014-08-03 19:11:15,991 list.remove(x): x not in list
+
+2014-08-03 19:11:15,991 list.remove(x): x not in list
+
+2014-08-03 19:11:55,366 list.remove(x): x not in list
+
+2014-08-03 19:11:55,366 list.remove(x): x not in list
+
+2014-08-03 19:11:55,366 list.remove(x): x not in list
+
+2014-08-03 19:11:55,366 list.remove(x): x not in list
+
+2014-08-03 19:11:55,366 list.remove(x): x not in list
+
+2014-08-03 19:11:55,366 list.remove(x): x not in list
+
+2014-08-03 19:12:37,837 list.remove(x): x not in list
+
+2014-08-03 19:12:37,837 list.remove(x): x not in list
+
+2014-08-03 19:12:37,837 list.remove(x): x not in list
+
+2014-08-03 19:12:37,837 list.remove(x): x not in list
+
+2014-08-03 19:12:37,837 list.remove(x): x not in list
+
+2014-08-03 19:12:37,837 list.remove(x): x not in list
+
+2014-08-03 19:13:19,020 list.remove(x): x not in list
+
+2014-08-03 19:13:19,020 list.remove(x): x not in list
+
+2014-08-03 19:13:19,020 list.remove(x): x not in list
+
+2014-08-03 19:13:19,020 list.remove(x): x not in list
+
+2014-08-03 19:13:19,020 list.remove(x): x not in list
+
+2014-08-03 19:13:19,020 list.remove(x): x not in list
+
+2014-08-03 19:13:58,810 list.remove(x): x not in list
+
+2014-08-03 19:13:58,810 list.remove(x): x not in list
+
+2014-08-03 19:13:58,810 list.remove(x): x not in list
+
+2014-08-03 19:13:58,810 list.remove(x): x not in list
+
+2014-08-03 19:13:58,810 list.remove(x): x not in list
+
+2014-08-03 19:13:58,810 list.remove(x): x not in list
+
+2014-08-03 19:14:37,529 list.remove(x): x not in list
+
+2014-08-03 19:14:37,529 list.remove(x): x not in list
+
+2014-08-03 19:14:37,529 list.remove(x): x not in list
+
+2014-08-03 19:14:37,529 list.remove(x): x not in list
+
+2014-08-03 19:14:37,529 list.remove(x): x not in list
+
+2014-08-03 19:14:37,529 list.remove(x): x not in list
+
+2014-08-03 19:15:19,166 list.remove(x): x not in list
+
+2014-08-03 19:15:19,166 list.remove(x): x not in list
+
+2014-08-03 19:15:19,166 list.remove(x): x not in list
+
+2014-08-03 19:15:19,166 list.remove(x): x not in list
+
+2014-08-03 19:15:19,166 list.remove(x): x not in list
+
+2014-08-03 19:15:19,166 list.remove(x): x not in list
+
+2014-08-03 19:15:59,996 list.remove(x): x not in list
+
+2014-08-03 19:15:59,996 list.remove(x): x not in list
+
+2014-08-03 19:15:59,996 list.remove(x): x not in list
+
+2014-08-03 19:15:59,996 list.remove(x): x not in list
+
+2014-08-03 19:15:59,996 list.remove(x): x not in list
+
+2014-08-03 19:15:59,996 list.remove(x): x not in list
+
+2014-08-03 19:16:47,907 list.remove(x): x not in list
+
+2014-08-03 19:16:47,907 list.remove(x): x not in list
+
+2014-08-03 19:16:47,907 list.remove(x): x not in list
+
+2014-08-03 19:16:47,907 list.remove(x): x not in list
+
+2014-08-03 19:16:47,907 list.remove(x): x not in list
+
+2014-08-03 19:16:47,907 list.remove(x): x not in list
+
+2014-08-03 19:17:30,484 list.remove(x): x not in list
+
+2014-08-03 19:17:30,484 list.remove(x): x not in list
+
+2014-08-03 19:17:30,484 list.remove(x): x not in list
+
+2014-08-03 19:17:30,484 list.remove(x): x not in list
+
+2014-08-03 19:17:30,484 list.remove(x): x not in list
+
+2014-08-03 19:17:30,484 list.remove(x): x not in list
+
+2014-08-03 19:18:11,734 list.remove(x): x not in list
+
+2014-08-03 19:18:11,734 list.remove(x): x not in list
+
+2014-08-03 19:18:11,734 list.remove(x): x not in list
+
+2014-08-03 19:18:11,734 list.remove(x): x not in list
+
+2014-08-03 19:18:11,734 list.remove(x): x not in list
+
+2014-08-03 19:18:11,734 list.remove(x): x not in list
+
+2014-08-03 19:18:49,804 list.remove(x): x not in list
+
+2014-08-03 19:18:49,804 list.remove(x): x not in list
+
+2014-08-03 19:18:49,804 list.remove(x): x not in list
+
+2014-08-03 19:18:49,804 list.remove(x): x not in list
+
+2014-08-03 19:18:49,804 list.remove(x): x not in list
+
+2014-08-03 19:18:49,804 list.remove(x): x not in list
+
+2014-08-03 19:19:32,337 list.remove(x): x not in list
+
+2014-08-03 19:19:32,337 list.remove(x): x not in list
+
+2014-08-03 19:19:32,337 list.remove(x): x not in list
+
+2014-08-03 19:19:32,337 list.remove(x): x not in list
+
+2014-08-03 19:19:32,337 list.remove(x): x not in list
+
+2014-08-03 19:19:32,337 list.remove(x): x not in list
+
+2014-08-03 19:20:14,148 list.remove(x): x not in list
+
+2014-08-03 19:20:14,148 list.remove(x): x not in list
+
+2014-08-03 19:20:14,148 list.remove(x): x not in list
+
+2014-08-03 19:20:14,148 list.remove(x): x not in list
+
+2014-08-03 19:20:14,148 list.remove(x): x not in list
+
+2014-08-03 19:20:14,148 list.remove(x): x not in list
+
+2014-08-03 19:20:57,573 list.remove(x): x not in list
+
+2014-08-03 19:20:57,573 list.remove(x): x not in list
+
+2014-08-03 19:20:57,573 list.remove(x): x not in list
+
+2014-08-03 19:20:57,573 list.remove(x): x not in list
+
+2014-08-03 19:20:57,573 list.remove(x): x not in list
+
+2014-08-03 19:20:57,573 list.remove(x): x not in list
+
+2014-08-03 19:21:38,834 list.remove(x): x not in list
+
+2014-08-03 19:21:38,834 list.remove(x): x not in list
+
+2014-08-03 19:21:38,834 list.remove(x): x not in list
+
+2014-08-03 19:21:38,834 list.remove(x): x not in list
+
+2014-08-03 19:21:38,834 list.remove(x): x not in list
+
+2014-08-03 19:21:38,834 list.remove(x): x not in list
+
+2014-08-03 19:22:21,326 list.remove(x): x not in list
+
+2014-08-03 19:22:21,326 list.remove(x): x not in list
+
+2014-08-03 19:22:21,326 list.remove(x): x not in list
+
+2014-08-03 19:22:21,326 list.remove(x): x not in list
+
+2014-08-03 19:22:21,326 list.remove(x): x not in list
+
+2014-08-03 19:22:21,326 list.remove(x): x not in list
+
+2014-08-03 19:23:01,904 list.remove(x): x not in list
+
+2014-08-03 19:23:01,904 list.remove(x): x not in list
+
+2014-08-03 19:23:01,904 list.remove(x): x not in list
+
+2014-08-03 19:23:01,904 list.remove(x): x not in list
+
+2014-08-03 19:23:01,904 list.remove(x): x not in list
+
+2014-08-03 19:23:01,904 list.remove(x): x not in list
+
+2014-08-03 19:23:40,808 list.remove(x): x not in list
+
+2014-08-03 19:23:40,808 list.remove(x): x not in list
+
+2014-08-03 19:23:40,808 list.remove(x): x not in list
+
+2014-08-03 19:23:40,808 list.remove(x): x not in list
+
+2014-08-03 19:23:40,808 list.remove(x): x not in list
+
+2014-08-03 19:23:40,808 list.remove(x): x not in list
+
+2014-08-03 19:24:19,941 list.remove(x): x not in list
+
+2014-08-03 19:24:19,941 list.remove(x): x not in list
+
+2014-08-03 19:24:19,941 list.remove(x): x not in list
+
+2014-08-03 19:24:19,941 list.remove(x): x not in list
+
+2014-08-03 19:24:19,941 list.remove(x): x not in list
+
+2014-08-03 19:24:19,941 list.remove(x): x not in list
+
+2014-08-03 19:25:00,364 list.remove(x): x not in list
+
+2014-08-03 19:25:00,364 list.remove(x): x not in list
+
+2014-08-03 19:25:00,364 list.remove(x): x not in list
+
+2014-08-03 19:25:00,364 list.remove(x): x not in list
+
+2014-08-03 19:25:00,364 list.remove(x): x not in list
+
+2014-08-03 19:25:00,364 list.remove(x): x not in list
+
+2014-08-03 19:25:39,746 list.remove(x): x not in list
+
+2014-08-03 19:25:39,746 list.remove(x): x not in list
+
+2014-08-03 19:25:39,746 list.remove(x): x not in list
+
+2014-08-03 19:25:39,746 list.remove(x): x not in list
+
+2014-08-03 19:25:39,746 list.remove(x): x not in list
+
+2014-08-03 19:25:39,746 list.remove(x): x not in list
+
+2014-08-03 19:26:25,532 list.remove(x): x not in list
+
+2014-08-03 19:26:25,532 list.remove(x): x not in list
+
+2014-08-03 19:26:25,532 list.remove(x): x not in list
+
+2014-08-03 19:26:25,532 list.remove(x): x not in list
+
+2014-08-03 19:26:25,532 list.remove(x): x not in list
+
+2014-08-03 19:26:25,532 list.remove(x): x not in list
+
+2014-08-03 19:27:03,525 list.remove(x): x not in list
+
+2014-08-03 19:27:03,525 list.remove(x): x not in list
+
+2014-08-03 19:27:03,525 list.remove(x): x not in list
+
+2014-08-03 19:27:03,525 list.remove(x): x not in list
+
+2014-08-03 19:27:03,525 list.remove(x): x not in list
+
+2014-08-03 19:27:03,525 list.remove(x): x not in list
+
+2014-08-03 19:27:42,889 list.remove(x): x not in list
+
+2014-08-03 19:27:42,889 list.remove(x): x not in list
+
+2014-08-03 19:27:42,889 list.remove(x): x not in list
+
+2014-08-03 19:27:42,889 list.remove(x): x not in list
+
+2014-08-03 19:27:42,889 list.remove(x): x not in list
+
+2014-08-03 19:27:42,889 list.remove(x): x not in list
+
+2014-08-03 19:28:23,131 list.remove(x): x not in list
+
+2014-08-03 19:28:23,131 list.remove(x): x not in list
+
+2014-08-03 19:28:23,131 list.remove(x): x not in list
+
+2014-08-03 19:28:23,131 list.remove(x): x not in list
+
+2014-08-03 19:28:23,131 list.remove(x): x not in list
+
+2014-08-03 19:28:23,131 list.remove(x): x not in list
+
+2014-08-03 19:29:01,863 list.remove(x): x not in list
+
+2014-08-03 19:29:01,863 list.remove(x): x not in list
+
+2014-08-03 19:29:01,863 list.remove(x): x not in list
+
+2014-08-03 19:29:01,863 list.remove(x): x not in list
+
+2014-08-03 19:29:01,863 list.remove(x): x not in list
+
+2014-08-03 19:29:01,863 list.remove(x): x not in list
+
+2014-08-03 19:29:42,330 list.remove(x): x not in list
+
+2014-08-03 19:29:42,330 list.remove(x): x not in list
+
+2014-08-03 19:29:42,330 list.remove(x): x not in list
+
+2014-08-03 19:29:42,330 list.remove(x): x not in list
+
+2014-08-03 19:29:42,330 list.remove(x): x not in list
+
+2014-08-03 19:29:42,330 list.remove(x): x not in list
+
+2014-08-03 19:30:23,283 list.remove(x): x not in list
+
+2014-08-03 19:30:23,283 list.remove(x): x not in list
+
+2014-08-03 19:30:23,283 list.remove(x): x not in list
+
+2014-08-03 19:30:23,283 list.remove(x): x not in list
+
+2014-08-03 19:30:23,283 list.remove(x): x not in list
+
+2014-08-03 19:30:23,283 list.remove(x): x not in list
+
+2014-08-03 19:31:02,938 list.remove(x): x not in list
+
+2014-08-03 19:31:02,938 list.remove(x): x not in list
+
+2014-08-03 19:31:02,938 list.remove(x): x not in list
+
+2014-08-03 19:31:02,938 list.remove(x): x not in list
+
+2014-08-03 19:31:02,938 list.remove(x): x not in list
+
+2014-08-03 19:31:02,938 list.remove(x): x not in list
+
+2014-08-03 19:31:43,336 list.remove(x): x not in list
+
+2014-08-03 19:31:43,336 list.remove(x): x not in list
+
+2014-08-03 19:31:43,336 list.remove(x): x not in list
+
+2014-08-03 19:31:43,336 list.remove(x): x not in list
+
+2014-08-03 19:31:43,336 list.remove(x): x not in list
+
+2014-08-03 19:31:43,336 list.remove(x): x not in list
+
+2014-08-03 19:32:25,598 list.remove(x): x not in list
+
+2014-08-03 19:32:25,598 list.remove(x): x not in list
+
+2014-08-03 19:32:25,598 list.remove(x): x not in list
+
+2014-08-03 19:32:25,598 list.remove(x): x not in list
+
+2014-08-03 19:32:25,598 list.remove(x): x not in list
+
+2014-08-03 19:32:25,598 list.remove(x): x not in list
+
+2014-08-03 19:33:06,130 list.remove(x): x not in list
+
+2014-08-03 19:33:06,130 list.remove(x): x not in list
+
+2014-08-03 19:33:06,130 list.remove(x): x not in list
+
+2014-08-03 19:33:06,130 list.remove(x): x not in list
+
+2014-08-03 19:33:06,130 list.remove(x): x not in list
+
+2014-08-03 19:33:06,130 list.remove(x): x not in list
+
+2014-08-03 19:33:50,248 list.remove(x): x not in list
+
+2014-08-03 19:33:50,248 list.remove(x): x not in list
+
+2014-08-03 19:33:50,248 list.remove(x): x not in list
+
+2014-08-03 19:33:50,248 list.remove(x): x not in list
+
+2014-08-03 19:33:50,248 list.remove(x): x not in list
+
+2014-08-03 19:33:50,248 list.remove(x): x not in list
+
+2014-08-03 19:34:30,028 list.remove(x): x not in list
+
+2014-08-03 19:34:30,028 list.remove(x): x not in list
+
+2014-08-03 19:34:30,028 list.remove(x): x not in list
+
+2014-08-03 19:34:30,028 list.remove(x): x not in list
+
+2014-08-03 19:34:30,028 list.remove(x): x not in list
+
+2014-08-03 19:34:30,028 list.remove(x): x not in list
+
+2014-08-03 19:35:13,129 list.remove(x): x not in list
+
+2014-08-03 19:35:13,129 list.remove(x): x not in list
+
+2014-08-03 19:35:13,129 list.remove(x): x not in list
+
+2014-08-03 19:35:13,129 list.remove(x): x not in list
+
+2014-08-03 19:35:13,129 list.remove(x): x not in list
+
+2014-08-03 19:35:13,129 list.remove(x): x not in list
+
+2014-08-03 19:35:56,534 list.remove(x): x not in list
+
+2014-08-03 19:35:56,534 list.remove(x): x not in list
+
+2014-08-03 19:35:56,534 list.remove(x): x not in list
+
+2014-08-03 19:35:56,534 list.remove(x): x not in list
+
+2014-08-03 19:35:56,534 list.remove(x): x not in list
+
+2014-08-03 19:35:56,534 list.remove(x): x not in list
+
+2014-08-03 19:36:41,681 list.remove(x): x not in list
+
+2014-08-03 19:36:41,681 list.remove(x): x not in list
+
+2014-08-03 19:36:41,681 list.remove(x): x not in list
+
+2014-08-03 19:36:41,681 list.remove(x): x not in list
+
+2014-08-03 19:36:41,681 list.remove(x): x not in list
+
+2014-08-03 19:36:41,681 list.remove(x): x not in list
+
+2014-08-03 19:37:23,958 list.remove(x): x not in list
+
+2014-08-03 19:37:23,958 list.remove(x): x not in list
+
+2014-08-03 19:37:23,958 list.remove(x): x not in list
+
+2014-08-03 19:37:23,958 list.remove(x): x not in list
+
+2014-08-03 19:37:23,958 list.remove(x): x not in list
+
+2014-08-03 19:37:23,958 list.remove(x): x not in list
+
+2014-08-03 19:38:03,736 list.remove(x): x not in list
+
+2014-08-03 19:38:03,736 list.remove(x): x not in list
+
+2014-08-03 19:38:03,736 list.remove(x): x not in list
+
+2014-08-03 19:38:03,736 list.remove(x): x not in list
+
+2014-08-03 19:38:03,736 list.remove(x): x not in list
+
+2014-08-03 19:38:03,736 list.remove(x): x not in list
+
+2014-08-03 19:38:41,218 list.remove(x): x not in list
+
+2014-08-03 19:38:41,218 list.remove(x): x not in list
+
+2014-08-03 19:38:41,218 list.remove(x): x not in list
+
+2014-08-03 19:38:41,218 list.remove(x): x not in list
+
+2014-08-03 19:38:41,218 list.remove(x): x not in list
+
+2014-08-03 19:38:41,218 list.remove(x): x not in list
+
+2014-08-03 19:39:21,036 list.remove(x): x not in list
+
+2014-08-03 19:39:21,036 list.remove(x): x not in list
+
+2014-08-03 19:39:21,036 list.remove(x): x not in list
+
+2014-08-03 19:39:21,036 list.remove(x): x not in list
+
+2014-08-03 19:39:21,036 list.remove(x): x not in list
+
+2014-08-03 19:39:21,036 list.remove(x): x not in list
+
+2014-08-03 19:39:50,459 <urlopen error [Errno 111] Connection refused>
+
+2014-08-03 19:39:50,459 <urlopen error [Errno 111] Connection refused>
+
+2014-08-03 19:39:50,459 <urlopen error [Errno 111] Connection refused>
+
+2014-08-03 19:39:50,459 <urlopen error [Errno 111] Connection refused>
+
+2014-08-03 19:39:50,459 <urlopen error [Errno 111] Connection refused>
+
+2014-08-03 19:39:50,459 <urlopen error [Errno 111] Connection refused>
+
+2014-08-03 19:41:38,441 <urlopen error [Errno 111] Connection refused>
+
