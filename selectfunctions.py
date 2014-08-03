@@ -133,6 +133,9 @@ def topPBatters(**kwargs):
                 team = str( cells[2].text.lower() )
                 if team == 'chw': # convert for chicago white sox, to comply with boy.pt
                     team = 'cws'
+                if (nextPlayer[0] == 'Austin') and (nextPlayer[1] == 'Jackson'):
+                    team='sea'
+                    print "CHANGED AUSTIN JACKSON's TEAM"
                 nextPlayer.append( team )
                 players.append( tuple(nextPlayer) )
 
@@ -188,7 +191,9 @@ def _whoIsEligible(**kwargs):
         assert type(thing2) == str
         assert type(thing3) == str
     assert type(kwargs['filt']) == dict
-
+ 
+    #import pdb
+    #pdb.set_trace()
     ## Are we going to filter by minERA?
     if 'minERA' in kwargs['filt'].keys():
         filterERA = True
@@ -323,6 +328,7 @@ def _formatTeam(teamString):
     team names on their schedule page
     """
     from bot import Bot
+    #print "teamString: {}".format(teamString)
     assert teamString in Bot.teams
 
     return cbsFormattingDict[teamString]
