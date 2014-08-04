@@ -66,7 +66,7 @@ makeInstance 17 & wait
 echo "**************** INSTANCES CREATED! ****************"
 
 # Sleep for a bit to make sure instances are ready to receive files
-sleepTime=5
+sleepTime=30
 echo "\n-->Sleeping for $sleepTime seconds to allow instances to be ready to receive files"
 sleep $sleepTime
 

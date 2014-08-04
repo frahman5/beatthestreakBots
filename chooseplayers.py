@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, date # to get today's date
 
 from filepath import Filepath 
 from bot import Bot
-from config import ROOT, ignorePlayers, logEligiblePlayers
+from config import ROOT, ignorePlayers, logEligiblePlayers, playerExceptions
 from exception import NoPlayerFoundException, FailedAccountException, \
                       FailedUpdateException
 from errorlogging import getLogger, logError, logFailedAccounts
