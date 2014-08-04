@@ -133,9 +133,9 @@ def topPBatters(**kwargs):
                 team = str( cells[2].text.lower() )
                 if team == 'chw': # convert for chicago white sox, to comply with boy.pt
                     team = 'cws'
-                if (nextPlayer[0] == 'Austin') and (nextPlayer[1] == 'Jackson'):
-                    team='sea'
-                    print "CHANGED AUSTIN JACKSON's TEAM"
+                if "/" in team:   # if a player was traded, team is oldTeam/newTeam
+                    team = team.split('/')[-1]
+                    print "CHANGED {} {}'s TEAM!".format(nextPlayer[0], nextPlayer[1])
                 nextPlayer.append( team )
                 players.append( tuple(nextPlayer) )
 

@@ -51,8 +51,8 @@ function pushFiles {
     gcutil push $p $instance $finalMinionDir$minion2 $googleMinionDir 
 }
 
-# Create all the disks in parallel
-    # wait makes shell wait for all jobs running background to finish
+Create all the disks in parallel
+    wait makes shell wait for all jobs running background to finish
 makeDisk 5 & makeDisk 6 & makeDisk 7 & makeDisk 8 & makeDisk 9 & makeDisk 10 & \
 makeDisk 11 & makeDisk 12 & makeDisk 13 & makeDisk 14 & makeDisk 15 & makeDisk 16 & \
 makeDisk 17 & wait 
