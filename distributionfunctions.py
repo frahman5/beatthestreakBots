@@ -63,7 +63,7 @@ def staticDownRandPlayers(**kwargs):
         ## Add player to ignorePlayers, if necessary
         for player in (p1, p2):
             if (player in playerExceptions.keys()) and \
-               (playerExceptions[player] == 2) and \
+               (playerExceptions[player] == 10) and \
                (player not in ignorePlayers):
                 ignorePlayers.append(player)
         e.args += (' with players {} and {}'.format(p1, p2),)
