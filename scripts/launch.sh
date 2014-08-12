@@ -1,4 +1,4 @@
-#!/bin/bash
+    #!/bin/bash
 ## Script to semi-automate the process of creating VM instnaces, 
 ## and running player selectionss on them
 
@@ -52,11 +52,15 @@ function pushFiles {
 }
 
 # Create all the disks in parallel
-    wait makes shell wait for all jobs running background to finish
+    # wait makes shell wait for all jobs running background to finish
 makeDisk 5 & makeDisk 6 & makeDisk 7 & makeDisk 8 & makeDisk 9 & makeDisk 10 & \
 makeDisk 11 & makeDisk 12 & makeDisk 13 & makeDisk 14 & makeDisk 15 & makeDisk 16 & \
 makeDisk 17 & wait 
 echo "**************** DISKS CREATED! ****************"
+
+sleepTime=60
+echo "\n-->Sleeping for $sleepTime seconds to allow disks to be ready for instance creation"
+sleep $sleepTime
 
 # Create all the instances in parallel
 makeInstance 5 & makeInstance 6 & makeInstance 7 & makeInstance 8 & \
@@ -82,6 +86,9 @@ do
     gcutil $sv $p ssh $zone 'sn'$strategy
 done
 
-# makeInstance 6
-# pushFiles 6
-# gcutil $sv $p $ssh $zone sn6
+# makeInstance 16
+# pushFiles 16
+# makeInstance 11
+# # pushFiles 11    
+# gcutil $sv $p ssh $zone sn16
+# gcutil $sv $p ssh $zone sn11

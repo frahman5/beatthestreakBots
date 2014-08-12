@@ -192,8 +192,7 @@ def _whoIsEligible(**kwargs):
         assert type(thing3) == str
     assert type(kwargs['filt']) == dict
  
-    #import pdb
-    #pdb.set_trace()
+
     ## Are we going to filter by minERA?
     if 'minERA' in kwargs['filt'].keys():
         filterERA = True
@@ -269,8 +268,12 @@ def _whoIsEligible(**kwargs):
     for player in activePlayersIter:
         firstName, lastName, team = player
         teamFormatted = _formatTeam(team)
-        today = datetime.today().date()
-        twentyMinFromNow = (datetime.now(timezone('US/Eastern')) + timedelta(minutes=20)).time()
+        now = datetime.now(timezone('US/Eastern'))
+        today = now.date()
+        twentyMinFromNow = (now + timedelta(minutes=20)).time()
+        # today = datetime.today().date()
+        # twentyMinFromNow = (datetime.now(timezone('US/Eastern')) + timedelta(minutes=20)).time()
+        print "Today: {}".format(today)
         print "Twenty Min From Now: {}".format(twentyMinFromNow)
 
         # is the player's team playing
