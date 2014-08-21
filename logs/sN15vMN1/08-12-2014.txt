@@ -2,3 +2,18 @@
 
 2014-08-11 22:03:48,862 [Errno 54] Connection reset by peer
 
+2014-08-12 02:21:50,296 Unit account update failure: rahman.metro.801801@faiyamrahman.com, beatthestreak1
+
+2014-08-12 02:21:50,296     p1, p2: None, None
+
+2014-08-12 02:21:50,296 'Player Hanley Ramirez on team lad was not found'
+Traceback (most recent call last):
+  File "chooseplayers.py", line 471, in choosePlayers
+    eligiblePlayers=eligiblePlayers)
+  File "chooseplayers.py", line 176, in __distribute_eligible_players
+    eligiblePlayers=kwargs['eligiblePlayers'])
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 25, in randDownRandPlayers
+    doubleDown=random.choice((True, False)) )
+  File "/home/faiyamrahman/programming/Python/beatthestreakBots/distributionfunctions.py", line 70, in staticDownRandPlayers
+    raise e
+NoPlayerFoundException: 'Player Hanley Ramirez on team lad was not found'
