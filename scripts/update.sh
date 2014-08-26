@@ -10,7 +10,7 @@ function pullFiles {
 
   ## Google compute engine parameters
      # project specifier
-  p=--project='faiyam-bts-1'
+  p=--project='coherent-code-678'
      # directory of minion account files
   googleMinionDir=/home/faiyamrahman/programming/Python/beatthestreakBots/accountFiles/minionAccountFiles/
      # directory of minion logs

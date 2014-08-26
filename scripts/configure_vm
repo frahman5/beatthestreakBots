@@ -1,0 +1,43 @@
+#### install linux dependencies
+sudo apt-get update
+sudo apt-get install git
+sudo apt-get install gcc 
+sudo apt-get install python-dev
+sudo apt-get install xvfb
+
+### Install chromedriver
+   ## chromium
+sudo aptitude update
+sudo aptitude install chromium-browser
+   ## chrome driver
+cd /usr/local/bin
+sudo wget http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux64.zip
+sudo apt-get install unzip
+unzip chromedriver_linux64.zip
+sudo chmod a+x chromedriver
+    ## google-chrome
+sudo apt-get install libxss1 libappindicator1 libindicator7
+sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome*.deb
+
+#### Install pip 
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+
+#### get the git repository
+mkdir programming
+cd programming
+mkdir Python
+cd Python   
+git clone https://github.com/frahman5/beatthestreakBots.git
+   ## Enter username and password
+
+#### Handling pandas problem
+sudo apt-get install pandas # pandas is problematic to install with pip
+
+### Install python requirements
+pip install -r requirements.txt
+
+
+
+

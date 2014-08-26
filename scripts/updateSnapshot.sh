@@ -4,7 +4,7 @@
 ## Google Compute Engine Paraaters
 googleMinionDir=/home/faiyamrahman/programming/Python/beatthestreakBots/accountFiles/minionAccountFiles
 sv=--service_version="v1"
-p=--project="faiyam-bts-1"
+p=--project="coherent-code-678"
 zone=--zone="us-central1-a"
 snapshot=--source_snapshot="sims-chromedriver-clientalive-strats-5-17"
 disktype=--disk_type="pd-ssd"
@@ -38,11 +38,11 @@ makeInstance 5
 gcutil $sv $p ssh $zone sn5
 
 # update the snapshot
-gcutil --project='faiyam-bts-1' deletesnapshot "sims-chromedriver-clientalive-strats-5-17"
-gcutil --project='faiyam-bts-1' addsnapshot --zone='us-central1-a' "sims-chromedriver-clientalive-strats-5-17"
+gcutil $p deletesnapshot "sims-chromedriver-clientalive-strats-5-17"
+gcutil $p addsnapshot --zone='us-central1-a' "sims-chromedriver-clientalive-strats-5-17"
 
 # delete the instance
-gcutil --project='faiyam-bts-1' deleteinstance sn5
+gcutil $p deleteinstance sn5
 
 # list the snapshots
-gcutil --project='faiyam-bts-1' listsnapshots
+gcutil $p listsnapshots
