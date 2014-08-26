@@ -44,7 +44,9 @@ class Bot(object):
         if ROOT == '/home/faiyamrahman/programming/Python/beatthestreakBots':
             print "--> Starting BOT display"
             self.display = Display(visible=0, size=(1024, 768))
+            print "--> successfully assigned display parameters"
             self.display.start()
+            print "--> succesffully started display"
         else:
             self.display = None
 
