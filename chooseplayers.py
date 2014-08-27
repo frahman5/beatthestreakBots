@@ -466,6 +466,7 @@ def choosePlayers(**kwargs):
                 # make the appropriate bot and update him
                 bot, p1, p2 = (None, None, None) # in case we throw an exception before they get assigned
                 bot = Bot(str(username), str(password), activeDate)
+                print "-->Succesfully created Bot"
                 p1, p2 = __distribute_eligible_players( 
                     funcDict=funcDict, bot=bot, sN=kwargs['sN'],
                     eligiblePlayers=eligiblePlayers)

@@ -54,7 +54,9 @@ class Bot(object):
         self.username = username
         self.password = password
         self.activeDate = activeDate
+        print "-->Succesfully set username, password, and activeDate for bot"
         self.browser = webdriver.Chrome()
+        print "-->Succesfully created chrome webdriver"
         self.today = datetime.today()
         self.dev = dev
         if self.dev:
