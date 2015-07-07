@@ -1,9 +1,10 @@
-#### install linux dependencies
+    #### install linux dependencies
 sudo apt-get update
 sudo apt-get install git
 sudo apt-get install gcc 
 sudo apt-get install python-dev
 sudo apt-get install xvfb
+sudo apt-get install screen
 
 ### Install chromedriver
    ## chromium
@@ -13,7 +14,7 @@ sudo aptitude install chromium-browser
 cd /usr/local/bin
 sudo wget http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux64.zip
 sudo apt-get install unzip
-unzip chromedriver_linux64.zip
+sudo unzip chromedriver_linux64.zip
 sudo chmod a+x chromedriver
     ## google-chrome
 sudo apt-get install libxss1 libappindicator1 libindicator7
@@ -33,10 +34,14 @@ git clone https://github.com/frahman5/beatthestreakBots.git
    ## Enter username and password
 
 #### Handling pandas problem
-sudo apt-get install pandas # pandas is problematic to install with pip
+sudo apt-get install python-pandas # pandas is problematic to install with pip
 
 ### Install python requirements
-pip install -r requirements.txt
+sudo pip install -r requirements.txt
+
+## Troubleshooting:
+## If you get an error related to freetype, run:
+    # sudo apt-get install libfreetype6-dev
 
 
 

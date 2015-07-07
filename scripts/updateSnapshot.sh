@@ -4,7 +4,7 @@
 ## Google Compute Engine Paraaters
 googleMinionDir=/home/faiyamrahman/programming/Python/beatthestreakBots/accountFiles/minionAccountFiles
 sv=--service_version="v1"
-p=--project="coherent-code-678"
+p=--project="dmitry-bts-1"
 zone=--zone="us-central1-a"
 snapshot=--source_snapshot="sims-chromedriver-clientalive-strats-5-17"
 disktype=--disk_type="pd-ssd"
@@ -32,17 +32,17 @@ function makeInstance {
     gcutil $sv $p addinstance 'sn'$1 $zone $machinetype $network $ip $service $disk $autodelete
 }
 
-# make sn5 and ssh into it so we can pull the git repo
-makeDisk 5
-makeInstance 5
-gcutil $sv $p ssh $zone sn5
+# make sn6 and ssh into it so we can pull the git repo
+makeDisk 6
+makeInstance 6
+gcutil $sv $p ssh $zone sn6
 
 # update the snapshot
 gcutil $p deletesnapshot "sims-chromedriver-clientalive-strats-5-17"
 gcutil $p addsnapshot --zone='us-central1-a' "sims-chromedriver-clientalive-strats-5-17"
 
 # delete the instance
-gcutil $p deleteinstance sn5
+gcutil $p deleteinstance sn6
 
 # list the snapshots
 gcutil $p listsnapshots
